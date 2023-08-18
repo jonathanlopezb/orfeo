@@ -17,7 +17,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: buscarcadena(character varying, character varying); Type: FUNCTION; Schema: public; Owner: orfeo62usr
+-- Name: buscarcadena(character varying, character varying); Type: FUNCTION; Schema: public; Owner: orfeo_usr
 --
 
 CREATE FUNCTION public.buscarcadena(cadena character varying, esquema character varying) RETURNS character varying
@@ -67,10 +67,10 @@ DECLARE
 $$;
 
 
-ALTER FUNCTION public.buscarcadena(cadena character varying, esquema character varying) OWNER TO orfeo62usr;
+ALTER FUNCTION public.buscarcadena(cadena character varying, esquema character varying) OWNER TO orfeo_usr;
 
 --
--- Name: concat(text, text); Type: FUNCTION; Schema: public; Owner: orfeo62usr
+-- Name: concat(text, text); Type: FUNCTION; Schema: public; Owner: orfeo_usr
 --
 
 CREATE FUNCTION public.concat(text, text) RETURNS text
@@ -78,14 +78,14 @@ CREATE FUNCTION public.concat(text, text) RETURNS text
     AS $_$select case when $1 = '' then $2 else ($1 || ', ' || $2) end$_$;
 
 
-ALTER FUNCTION public.concat(text, text) OWNER TO orfeo62usr;
+ALTER FUNCTION public.concat(text, text) OWNER TO orfeo_usr;
 
 SET default_tablespace = '';
 
 SET default_with_oids = false;
 
 --
--- Name: preguntas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: preguntas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.preguntas (
@@ -94,17 +94,17 @@ CREATE TABLE public.preguntas (
 );
 
 
-ALTER TABLE public.preguntas OWNER TO orfeo62usr;
+ALTER TABLE public.preguntas OWNER TO orfeo_usr;
 
 --
--- Name: TABLE preguntas; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE preguntas; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.preguntas IS 'Guarda la pregunta en general para restablecer contraseña';
 
 
 --
--- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public."Preguntas_id_preguntas_seq"
@@ -115,17 +115,17 @@ CREATE SEQUENCE public."Preguntas_id_preguntas_seq"
     CACHE 1;
 
 
-ALTER TABLE public."Preguntas_id_preguntas_seq" OWNER TO orfeo62usr;
+ALTER TABLE public."Preguntas_id_preguntas_seq" OWNER TO orfeo_usr;
 
 --
--- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public."Preguntas_id_preguntas_seq" OWNED BY public.preguntas.id_preguntas;
 
 
 --
--- Name: respuestas_usuario; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: respuestas_usuario; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.respuestas_usuario (
@@ -136,17 +136,17 @@ CREATE TABLE public.respuestas_usuario (
 );
 
 
-ALTER TABLE public.respuestas_usuario OWNER TO orfeo62usr;
+ALTER TABLE public.respuestas_usuario OWNER TO orfeo_usr;
 
 --
--- Name: TABLE respuestas_usuario; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE respuestas_usuario; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.respuestas_usuario IS 'Preguntas por usuario';
 
 
 --
--- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public."Respuestas_Usuario_id_Respuestas_Usuario_seq"
@@ -157,17 +157,17 @@ CREATE SEQUENCE public."Respuestas_Usuario_id_Respuestas_Usuario_seq"
     CACHE 1;
 
 
-ALTER TABLE public."Respuestas_Usuario_id_Respuestas_Usuario_seq" OWNER TO orfeo62usr;
+ALTER TABLE public."Respuestas_Usuario_id_Respuestas_Usuario_seq" OWNER TO orfeo_usr;
 
 --
--- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public."Respuestas_Usuario_id_Respuestas_Usuario_seq" OWNED BY public.respuestas_usuario."id_Respuestas_Usuario";
 
 
 --
--- Name: usuario; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: usuario; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.usuario (
@@ -246,234 +246,234 @@ CREATE TABLE public.usuario (
 );
 
 
-ALTER TABLE public.usuario OWNER TO orfeo62usr;
+ALTER TABLE public.usuario OWNER TO orfeo_usr;
 
 --
--- Name: TABLE usuario; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE usuario; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.usuario IS 'USUARIO';
 
 
 --
--- Name: COLUMN usuario.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_codi IS 'CODIGO DE USUARIO';
 
 
 --
--- Name: COLUMN usuario.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.depe_codi IS 'DEPE_CODI';
 
 
 --
--- Name: COLUMN usuario.usua_login; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_login; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_login IS 'LOGIN USUARIO';
 
 
 --
--- Name: COLUMN usuario.usua_fech_crea; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_fech_crea; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_fech_crea IS 'FECHA DE CREACION DEL USUARIO';
 
 
 --
--- Name: COLUMN usuario.usua_pasw; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_pasw; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_pasw IS 'USUA_PASW';
 
 
 --
--- Name: COLUMN usuario.usua_esta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_esta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_esta IS 'ESTADO DEL USUARIO - Activo o No (1/0)';
 
 
 --
--- Name: COLUMN usuario.usua_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_nomb IS 'NOMBRE DEL USUARIO';
 
 
 --
--- Name: COLUMN usuario.perm_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.perm_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.perm_radi IS 'Permiso para digitalizacion de documentos: 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.usua_admin; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_admin; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_admin IS 'Prestamo de documentos fisicos: 0 sin permiso -  1 permiso asignado ';
 
 
 --
--- Name: COLUMN usuario.usua_nuevo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_nuevo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_nuevo IS 'Usuario Nuevo ? Si esta en ''0'' resetea la contrase?a';
 
 
 --
--- Name: COLUMN usuario.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_doc IS 'No. de Documento de Identificacion. ';
 
 
 --
--- Name: COLUMN usuario.codi_nivel; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.codi_nivel; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.codi_nivel IS 'Nivel del Usuario';
 
 
 --
--- Name: COLUMN usuario.usua_sesion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_sesion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_sesion IS 'Sesion Actual del usuario o Ultima fecha que entro.';
 
 
 --
--- Name: COLUMN usuario.usua_fech_sesion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_fech_sesion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_fech_sesion IS 'Fecha de Actual de la session o Ultima Fecha.';
 
 
 --
--- Name: COLUMN usuario.usua_ext; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_ext; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_ext IS 'Numero de extension del usuario';
 
 
 --
--- Name: COLUMN usuario.usua_nacim; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_nacim; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_nacim IS 'Fecha Nacimiento';
 
 
 --
--- Name: COLUMN usuario.usua_email; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_email; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_email IS 'Mail';
 
 
 --
--- Name: COLUMN usuario.usua_at; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_at; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_at IS 'Nombre del Equipo';
 
 
 --
--- Name: COLUMN usuario.usua_piso; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_piso; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_piso IS 'Piso en el que se encuentra laborando';
 
 
 --
--- Name: COLUMN usuario.usua_admin_archivo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_admin_archivo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_admin_archivo IS 'Administrador de Archivo (Expedientes): 0 sin permiso - 1 permiso asignado ';
 
 
 --
--- Name: COLUMN usuario.usua_masiva; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_masiva; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_masiva IS 'Permiso de radicacion masiva de documentos';
 
 
 --
--- Name: COLUMN usuario.usua_perm_dev; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_dev; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_dev IS 'Devoluciones de correo (Dev_correo): 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.sgd_panu_codi IS 'Permisos de anulacion de radicados: 1 - Permiso de solicitud de anulado 2- Permiso de anulacion y generacion de actas 3- Permiso 1 y 2';
 
 
 --
--- Name: COLUMN usuario.usua_prad_tp1; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_prad_tp1; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_prad_tp1 IS 'Si esta en ''1'' El usuario Tiene Permisos de radicacicion Tipo 1.  En nuestro caso de salida';
 
 
 --
--- Name: COLUMN usuario.usua_prad_tp2; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_prad_tp2; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_prad_tp2 IS 'Si esta en ''2'' El usuario Tiene Permisos de radicacicion Tipo 2.  En nuestro caso de Entrada';
 
 
 --
--- Name: COLUMN usuario.usua_perm_envios; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_envios; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_envios IS 'Envios de correo (correspondencia): 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.usua_perm_modifica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_modifica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_modifica IS 'Permiso de modificar Radicados';
 
 
 --
--- Name: COLUMN usuario.usua_perm_impresion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_impresion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_impresion IS 'Carpeta de impresion: 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.sgd_perm_estadistica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.sgd_perm_estadistica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.sgd_perm_estadistica IS 'Si tiene ''1'' tiene permisos como jefe para ver las estadisticas de la dependencia.';
 
 
 --
--- Name: COLUMN usuario.usua_admin_sistema; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_admin_sistema; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_admin_sistema IS 'Administrador del sistema : 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.usua_perm_trd; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_trd; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_trd IS 'Usuario Administracion de tablas de retencion documental : 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN usuario.usua_perm_prestamo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_prestamo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_prestamo IS 'Indica si un usuario tiene o no permiso de acceso al modulo de prestamo. Segun su valor:
@@ -484,112 +484,112 @@ Tiene permiso
 
 
 --
--- Name: COLUMN usuario.perm_borrar_anexo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.perm_borrar_anexo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.perm_borrar_anexo IS 'Indica si un usuario tiene (1) o no (0) permiso para tipificar anexos .tif';
 
 
 --
--- Name: COLUMN usuario.perm_tipif_anexo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.perm_tipif_anexo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.perm_tipif_anexo IS 'Indica si un usuario tiene (1)  o no (0) permiso para tipificar anexos .tif';
 
 
 --
--- Name: COLUMN usuario.usua_perm_rademail; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_rademail; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_rademail IS 'Permiso de radicacion de email';
 
 
 --
--- Name: COLUMN usuario.usua_perm_accesi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_accesi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_accesi IS 'Permiso para  compatbilidad uso de lector de pantalla';
 
 
 --
--- Name: COLUMN usuario.usua_perm_agrcontacto; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_agrcontacto; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_agrcontacto IS 'permiso para agregar contactos formualrio rad';
 
 
 --
--- Name: COLUMN usuario.usua_perm_preradicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_preradicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_preradicado IS 'Identifica si tiene o no el permiso del formulario de pre-radicación';
 
 
 --
--- Name: COLUMN usuario.cod_rol; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.cod_rol; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.cod_rol IS 'identifica el rol que se asigno al usuario';
 
 
 --
--- Name: COLUMN usuario.usua_perm_reasigna_masiva; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_reasigna_masiva; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_reasigna_masiva IS 'Este permite asignar el permiso para realizar el proceso de reasignación masiva';
 
 
 --
--- Name: COLUMN usuario.usua_nivel_consulta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_nivel_consulta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_nivel_consulta IS 'Este permiso permite asignar un nivel de consilta a los radicados';
 
 
 --
--- Name: COLUMN usuario.descarga_arc_original; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.descarga_arc_original; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.descarga_arc_original IS 'Este permiso permite descargar el archivo original del radicado';
 
 
 --
--- Name: COLUMN usuario.firma_qr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.firma_qr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.firma_qr IS 'Este permiso permite firmar el radicado';
 
 
 --
--- Name: COLUMN usuario.usua_perm_grupo_usuarios_informados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_grupo_usuarios_informados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_grupo_usuarios_informados IS 'Este permiso permite asignar el permiso para crear gupos de informados nuevos';
 
 
 --
--- Name: COLUMN usuario.usua_perm_consulta_rad; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.usua_perm_consulta_rad; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.usua_perm_consulta_rad IS 'Permiso para el proceso de consulta de radicados marcados como confidenciales';
 
 
 --
--- Name: COLUMN usuario.consulta_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.consulta_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.consulta_inv_documental IS 'permiso para consulta de inventario documental';
 
 
 --
--- Name: COLUMN usuario.carga_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN usuario.carga_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.usuario.carga_inv_documental IS 'permiso para creación y carga de documentos en inventario documental';
 
 
 --
--- Name: V_USUARIO; Type: VIEW; Schema: public; Owner: orfeo62usr
+-- Name: V_USUARIO; Type: VIEW; Schema: public; Owner: orfeo_usr
 --
 
 CREATE VIEW public."V_USUARIO" AS
@@ -600,10 +600,10 @@ CREATE VIEW public."V_USUARIO" AS
    FROM public.usuario;
 
 
-ALTER TABLE public."V_USUARIO" OWNER TO orfeo62usr;
+ALTER TABLE public."V_USUARIO" OWNER TO orfeo_usr;
 
 --
--- Name: anexos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: anexos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.anexos (
@@ -662,66 +662,66 @@ CREATE TABLE public.anexos (
 );
 
 
-ALTER TABLE public.anexos OWNER TO orfeo62usr;
+ALTER TABLE public.anexos OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN anexos.numero_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.numero_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.numero_doc IS 'Numero de documento';
 
 
 --
--- Name: COLUMN anexos.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.sgd_srd_codigo IS 'Serie';
 
 
 --
--- Name: COLUMN anexos.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.sgd_sbrd_codigo IS 'Subserie';
 
 
 --
--- Name: COLUMN anexos.anex_idarch_version; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.anex_idarch_version; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.anex_idarch_version IS 'Id del archivo de versión';
 
 
 --
--- Name: COLUMN anexos.anex_num_version; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.anex_num_version; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.anex_num_version IS 'Numero de versión del anexo';
 
 
 --
--- Name: COLUMN anexos.radi_docu_publico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.radi_docu_publico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.radi_docu_publico IS 'Guarda la información correspondiente el documento puede ser visible o no en el landin page';
 
 
 --
--- Name: COLUMN anexos.fecha_rec_remi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.fecha_rec_remi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.fecha_rec_remi IS 'fecha recibido remitente';
 
 
 --
--- Name: COLUMN anexos.anex_radicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.anex_radicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.anex_radicado IS 'Indica si el anexo va a ser una respuesta.';
 
 
 --
--- Name: COLUMN anexos.anex_tipo_envio; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos.anex_tipo_envio; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos.anex_tipo_envio IS 'Inca la forma de envío de la respuesta dada, 1=Fisico, 2= Electrónico
@@ -729,7 +729,7 @@ COMMENT ON COLUMN public.anexos.anex_tipo_envio IS 'Inca la forma de envío de l
 
 
 --
--- Name: anexos_historico; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: anexos_historico; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.anexos_historico (
@@ -742,10 +742,10 @@ CREATE TABLE public.anexos_historico (
 );
 
 
-ALTER TABLE public.anexos_historico OWNER TO orfeo62usr;
+ALTER TABLE public.anexos_historico OWNER TO orfeo_usr;
 
 --
--- Name: anexos_tipo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: anexos_tipo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.anexos_tipo (
@@ -756,17 +756,17 @@ CREATE TABLE public.anexos_tipo (
 );
 
 
-ALTER TABLE public.anexos_tipo OWNER TO orfeo62usr;
+ALTER TABLE public.anexos_tipo OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN anexos_tipo.anex_tipo_icon; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN anexos_tipo.anex_tipo_icon; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.anexos_tipo.anex_tipo_icon IS 'iconos';
 
 
 --
--- Name: bodega_empresas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: bodega_empresas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.bodega_empresas (
@@ -794,31 +794,31 @@ CREATE TABLE public.bodega_empresas (
 );
 
 
-ALTER TABLE public.bodega_empresas OWNER TO orfeo62usr;
+ALTER TABLE public.bodega_empresas OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN bodega_empresas.codigo_suscriptor; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN bodega_empresas.codigo_suscriptor; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.bodega_empresas.codigo_suscriptor IS 'Codigo del suscriptor';
 
 
 --
--- Name: COLUMN bodega_empresas.id_users_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN bodega_empresas.id_users_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.bodega_empresas.id_users_pqrs IS 'Indica el id del usuario correspondiente en la pagina publica';
 
 
 --
--- Name: COLUMN bodega_empresas.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN bodega_empresas.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.bodega_empresas.trte_codi IS 'Tipo de remitente';
 
 
 --
--- Name: borrar_carpeta_personalizada; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: borrar_carpeta_personalizada; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.borrar_carpeta_personalizada (
@@ -828,10 +828,10 @@ CREATE TABLE public.borrar_carpeta_personalizada (
 );
 
 
-ALTER TABLE public.borrar_carpeta_personalizada OWNER TO orfeo62usr;
+ALTER TABLE public.borrar_carpeta_personalizada OWNER TO orfeo_usr;
 
 --
--- Name: borrar_empresa_esp; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: borrar_empresa_esp; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.borrar_empresa_esp (
@@ -846,59 +846,59 @@ CREATE TABLE public.borrar_empresa_esp (
 );
 
 
-ALTER TABLE public.borrar_empresa_esp OWNER TO orfeo62usr;
+ALTER TABLE public.borrar_empresa_esp OWNER TO orfeo_usr;
 
 --
--- Name: TABLE borrar_empresa_esp; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE borrar_empresa_esp; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.borrar_empresa_esp IS 'EMPRESA_ESP';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.eesp_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.eesp_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.eesp_codi IS 'CODGO DE EMPRESA DE SERVICIOS PUBLICOS';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.eesp_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.eesp_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.eesp_nomb IS 'NOMBRE DE EMPRESA';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.essp_nit; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.essp_nit; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.essp_nit IS 'ESSP_NIT';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.essp_sigla; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.essp_sigla; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.essp_sigla IS 'ESSP_SIGLA';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.depe_codi IS 'DEPE_CODI';
 
 
 --
--- Name: COLUMN borrar_empresa_esp.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN borrar_empresa_esp.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.borrar_empresa_esp.muni_codi IS 'MUNI_CODI';
 
 
 --
--- Name: carpeta; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: carpeta; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.carpeta (
@@ -908,38 +908,38 @@ CREATE TABLE public.carpeta (
 );
 
 
-ALTER TABLE public.carpeta OWNER TO orfeo62usr;
+ALTER TABLE public.carpeta OWNER TO orfeo_usr;
 
 --
--- Name: TABLE carpeta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE carpeta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.carpeta IS 'CARPETA';
 
 
 --
--- Name: COLUMN carpeta.carp_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN carpeta.carp_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.carpeta.carp_codi IS 'CARP_CODI';
 
 
 --
--- Name: COLUMN carpeta.carp_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN carpeta.carp_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.carpeta.carp_desc IS 'CARP_DESC';
 
 
 --
--- Name: COLUMN carpeta.mostrar_como_tipo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN carpeta.mostrar_como_tipo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.carpeta.mostrar_como_tipo IS 'Indica si se debe mostrar o no como tipo de radicado en el sistema aplica mas que todo para PQRS';
 
 
 --
--- Name: carpeta_per; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.carpeta_per (
@@ -952,10 +952,10 @@ CREATE TABLE public.carpeta_per (
 );
 
 
-ALTER TABLE public.carpeta_per OWNER TO orfeo62usr;
+ALTER TABLE public.carpeta_per OWNER TO orfeo_usr;
 
 --
--- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.carpeta_per_id_caperta_per_seq
@@ -966,17 +966,17 @@ CREATE SEQUENCE public.carpeta_per_id_caperta_per_seq
     CACHE 1;
 
 
-ALTER TABLE public.carpeta_per_id_caperta_per_seq OWNER TO orfeo62usr;
+ALTER TABLE public.carpeta_per_id_caperta_per_seq OWNER TO orfeo_usr;
 
 --
--- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.carpeta_per_id_caperta_per_seq OWNED BY public.carpeta_per.id_caperta_per;
 
 
 --
--- Name: centro_poblado; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: centro_poblado; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.centro_poblado (
@@ -988,45 +988,45 @@ CREATE TABLE public.centro_poblado (
 );
 
 
-ALTER TABLE public.centro_poblado OWNER TO orfeo62usr;
+ALTER TABLE public.centro_poblado OWNER TO orfeo_usr;
 
 --
--- Name: TABLE centro_poblado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE centro_poblado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.centro_poblado IS 'CENTRO_POBLADO';
 
 
 --
--- Name: COLUMN centro_poblado.cpob_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN centro_poblado.cpob_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.centro_poblado.cpob_codi IS 'CPOB_CODI';
 
 
 --
--- Name: COLUMN centro_poblado.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN centro_poblado.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.centro_poblado.muni_codi IS 'MUNI_CODI';
 
 
 --
--- Name: COLUMN centro_poblado.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN centro_poblado.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.centro_poblado.dpto_codi IS 'DPTO_CODI';
 
 
 --
--- Name: COLUMN centro_poblado.cpob_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN centro_poblado.cpob_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.centro_poblado.cpob_nomb IS 'CPOB_NOMB';
 
 
 --
--- Name: configuracion_contrasena; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.configuracion_contrasena (
@@ -1039,59 +1039,59 @@ CREATE TABLE public.configuracion_contrasena (
 );
 
 
-ALTER TABLE public.configuracion_contrasena OWNER TO orfeo62usr;
+ALTER TABLE public.configuracion_contrasena OWNER TO orfeo_usr;
 
 --
--- Name: TABLE configuracion_contrasena; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE configuracion_contrasena; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.configuracion_contrasena IS 'tabla que guarda la información de las configuraciones de las contrasñeas';
 
 
 --
--- Name: COLUMN configuracion_contrasena."idConfiguracionContracsena"; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena."idConfiguracionContracsena"; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena."idConfiguracionContracsena" IS 'Identificador de tabla';
 
 
 --
--- Name: COLUMN configuracion_contrasena.numero_periocidad; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena.numero_periocidad; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena.numero_periocidad IS 'Indica la cantidad de dias, semanas o meses en los que vence la contraseña';
 
 
 --
--- Name: COLUMN configuracion_contrasena.descripcion_periocidad; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena.descripcion_periocidad; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena.descripcion_periocidad IS 'Indica la descripción de la periocidad dias, semanas y meses';
 
 
 --
--- Name: COLUMN configuracion_contrasena.dias_notificacion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena.dias_notificacion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena.dias_notificacion IS 'indica la cantidad de dias antes del vencimiento de la contraseña';
 
 
 --
--- Name: COLUMN configuracion_contrasena.estado_configuracion_contrasena; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena.estado_configuracion_contrasena; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena.estado_configuracion_contrasena IS 'Indica el estado de la confuguración';
 
 
 --
--- Name: COLUMN configuracion_contrasena.anio_creacion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_contrasena.anio_creacion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_contrasena.anio_creacion IS 'guara el año en el que se crea la configuración';
 
 
 --
--- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public."configuracion_contrasena_idConfiguracionContracsena_seq"
@@ -1102,17 +1102,17 @@ CREATE SEQUENCE public."configuracion_contrasena_idConfiguracionContracsena_seq"
     CACHE 1;
 
 
-ALTER TABLE public."configuracion_contrasena_idConfiguracionContracsena_seq" OWNER TO orfeo62usr;
+ALTER TABLE public."configuracion_contrasena_idConfiguracionContracsena_seq" OWNER TO orfeo_usr;
 
 --
--- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public."configuracion_contrasena_idConfiguracionContracsena_seq" OWNED BY public.configuracion_contrasena."idConfiguracionContracsena";
 
 
 --
--- Name: configuracion_general_fondo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.configuracion_general_fondo (
@@ -1124,52 +1124,52 @@ CREATE TABLE public.configuracion_general_fondo (
 );
 
 
-ALTER TABLE public.configuracion_general_fondo OWNER TO orfeo62usr;
+ALTER TABLE public.configuracion_general_fondo OWNER TO orfeo_usr;
 
 --
--- Name: TABLE configuracion_general_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE configuracion_general_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.configuracion_general_fondo IS 'En esta tabla se va a guardar la configuración de los campos que se mostraran en el visor de consulta de fondo acumulado. 1= decretos, 2= resoluciones, 3=comunicaciones, 4=contratos, 5=posesiones, 6=titulaciones, 7=manual funciones, 8=plan desarrollo, 9=acuerdos, 10=historia laboral';
 
 
 --
--- Name: COLUMN configuracion_general_fondo.id_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_general_fondo.id_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_general_fondo.id_campo_configuracion_fondo IS 'Guarda el identificador de la tabla';
 
 
 --
--- Name: COLUMN configuracion_general_fondo.nombre_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_general_fondo.nombre_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_general_fondo.nombre_campo_configuracion_fondo IS 'Referencia al nombre del campo de la tabla donde se guarda la información leida del excel';
 
 
 --
--- Name: COLUMN configuracion_general_fondo.descripcion_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_general_fondo.descripcion_campo_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_general_fondo.descripcion_campo_configuracion_fondo IS 'Referencia el texto que va a mostrar en el formulario el label del campo de la tabla donde se guarda la información leida del excel tipo_consulta_configuracion_fondo';
 
 
 --
--- Name: COLUMN configuracion_general_fondo.consultar_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_general_fondo.consultar_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_general_fondo.consultar_configuracion_fondo IS 'Indica si el campo va a ser utilizado para consultar de la información leida del excel';
 
 
 --
--- Name: COLUMN configuracion_general_fondo.tipo_consulta_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN configuracion_general_fondo.tipo_consulta_configuracion_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.configuracion_general_fondo.tipo_consulta_configuracion_fondo IS 'Indica el tipo de archivo leido';
 
 
 --
--- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.configuracion_general_fondo_id_campo_configuracion_fondo_seq
@@ -1180,17 +1180,17 @@ CREATE SEQUENCE public.configuracion_general_fondo_id_campo_configuracion_fondo_
     CACHE 1;
 
 
-ALTER TABLE public.configuracion_general_fondo_id_campo_configuracion_fondo_seq OWNER TO orfeo62usr;
+ALTER TABLE public.configuracion_general_fondo_id_campo_configuracion_fondo_seq OWNER TO orfeo_usr;
 
 --
--- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.configuracion_general_fondo_id_campo_configuracion_fondo_seq OWNED BY public.configuracion_general_fondo.id_campo_configuracion_fondo;
 
 
 --
--- Name: contrasenas_guardadas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.contrasenas_guardadas (
@@ -1204,66 +1204,66 @@ CREATE TABLE public.contrasenas_guardadas (
 );
 
 
-ALTER TABLE public.contrasenas_guardadas OWNER TO orfeo62usr;
+ALTER TABLE public.contrasenas_guardadas OWNER TO orfeo_usr;
 
 --
--- Name: TABLE contrasenas_guardadas; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE contrasenas_guardadas; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.contrasenas_guardadas IS 'Guarda las contraseñas correspondientes a los usuarios.';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.id_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.id_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.id_contrasena_guardada IS 'Identificador de tabla';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.usua_login_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.usua_login_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.usua_login_contrasena_guardada IS 'indica el usuario al que se le esta guardando la contraseña';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.contrasena_anterior_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.contrasena_anterior_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.contrasena_anterior_contrasena_guardada IS 'indica la contraseña anterior que tenia el usuario';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.contrasena_nueva_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.contrasena_nueva_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.contrasena_nueva_contrasena_guardada IS 'indica la contraseña nueva que tiene el usuario';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.fecha_creacion_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.fecha_creacion_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.fecha_creacion_contrasena_guardada IS 'indica la fecha en la que se crea el registro';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.fecha_vencimiento_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.fecha_vencimiento_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.fecha_vencimiento_contrasena_guardada IS 'indica la fecha de vencimiento de la contraseña';
 
 
 --
--- Name: COLUMN contrasenas_guardadas.estado_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN contrasenas_guardadas.estado_contrasena_guardada; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.contrasenas_guardadas.estado_contrasena_guardada IS 'indica el estado de la contraseña';
 
 
 --
--- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.contrasenas_guardadas_id_contrasena_guardada_seq
@@ -1274,17 +1274,17 @@ CREATE SEQUENCE public.contrasenas_guardadas_id_contrasena_guardada_seq
     CACHE 1;
 
 
-ALTER TABLE public.contrasenas_guardadas_id_contrasena_guardada_seq OWNER TO orfeo62usr;
+ALTER TABLE public.contrasenas_guardadas_id_contrasena_guardada_seq OWNER TO orfeo_usr;
 
 --
--- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.contrasenas_guardadas_id_contrasena_guardada_seq OWNED BY public.contrasenas_guardadas.id_contrasena_guardada;
 
 
 --
--- Name: datosocr; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: datosocr; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.datosocr (
@@ -1302,17 +1302,17 @@ CREATE TABLE public.datosocr (
 );
 
 
-ALTER TABLE public.datosocr OWNER TO orfeo62usr;
+ALTER TABLE public.datosocr OWNER TO orfeo_usr;
 
 --
--- Name: TABLE datosocr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE datosocr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.datosocr IS 'datosocr es donde se guarda directamente todo lo que skinascan reconoce como texto';
 
 
 --
--- Name: datosocr_indice_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: datosocr_indice_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.datosocr_indice_seq
@@ -1323,17 +1323,17 @@ CREATE SEQUENCE public.datosocr_indice_seq
     CACHE 1;
 
 
-ALTER TABLE public.datosocr_indice_seq OWNER TO orfeo62usr;
+ALTER TABLE public.datosocr_indice_seq OWNER TO orfeo_usr;
 
 --
--- Name: datosocr_indice_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: datosocr_indice_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.datosocr_indice_seq OWNED BY public.datosocr.indice;
 
 
 --
--- Name: departamento; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: departamento; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.departamento (
@@ -1344,31 +1344,31 @@ CREATE TABLE public.departamento (
 );
 
 
-ALTER TABLE public.departamento OWNER TO orfeo62usr;
+ALTER TABLE public.departamento OWNER TO orfeo_usr;
 
 --
--- Name: TABLE departamento; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE departamento; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.departamento IS 'DEPARTAMENTO';
 
 
 --
--- Name: COLUMN departamento.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN departamento.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.departamento.dpto_codi IS 'DPTO_CODI';
 
 
 --
--- Name: COLUMN departamento.dpto_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN departamento.dpto_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.departamento.dpto_nomb IS 'DPTO_NOMB';
 
 
 --
--- Name: dependencia; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: dependencia; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.dependencia (
@@ -1393,45 +1393,45 @@ CREATE TABLE public.dependencia (
 );
 
 
-ALTER TABLE public.dependencia OWNER TO orfeo62usr;
+ALTER TABLE public.dependencia OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN dependencia.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN dependencia.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.dependencia.depe_codi IS 'CODIGO DE DEPENDENCIA';
 
 
 --
--- Name: COLUMN dependencia.depe_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN dependencia.depe_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.dependencia.depe_nomb IS 'NOMBRE DE DEPENDENCIA';
 
 
 --
--- Name: COLUMN dependencia.dep_sigla; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN dependencia.dep_sigla; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.dependencia.dep_sigla IS 'SIGLA DE LA DEPENDENCIA';
 
 
 --
--- Name: COLUMN dependencia.dep_central; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN dependencia.dep_central; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.dependencia.dep_central IS 'INDICA SI SE TRATA DE UNA DEPENDENCIA DEL NIVEL CENTRAL';
 
 
 --
--- Name: COLUMN dependencia.depe_segu; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN dependencia.depe_segu; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.dependencia.depe_segu IS 'Guarda valor que identifica que la dependencia tenga seguridad o no en la consulta de radicados ';
 
 
 --
--- Name: dependencia_visibilidad; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: dependencia_visibilidad; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.dependencia_visibilidad (
@@ -1441,10 +1441,10 @@ CREATE TABLE public.dependencia_visibilidad (
 );
 
 
-ALTER TABLE public.dependencia_visibilidad OWNER TO orfeo62usr;
+ALTER TABLE public.dependencia_visibilidad OWNER TO orfeo_usr;
 
 --
--- Name: dependencias; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: dependencias; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.dependencias
@@ -1455,10 +1455,10 @@ CREATE SEQUENCE public.dependencias
     CACHE 1;
 
 
-ALTER TABLE public.dependencias OWNER TO orfeo62usr;
+ALTER TABLE public.dependencias OWNER TO orfeo_usr;
 
 --
--- Name: direccion_usuarios; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.direccion_usuarios (
@@ -1472,17 +1472,17 @@ CREATE TABLE public.direccion_usuarios (
 );
 
 
-ALTER TABLE public.direccion_usuarios OWNER TO orfeo62usr;
+ALTER TABLE public.direccion_usuarios OWNER TO orfeo_usr;
 
 --
--- Name: TABLE direccion_usuarios; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE direccion_usuarios; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.direccion_usuarios IS 'guarda la dirección del usuariio';
 
 
 --
--- Name: direccion_usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.direccion_usuarios_id_seq
@@ -1493,17 +1493,17 @@ CREATE SEQUENCE public.direccion_usuarios_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.direccion_usuarios_id_seq OWNER TO orfeo62usr;
+ALTER TABLE public.direccion_usuarios_id_seq OWNER TO orfeo_usr;
 
 --
--- Name: direccion_usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.direccion_usuarios_id_seq OWNED BY public.direccion_usuarios.id;
 
 
 --
--- Name: estado; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: estado; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.estado (
@@ -1513,38 +1513,38 @@ CREATE TABLE public.estado (
 );
 
 
-ALTER TABLE public.estado OWNER TO orfeo62usr;
+ALTER TABLE public.estado OWNER TO orfeo_usr;
 
 --
--- Name: TABLE estado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE estado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.estado IS 'ESTADO';
 
 
 --
--- Name: COLUMN estado.esta_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN estado.esta_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.estado.esta_codi IS 'ESTA_CODI';
 
 
 --
--- Name: COLUMN estado.esta_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN estado.esta_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.estado.esta_desc IS 'ESTA_DESC';
 
 
 --
--- Name: COLUMN estado.estado_tipo_radicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN estado.estado_tipo_radicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.estado.estado_tipo_radicado IS 'Guarda el id del tipo de radicado donde se ve afectado el estado';
 
 
 --
--- Name: estado_civil_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.estado_civil_pqrs (
@@ -1553,10 +1553,10 @@ CREATE TABLE public.estado_civil_pqrs (
 );
 
 
-ALTER TABLE public.estado_civil_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.estado_civil_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.estado_civil_pqrs_id_estado_civil_pqrs_seq
@@ -1567,17 +1567,17 @@ CREATE SEQUENCE public.estado_civil_pqrs_id_estado_civil_pqrs_seq
     CACHE 1;
 
 
-ALTER TABLE public.estado_civil_pqrs_id_estado_civil_pqrs_seq OWNER TO orfeo62usr;
+ALTER TABLE public.estado_civil_pqrs_id_estado_civil_pqrs_seq OWNER TO orfeo_usr;
 
 --
--- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.estado_civil_pqrs_id_estado_civil_pqrs_seq OWNED BY public.estado_civil_pqrs.id_estado_civil_pqrs;
 
 
 --
--- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.fondo_acumulado_comunicaciones_id_fondo_acumulado_seq
@@ -1588,10 +1588,10 @@ CREATE SEQUENCE public.fondo_acumulado_comunicaciones_id_fondo_acumulado_seq
     CACHE 1;
 
 
-ALTER TABLE public.fondo_acumulado_comunicaciones_id_fondo_acumulado_seq OWNER TO orfeo62usr;
+ALTER TABLE public.fondo_acumulado_comunicaciones_id_fondo_acumulado_seq OWNER TO orfeo_usr;
 
 --
--- Name: fondo_acumulado_comunicaciones; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.fondo_acumulado_comunicaciones (
@@ -1612,108 +1612,108 @@ CREATE TABLE public.fondo_acumulado_comunicaciones (
 );
 
 
-ALTER TABLE public.fondo_acumulado_comunicaciones OWNER TO orfeo62usr;
+ALTER TABLE public.fondo_acumulado_comunicaciones OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.id_fondo_acumulado_comunicaciones; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.id_fondo_acumulado_comunicaciones; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.id_fondo_acumulado_comunicaciones IS 'Guarda el identificador de la tabla';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.tipo_fondo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.tipo_fondo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.tipo_fondo IS 'Guarda el tipo de archivo del fondo acumulado 3= comunicaciones, 2= resoluciones';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo1; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo1; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo1 IS 'Guarda fecha_recibido que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo2; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo2; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo2 IS 'Guarda codigo_dependencia que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo3; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo3; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo3 IS 'Guarda numero_consecutivo que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo4; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo4; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo4 IS 'Guarda entidad que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo5; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo5; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo5 IS 'Guarda persona que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo6; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo6; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo6 IS 'Guarda ubicacion_electronica que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo7; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo7; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo7 IS 'Guarda lugar que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo8; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo8; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo8 IS 'Guarda referencia que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo9; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo9; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo9 IS 'Guarda anexos que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo10; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo10; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo10 IS 'Guarda usuario_firma que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo11; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo11; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo11 IS 'Guarda no_conforme que se esta leyendo';
 
 
 --
--- Name: COLUMN fondo_acumulado_comunicaciones.campo12; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN fondo_acumulado_comunicaciones.campo12; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.fondo_acumulado_comunicaciones.campo12 IS 'Guarda año que se esta leyendo';
 
 
 --
--- Name: fun_funcionario; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: fun_funcionario; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.fun_funcionario (
@@ -1733,10 +1733,10 @@ CREATE TABLE public.fun_funcionario (
 );
 
 
-ALTER TABLE public.fun_funcionario OWNER TO orfeo62usr;
+ALTER TABLE public.fun_funcionario OWNER TO orfeo_usr;
 
 --
--- Name: genero_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: genero_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.genero_pqrs (
@@ -1745,10 +1745,10 @@ CREATE TABLE public.genero_pqrs (
 );
 
 
-ALTER TABLE public.genero_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.genero_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: grupo_interes; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: grupo_interes; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.grupo_interes (
@@ -1757,31 +1757,31 @@ CREATE TABLE public.grupo_interes (
 );
 
 
-ALTER TABLE public.grupo_interes OWNER TO orfeo62usr;
+ALTER TABLE public.grupo_interes OWNER TO orfeo_usr;
 
 --
--- Name: TABLE grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.grupo_interes IS 'Guarda la información relacionada a los grupos de interes';
 
 
 --
--- Name: COLUMN grupo_interes.id_grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN grupo_interes.id_grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.grupo_interes.id_grupo_interes IS 'Identificador de tabla';
 
 
 --
--- Name: COLUMN grupo_interes.nombre_grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN grupo_interes.nombre_grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.grupo_interes.nombre_grupo_interes IS 'Nombre del grupo de interés de la entidad';
 
 
 --
--- Name: grupos_informados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.grupos_informados (
@@ -1792,17 +1792,17 @@ CREATE TABLE public.grupos_informados (
 );
 
 
-ALTER TABLE public.grupos_informados OWNER TO orfeo62usr;
+ALTER TABLE public.grupos_informados OWNER TO orfeo_usr;
 
 --
--- Name: TABLE grupos_informados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE grupos_informados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.grupos_informados IS 'Tabla para almacenar los nombres de los grupos a los que se van a informar los radicados';
 
 
 --
--- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.grupos_informados_id_grupos_informados_seq
@@ -1813,17 +1813,17 @@ CREATE SEQUENCE public.grupos_informados_id_grupos_informados_seq
     CACHE 1;
 
 
-ALTER TABLE public.grupos_informados_id_grupos_informados_seq OWNER TO orfeo62usr;
+ALTER TABLE public.grupos_informados_id_grupos_informados_seq OWNER TO orfeo_usr;
 
 --
--- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.grupos_informados_id_grupos_informados_seq OWNED BY public.grupos_informados.id_grupos_informados;
 
 
 --
--- Name: grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.grupos_informados_seq
@@ -1834,17 +1834,17 @@ CREATE SEQUENCE public.grupos_informados_seq
     CACHE 1;
 
 
-ALTER TABLE public.grupos_informados_seq OWNER TO orfeo62usr;
+ALTER TABLE public.grupos_informados_seq OWNER TO orfeo_usr;
 
 --
--- Name: grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.grupos_informados_seq OWNED BY public.grupos_informados.id_grupos_informados;
 
 
 --
--- Name: hist_eventos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: hist_eventos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.hist_eventos (
@@ -1863,80 +1863,80 @@ CREATE TABLE public.hist_eventos (
 );
 
 
-ALTER TABLE public.hist_eventos OWNER TO orfeo62usr;
+ALTER TABLE public.hist_eventos OWNER TO orfeo_usr;
 
 --
--- Name: TABLE hist_eventos; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE hist_eventos; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.hist_eventos IS 'HIST_EVENTOS';
 
 
 --
--- Name: COLUMN hist_eventos.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.depe_codi IS 'DEPE_CODI';
 
 
 --
--- Name: COLUMN hist_eventos.hist_fech; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.hist_fech; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.hist_fech IS 'HIST_FECH';
 
 
 --
--- Name: COLUMN hist_eventos.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.usua_codi IS 'USUA_CODI';
 
 
 --
--- Name: COLUMN hist_eventos.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.radi_nume_radi IS 'Numero de Radicado';
 
 
 --
--- Name: COLUMN hist_eventos.hist_obse; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.hist_obse; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.hist_obse IS 'HIST_OBSE';
 
 
 --
--- Name: COLUMN hist_eventos.usua_codi_dest; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.usua_codi_dest; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.usua_codi_dest IS 'Codigo del usuario destino.';
 
 
 --
--- Name: COLUMN hist_eventos.sgd_ttr_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.sgd_ttr_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.sgd_ttr_codigo IS 'Tipo de Evento';
 
 
 --
--- Name: COLUMN hist_eventos.hist_doc_dest; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.hist_doc_dest; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.hist_doc_dest IS 'Documento del usuario destino No. implentado';
 
 
 --
--- Name: COLUMN hist_eventos.depe_codi_dest; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN hist_eventos.depe_codi_dest; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.hist_eventos.depe_codi_dest IS 'Codigo de la dependencia del usuario destino';
 
 
 --
--- Name: informados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: informados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.informados (
@@ -1953,24 +1953,24 @@ CREATE TABLE public.informados (
 );
 
 
-ALTER TABLE public.informados OWNER TO orfeo62usr;
+ALTER TABLE public.informados OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN informados.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN informados.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.informados.usua_codi IS 'Codigo de usuario';
 
 
 --
--- Name: COLUMN informados.info_resp; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN informados.info_resp; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.informados.info_resp IS 'Indica si el informado necesita respuesta.';
 
 
 --
--- Name: inventario_documental; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: inventario_documental; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.inventario_documental (
@@ -1997,17 +1997,17 @@ CREATE TABLE public.inventario_documental (
 );
 
 
-ALTER TABLE public.inventario_documental OWNER TO orfeo62usr;
+ALTER TABLE public.inventario_documental OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN inventario_documental.fr_consulta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN inventario_documental.fr_consulta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.inventario_documental.fr_consulta IS '1 => baja, 2 => media, 3 => alta';
 
 
 --
--- Name: inventario_documentos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: inventario_documentos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.inventario_documentos (
@@ -2023,10 +2023,10 @@ CREATE TABLE public.inventario_documentos (
 );
 
 
-ALTER TABLE public.inventario_documentos OWNER TO orfeo62usr;
+ALTER TABLE public.inventario_documentos OWNER TO orfeo_usr;
 
 --
--- Name: medio_recepcion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: medio_recepcion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.medio_recepcion (
@@ -2035,31 +2035,31 @@ CREATE TABLE public.medio_recepcion (
 );
 
 
-ALTER TABLE public.medio_recepcion OWNER TO orfeo62usr;
+ALTER TABLE public.medio_recepcion OWNER TO orfeo_usr;
 
 --
--- Name: TABLE medio_recepcion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE medio_recepcion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.medio_recepcion IS 'MEDIO_RECEPCION';
 
 
 --
--- Name: COLUMN medio_recepcion.mrec_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN medio_recepcion.mrec_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.medio_recepcion.mrec_codi IS 'CODIGO DE MEDIO DE RECEPCION';
 
 
 --
--- Name: COLUMN medio_recepcion.mrec_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN medio_recepcion.mrec_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.medio_recepcion.mrec_desc IS 'DESCRIPCION DEL MEDIO';
 
 
 --
--- Name: municipio; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: municipio; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.municipio (
@@ -2074,38 +2074,38 @@ CREATE TABLE public.municipio (
 );
 
 
-ALTER TABLE public.municipio OWNER TO orfeo62usr;
+ALTER TABLE public.municipio OWNER TO orfeo_usr;
 
 --
--- Name: TABLE municipio; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE municipio; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.municipio IS 'MUNICIPIO';
 
 
 --
--- Name: COLUMN municipio.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN municipio.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.municipio.muni_codi IS 'MUNI_CODI';
 
 
 --
--- Name: COLUMN municipio.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN municipio.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.municipio.dpto_codi IS 'DPTO_CODI';
 
 
 --
--- Name: COLUMN municipio.muni_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN municipio.muni_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.municipio.muni_nomb IS 'MUNI_NOMB';
 
 
 --
--- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.nivel_academico_pqrs_id_nivel_acad_pqrs_seq
@@ -2116,10 +2116,10 @@ CREATE SEQUENCE public.nivel_academico_pqrs_id_nivel_acad_pqrs_seq
     CACHE 1;
 
 
-ALTER TABLE public.nivel_academico_pqrs_id_nivel_acad_pqrs_seq OWNER TO orfeo62usr;
+ALTER TABLE public.nivel_academico_pqrs_id_nivel_acad_pqrs_seq OWNER TO orfeo_usr;
 
 --
--- Name: nivel_academico_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: nivel_academico_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.nivel_academico_pqrs (
@@ -2128,10 +2128,10 @@ CREATE TABLE public.nivel_academico_pqrs (
 );
 
 
-ALTER TABLE public.nivel_academico_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.nivel_academico_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_dtc; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtc; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_dtc
@@ -2142,10 +2142,10 @@ CREATE SEQUENCE public.num_resol_dtc
     CACHE 1;
 
 
-ALTER TABLE public.num_resol_dtc OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_dtc OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_dtn; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtn; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_dtn
@@ -2156,10 +2156,10 @@ CREATE SEQUENCE public.num_resol_dtn
     CACHE 1;
 
 
-ALTER TABLE public.num_resol_dtn OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_dtn OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_dtoc; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtoc; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_dtoc
@@ -2170,10 +2170,10 @@ CREATE SEQUENCE public.num_resol_dtoc
     CACHE 1;
 
 
-ALTER TABLE public.num_resol_dtoc OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_dtoc OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_dtor; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtor; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_dtor
@@ -2184,10 +2184,10 @@ CREATE SEQUENCE public.num_resol_dtor
     CACHE 1;
 
 
-ALTER TABLE public.num_resol_dtor OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_dtor OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_dts; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dts; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_dts
@@ -2198,10 +2198,10 @@ CREATE SEQUENCE public.num_resol_dts
     CACHE 1;
 
 
-ALTER TABLE public.num_resol_dts OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_dts OWNER TO orfeo_usr;
 
 --
--- Name: num_resol_gral; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_gral; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.num_resol_gral
@@ -2212,10 +2212,10 @@ CREATE SEQUENCE public.num_resol_gral
     CACHE 20;
 
 
-ALTER TABLE public.num_resol_gral OWNER TO orfeo62usr;
+ALTER TABLE public.num_resol_gral OWNER TO orfeo_usr;
 
 --
--- Name: par_serv_servicios; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: par_serv_servicios; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.par_serv_servicios (
@@ -2226,10 +2226,10 @@ CREATE TABLE public.par_serv_servicios (
 );
 
 
-ALTER TABLE public.par_serv_servicios OWNER TO orfeo62usr;
+ALTER TABLE public.par_serv_servicios OWNER TO orfeo_usr;
 
 --
--- Name: perfiles; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: perfiles; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.perfiles (
@@ -2288,255 +2288,255 @@ CREATE TABLE public.perfiles (
 );
 
 
-ALTER TABLE public.perfiles OWNER TO orfeo62usr;
+ALTER TABLE public.perfiles OWNER TO orfeo_usr;
 
 --
--- Name: TABLE perfiles; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE perfiles; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.perfiles IS 'Guarda los permisos de accesos al sistema mediante un rol';
 
 
 --
--- Name: COLUMN perfiles.codi_perfil; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.codi_perfil; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.codi_perfil IS 'Identificador de la tabla perfiles el que se relaciona con la tabla usuario';
 
 
 --
--- Name: COLUMN perfiles.nomb_perfil; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.nomb_perfil; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.nomb_perfil IS 'Nombre del perfil (rol)';
 
 
 --
--- Name: COLUMN perfiles.usua_esta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_esta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_esta IS 'Estado del usuario - Activo o No (1/0)';
 
 
 --
--- Name: COLUMN perfiles.perm_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.perm_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.perm_radi IS 'Permiso para digitalizacion de documentos: 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_admin; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_admin; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_admin IS 'Prestamo de documentos fisicos: 0 sin permiso -  1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_nuevo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_nuevo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_nuevo IS 'Usuario Nuevo ? Si esta en ''''0'''' resetea la contraseña';
 
 
 --
--- Name: COLUMN perfiles.codi_nivel; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.codi_nivel; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.codi_nivel IS 'Nivel del Usuario';
 
 
 --
--- Name: COLUMN perfiles.usua_admin_archivo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_admin_archivo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_admin_archivo IS 'Administrador de Archivo (Expedientes): 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_masiva; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_masiva; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_masiva IS 'Permiso de radicacion masiva de documentos';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_dev; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_dev; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_dev IS 'Devoluciones de correo (Dev_correo): 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.sgd_panu_codi IS 'Permisos de anulacion de radicados: 1 - Permiso de solicitud de anulado 2- Permiso de anulacion y generacion de actas 3- Permiso 1 y 2';
 
 
 --
--- Name: COLUMN perfiles.usua_prad_tp1; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_prad_tp1; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_prad_tp1 IS 'Si esta en ''''1'''' El usuario Tiene Permisos de radicacicion Tipo 1.  En nuestro caso de salida';
 
 
 --
--- Name: COLUMN perfiles.usua_prad_tp2; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_prad_tp2; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_prad_tp2 IS 'Si esta en ''''2'''' El usuario Tiene Permisos de radicacicion Tipo 2.  En nuestro caso de Entrada';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_envios; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_envios; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_envios IS 'Envios de correo (correspondencia): 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_modifica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_modifica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_modifica IS 'Permiso de modificar Radicados';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_impresion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_impresion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_impresion IS 'Carpeta de impresion: 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.sgd_perm_estadistica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.sgd_perm_estadistica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.sgd_perm_estadistica IS 'Si tiene ''''1'''' tiene permisos como jefe para ver las estadisticas de la dependencia';
 
 
 --
--- Name: COLUMN perfiles.usua_admin_sistema; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_admin_sistema; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_admin_sistema IS 'Administrador del sistema : 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_trd; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_trd; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_trd IS 'Usuario Administracion de tablas de retencion documental : 0 sin permiso - 1 permiso asignado';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_prestamo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_prestamo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_prestamo IS 'Indica si un usuario tiene o no permiso de acceso al modulo de prestamo. Segun su valor: Tiene permiso (0) No tiene permiso';
 
 
 --
--- Name: COLUMN perfiles.perm_borrar_anexo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.perm_borrar_anexo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.perm_borrar_anexo IS 'Indica si un usuario tiene (1) o no (0) permiso para tipificar anexos .pdf';
 
 
 --
--- Name: COLUMN perfiles.perm_tipif_anexo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.perm_tipif_anexo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.perm_tipif_anexo IS 'Indica si un usuario tiene (1)  o no (0) permiso para tipificar anexos .pdf';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_rademail; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_rademail; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_rademail IS 'Permiso de radicacion de email';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_accesi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_accesi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_accesi IS 'Permiso para  compatbilidad uso de lector de pantalla';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_agrcontacto; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_agrcontacto; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_agrcontacto IS 'permiso para agregar contactos formualrio rad';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_preradicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_preradicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_preradicado IS 'Permiso para la pre-radicación que se realiza en el sistema';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_reasigna_masiva; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_reasigna_masiva; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_reasigna_masiva IS 'Este permite asignar el permiso para realizar el proceso de reasignación masiva';
 
 
 --
--- Name: COLUMN perfiles.usua_nivel_consulta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_nivel_consulta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_nivel_consulta IS 'Este permiso permite asignar un nivel de consilta a los radicados';
 
 
 --
--- Name: COLUMN perfiles.descarga_arc_original; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.descarga_arc_original; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.descarga_arc_original IS 'Este permiso permite descargar el archivo original del radicado';
 
 
 --
--- Name: COLUMN perfiles.firma_qr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.firma_qr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.firma_qr IS 'Este permiso permite firmar el radicado';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_grupo_usuarios_informados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_grupo_usuarios_informados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_grupo_usuarios_informados IS 'Este permiso permite asignar el permiso para crear gupos de informados nuevos';
 
 
 --
--- Name: COLUMN perfiles.usua_perm_consulta_rad; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.usua_perm_consulta_rad; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.usua_perm_consulta_rad IS 'Permiso para el proceso de consulta de radicados marcados como confidenciales';
 
 
 --
--- Name: COLUMN perfiles.consulta_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.consulta_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.consulta_inv_documental IS 'permiso para consulta de inventario documental';
 
 
 --
--- Name: COLUMN perfiles.carga_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN perfiles.carga_inv_documental; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.perfiles.carga_inv_documental IS 'permiso para creacion y carga de documentos en inventario documental';
 
 
 --
--- Name: perfiles_codi_perfil_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: perfiles_codi_perfil_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.perfiles_codi_perfil_seq
@@ -2547,17 +2547,17 @@ CREATE SEQUENCE public.perfiles_codi_perfil_seq
     CACHE 1;
 
 
-ALTER TABLE public.perfiles_codi_perfil_seq OWNER TO orfeo62usr;
+ALTER TABLE public.perfiles_codi_perfil_seq OWNER TO orfeo_usr;
 
 --
--- Name: perfiles_codi_perfil_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: perfiles_codi_perfil_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.perfiles_codi_perfil_seq OWNED BY public.perfiles.codi_perfil;
 
 
 --
--- Name: pl_generado_plg; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: pl_generado_plg; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.pl_generado_plg (
@@ -2587,10 +2587,10 @@ CREATE TABLE public.pl_generado_plg (
 );
 
 
-ALTER TABLE public.pl_generado_plg OWNER TO orfeo62usr;
+ALTER TABLE public.pl_generado_plg OWNER TO orfeo_usr;
 
 --
--- Name: pl_tipo_plt; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: pl_tipo_plt; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.pl_tipo_plt (
@@ -2599,10 +2599,10 @@ CREATE TABLE public.pl_tipo_plt (
 );
 
 
-ALTER TABLE public.pl_tipo_plt OWNER TO orfeo62usr;
+ALTER TABLE public.pl_tipo_plt OWNER TO orfeo_usr;
 
 --
--- Name: plan_table; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: plan_table; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.plan_table (
@@ -2633,10 +2633,10 @@ CREATE TABLE public.plan_table (
 );
 
 
-ALTER TABLE public.plan_table OWNER TO orfeo62usr;
+ALTER TABLE public.plan_table OWNER TO orfeo_usr;
 
 --
--- Name: plantilla_pl; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: plantilla_pl; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.plantilla_pl (
@@ -2651,10 +2651,10 @@ CREATE TABLE public.plantilla_pl (
 );
 
 
-ALTER TABLE public.plantilla_pl OWNER TO orfeo62usr;
+ALTER TABLE public.plantilla_pl OWNER TO orfeo_usr;
 
 --
--- Name: plsql_profiler_runnumeric; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: plsql_profiler_runnumeric; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.plsql_profiler_runnumeric
@@ -2665,10 +2665,10 @@ CREATE SEQUENCE public.plsql_profiler_runnumeric
     CACHE 1;
 
 
-ALTER TABLE public.plsql_profiler_runnumeric OWNER TO orfeo62usr;
+ALTER TABLE public.plsql_profiler_runnumeric OWNER TO orfeo_usr;
 
 --
--- Name: pre_radicado; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: pre_radicado; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.pre_radicado (
@@ -2678,17 +2678,17 @@ CREATE TABLE public.pre_radicado (
 );
 
 
-ALTER TABLE public.pre_radicado OWNER TO orfeo62usr;
+ALTER TABLE public.pre_radicado OWNER TO orfeo_usr;
 
 --
--- Name: TABLE pre_radicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE pre_radicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.pre_radicado IS 'almacena los radicados que se han generado de forma inicial sin remitente alguno';
 
 
 --
--- Name: pres_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: pres_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.pres_seq
@@ -2699,10 +2699,10 @@ CREATE SEQUENCE public.pres_seq
     CACHE 1;
 
 
-ALTER TABLE public.pres_seq OWNER TO orfeo62usr;
+ALTER TABLE public.pres_seq OWNER TO orfeo_usr;
 
 --
--- Name: prestamo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: prestamo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.prestamo (
@@ -2726,38 +2726,38 @@ CREATE TABLE public.prestamo (
 );
 
 
-ALTER TABLE public.prestamo OWNER TO orfeo62usr;
+ALTER TABLE public.prestamo OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN prestamo.dev_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN prestamo.dev_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.prestamo.dev_desc IS 'Observaciones realizadas por el usuario que recibe la devolucion acerca de la cantidad, el estado, tipo o sucesos acontecidos con los documentos y anexos fisicos';
 
 
 --
--- Name: COLUMN prestamo.pres_fech_canc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN prestamo.pres_fech_canc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.prestamo.pres_fech_canc IS 'Fecha de cancelacion de la solicitud';
 
 
 --
--- Name: COLUMN prestamo.usua_login_canc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN prestamo.usua_login_canc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.prestamo.usua_login_canc IS 'Login del usuario que cancela la solicitud';
 
 
 --
--- Name: COLUMN prestamo.usua_login_rx; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN prestamo.usua_login_rx; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.prestamo.usua_login_rx IS 'Login del usuario que recibe el documento al momento de entregar.';
 
 
 --
--- Name: radicado; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: radicado; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.radicado (
@@ -2851,360 +2851,360 @@ CREATE TABLE public.radicado (
 );
 
 
-ALTER TABLE public.radicado OWNER TO orfeo62usr;
+ALTER TABLE public.radicado OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN radicado.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_nume_radi IS 'Numero de Radicado';
 
 
 --
--- Name: COLUMN radicado.radi_fech_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_fech_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_fech_radi IS 'FECHA DE RADICACION';
 
 
 --
--- Name: COLUMN radicado.tdoc_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.tdoc_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.tdoc_codi IS 'Tipo de Documento, (ej. Res, derecho pet, tutela, etc .. . . . .)';
 
 
 --
--- Name: COLUMN radicado.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.trte_codi IS 'TRTE_CODI';
 
 
 --
--- Name: COLUMN radicado.mrec_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.mrec_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.mrec_codi IS 'MREC_CODI';
 
 
 --
--- Name: COLUMN radicado.eesp_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.eesp_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.eesp_codi IS 'EESP_CODI';
 
 
 --
--- Name: COLUMN radicado.eotra_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.eotra_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.eotra_codi IS 'EOTRA_CODI';
 
 
 --
--- Name: COLUMN radicado.radi_tipo_empr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_tipo_empr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_tipo_empr IS 'TIPO DE EMPRESA (OTRA O ESP)';
 
 
 --
--- Name: COLUMN radicado.radi_fech_ofic; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_fech_ofic; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_fech_ofic IS 'FECHA DE OFICIO';
 
 
 --
--- Name: COLUMN radicado.tdid_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.tdid_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.tdid_codi IS 'TDID_CODI';
 
 
 --
--- Name: COLUMN radicado.radi_nume_iden; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_nume_iden; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_nume_iden IS 'NUMERO DE IDENTIFICACION';
 
 
 --
--- Name: COLUMN radicado.radi_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_nomb IS 'NOMBRE';
 
 
 --
--- Name: COLUMN radicado.radi_prim_apel; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_prim_apel; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_prim_apel IS '1 APELLIDO';
 
 
 --
--- Name: COLUMN radicado.radi_segu_apel; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_segu_apel; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_segu_apel IS '2 APELLIDO';
 
 
 --
--- Name: COLUMN radicado.radi_pais; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_pais; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_pais IS 'PAIS (DEFAULT COLOMBIA)';
 
 
 --
--- Name: COLUMN radicado.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.muni_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.muni_codi IS 'MUNI_CODI';
 
 
 --
--- Name: COLUMN radicado.cpob_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.cpob_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.cpob_codi IS 'CPOB_CODI';
 
 
 --
--- Name: COLUMN radicado.carp_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.carp_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.carp_codi IS 'CARP_CODI';
 
 
 --
--- Name: COLUMN radicado.esta_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.esta_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.esta_codi IS 'ESTA_CODI';
 
 
 --
--- Name: COLUMN radicado.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.dpto_codi IS 'DPTO_CODI';
 
 
 --
--- Name: COLUMN radicado.cen_muni_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.cen_muni_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.cen_muni_codi IS 'CEN_MUNI_CODI';
 
 
 --
--- Name: COLUMN radicado.cen_dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.cen_dpto_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.cen_dpto_codi IS 'CEN_DPTO_CODI';
 
 
 --
--- Name: COLUMN radicado.radi_dire_corr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_dire_corr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_dire_corr IS 'DIRECCION CORRESPONDENCIA';
 
 
 --
--- Name: COLUMN radicado.radi_tele_cont; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_tele_cont; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_tele_cont IS 'TELEFONO CONTACTO';
 
 
 --
--- Name: COLUMN radicado.radi_nume_hoja; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_nume_hoja; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_nume_hoja IS 'NUMERO DE HOJAS';
 
 
 --
--- Name: COLUMN radicado.radi_desc_anex; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_desc_anex; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_desc_anex IS 'DESCRIPCION DE ANEXOS';
 
 
 --
--- Name: COLUMN radicado.radi_nume_deri; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_nume_deri; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_nume_deri IS 'NUMERO DERIVADO';
 
 
 --
--- Name: COLUMN radicado.radi_path; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_path; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_path IS 'RADI_PATH';
 
 
 --
--- Name: COLUMN radicado.radi_usua_actu; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_usua_actu; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_usua_actu IS 'USUARIO ACTUAL';
 
 
 --
--- Name: COLUMN radicado.radi_depe_actu; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_depe_actu; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_depe_actu IS 'DEPENDENCIA ACTUAL (USUARIO)';
 
 
 --
--- Name: COLUMN radicado.radi_fech_asig; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_fech_asig; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_fech_asig IS 'FECHA DE ASIGNACION DEL USUARIO';
 
 
 --
--- Name: COLUMN radicado.radi_arch1; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_arch1; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_arch1 IS 'CAMPO PARA ARCHIVO FISICO';
 
 
 --
--- Name: COLUMN radicado.radi_arch2; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_arch2; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_arch2 IS 'CAMPO PARA ARCHIVO FISICO';
 
 
 --
--- Name: COLUMN radicado.radi_arch3; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_arch3; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_arch3 IS 'CAMPO PARA ARCHIVO FISICO';
 
 
 --
--- Name: COLUMN radicado.radi_arch4; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_arch4; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_arch4 IS 'CAMPO PARA ARCHIVO FISICO';
 
 
 --
--- Name: COLUMN radicado.radicado_referencia_cliente; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radicado_referencia_cliente; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radicado_referencia_cliente IS 'Este campo guarda la información del radicado de referencia del cliente externo a las comunicaciones que se reciben';
 
 
 --
--- Name: COLUMN radicado.usua_doc_ante; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.usua_doc_ante; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.usua_doc_ante IS 'Codigo TTR. transaccion.';
 
 
 --
--- Name: COLUMN radicado.radi_fech_antetx; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_fech_antetx; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_fech_antetx IS 'Documento del usuario que realizo la anterior tx';
 
 
 --
--- Name: COLUMN radicado.sgd_trad_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.sgd_trad_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.sgd_trad_codigo IS 'Fecha de la Ultima transaccion.';
 
 
 --
--- Name: COLUMN radicado.numero_rm; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.numero_rm; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.numero_rm IS 'numero de registro';
 
 
 --
--- Name: COLUMN radicado.numero_tran; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.numero_tran; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.numero_tran IS 'Numero de transaccion';
 
 
 --
--- Name: COLUMN radicado.doc_transferido; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.doc_transferido; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.doc_transferido IS '1 Gestión 2 Central 3 Hitorico';
 
 
 --
--- Name: COLUMN radicado.radi_envio_correo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_envio_correo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_envio_correo IS 'Guardar en la columna radi_envio_correo en false (no quiero notificación) y true (quiero que me notifique.) ';
 
 
 --
--- Name: COLUMN radicado.radi_docu_publico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_docu_publico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_docu_publico IS 'Guarda la información correspondiente el documento puede ser visible o no en el landin page';
 
 
 --
--- Name: COLUMN radicado.radi_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_eje_tematico IS 'Guarda el identificador del eje tematico, esto es como para tenerlo presente';
 
 
 --
--- Name: COLUMN radicado.radi_estado_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_estado_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_estado_pqrs IS 'Guarda el estado de una PQRs';
 
 
 --
--- Name: COLUMN radicado.descripcion_asunto_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.descripcion_asunto_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.descripcion_asunto_pqrs IS 'guara la descripción del asunto de la pqrs';
 
 
 --
--- Name: COLUMN radicado.grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.grupo_interes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.grupo_interes IS 'Guarda la información de los grupos de interes';
 
 
 --
--- Name: COLUMN radicado.servicio_pqr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.servicio_pqr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.servicio_pqr IS 'Guarda el id del servicio correspondiente a la PQRS';
 
 
 --
--- Name: COLUMN radicado.radi_depe_ante; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN radicado.radi_depe_ante; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.radicado.radi_depe_ante IS 'codigo de la dependencia anterior';
 
 
 --
--- Name: rango_edades_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: rango_edades_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.rango_edades_pqrs (
@@ -3213,31 +3213,31 @@ CREATE TABLE public.rango_edades_pqrs (
 );
 
 
-ALTER TABLE public.rango_edades_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.rango_edades_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: TABLE rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.rango_edades_pqrs IS 'tabla que guarda la información respecto a las dedades.';
 
 
 --
--- Name: COLUMN rango_edades_pqrs.id_rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN rango_edades_pqrs.id_rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.rango_edades_pqrs.id_rango_edades_pqrs IS 'Identificador de tabla';
 
 
 --
--- Name: COLUMN rango_edades_pqrs.nombre_rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN rango_edades_pqrs.nombre_rango_edades_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.rango_edades_pqrs.nombre_rango_edades_pqrs IS 'las opciones de edades';
 
 
 --
--- Name: rol_tipos_doc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: rol_tipos_doc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.rol_tipos_doc (
@@ -3248,17 +3248,17 @@ CREATE TABLE public.rol_tipos_doc (
 );
 
 
-ALTER TABLE public.rol_tipos_doc OWNER TO orfeo62usr;
+ALTER TABLE public.rol_tipos_doc OWNER TO orfeo_usr;
 
 --
--- Name: TABLE rol_tipos_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE rol_tipos_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.rol_tipos_doc IS 'Se guarda el codigo del rol y los tipos documentales a los que tiene acceso un usuario';
 
 
 --
--- Name: roles; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: roles; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.roles (
@@ -3269,17 +3269,17 @@ CREATE TABLE public.roles (
 );
 
 
-ALTER TABLE public.roles OWNER TO orfeo62usr;
+ALTER TABLE public.roles OWNER TO orfeo_usr;
 
 --
--- Name: TABLE roles; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE roles; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.roles IS 'Almacena los roles de la herramienta, acorde a los perfiles';
 
 
 --
--- Name: roles_cod_rol_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: roles_cod_rol_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.roles_cod_rol_seq
@@ -3290,17 +3290,17 @@ CREATE SEQUENCE public.roles_cod_rol_seq
     CACHE 1;
 
 
-ALTER TABLE public.roles_cod_rol_seq OWNER TO orfeo62usr;
+ALTER TABLE public.roles_cod_rol_seq OWNER TO orfeo_usr;
 
 --
--- Name: roles_cod_rol_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: roles_cod_rol_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.roles_cod_rol_seq OWNED BY public.roles.cod_rol;
 
 
 --
--- Name: sec_bodega_empresas; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_bodega_empresas; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_bodega_empresas
@@ -3311,10 +3311,10 @@ CREATE SEQUENCE public.sec_bodega_empresas
     CACHE 1;
 
 
-ALTER TABLE public.sec_bodega_empresas OWNER TO orfeo62usr;
+ALTER TABLE public.sec_bodega_empresas OWNER TO orfeo_usr;
 
 --
--- Name: sec_central; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_central; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_central
@@ -3325,10 +3325,10 @@ CREATE SEQUENCE public.sec_central
     CACHE 1;
 
 
-ALTER TABLE public.sec_central OWNER TO orfeo62usr;
+ALTER TABLE public.sec_central OWNER TO orfeo_usr;
 
 --
--- Name: sec_ciu_ciudadano; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_ciu_ciudadano; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_ciu_ciudadano
@@ -3339,10 +3339,10 @@ CREATE SEQUENCE public.sec_ciu_ciudadano
     CACHE 1;
 
 
-ALTER TABLE public.sec_ciu_ciudadano OWNER TO orfeo62usr;
+ALTER TABLE public.sec_ciu_ciudadano OWNER TO orfeo_usr;
 
 --
--- Name: sec_def_contactos; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_def_contactos; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_def_contactos
@@ -3353,10 +3353,10 @@ CREATE SEQUENCE public.sec_def_contactos
     CACHE 1;
 
 
-ALTER TABLE public.sec_def_contactos OWNER TO orfeo62usr;
+ALTER TABLE public.sec_def_contactos OWNER TO orfeo_usr;
 
 --
--- Name: sec_dir_direcciones; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_dir_direcciones; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_dir_direcciones
@@ -3367,10 +3367,10 @@ CREATE SEQUENCE public.sec_dir_direcciones
     CACHE 1;
 
 
-ALTER TABLE public.sec_dir_direcciones OWNER TO orfeo62usr;
+ALTER TABLE public.sec_dir_direcciones OWNER TO orfeo_usr;
 
 --
--- Name: sec_edificio; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_edificio; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_edificio
@@ -3381,10 +3381,10 @@ CREATE SEQUENCE public.sec_edificio
     CACHE 1;
 
 
-ALTER TABLE public.sec_edificio OWNER TO orfeo62usr;
+ALTER TABLE public.sec_edificio OWNER TO orfeo_usr;
 
 --
--- Name: sec_fondo; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_fondo; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_fondo
@@ -3395,10 +3395,10 @@ CREATE SEQUENCE public.sec_fondo
     CACHE 1;
 
 
-ALTER TABLE public.sec_fondo OWNER TO orfeo62usr;
+ALTER TABLE public.sec_fondo OWNER TO orfeo_usr;
 
 --
--- Name: sec_inv; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_inv; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_inv
@@ -3409,10 +3409,10 @@ CREATE SEQUENCE public.sec_inv
     CACHE 1;
 
 
-ALTER TABLE public.sec_inv OWNER TO orfeo62usr;
+ALTER TABLE public.sec_inv OWNER TO orfeo_usr;
 
 --
--- Name: sec_oem_empresas; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_empresas; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_oem_empresas
@@ -3423,10 +3423,10 @@ CREATE SEQUENCE public.sec_oem_empresas
     CACHE 1;
 
 
-ALTER TABLE public.sec_oem_empresas OWNER TO orfeo62usr;
+ALTER TABLE public.sec_oem_empresas OWNER TO orfeo_usr;
 
 --
--- Name: sec_oem_oempresas; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_oempresas; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_oem_oempresas
@@ -3437,10 +3437,10 @@ CREATE SEQUENCE public.sec_oem_oempresas
     CACHE 1;
 
 
-ALTER TABLE public.sec_oem_oempresas OWNER TO orfeo62usr;
+ALTER TABLE public.sec_oem_oempresas OWNER TO orfeo_usr;
 
 --
--- Name: sec_planilla; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_planilla
@@ -3451,10 +3451,10 @@ CREATE SEQUENCE public.sec_planilla
     CACHE 1;
 
 
-ALTER TABLE public.sec_planilla OWNER TO orfeo62usr;
+ALTER TABLE public.sec_planilla OWNER TO orfeo_usr;
 
 --
--- Name: sec_planilla_envio; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_envio; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_planilla_envio
@@ -3465,10 +3465,10 @@ CREATE SEQUENCE public.sec_planilla_envio
     CACHE 1;
 
 
-ALTER TABLE public.sec_planilla_envio OWNER TO orfeo62usr;
+ALTER TABLE public.sec_planilla_envio OWNER TO orfeo_usr;
 
 --
--- Name: sec_planilla_tx; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_tx; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_planilla_tx
@@ -3479,10 +3479,10 @@ CREATE SEQUENCE public.sec_planilla_tx
     CACHE 1;
 
 
-ALTER TABLE public.sec_planilla_tx OWNER TO orfeo62usr;
+ALTER TABLE public.sec_planilla_tx OWNER TO orfeo_usr;
 
 --
--- Name: sec_prestamo; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_prestamo; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_prestamo
@@ -3493,10 +3493,10 @@ CREATE SEQUENCE public.sec_prestamo
     CACHE 1;
 
 
-ALTER TABLE public.sec_prestamo OWNER TO orfeo62usr;
+ALTER TABLE public.sec_prestamo OWNER TO orfeo_usr;
 
 --
--- Name: sec_rol_tipos_doc; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_rol_tipos_doc; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_rol_tipos_doc
@@ -3507,17 +3507,17 @@ CREATE SEQUENCE public.sec_rol_tipos_doc
     CACHE 1;
 
 
-ALTER TABLE public.sec_rol_tipos_doc OWNER TO orfeo62usr;
+ALTER TABLE public.sec_rol_tipos_doc OWNER TO orfeo_usr;
 
 --
--- Name: sec_rol_tipos_doc; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: sec_rol_tipos_doc; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.sec_rol_tipos_doc OWNED BY public.rol_tipos_doc.cod_rol_tipos;
 
 
 --
--- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sec_sgd_hfld_histflujodoc
@@ -3528,10 +3528,10 @@ CREATE SEQUENCE public.sec_sgd_hfld_histflujodoc
     CACHE 1;
 
 
-ALTER TABLE public.sec_sgd_hfld_histflujodoc OWNER TO orfeo62usr;
+ALTER TABLE public.sec_sgd_hfld_histflujodoc OWNER TO orfeo_usr;
 
 --
--- Name: secr_subseries_id_tabla; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_subseries_id_tabla; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_subseries_id_tabla
@@ -3542,10 +3542,10 @@ CREATE SEQUENCE public.secr_subseries_id_tabla
     CACHE 1;
 
 
-ALTER TABLE public.secr_subseries_id_tabla OWNER TO orfeo62usr;
+ALTER TABLE public.secr_subseries_id_tabla OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp1_; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp1_
@@ -3556,10 +3556,10 @@ CREATE SEQUENCE public.secr_tp1_
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp1_ OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp1_ OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp1_998; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_998; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp1_998
@@ -3570,10 +3570,10 @@ CREATE SEQUENCE public.secr_tp1_998
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp1_998 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp1_998 OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp1_999; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_999; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp1_999
@@ -3584,10 +3584,10 @@ CREATE SEQUENCE public.secr_tp1_999
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp1_999 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp1_999 OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp2_; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp2_
@@ -3598,10 +3598,10 @@ CREATE SEQUENCE public.secr_tp2_
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp2_ OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp2_ OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp2_998; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_998; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp2_998
@@ -3612,10 +3612,10 @@ CREATE SEQUENCE public.secr_tp2_998
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp2_998 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp2_998 OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp2_999; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_999; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp2_999
@@ -3626,10 +3626,10 @@ CREATE SEQUENCE public.secr_tp2_999
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp2_999 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp2_999 OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp4_; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp4_
@@ -3640,10 +3640,10 @@ CREATE SEQUENCE public.secr_tp4_
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp4_ OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp4_ OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp4_998; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_998; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp4_998
@@ -3654,10 +3654,10 @@ CREATE SEQUENCE public.secr_tp4_998
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp4_998 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp4_998 OWNER TO orfeo_usr;
 
 --
--- Name: secr_tp4_999; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_999; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.secr_tp4_999
@@ -3668,10 +3668,10 @@ CREATE SEQUENCE public.secr_tp4_999
     CACHE 1;
 
 
-ALTER TABLE public.secr_tp4_999 OWNER TO orfeo62usr;
+ALTER TABLE public.secr_tp4_999 OWNER TO orfeo_usr;
 
 --
--- Name: seq_parexp_paramexpediente; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: seq_parexp_paramexpediente; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.seq_parexp_paramexpediente
@@ -3682,10 +3682,10 @@ CREATE SEQUENCE public.seq_parexp_paramexpediente
     CACHE 1;
 
 
-ALTER TABLE public.seq_parexp_paramexpediente OWNER TO orfeo62usr;
+ALTER TABLE public.seq_parexp_paramexpediente OWNER TO orfeo_usr;
 
 --
--- Name: seq_sgd_mrd_codigo; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: seq_sgd_mrd_codigo; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.seq_sgd_mrd_codigo
@@ -3696,10 +3696,10 @@ CREATE SEQUENCE public.seq_sgd_mrd_codigo
     CACHE 1;
 
 
-ALTER TABLE public.seq_sgd_mrd_codigo OWNER TO orfeo62usr;
+ALTER TABLE public.seq_sgd_mrd_codigo OWNER TO orfeo_usr;
 
 --
--- Name: servicios_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: servicios_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.servicios_pqrs (
@@ -3708,31 +3708,31 @@ CREATE TABLE public.servicios_pqrs (
 );
 
 
-ALTER TABLE public.servicios_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.servicios_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: TABLE servicios_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE servicios_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.servicios_pqrs IS 'Indica los servicios que se prestan en la entidad';
 
 
 --
--- Name: COLUMN servicios_pqrs.id_servicio_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN servicios_pqrs.id_servicio_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.servicios_pqrs.id_servicio_pqrs IS 'Identificador de tabla';
 
 
 --
--- Name: COLUMN servicios_pqrs.nombre_servicio_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN servicios_pqrs.nombre_servicio_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.servicios_pqrs.nombre_servicio_pqrs IS 'Guarda el nombre del servicio';
 
 
 --
--- Name: sgd_agen_agendados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_agen_agendados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_agen_agendados (
@@ -3747,10 +3747,10 @@ CREATE TABLE public.sgd_agen_agendados (
 );
 
 
-ALTER TABLE public.sgd_agen_agendados OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_agen_agendados OWNER TO orfeo_usr;
 
 --
--- Name: sgd_anar_anexarg; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_anar_anexarg; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_anar_anexarg (
@@ -3761,45 +3761,45 @@ CREATE TABLE public.sgd_anar_anexarg (
 );
 
 
-ALTER TABLE public.sgd_anar_anexarg OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_anar_anexarg OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_anar_anexarg; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_anar_anexarg; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_anar_anexarg IS 'Indica los argumentos o criterios a incluir dentro de un tipo de documento generado';
 
 
 --
--- Name: COLUMN sgd_anar_anexarg.sgd_anar_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_anar_anexarg.sgd_anar_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_anar_anexarg.sgd_anar_codi IS 'id del registro';
 
 
 --
--- Name: COLUMN sgd_anar_anexarg.anex_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_anar_anexarg.anex_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_anar_anexarg.anex_codigo IS 'codigo del anexo';
 
 
 --
--- Name: COLUMN sgd_anar_anexarg.sgd_argd_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_anar_anexarg.sgd_argd_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_anar_anexarg.sgd_argd_codi IS 'codigo del argumento empleado';
 
 
 --
--- Name: COLUMN sgd_anar_anexarg.sgd_anar_argcod; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_anar_anexarg.sgd_anar_argcod; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_anar_anexarg.sgd_anar_argcod IS 'valor del campo llave, de tabla que contiene el argumento referenciado';
 
 
 --
--- Name: sgd_anar_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_anar_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_anar_secue
@@ -3810,10 +3810,10 @@ CREATE SEQUENCE public.sgd_anar_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_anar_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_anar_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_anu_anulados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_anu_anulados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_anu_anulados (
@@ -3835,10 +3835,10 @@ CREATE TABLE public.sgd_anu_anulados (
 );
 
 
-ALTER TABLE public.sgd_anu_anulados OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_anu_anulados OWNER TO orfeo_usr;
 
 --
--- Name: sgd_aper_adminperfiles; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_aper_adminperfiles; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_aper_adminperfiles (
@@ -3847,10 +3847,10 @@ CREATE TABLE public.sgd_aper_adminperfiles (
 );
 
 
-ALTER TABLE public.sgd_aper_adminperfiles OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_aper_adminperfiles OWNER TO orfeo_usr;
 
 --
--- Name: sgd_apli_aplintegra; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_apli_aplintegra; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_apli_aplintegra (
@@ -3867,10 +3867,10 @@ CREATE TABLE public.sgd_apli_aplintegra (
 );
 
 
-ALTER TABLE public.sgd_apli_aplintegra OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_apli_aplintegra OWNER TO orfeo_usr;
 
 --
--- Name: sgd_aplmen_aplimens; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_aplmen_aplimens; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_aplmen_aplimens (
@@ -3882,10 +3882,10 @@ CREATE TABLE public.sgd_aplmen_aplimens (
 );
 
 
-ALTER TABLE public.sgd_aplmen_aplimens OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_aplmen_aplimens OWNER TO orfeo_usr;
 
 --
--- Name: sgd_aplus_plicusua; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_aplus_plicusua; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_aplus_plicusua (
@@ -3897,10 +3897,10 @@ CREATE TABLE public.sgd_aplus_plicusua (
 );
 
 
-ALTER TABLE public.sgd_aplus_plicusua OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_aplus_plicusua OWNER TO orfeo_usr;
 
 --
--- Name: sgd_arch_depe; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_arch_depe; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_arch_depe (
@@ -3911,10 +3911,10 @@ CREATE TABLE public.sgd_arch_depe (
 );
 
 
-ALTER TABLE public.sgd_arch_depe OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_arch_depe OWNER TO orfeo_usr;
 
 --
--- Name: sgd_archivo_central; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_archivo_central; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_archivo_central (
@@ -3953,10 +3953,10 @@ CREATE TABLE public.sgd_archivo_central (
 );
 
 
-ALTER TABLE public.sgd_archivo_central OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_archivo_central OWNER TO orfeo_usr;
 
 --
--- Name: sgd_archivo_fondo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_archivo_fondo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_archivo_fondo (
@@ -3994,10 +3994,10 @@ CREATE TABLE public.sgd_archivo_fondo (
 );
 
 
-ALTER TABLE public.sgd_archivo_fondo OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_archivo_fondo OWNER TO orfeo_usr;
 
 --
--- Name: sgd_archivo_hist; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_archivo_hist; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_archivo_hist (
@@ -4012,10 +4012,10 @@ CREATE TABLE public.sgd_archivo_hist (
 );
 
 
-ALTER TABLE public.sgd_archivo_hist OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_archivo_hist OWNER TO orfeo_usr;
 
 --
--- Name: sgd_argd_argdoc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_argd_argdoc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_argd_argdoc (
@@ -4029,66 +4029,66 @@ CREATE TABLE public.sgd_argd_argdoc (
 );
 
 
-ALTER TABLE public.sgd_argd_argdoc OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_argd_argdoc OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_argd_argdoc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_argd_argdoc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_argd_argdoc IS 'Define los argumentos que ha de incluir un tipo de documento';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_codi IS 'Id del registro';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_pnufe_codi IS 'Codigo del proceso';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_tabla; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_tabla; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_tabla IS 'Nombre de la tabla tabla a la que hace refencia el argumento';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_tcodi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_tcodi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_tcodi IS 'Nombre del campo llave de la tabla referenciada';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_tdes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_tdes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_tdes IS 'Nombre del campo descripcion de la tabla referenciada';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_llist; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_llist; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_llist IS 'Texto del label descriptor  que ha  de aparecen de forma dinamica en la pagina web';
 
 
 --
--- Name: COLUMN sgd_argd_argdoc.sgd_argd_campo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argd_argdoc.sgd_argd_campo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argd_argdoc.sgd_argd_campo IS 'Etiqueta que ha de incluirse en el documento para referenciar este campo';
 
 
 --
--- Name: sgd_argup_argudoctop; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_argup_argudoctop; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_argup_argudoctop (
@@ -4098,31 +4098,31 @@ CREATE TABLE public.sgd_argup_argudoctop (
 );
 
 
-ALTER TABLE public.sgd_argup_argudoctop OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_argup_argudoctop OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_argup_argudoctop; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_argup_argudoctop; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_argup_argudoctop IS 'Almacena los argumentos para contestar pliegos de cargos';
 
 
 --
--- Name: COLUMN sgd_argup_argudoctop.sgd_argup_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argup_argudoctop.sgd_argup_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argup_argudoctop.sgd_argup_codi IS 'Id del registro';
 
 
 --
--- Name: COLUMN sgd_argup_argudoctop.sgd_argup_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_argup_argudoctop.sgd_argup_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_argup_argudoctop.sgd_argup_desc IS 'Descripcion';
 
 
 --
--- Name: sgd_auditoria; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_auditoria; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_auditoria (
@@ -4135,17 +4135,17 @@ CREATE TABLE public.sgd_auditoria (
 );
 
 
-ALTER TABLE public.sgd_auditoria OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_auditoria OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_auditoria; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_auditoria; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_auditoria IS 'Tabla para radicacion via web';
 
 
 --
--- Name: sgd_camexp_campoexpediente; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_camexp_campoexpediente; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_camexp_campoexpediente (
@@ -4160,10 +4160,10 @@ CREATE TABLE public.sgd_camexp_campoexpediente (
 );
 
 
-ALTER TABLE public.sgd_camexp_campoexpediente OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_camexp_campoexpediente OWNER TO orfeo_usr;
 
 --
--- Name: sgd_carp_descripcion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_carp_descripcion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_carp_descripcion (
@@ -4173,10 +4173,10 @@ CREATE TABLE public.sgd_carp_descripcion (
 );
 
 
-ALTER TABLE public.sgd_carp_descripcion OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_carp_descripcion OWNER TO orfeo_usr;
 
 --
--- Name: sgd_cau_causal; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_cau_causal; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_cau_causal (
@@ -4185,10 +4185,10 @@ CREATE TABLE public.sgd_cau_causal (
 );
 
 
-ALTER TABLE public.sgd_cau_causal OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_cau_causal OWNER TO orfeo_usr;
 
 --
--- Name: sgd_caux_causales; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_caux_causales; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_caux_causales (
@@ -4201,10 +4201,10 @@ CREATE TABLE public.sgd_caux_causales (
 );
 
 
-ALTER TABLE public.sgd_caux_causales OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_caux_causales OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ciu_ciudadano; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_ciudadano; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ciu_ciudadano (
@@ -4232,38 +4232,38 @@ CREATE TABLE public.sgd_ciu_ciudadano (
 );
 
 
-ALTER TABLE public.sgd_ciu_ciudadano OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ciu_ciudadano OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_ciu_ciudadano.sgd_ciu_edad; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ciu_ciudadano.sgd_ciu_edad; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ciu_ciudadano.sgd_ciu_edad IS 'Guarda la edad de la persona en relación a la opción de la tabla rango_edades';
 
 
 --
--- Name: COLUMN sgd_ciu_ciudadano.sgd_ciu_ubicacion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ciu_ciudadano.sgd_ciu_ubicacion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ciu_ciudadano.sgd_ciu_ubicacion IS 'Guarda la inormación correspondiente a Urbana =1 o Rural =0';
 
 
 --
--- Name: COLUMN sgd_ciu_ciudadano.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ciu_ciudadano.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ciu_ciudadano.trte_codi IS 'Tipo de remitente';
 
 
 --
--- Name: COLUMN sgd_ciu_ciudadano.tipo_poblacion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ciu_ciudadano.tipo_poblacion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ciu_ciudadano.tipo_poblacion IS 'Indica el tipo de población a la que pertenece el que interpone la PQRS';
 
 
 --
--- Name: sgd_ciu_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_ciu_secue
@@ -4274,10 +4274,10 @@ CREATE SEQUENCE public.sgd_ciu_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_ciu_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ciu_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_clta_clstarif; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_clta_clstarif; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_clta_clstarif (
@@ -4290,10 +4290,10 @@ CREATE TABLE public.sgd_clta_clstarif (
 );
 
 
-ALTER TABLE public.sgd_clta_clstarif OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_clta_clstarif OWNER TO orfeo_usr;
 
 --
--- Name: sgd_cob_campobliga; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_cob_campobliga; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_cob_campobliga (
@@ -4304,45 +4304,45 @@ CREATE TABLE public.sgd_cob_campobliga (
 );
 
 
-ALTER TABLE public.sgd_cob_campobliga OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_cob_campobliga OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_cob_campobliga; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_cob_campobliga; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_cob_campobliga IS 'Indica los campos obligatorios que hacen parte de un tipo de documento de correspondencia masiva';
 
 
 --
--- Name: COLUMN sgd_cob_campobliga.sgd_cob_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_cob_campobliga.sgd_cob_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_cob_campobliga.sgd_cob_codi IS 'ID del registro';
 
 
 --
--- Name: COLUMN sgd_cob_campobliga.sgd_cob_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_cob_campobliga.sgd_cob_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_cob_campobliga.sgd_cob_desc IS 'Descripcion';
 
 
 --
--- Name: COLUMN sgd_cob_campobliga.sgd_cob_label; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_cob_campobliga.sgd_cob_label; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_cob_campobliga.sgd_cob_label IS 'Rotulo del campo a incluir dentro del documento';
 
 
 --
--- Name: COLUMN sgd_cob_campobliga.sgd_tidm_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_cob_campobliga.sgd_tidm_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_cob_campobliga.sgd_tidm_codi IS 'Codigo del documento';
 
 
 --
--- Name: sgd_dcau_causal; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dcau_causal; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_dcau_causal (
@@ -4352,10 +4352,10 @@ CREATE TABLE public.sgd_dcau_causal (
 );
 
 
-ALTER TABLE public.sgd_dcau_causal OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_dcau_causal OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ddca_ddsgrgdo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ddca_ddsgrgdo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ddca_ddsgrgdo (
@@ -4366,10 +4366,10 @@ CREATE TABLE public.sgd_ddca_ddsgrgdo (
 );
 
 
-ALTER TABLE public.sgd_ddca_ddsgrgdo OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ddca_ddsgrgdo OWNER TO orfeo_usr;
 
 --
--- Name: sgd_def_contactos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_def_contactos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_def_contactos (
@@ -4382,10 +4382,10 @@ CREATE TABLE public.sgd_def_contactos (
 );
 
 
-ALTER TABLE public.sgd_def_contactos OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_def_contactos OWNER TO orfeo_usr;
 
 --
--- Name: sgd_def_continentes; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_def_continentes; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_def_continentes (
@@ -4394,10 +4394,10 @@ CREATE TABLE public.sgd_def_continentes (
 );
 
 
-ALTER TABLE public.sgd_def_continentes OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_def_continentes OWNER TO orfeo_usr;
 
 --
--- Name: sgd_def_paises; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_def_paises; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_def_paises (
@@ -4407,10 +4407,10 @@ CREATE TABLE public.sgd_def_paises (
 );
 
 
-ALTER TABLE public.sgd_def_paises OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_def_paises OWNER TO orfeo_usr;
 
 --
--- Name: sgd_deve_dev_envio; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_deve_dev_envio; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_deve_dev_envio (
@@ -4419,10 +4419,10 @@ CREATE TABLE public.sgd_deve_dev_envio (
 );
 
 
-ALTER TABLE public.sgd_deve_dev_envio OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_deve_dev_envio OWNER TO orfeo_usr;
 
 --
--- Name: sgd_dir_drecciones; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_drecciones; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_dir_drecciones (
@@ -4452,31 +4452,31 @@ CREATE TABLE public.sgd_dir_drecciones (
 );
 
 
-ALTER TABLE public.sgd_dir_drecciones OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_dir_drecciones OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_dir_drecciones.sgd_dir_nomremdes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dir_drecciones.sgd_dir_nomremdes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dir_drecciones.sgd_dir_nomremdes IS 'NOMBRE DE REMITENTE O DESTINATARIO';
 
 
 --
--- Name: COLUMN sgd_dir_drecciones.sgd_trd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dir_drecciones.sgd_trd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dir_drecciones.sgd_trd_codigo IS 'TIPO DE REMITENTE/DESTINATARIO (1 Ciudadanao, 2 OtrasEmpresas, 3 Esp, 4 Funcionario)';
 
 
 --
--- Name: COLUMN sgd_dir_drecciones.sgd_dir_tdoc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dir_drecciones.sgd_dir_tdoc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dir_drecciones.sgd_dir_tdoc IS 'NUMERO DE DOCUMENTO';
 
 
 --
--- Name: sgd_dir_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_dir_secue
@@ -4487,10 +4487,10 @@ CREATE SEQUENCE public.sgd_dir_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_dir_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_dir_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_dnufe_docnufe; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dnufe_docnufe; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_dnufe_docnufe (
@@ -4506,59 +4506,59 @@ CREATE TABLE public.sgd_dnufe_docnufe (
 );
 
 
-ALTER TABLE public.sgd_dnufe_docnufe OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_dnufe_docnufe OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_dnufe_docnufe; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_dnufe_docnufe; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_dnufe_docnufe IS 'Indica los documentos que componen un proceso de numeracion y fechado';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.sgd_dnufe_codi IS 'Id del registro';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.sgd_pnufe_codi IS 'codigo del proceso';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.sgd_tpr_codigo IS 'codigo del documento que hace parte de un proceso de numeracion y fechado';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_label; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_label; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.sgd_dnufe_label IS 'label del documento que ha de usarse en la interfaz de gestion de procesos de numeracion y fechado';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.trte_codi IS 'indica el tipo de remitente para quien va dirigida la comunicacion';
 
 
 --
--- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_main; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dnufe_docnufe.sgd_dnufe_main; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dnufe_docnufe.sgd_dnufe_main IS 'Indica si el registro es el documento principal del paquete';
 
 
 --
--- Name: sgd_dt_radicado; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dt_radicado; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_dt_radicado (
@@ -4567,31 +4567,31 @@ CREATE TABLE public.sgd_dt_radicado (
 );
 
 
-ALTER TABLE public.sgd_dt_radicado OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_dt_radicado OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_dt_radicado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_dt_radicado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_dt_radicado IS 'Dias de termino por radicado';
 
 
 --
--- Name: COLUMN sgd_dt_radicado.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dt_radicado.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dt_radicado.radi_nume_radi IS 'Numero de radicado';
 
 
 --
--- Name: COLUMN sgd_dt_radicado.dias_termino; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_dt_radicado.dias_termino; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_dt_radicado.dias_termino IS 'dias de termino';
 
 
 --
--- Name: sgd_eanu_estanulacion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_eanu_estanulacion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_eanu_estanulacion (
@@ -4600,10 +4600,10 @@ CREATE TABLE public.sgd_eanu_estanulacion (
 );
 
 
-ALTER TABLE public.sgd_eanu_estanulacion OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_eanu_estanulacion OWNER TO orfeo_usr;
 
 --
--- Name: sgd_einv_inventario; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_einv_inventario; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_einv_inventario (
@@ -4632,10 +4632,10 @@ CREATE TABLE public.sgd_einv_inventario (
 );
 
 
-ALTER TABLE public.sgd_einv_inventario OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_einv_inventario OWNER TO orfeo_usr;
 
 --
--- Name: sgd_eit_items; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_eit_items; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_eit_items (
@@ -4648,10 +4648,10 @@ CREATE TABLE public.sgd_eit_items (
 );
 
 
-ALTER TABLE public.sgd_eit_items OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_eit_items OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ejes_tematicos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ejes_tematicos (
@@ -4664,52 +4664,52 @@ CREATE TABLE public.sgd_ejes_tematicos (
 );
 
 
-ALTER TABLE public.sgd_ejes_tematicos OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ejes_tematicos OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_ejes_tematicos; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ejes_tematicos; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_ejes_tematicos IS 'Guarda la información de los ejes tematicos los cuales se utilizan para clasificar el documento que se esta solicitando';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos.id_sgd_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos.id_sgd_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos.id_sgd_eje_tematico IS 'Codigo del eje tematico';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos.nombre_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos.nombre_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos.nombre_eje_tematico IS 'Nombre del eje tematico';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos.descripcion_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos.descripcion_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos.descripcion_eje_tematico IS 'Descripcion del eje tematico';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos.plazo_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos.plazo_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos.plazo_eje_tematico IS 'Dias de plazo';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos.tipo_plazo_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos.tipo_plazo_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos.tipo_plazo_eje_tematico IS 'Tipo de plazo';
 
 
 --
--- Name: sgd_ejes_tematicos_dependencia; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependencia; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ejes_tematicos_dependencia (
@@ -4720,31 +4720,31 @@ CREATE TABLE public.sgd_ejes_tematicos_dependencia (
 );
 
 
-ALTER TABLE public.sgd_ejes_tematicos_dependencia OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ejes_tematicos_dependencia OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_ejes_tematicos_dependencia; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ejes_tematicos_dependencia; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_ejes_tematicos_dependencia IS 'Guarda la relación de los ejes tematicos a sociados a una dependencia';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos_dependencia.id_sgd_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos_dependencia.id_sgd_eje_tematico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos_dependencia.id_sgd_eje_tematico IS 'Guarda el id del ejetematica para la dependencia';
 
 
 --
--- Name: COLUMN sgd_ejes_tematicos_dependencia.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_ejes_tematicos_dependencia.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_ejes_tematicos_dependencia.depe_codi IS 'Guarda el código de la dependencia';
 
 
 --
--- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq
@@ -4755,17 +4755,17 @@ CREATE SEQUENCE public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_depende
     CACHE 1;
 
 
-ALTER TABLE public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq OWNED BY public.sgd_ejes_tematicos_dependencia.id_sgd_eje_tematico_dependencia;
 
 
 --
--- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq
@@ -4776,17 +4776,17 @@ CREATE SEQUENCE public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq
     CACHE 1;
 
 
-ALTER TABLE public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq OWNED BY public.sgd_ejes_tematicos.id_sgd_eje_tematico;
 
 
 --
--- Name: sgd_empus_empusuario; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_empus_empusuario; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_empus_empusuario (
@@ -4795,17 +4795,17 @@ CREATE TABLE public.sgd_empus_empusuario (
 );
 
 
-ALTER TABLE public.sgd_empus_empusuario OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_empus_empusuario OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_empus_empusuario.identificador_empresa; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_empus_empusuario.identificador_empresa; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_empus_empusuario.identificador_empresa IS 'Corresponde al identificador de la tabla bodega_empresas';
 
 
 --
--- Name: sgd_ent_entidades; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ent_entidades; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ent_entidades (
@@ -4820,10 +4820,10 @@ CREATE TABLE public.sgd_ent_entidades (
 );
 
 
-ALTER TABLE public.sgd_ent_entidades OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ent_entidades OWNER TO orfeo_usr;
 
 --
--- Name: sgd_enve_envioespecial; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_enve_envioespecial; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_enve_envioespecial (
@@ -4834,38 +4834,38 @@ CREATE TABLE public.sgd_enve_envioespecial (
 );
 
 
-ALTER TABLE public.sgd_enve_envioespecial OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_enve_envioespecial OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_enve_envioespecial.sgd_fenv_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_enve_envioespecial.sgd_fenv_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_enve_envioespecial.sgd_fenv_codigo IS 'Codigo Empresa de envio';
 
 
 --
--- Name: COLUMN sgd_enve_envioespecial.sgd_enve_valorl; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_enve_envioespecial.sgd_enve_valorl; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_enve_envioespecial.sgd_enve_valorl IS 'Valor Campo Local';
 
 
 --
--- Name: COLUMN sgd_enve_envioespecial.sgd_enve_valorn; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_enve_envioespecial.sgd_enve_valorn; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_enve_envioespecial.sgd_enve_valorn IS 'Valor Campo Nacional';
 
 
 --
--- Name: COLUMN sgd_enve_envioespecial.sgd_enve_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_enve_envioespecial.sgd_enve_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_enve_envioespecial.sgd_enve_desc IS 'Descripcion Valor';
 
 
 --
--- Name: sgd_estc_estconsolid; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_estc_estconsolid; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_estc_estconsolid (
@@ -4894,171 +4894,171 @@ CREATE TABLE public.sgd_estc_estconsolid (
 );
 
 
-ALTER TABLE public.sgd_estc_estconsolid OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_estc_estconsolid OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_estc_estconsolid; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_estc_estconsolid; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_estc_estconsolid IS 'Tabla en la cual se almacenan consolidados de las territoriales.';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_codigo IS 'Codigo Registro Unico';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_tpr_codigo IS 'Tipo de Documento';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.dep_nombre; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.dep_nombre; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.dep_nombre IS 'Nombre Grupo Dependenciad de cada Territorial';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.depe_codi IS 'Codigo dependencia';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_ctotal; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_ctotal; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_ctotal IS 'Cantidad Documentos';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_centramite; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_centramite; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_centramite IS 'Cantidad Documentos En tramite';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_csinriesgo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_csinriesgo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_csinriesgo IS 'Cantidad Documentos Sin riesgo';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_criesgomedio; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_criesgomedio; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_criesgomedio IS 'Cantidad de Documentos en Riesgo Medio';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_criesgoalto; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_criesgoalto; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_criesgoalto IS 'Cantidad de Documentos en Riesgo Alto';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_ctramitados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_ctramitados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_ctramitados IS 'Cantidad de Documentos Tramitados';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_centermino; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_centermino; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_centermino IS 'Cantidad Documentos Tramitados en Termino';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_cfueratermino; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_cfueratermino; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_cfueratermino IS 'Cantidad Documentos Tramitados Fuera de Termino';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechgen; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechgen; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_fechgen IS 'Fecha Generados';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechini; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechini; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_fechini IS 'Fecha Inicio de Reporde de Radicados';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechfin; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechfin; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_fechfin IS 'Fecha Fin de Reporte de Radicados';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechiniresp; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechiniresp; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_fechiniresp IS 'Fecha inicio de Documentos respuesta';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechfinresp; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_fechfinresp; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_fechfinresp IS 'Fecha Fin de Documentos Respuesta';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_dsinriesgo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_dsinriesgo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_dsinriesgo IS 'Dias definidos para Riesgo Bajo';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_driesgomegio; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_driesgomegio; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_driesgomegio IS 'Dias Para Riesgo Medio';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_driesgoalto; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_driesgoalto; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_driesgoalto IS 'Dias Para Riesgo Alto';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_dtermino; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_dtermino; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_dtermino IS 'Dias Reales de Termino de los Documentos.';
 
 
 --
--- Name: COLUMN sgd_estc_estconsolid.sgd_estc_grupgenerado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_estc_estconsolid.sgd_estc_grupgenerado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_estc_estconsolid.sgd_estc_grupgenerado IS 'Numero Historico de la Generacion.';
 
 
 --
--- Name: sgd_estinst_estadoinstancia; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_estinst_estadoinstancia; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_estinst_estadoinstancia (
@@ -5071,10 +5071,10 @@ CREATE TABLE public.sgd_estinst_estadoinstancia (
 );
 
 
-ALTER TABLE public.sgd_estinst_estadoinstancia OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_estinst_estadoinstancia OWNER TO orfeo_usr;
 
 --
--- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_exp_expediente_id_expediente_seq
@@ -5085,10 +5085,10 @@ CREATE SEQUENCE public.sgd_exp_expediente_id_expediente_seq
     CACHE 1;
 
 
-ALTER TABLE public.sgd_exp_expediente_id_expediente_seq OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_exp_expediente_id_expediente_seq OWNER TO orfeo_usr;
 
 --
--- Name: sgd_exp_expediente; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_exp_expediente; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_exp_expediente (
@@ -5133,157 +5133,157 @@ CREATE TABLE public.sgd_exp_expediente (
 );
 
 
-ALTER TABLE public.sgd_exp_expediente OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_exp_expediente OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_numero IS 'Numero de Expediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.radi_nume_radi IS 'Radicado Asociado por cada radicado puede existir un registro de ubicacion en el expediente.';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_fech; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_fech; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_fech IS 'Fecha de Creacion del Expediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_fech_mod; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_fech_mod; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_fech_mod IS 'Fecha de Ultima modificacion';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.depe_codi IS 'Dependencia que crea el expediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.usua_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.usua_codi IS 'Codigo del Usuario que crea el expediente ';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.usua_doc IS 'Documento del usuario que crea el documento';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_estado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_estado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_estado IS 'Indica si el radicado esta archivado (1) o no (0)';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_titulo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_titulo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_titulo IS 'Titulo de expediente se coloca en archivo';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_asunto; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_asunto; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_asunto IS 'Asunto del expediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_carpeta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_carpeta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_carpeta IS 'Ubicacion en carpeta';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_ufisica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_ufisica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_ufisica IS 'Ubicacion fisica';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_isla; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_isla; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_isla IS 'Isla';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_estante; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_estante; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_estante IS 'Estante';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_caja; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_caja; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_caja IS 'Caja';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_fech_arch; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_fech_arch; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_fech_arch IS 'Fecha de archivado';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_srd_codigo IS 'Serie';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_sbrd_codigo IS 'Subserie';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_fexp_codigo IS 'Fecha del expediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.sgd_exp_subexpediente; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.sgd_exp_subexpediente; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.sgd_exp_subexpediente IS 'Nombre de subexpediente';
 
 
 --
--- Name: COLUMN sgd_exp_expediente.id_expediente; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_exp_expediente.id_expediente; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_exp_expediente.id_expediente IS 'Autoincremental de la tabla para diferenciar los datos correspondientes';
 
 
 --
--- Name: sgd_fars_faristas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fars_faristas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_fars_faristas (
@@ -5304,10 +5304,10 @@ CREATE TABLE public.sgd_fars_faristas (
 );
 
 
-ALTER TABLE public.sgd_fars_faristas OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_fars_faristas OWNER TO orfeo_usr;
 
 --
--- Name: sgd_fenv_frmenvio; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fenv_frmenvio; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_fenv_frmenvio (
@@ -5318,10 +5318,10 @@ CREATE TABLE public.sgd_fenv_frmenvio (
 );
 
 
-ALTER TABLE public.sgd_fenv_frmenvio OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_fenv_frmenvio OWNER TO orfeo_usr;
 
 --
--- Name: sgd_fexp_flujoexpedientes; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fexp_flujoexpedientes; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_fexp_flujoexpedientes (
@@ -5334,59 +5334,59 @@ CREATE TABLE public.sgd_fexp_flujoexpedientes (
 );
 
 
-ALTER TABLE public.sgd_fexp_flujoexpedientes OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_fexp_flujoexpedientes OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_fexp_flujoexpedientes; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fexp_flujoexpedientes; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_fexp_flujoexpedientes IS 'Descripcion de la etapa en el Tipo de Proceso incicado en el campo SGD_PEXP_CODIGO';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_fexp_codigo IS 'Codigo etapa del Flujo. Codigo debe ser Unico.';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_pexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_pexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_pexp_codigo IS 'Codigo de proceso al cual se le incluira el flujo';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_orden; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_orden; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_fexp_orden IS 'Orden de la Etapa en el Flujo Documental';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_terminos; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_terminos; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_fexp_terminos IS 'Numero de dias de plazo para cumplimiento de esta etapa.';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_imagen; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_imagen; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_fexp_imagen IS 'Icono para distinguir la etapa.';
 
 
 --
--- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_descrip; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_fexp_flujoexpedientes.sgd_fexp_descrip; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_fexp_flujoexpedientes.sgd_fexp_descrip IS 'Descripcion de la etapa en el Tipo de Proceso incicado en el campo SGD_PEXP_CODIGO';
 
 
 --
--- Name: sgd_firmas_qr; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_firmas_qr; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_firmas_qr (
@@ -5401,66 +5401,66 @@ CREATE TABLE public.sgd_firmas_qr (
 );
 
 
-ALTER TABLE public.sgd_firmas_qr OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_firmas_qr OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_firmas_qr; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_firmas_qr; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_firmas_qr IS 'almacena la información de los radicados firmados';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.radi_nume_radi IS 'Número de radicado';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.usua_login; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.usua_login; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.usua_login IS 'Usuario que genera la firma';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.usua_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.usua_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.usua_nomb IS 'Nombre del usuario';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.usua_doc IS 'Documento de identidad del usuario';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.depe_codi IS 'Dependencia del usuario';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.firma_fecha; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.firma_fecha; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.firma_fecha IS 'Fecha de generación de la firma';
 
 
 --
--- Name: COLUMN sgd_firmas_qr.permiso_firma; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_firmas_qr.permiso_firma; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_firmas_qr.permiso_firma IS 'Permiso de firma actual del usuario';
 
 
 --
--- Name: sgd_firrad_firmarads; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_firrad_firmarads; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_firrad_firmarads (
@@ -5475,10 +5475,10 @@ CREATE TABLE public.sgd_firrad_firmarads (
 );
 
 
-ALTER TABLE public.sgd_firrad_firmarads OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_firrad_firmarads OWNER TO orfeo_usr;
 
 --
--- Name: sgd_fld_flujodoc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fld_flujodoc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_fld_flujodoc (
@@ -5490,10 +5490,10 @@ CREATE TABLE public.sgd_fld_flujodoc (
 );
 
 
-ALTER TABLE public.sgd_fld_flujodoc OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_fld_flujodoc OWNER TO orfeo_usr;
 
 --
--- Name: sgd_fun_funciones; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fun_funciones; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_fun_funciones (
@@ -5504,10 +5504,10 @@ CREATE TABLE public.sgd_fun_funciones (
 );
 
 
-ALTER TABLE public.sgd_fun_funciones OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_fun_funciones OWNER TO orfeo_usr;
 
 --
--- Name: sgd_hfld_histflujodoc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_hfld_histflujodoc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_hfld_histflujodoc (
@@ -5528,17 +5528,17 @@ CREATE TABLE public.sgd_hfld_histflujodoc (
 );
 
 
-ALTER TABLE public.sgd_hfld_histflujodoc OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_hfld_histflujodoc OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_hfld_histflujodoc.sgd_hfld_fech; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_hfld_histflujodoc.sgd_hfld_fech; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_hfld_histflujodoc.sgd_hfld_fech IS 'Fecha Historico de expediente';
 
 
 --
--- Name: sgd_hmtd_hismatdoc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_hmtd_hismatdoc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_hmtd_hismatdoc (
@@ -5553,10 +5553,10 @@ CREATE TABLE public.sgd_hmtd_hismatdoc (
 );
 
 
-ALTER TABLE public.sgd_hmtd_hismatdoc OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_hmtd_hismatdoc OWNER TO orfeo_usr;
 
 --
--- Name: sgd_hmtd_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_hmtd_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_hmtd_secue
@@ -5567,10 +5567,10 @@ CREATE SEQUENCE public.sgd_hmtd_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_hmtd_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_hmtd_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_info_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_info_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_info_secue
@@ -5581,10 +5581,10 @@ CREATE SEQUENCE public.sgd_info_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_info_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_info_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_instorf_instanciasorfeo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_instorf_instanciasorfeo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_instorf_instanciasorfeo (
@@ -5593,10 +5593,10 @@ CREATE TABLE public.sgd_instorf_instanciasorfeo (
 );
 
 
-ALTER TABLE public.sgd_instorf_instanciasorfeo OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_instorf_instanciasorfeo OWNER TO orfeo_usr;
 
 --
--- Name: sgd_lip_linkip; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_lip_linkip; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_lip_linkip (
@@ -5617,10 +5617,10 @@ CREATE TABLE public.sgd_lip_linkip (
 );
 
 
-ALTER TABLE public.sgd_lip_linkip OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_lip_linkip OWNER TO orfeo_usr;
 
 --
--- Name: sgd_mat_matriz; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mat_matriz; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_mat_matriz (
@@ -5635,10 +5635,10 @@ CREATE TABLE public.sgd_mat_matriz (
 );
 
 
-ALTER TABLE public.sgd_mat_matriz OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_mat_matriz OWNER TO orfeo_usr;
 
 --
--- Name: sgd_mat_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mat_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_mat_secue
@@ -5649,10 +5649,10 @@ CREATE SEQUENCE public.sgd_mat_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_mat_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_mat_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_mpes_mddpeso; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mpes_mddpeso; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_mpes_mddpeso (
@@ -5661,10 +5661,10 @@ CREATE TABLE public.sgd_mpes_mddpeso (
 );
 
 
-ALTER TABLE public.sgd_mpes_mddpeso OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_mpes_mddpeso OWNER TO orfeo_usr;
 
 --
--- Name: sgd_mrd_matrird; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mrd_matrird; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_mrd_matrird (
@@ -5680,17 +5680,17 @@ CREATE TABLE public.sgd_mrd_matrird (
 );
 
 
-ALTER TABLE public.sgd_mrd_matrird OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_mrd_matrird OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_mrd_matrird.sgd_mrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_mrd_matrird.sgd_mrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_mrd_matrird.sgd_mrd_codigo IS 'Se agrega secuencia para la trd';
 
 
 --
--- Name: sgd_msdep_msgdep; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_msdep_msgdep; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_msdep_msgdep (
@@ -5700,10 +5700,10 @@ CREATE TABLE public.sgd_msdep_msgdep (
 );
 
 
-ALTER TABLE public.sgd_msdep_msgdep OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_msdep_msgdep OWNER TO orfeo_usr;
 
 --
--- Name: sgd_msg_mensaje; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_msg_mensaje; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_msg_mensaje (
@@ -5718,10 +5718,10 @@ CREATE TABLE public.sgd_msg_mensaje (
 );
 
 
-ALTER TABLE public.sgd_msg_mensaje OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_msg_mensaje OWNER TO orfeo_usr;
 
 --
--- Name: sgd_mtd_matriz_doc; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mtd_matriz_doc; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_mtd_matriz_doc (
@@ -5731,10 +5731,10 @@ CREATE TABLE public.sgd_mtd_matriz_doc (
 );
 
 
-ALTER TABLE public.sgd_mtd_matriz_doc OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_mtd_matriz_doc OWNER TO orfeo_usr;
 
 --
--- Name: sgd_noh_nohabiles; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_noh_nohabiles; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_noh_nohabiles (
@@ -5742,10 +5742,10 @@ CREATE TABLE public.sgd_noh_nohabiles (
 );
 
 
-ALTER TABLE public.sgd_noh_nohabiles OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_noh_nohabiles OWNER TO orfeo_usr;
 
 --
--- Name: sgd_not_notificacion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_not_notificacion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_not_notificacion (
@@ -5754,10 +5754,10 @@ CREATE TABLE public.sgd_not_notificacion (
 );
 
 
-ALTER TABLE public.sgd_not_notificacion OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_not_notificacion OWNER TO orfeo_usr;
 
 --
--- Name: sgd_ntrd_notifrad; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ntrd_notifrad; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ntrd_notifrad (
@@ -5773,10 +5773,10 @@ CREATE TABLE public.sgd_ntrd_notifrad (
 );
 
 
-ALTER TABLE public.sgd_ntrd_notifrad OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ntrd_notifrad OWNER TO orfeo_usr;
 
 --
--- Name: sgd_oem_oempresas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_oem_oempresas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_oem_oempresas (
@@ -5796,10 +5796,10 @@ CREATE TABLE public.sgd_oem_oempresas (
 );
 
 
-ALTER TABLE public.sgd_oem_oempresas OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_oem_oempresas OWNER TO orfeo_usr;
 
 --
--- Name: sgd_oem_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_oem_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_oem_secue
@@ -5810,10 +5810,10 @@ CREATE SEQUENCE public.sgd_oem_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_oem_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_oem_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_panu_peranulados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_panu_peranulados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_panu_peranulados (
@@ -5822,24 +5822,24 @@ CREATE TABLE public.sgd_panu_peranulados (
 );
 
 
-ALTER TABLE public.sgd_panu_peranulados OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_panu_peranulados OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_panu_peranulados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_panu_peranulados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_panu_peranulados IS 'Define los permisos de anulacion de documentos';
 
 
 --
--- Name: COLUMN sgd_panu_peranulados.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_panu_peranulados.sgd_panu_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_panu_peranulados.sgd_panu_codi IS 'Descripcion';
 
 
 --
--- Name: sgd_parametro; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_parametro; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_parametro (
@@ -5849,38 +5849,38 @@ CREATE TABLE public.sgd_parametro (
 );
 
 
-ALTER TABLE public.sgd_parametro OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_parametro OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_parametro; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_parametro; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_parametro IS 'Almacena parametros compuestos por dos valores: identificador y valor';
 
 
 --
--- Name: COLUMN sgd_parametro.param_nomb; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_parametro.param_nomb; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_parametro.param_nomb IS 'Nombre del tipo de parametro';
 
 
 --
--- Name: COLUMN sgd_parametro.param_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_parametro.param_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_parametro.param_codi IS 'Codigo identificador del parametro';
 
 
 --
--- Name: COLUMN sgd_parametro.param_valor; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_parametro.param_valor; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_parametro.param_valor IS 'Valor del parametro';
 
 
 --
--- Name: sgd_parexp_paramexpediente; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_parexp_paramexpediente; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_parexp_paramexpediente (
@@ -5893,17 +5893,17 @@ CREATE TABLE public.sgd_parexp_paramexpediente (
 );
 
 
-ALTER TABLE public.sgd_parexp_paramexpediente OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_parexp_paramexpediente OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_parexp_paramexpediente.sgd_parexp_editable; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_parexp_paramexpediente.sgd_parexp_editable; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_parexp_paramexpediente.sgd_parexp_editable IS '1 o 0';
 
 
 --
--- Name: sgd_pen_pensionados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_pen_pensionados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_pen_pensionados (
@@ -5923,10 +5923,10 @@ CREATE TABLE public.sgd_pen_pensionados (
 );
 
 
-ALTER TABLE public.sgd_pen_pensionados OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_pen_pensionados OWNER TO orfeo_usr;
 
 --
--- Name: sgd_pexp_procexpedientes; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_pexp_procexpedientes; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_pexp_procexpedientes (
@@ -5940,52 +5940,52 @@ CREATE TABLE public.sgd_pexp_procexpedientes (
 );
 
 
-ALTER TABLE public.sgd_pexp_procexpedientes OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_pexp_procexpedientes OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_pexp_codigo IS 'Codigo que identifica el proceso';
 
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_descrip; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_descrip; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_pexp_descrip IS 'Nombre del proceso';
 
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_terminos; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_terminos; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_pexp_terminos IS 'termino del proceso';
 
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_srd_codigo IS 'Serie (trd) que identifica el proceso';
 
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_sbrd_codigo IS 'Subserie (trd) que identifica el proceso';
 
 
 --
--- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_tieneflujo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pexp_procexpedientes.sgd_pexp_tieneflujo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pexp_procexpedientes.sgd_pexp_tieneflujo IS 'Si el expediente tiene flujo';
 
 
 --
--- Name: sgd_plg_secue; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_plg_secue; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_plg_secue
@@ -5996,10 +5996,10 @@ CREATE SEQUENCE public.sgd_plg_secue
     CACHE 1;
 
 
-ALTER TABLE public.sgd_plg_secue OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_plg_secue OWNER TO orfeo_usr;
 
 --
--- Name: sgd_pnufe_procnumfe; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_pnufe_procnumfe; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_pnufe_procnumfe (
@@ -6010,45 +6010,45 @@ CREATE TABLE public.sgd_pnufe_procnumfe (
 );
 
 
-ALTER TABLE public.sgd_pnufe_procnumfe OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_pnufe_procnumfe OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_pnufe_procnumfe; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_pnufe_procnumfe; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_pnufe_procnumfe IS 'Cataloga los procesos de numeracion y fechado';
 
 
 --
--- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnufe_procnumfe.sgd_pnufe_codi IS 'Codigo del proceso';
 
 
 --
--- Name: COLUMN sgd_pnufe_procnumfe.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnufe_procnumfe.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnufe_procnumfe.sgd_tpr_codigo IS 'Codigo del documento que genera el procedimiento';
 
 
 --
--- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_descrip; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_descrip; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnufe_procnumfe.sgd_pnufe_descrip IS 'Descripcion del procedimiento generado';
 
 
 --
--- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_serie; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnufe_procnumfe.sgd_pnufe_serie; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnufe_procnumfe.sgd_pnufe_serie IS 'Serie que maneja la numeracion de los documentos';
 
 
 --
--- Name: sgd_pnun_procenum; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_pnun_procenum; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_pnun_procenum (
@@ -6059,38 +6059,38 @@ CREATE TABLE public.sgd_pnun_procenum (
 );
 
 
-ALTER TABLE public.sgd_pnun_procenum OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_pnun_procenum OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_pnun_procenum.sgd_pnun_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnun_procenum.sgd_pnun_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnun_procenum.sgd_pnun_codi IS 'Id del registro';
 
 
 --
--- Name: COLUMN sgd_pnun_procenum.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnun_procenum.sgd_pnufe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnun_procenum.sgd_pnufe_codi IS 'Codigo del proceso';
 
 
 --
--- Name: COLUMN sgd_pnun_procenum.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnun_procenum.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnun_procenum.depe_codi IS 'Codigo de la dependencia';
 
 
 --
--- Name: COLUMN sgd_pnun_procenum.sgd_pnun_prepone; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_pnun_procenum.sgd_pnun_prepone; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_pnun_procenum.sgd_pnun_prepone IS 'Preposicion empleada para generar el numero completo del documento';
 
 
 --
--- Name: sgd_prc_proceso; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_prc_proceso; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_prc_proceso (
@@ -6101,10 +6101,10 @@ CREATE TABLE public.sgd_prc_proceso (
 );
 
 
-ALTER TABLE public.sgd_prc_proceso OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_prc_proceso OWNER TO orfeo_usr;
 
 --
--- Name: sgd_prd_prcdmentos; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_prd_prcdmentos; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_prd_prcdmentos (
@@ -6115,10 +6115,10 @@ CREATE TABLE public.sgd_prd_prcdmentos (
 );
 
 
-ALTER TABLE public.sgd_prd_prcdmentos OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_prd_prcdmentos OWNER TO orfeo_usr;
 
 --
--- Name: sgd_rda_retdoca; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_rda_retdoca; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_rda_retdoca (
@@ -6141,10 +6141,10 @@ CREATE TABLE public.sgd_rda_retdoca (
 );
 
 
-ALTER TABLE public.sgd_rda_retdoca OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_rda_retdoca OWNER TO orfeo_usr;
 
 --
--- Name: sgd_rdf_retdocf; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_rdf_retdocf; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_rdf_retdocf (
@@ -6157,10 +6157,10 @@ CREATE TABLE public.sgd_rdf_retdocf (
 );
 
 
-ALTER TABLE public.sgd_rdf_retdocf OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_rdf_retdocf OWNER TO orfeo_usr;
 
 --
--- Name: sgd_renv_regenvio; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_renv_regenvio; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_renv_regenvio (
@@ -6204,10 +6204,10 @@ CREATE TABLE public.sgd_renv_regenvio (
 );
 
 
-ALTER TABLE public.sgd_renv_regenvio OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_renv_regenvio OWNER TO orfeo_usr;
 
 --
--- Name: sgd_rmr_radmasivre; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_rmr_radmasivre; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_rmr_radmasivre (
@@ -6216,10 +6216,10 @@ CREATE TABLE public.sgd_rmr_radmasivre (
 );
 
 
-ALTER TABLE public.sgd_rmr_radmasivre OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_rmr_radmasivre OWNER TO orfeo_usr;
 
 --
--- Name: sgd_sbrd_subserierd; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sbrd_subserierd; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_sbrd_subserierd (
@@ -6237,17 +6237,17 @@ CREATE TABLE public.sgd_sbrd_subserierd (
 );
 
 
-ALTER TABLE public.sgd_sbrd_subserierd OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_sbrd_subserierd OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_sbrd_subserierd.id_tabla; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sbrd_subserierd.id_tabla; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sbrd_subserierd.id_tabla IS 'Secuencia que controla la creación de subseries mediante el sistema';
 
 
 --
--- Name: sgd_sed_sede; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sed_sede; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_sed_sede (
@@ -6256,10 +6256,10 @@ CREATE TABLE public.sgd_sed_sede (
 );
 
 
-ALTER TABLE public.sgd_sed_sede OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_sed_sede OWNER TO orfeo_usr;
 
 --
--- Name: sgd_senuf_secnumfe; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_senuf_secnumfe; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_senuf_secnumfe (
@@ -6270,10 +6270,10 @@ CREATE TABLE public.sgd_senuf_secnumfe (
 );
 
 
-ALTER TABLE public.sgd_senuf_secnumfe OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_senuf_secnumfe OWNER TO orfeo_usr;
 
 --
--- Name: sgd_sexp_secexpedientes; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sexp_secexpedientes; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_sexp_secexpedientes (
@@ -6303,80 +6303,80 @@ CREATE TABLE public.sgd_sexp_secexpedientes (
 );
 
 
-ALTER TABLE public.sgd_sexp_secexpedientes OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_sexp_secexpedientes OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_exp_numero IS 'Numero del expediente';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_srd_codigo IS 'codigo serie';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_sbrd_codigo IS 'codigo subserie';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_secuencia; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_secuencia; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_sexp_secuencia IS 'numero del expediente';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.depe_codi IS 'Dependencia creadora';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.usua_doc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.usua_doc IS 'Documento del usuario creador';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_fech; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_fech; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_sexp_fech IS 'Fecha de inicio del proceso';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_fexp_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_fexp_codigo IS 'Codigo de proceso';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_ano; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_ano; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_sexp_ano IS 'A?o del expediente';
 
 
 --
--- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_estado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_sexp_secexpedientes.sgd_sexp_estado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_sexp_secexpedientes.sgd_sexp_estado IS 'Estado de transferencia, 0 ninguna, 1 primaria, 2, secundaria, 3 eliminado';
 
 
 --
--- Name: sgd_srd_seriesrd; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_srd_seriesrd; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_srd_seriesrd (
@@ -6387,10 +6387,10 @@ CREATE TABLE public.sgd_srd_seriesrd (
 );
 
 
-ALTER TABLE public.sgd_srd_seriesrd OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_srd_seriesrd OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tar_tarifas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tar_tarifas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tar_tarifas (
@@ -6406,10 +6406,10 @@ CREATE TABLE public.sgd_tar_tarifas (
 );
 
 
-ALTER TABLE public.sgd_tar_tarifas OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tar_tarifas OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tdec_tipodecision; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tdec_tipodecision; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tdec_tipodecision (
@@ -6425,10 +6425,10 @@ CREATE TABLE public.sgd_tdec_tipodecision (
 );
 
 
-ALTER TABLE public.sgd_tdec_tipodecision OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tdec_tipodecision OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tid_tipdecision; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tid_tipdecision; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tid_tipdecision (
@@ -6440,31 +6440,31 @@ CREATE TABLE public.sgd_tid_tipdecision (
 );
 
 
-ALTER TABLE public.sgd_tid_tipdecision OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tid_tipdecision OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_tid_tipdecision; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tid_tipdecision; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_tid_tipdecision IS 'Tipos de decision';
 
 
 --
--- Name: COLUMN sgd_tid_tipdecision.sgd_tid_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tid_tipdecision.sgd_tid_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tid_tipdecision.sgd_tid_codi IS 'Id del registro';
 
 
 --
--- Name: COLUMN sgd_tid_tipdecision.sgd_tid_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tid_tipdecision.sgd_tid_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tid_tipdecision.sgd_tid_desc IS 'Descripcion';
 
 
 --
--- Name: sgd_tidm_tidocmasiva; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tidm_tidocmasiva; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tidm_tidocmasiva (
@@ -6473,31 +6473,31 @@ CREATE TABLE public.sgd_tidm_tidocmasiva (
 );
 
 
-ALTER TABLE public.sgd_tidm_tidocmasiva OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tidm_tidocmasiva OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_tidm_tidocmasiva; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tidm_tidocmasiva; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_tidm_tidocmasiva IS 'Cataloga los documentos que hacen parte del procedimiento de correspondencia masiva';
 
 
 --
--- Name: COLUMN sgd_tidm_tidocmasiva.sgd_tidm_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tidm_tidocmasiva.sgd_tidm_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tidm_tidocmasiva.sgd_tidm_codi IS 'Codigo del documento';
 
 
 --
--- Name: COLUMN sgd_tidm_tidocmasiva.sgd_tidm_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tidm_tidocmasiva.sgd_tidm_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tidm_tidocmasiva.sgd_tidm_desc IS 'Descripcion';
 
 
 --
--- Name: sgd_tip3_tipotercero; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tip3_tipotercero; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tip3_tipotercero (
@@ -6512,10 +6512,10 @@ CREATE TABLE public.sgd_tip3_tipotercero (
 );
 
 
-ALTER TABLE public.sgd_tip3_tipotercero OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tip3_tipotercero OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tma_temas; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tma_temas; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tma_temas (
@@ -6526,10 +6526,10 @@ CREATE TABLE public.sgd_tma_temas (
 );
 
 
-ALTER TABLE public.sgd_tma_temas OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tma_temas OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tme_tipmen; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tme_tipmen; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tme_tipmen (
@@ -6538,10 +6538,10 @@ CREATE TABLE public.sgd_tme_tipmen (
 );
 
 
-ALTER TABLE public.sgd_tme_tipmen OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tme_tipmen OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tpr_tpdcumento; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tpr_tpdcumento; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tpr_tpdcumento (
@@ -6561,52 +6561,52 @@ CREATE TABLE public.sgd_tpr_tpdcumento (
 );
 
 
-ALTER TABLE public.sgd_tpr_tpdcumento OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tpr_tpdcumento OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_numera; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_numera; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_numera IS 'INDICA SI UN DOCUMNTO PUEDE NUMERARSE';
 
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_radica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_radica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_radica IS 'INDICA SI UN DOCUMNTO PUEDE RADICARSE';
 
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_tp1; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_tp1; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_tp1 IS 'Radicados de salida';
 
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_tp2; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_tp2; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_tp2 IS 'Radicados de entrada';
 
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_estado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_estado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_estado IS 'Estado del documento 1- habilitado 2- deshabilitado';
 
 
 --
--- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_web; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tpr_tpdcumento.sgd_tpr_web; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tpr_tpdcumento.sgd_tpr_web IS 'Indica si se debe mostrar o no el tipo documental en el fomulario de PQRS';
 
 
 --
--- Name: sgd_trad_tiporad; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_trad_tiporad; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_trad_tiporad (
@@ -6620,17 +6620,17 @@ CREATE TABLE public.sgd_trad_tiporad (
 );
 
 
-ALTER TABLE public.sgd_trad_tiporad OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_trad_tiporad OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN sgd_trad_tiporad.mostrar_como_tipo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_trad_tiporad.mostrar_como_tipo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_trad_tiporad.mostrar_como_tipo IS 'Indica si se debe mostrar o no como tipo de radicado en el sistema aplica mas que todo para PQRS';
 
 
 --
--- Name: sgd_transfe_documentales; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_transfe_documentales; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_transfe_documentales (
@@ -6650,101 +6650,101 @@ CREATE TABLE public.sgd_transfe_documentales (
 );
 
 
-ALTER TABLE public.sgd_transfe_documentales OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_transfe_documentales OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_transfe_documentales; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_transfe_documentales; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_transfe_documentales IS 'Registra las transferencias documentales';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.id_trans; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.id_trans; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.id_trans IS 'Id unico de la tabla';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.sgd_exp_numero; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.sgd_exp_numero IS 'Numero de expediente';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.sgd_srd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.sgd_srd_codigo IS 'Codigo Serie';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.sgd_sbrd_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.sgd_sbrd_codigo IS 'Codigo Subserie';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.sgd_tpr_codigo; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.sgd_tpr_codigo IS 'Codigo tipo documental';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.radi_nume_radi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.radi_nume_radi IS 'Numero radicado';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.fecha_archivado; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.fecha_archivado; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.fecha_archivado IS 'Fecha archivado';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.depe_codi_arch; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.depe_codi_arch; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.depe_codi_arch IS 'Dependencia de usuario que archivo';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.usua_codi_arch; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.usua_codi_arch; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.usua_codi_arch IS 'Codigo de usuario que archivo';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.fecha_transferencia; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.fecha_transferencia; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.fecha_transferencia IS 'Fecha de transaccion documental';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.depe_codi_trans; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.depe_codi_trans; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.depe_codi_trans IS 'Dependencia de usuario que transfirio';
 
 
 --
--- Name: COLUMN sgd_transfe_documentales.usua_codi_trans; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_transfe_documentales.usua_codi_trans; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_transfe_documentales.usua_codi_trans IS 'Codigo de usuario que transfirio';
 
 
 --
--- Name: sgd_ttr_transaccion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ttr_transaccion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ttr_transaccion (
@@ -6753,10 +6753,10 @@ CREATE TABLE public.sgd_ttr_transaccion (
 );
 
 
-ALTER TABLE public.sgd_ttr_transaccion OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ttr_transaccion OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tvd_depe_id; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tvd_depe_id; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sgd_tvd_depe_id
@@ -6767,10 +6767,10 @@ CREATE SEQUENCE public.sgd_tvd_depe_id
     CACHE 1;
 
 
-ALTER TABLE public.sgd_tvd_depe_id OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tvd_depe_id OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tvd_dependencia; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tvd_dependencia; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tvd_dependencia (
@@ -6781,10 +6781,10 @@ CREATE TABLE public.sgd_tvd_dependencia (
 );
 
 
-ALTER TABLE public.sgd_tvd_dependencia OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tvd_dependencia OWNER TO orfeo_usr;
 
 --
--- Name: sgd_tvd_series; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tvd_series; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_tvd_series (
@@ -6797,59 +6797,59 @@ CREATE TABLE public.sgd_tvd_series (
 );
 
 
-ALTER TABLE public.sgd_tvd_series OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_tvd_series OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_tvd_series; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tvd_series; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_tvd_series IS 'Series de TVD';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_depe_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_depe_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_depe_codi IS 'Codigo de dependencia TVD';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_stvd_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_stvd_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_stvd_codi IS 'Codigo de serieTVD';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_stvd_nombre; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_stvd_nombre; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_stvd_nombre IS 'Nombre de serie TVD';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_stvd_ac; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_stvd_ac; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_stvd_ac IS 'Retencion en AC';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_stvd_dispfin; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_stvd_dispfin; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_stvd_dispfin IS 'Disposicion final';
 
 
 --
--- Name: COLUMN sgd_tvd_series.sgd_stvd_proc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN sgd_tvd_series.sgd_stvd_proc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.sgd_tvd_series.sgd_stvd_proc IS 'procedimiento';
 
 
 --
--- Name: sgd_ush_usuhistorico; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ush_usuhistorico; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_ush_usuhistorico (
@@ -6865,17 +6865,17 @@ CREATE TABLE public.sgd_ush_usuhistorico (
 );
 
 
-ALTER TABLE public.sgd_ush_usuhistorico OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_ush_usuhistorico OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_ush_usuhistorico; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ush_usuhistorico; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_ush_usuhistorico IS 'Representa las modificaciones hechas a los usuarios. Registro historico por usuario sobre el tipo de transaccion realizada y los cambios con fecha y hora de realizacion.';
 
 
 --
--- Name: sgd_usm_usumodifica; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sgd_usm_usumodifica; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sgd_usm_usumodifica (
@@ -6884,17 +6884,17 @@ CREATE TABLE public.sgd_usm_usumodifica (
 );
 
 
-ALTER TABLE public.sgd_usm_usumodifica OWNER TO orfeo62usr;
+ALTER TABLE public.sgd_usm_usumodifica OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sgd_usm_usumodifica; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_usm_usumodifica; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sgd_usm_usumodifica IS 'Contiene los tipos de modificaciones que se pueden hacer a los usuarios del sistema.';
 
 
 --
--- Name: sphinx_index_meta; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_meta; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sphinx_index_meta (
@@ -6904,17 +6904,17 @@ CREATE TABLE public.sphinx_index_meta (
 );
 
 
-ALTER TABLE public.sphinx_index_meta OWNER TO orfeo62usr;
+ALTER TABLE public.sphinx_index_meta OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sphinx_index_meta; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sphinx_index_meta; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sphinx_index_meta IS 'sphinx_index_meta esta tabla se usa para dejar una marca de tiempo cada vez que se ejecuta el proceso de indexación';
 
 
 --
--- Name: sphinx_index_remove; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_remove; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.sphinx_index_remove (
@@ -6927,17 +6927,17 @@ CREATE TABLE public.sphinx_index_remove (
 );
 
 
-ALTER TABLE public.sphinx_index_remove OWNER TO orfeo62usr;
+ALTER TABLE public.sphinx_index_remove OWNER TO orfeo_usr;
 
 --
--- Name: TABLE sphinx_index_remove; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sphinx_index_remove; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.sphinx_index_remove IS 'sphinx_index_remove se usa para indicarle a sphinx que registros debe eliminar, orfeo carga datos en esta tabla cuando actualizan un anexo cargado con skinascan';
 
 
 --
--- Name: sphinx_index_meta_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_meta_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.sphinx_index_meta_id_seq
@@ -6948,17 +6948,17 @@ CREATE SEQUENCE public.sphinx_index_meta_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.sphinx_index_meta_id_seq OWNER TO orfeo62usr;
+ALTER TABLE public.sphinx_index_meta_id_seq OWNER TO orfeo_usr;
 
 --
--- Name: sphinx_index_meta_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_meta_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.sphinx_index_meta_id_seq OWNED BY public.sphinx_index_remove.id;
 
 
 --
--- Name: tipo_doc_identificacion; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_doc_identificacion; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipo_doc_identificacion (
@@ -6967,31 +6967,31 @@ CREATE TABLE public.tipo_doc_identificacion (
 );
 
 
-ALTER TABLE public.tipo_doc_identificacion OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_doc_identificacion OWNER TO orfeo_usr;
 
 --
--- Name: TABLE tipo_doc_identificacion; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE tipo_doc_identificacion; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.tipo_doc_identificacion IS 'TIPO_DOC_IDENTIFICACION';
 
 
 --
--- Name: COLUMN tipo_doc_identificacion.tdid_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN tipo_doc_identificacion.tdid_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.tipo_doc_identificacion.tdid_codi IS 'CODIGO DEL TIPO DE DOCUMENTO DE IDENTIFICACION';
 
 
 --
--- Name: COLUMN tipo_doc_identificacion.tdid_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN tipo_doc_identificacion.tdid_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.tipo_doc_identificacion.tdid_desc IS 'DESCIPCION DEL TIPO DE DOCUMENTO DE IDENTIFICACION';
 
 
 --
--- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.tipo_poblacion_pqrs_id_tp_pqrs_seq
@@ -7002,10 +7002,10 @@ CREATE SEQUENCE public.tipo_poblacion_pqrs_id_tp_pqrs_seq
     CACHE 1;
 
 
-ALTER TABLE public.tipo_poblacion_pqrs_id_tp_pqrs_seq OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_poblacion_pqrs_id_tp_pqrs_seq OWNER TO orfeo_usr;
 
 --
--- Name: tipo_poblacion_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_poblacion_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipo_poblacion_pqrs (
@@ -7014,10 +7014,10 @@ CREATE TABLE public.tipo_poblacion_pqrs (
 );
 
 
-ALTER TABLE public.tipo_poblacion_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_poblacion_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: tipo_remitente; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_remitente; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipo_remitente (
@@ -7027,38 +7027,38 @@ CREATE TABLE public.tipo_remitente (
 );
 
 
-ALTER TABLE public.tipo_remitente OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_remitente OWNER TO orfeo_usr;
 
 --
--- Name: TABLE tipo_remitente; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE tipo_remitente; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.tipo_remitente IS 'TIPO_REMITENTE';
 
 
 --
--- Name: COLUMN tipo_remitente.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN tipo_remitente.trte_codi; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.tipo_remitente.trte_codi IS 'CODIGO TIPO DE REMITENTE';
 
 
 --
--- Name: COLUMN tipo_remitente.trte_desc; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN tipo_remitente.trte_desc; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.tipo_remitente.trte_desc IS 'DESC DEL TIPO DE REMITENTE';
 
 
 --
--- Name: COLUMN tipo_remitente.aplica_pqrs; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN tipo_remitente.aplica_pqrs; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public.tipo_remitente.aplica_pqrs IS 'indica si se muestra o no en el formulario de PQRS 0=No, 10= SI';
 
 
 --
--- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq
@@ -7069,10 +7069,10 @@ CREATE SEQUENCE public.tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq
     CACHE 1;
 
 
-ALTER TABLE public.tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq OWNER TO orfeo_usr;
 
 --
--- Name: tipo_tratamiento_pqrs; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_tratamiento_pqrs; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipo_tratamiento_pqrs (
@@ -7081,10 +7081,10 @@ CREATE TABLE public.tipo_tratamiento_pqrs (
 );
 
 
-ALTER TABLE public.tipo_tratamiento_pqrs OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_tratamiento_pqrs OWNER TO orfeo_usr;
 
 --
--- Name: tipo_usuario_grupo; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipo_usuario_grupo (
@@ -7094,10 +7094,10 @@ CREATE TABLE public.tipo_usuario_grupo (
 );
 
 
-ALTER TABLE public.tipo_usuario_grupo OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_usuario_grupo OWNER TO orfeo_usr;
 
 --
--- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq
@@ -7108,17 +7108,17 @@ CREATE SEQUENCE public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq
     CACHE 1;
 
 
-ALTER TABLE public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq OWNER TO orfeo62usr;
+ALTER TABLE public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq OWNER TO orfeo_usr;
 
 --
--- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq OWNED BY public.tipo_usuario_grupo.id_grupo_tipo_usuario;
 
 
 --
--- Name: tipos_comunicaciones; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.tipos_comunicaciones (
@@ -7127,17 +7127,17 @@ CREATE TABLE public.tipos_comunicaciones (
 );
 
 
-ALTER TABLE public.tipos_comunicaciones OWNER TO orfeo62usr;
+ALTER TABLE public.tipos_comunicaciones OWNER TO orfeo_usr;
 
 --
--- Name: TABLE tipos_comunicaciones; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE tipos_comunicaciones; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.tipos_comunicaciones IS 'En esta tabla se guarda la información de las diferentes pestañas incluidas en el archivo entregado por el cliente';
 
 
 --
--- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.tipos_comunicaciones_id_tipos_comunicaciones_seq
@@ -7148,17 +7148,17 @@ CREATE SEQUENCE public.tipos_comunicaciones_id_tipos_comunicaciones_seq
     CACHE 1;
 
 
-ALTER TABLE public.tipos_comunicaciones_id_tipos_comunicaciones_seq OWNER TO orfeo62usr;
+ALTER TABLE public.tipos_comunicaciones_id_tipos_comunicaciones_seq OWNER TO orfeo_usr;
 
 --
--- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.tipos_comunicaciones_id_tipos_comunicaciones_seq OWNED BY public.tipos_comunicaciones.id_tipos_comunicaciones;
 
 
 --
--- Name: ubicacion_fisica; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: ubicacion_fisica; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.ubicacion_fisica (
@@ -7167,10 +7167,10 @@ CREATE TABLE public.ubicacion_fisica (
 );
 
 
-ALTER TABLE public.ubicacion_fisica OWNER TO orfeo62usr;
+ALTER TABLE public.ubicacion_fisica OWNER TO orfeo_usr;
 
 --
--- Name: user; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: user; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public."user" (
@@ -7188,17 +7188,17 @@ CREATE TABLE public."user" (
 );
 
 
-ALTER TABLE public."user" OWNER TO orfeo62usr;
+ALTER TABLE public."user" OWNER TO orfeo_usr;
 
 --
--- Name: COLUMN "user".security_questions; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: COLUMN "user".security_questions; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON COLUMN public."user".security_questions IS '0 = sin metodo de Recuperacion de cuenta  1 = metodo por Preguntas 2 = metodo por correo ';
 
 
 --
--- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: user_id_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.user_id_seq
@@ -7209,17 +7209,17 @@ CREATE SEQUENCE public.user_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.user_id_seq OWNER TO orfeo62usr;
+ALTER TABLE public.user_id_seq OWNER TO orfeo_usr;
 
 --
--- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.user_id_seq OWNED BY public."user".id;
 
 
 --
--- Name: usuarios_grupos_informados; Type: TABLE; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados; Type: TABLE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE TABLE public.usuarios_grupos_informados (
@@ -7230,17 +7230,17 @@ CREATE TABLE public.usuarios_grupos_informados (
 );
 
 
-ALTER TABLE public.usuarios_grupos_informados OWNER TO orfeo62usr;
+ALTER TABLE public.usuarios_grupos_informados OWNER TO orfeo_usr;
 
 --
--- Name: TABLE usuarios_grupos_informados; Type: COMMENT; Schema: public; Owner: orfeo62usr
+-- Name: TABLE usuarios_grupos_informados; Type: COMMENT; Schema: public; Owner: orfeo_usr
 --
 
 COMMENT ON TABLE public.usuarios_grupos_informados IS 'Se utiliza para relacionar los usuarios con los grupos';
 
 
 --
--- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.usuarios_grupos_informados_id_usuarios_grupos_informados_seq
@@ -7251,17 +7251,17 @@ CREATE SEQUENCE public.usuarios_grupos_informados_id_usuarios_grupos_informados_
     CACHE 1;
 
 
-ALTER TABLE public.usuarios_grupos_informados_id_usuarios_grupos_informados_seq OWNER TO orfeo62usr;
+ALTER TABLE public.usuarios_grupos_informados_id_usuarios_grupos_informados_seq OWNER TO orfeo_usr;
 
 --
--- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.usuarios_grupos_informados_id_usuarios_grupos_informados_seq OWNED BY public.usuarios_grupos_informados.id_usuarios_grupos_informados;
 
 
 --
--- Name: usuarios_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_seq; Type: SEQUENCE; Schema: public; Owner: orfeo_usr
 --
 
 CREATE SEQUENCE public.usuarios_grupos_informados_seq
@@ -7272,157 +7272,157 @@ CREATE SEQUENCE public.usuarios_grupos_informados_seq
     CACHE 1;
 
 
-ALTER TABLE public.usuarios_grupos_informados_seq OWNER TO orfeo62usr;
+ALTER TABLE public.usuarios_grupos_informados_seq OWNER TO orfeo_usr;
 
 --
--- Name: usuarios_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: orfeo_usr
 --
 
 ALTER SEQUENCE public.usuarios_grupos_informados_seq OWNED BY public.usuarios_grupos_informados.id_usuarios_grupos_informados;
 
 
 --
--- Name: carpeta_per id_caperta_per; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per id_caperta_per; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.carpeta_per ALTER COLUMN id_caperta_per SET DEFAULT nextval('public.carpeta_per_id_caperta_per_seq'::regclass);
 
 
 --
--- Name: configuracion_contrasena idConfiguracionContracsena; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena idConfiguracionContracsena; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.configuracion_contrasena ALTER COLUMN "idConfiguracionContracsena" SET DEFAULT nextval('public."configuracion_contrasena_idConfiguracionContracsena_seq"'::regclass);
 
 
 --
--- Name: configuracion_general_fondo id_campo_configuracion_fondo; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo id_campo_configuracion_fondo; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.configuracion_general_fondo ALTER COLUMN id_campo_configuracion_fondo SET DEFAULT nextval('public.configuracion_general_fondo_id_campo_configuracion_fondo_seq'::regclass);
 
 
 --
--- Name: contrasenas_guardadas id_contrasena_guardada; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas id_contrasena_guardada; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.contrasenas_guardadas ALTER COLUMN id_contrasena_guardada SET DEFAULT nextval('public.contrasenas_guardadas_id_contrasena_guardada_seq'::regclass);
 
 
 --
--- Name: datosocr indice; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: datosocr indice; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.datosocr ALTER COLUMN indice SET DEFAULT nextval('public.datosocr_indice_seq'::regclass);
 
 
 --
--- Name: direccion_usuarios id; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios id; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.direccion_usuarios ALTER COLUMN id SET DEFAULT nextval('public.direccion_usuarios_id_seq'::regclass);
 
 
 --
--- Name: estado_civil_pqrs id_estado_civil_pqrs; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs id_estado_civil_pqrs; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.estado_civil_pqrs ALTER COLUMN id_estado_civil_pqrs SET DEFAULT nextval('public.estado_civil_pqrs_id_estado_civil_pqrs_seq'::regclass);
 
 
 --
--- Name: grupos_informados id_grupos_informados; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados id_grupos_informados; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.grupos_informados ALTER COLUMN id_grupos_informados SET DEFAULT nextval('public.grupos_informados_seq'::regclass);
 
 
 --
--- Name: perfiles codi_perfil; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: perfiles codi_perfil; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.perfiles ALTER COLUMN codi_perfil SET DEFAULT nextval('public.perfiles_codi_perfil_seq'::regclass);
 
 
 --
--- Name: preguntas id_preguntas; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: preguntas id_preguntas; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.preguntas ALTER COLUMN id_preguntas SET DEFAULT nextval('public."Preguntas_id_preguntas_seq"'::regclass);
 
 
 --
--- Name: respuestas_usuario id_Respuestas_Usuario; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: respuestas_usuario id_Respuestas_Usuario; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.respuestas_usuario ALTER COLUMN "id_Respuestas_Usuario" SET DEFAULT nextval('public."Respuestas_Usuario_id_Respuestas_Usuario_seq"'::regclass);
 
 
 --
--- Name: rol_tipos_doc cod_rol_tipos; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: rol_tipos_doc cod_rol_tipos; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.rol_tipos_doc ALTER COLUMN cod_rol_tipos SET DEFAULT nextval('public.sec_rol_tipos_doc'::regclass);
 
 
 --
--- Name: roles cod_rol; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: roles cod_rol; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.roles ALTER COLUMN cod_rol SET DEFAULT nextval('public.roles_cod_rol_seq'::regclass);
 
 
 --
--- Name: sgd_ejes_tematicos id_sgd_eje_tematico; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos id_sgd_eje_tematico; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ejes_tematicos ALTER COLUMN id_sgd_eje_tematico SET DEFAULT nextval('public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq'::regclass);
 
 
 --
--- Name: sgd_ejes_tematicos_dependencia id_sgd_eje_tematico_dependencia; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependencia id_sgd_eje_tematico_dependencia; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ejes_tematicos_dependencia ALTER COLUMN id_sgd_eje_tematico_dependencia SET DEFAULT nextval('public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq'::regclass);
 
 
 --
--- Name: sphinx_index_remove id; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_remove id; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sphinx_index_remove ALTER COLUMN id SET DEFAULT nextval('public.sphinx_index_meta_id_seq'::regclass);
 
 
 --
--- Name: tipo_usuario_grupo id_grupo_tipo_usuario; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo id_grupo_tipo_usuario; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.tipo_usuario_grupo ALTER COLUMN id_grupo_tipo_usuario SET DEFAULT nextval('public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq'::regclass);
 
 
 --
--- Name: tipos_comunicaciones id_tipos_comunicaciones; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones id_tipos_comunicaciones; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.tipos_comunicaciones ALTER COLUMN id_tipos_comunicaciones SET DEFAULT nextval('public.tipos_comunicaciones_id_tipos_comunicaciones_seq'::regclass);
 
 
 --
--- Name: user id; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: user id; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public."user" ALTER COLUMN id SET DEFAULT nextval('public.user_id_seq'::regclass);
 
 
 --
--- Name: usuarios_grupos_informados id_usuarios_grupos_informados; Type: DEFAULT; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados id_usuarios_grupos_informados; Type: DEFAULT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.usuarios_grupos_informados ALTER COLUMN id_usuarios_grupos_informados SET DEFAULT nextval('public.usuarios_grupos_informados_seq'::regclass);
 
 
 --
--- Data for Name: anexos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: anexos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.anexos (anex_radi_nume, anex_codigo, anex_tipo, anex_tamano, anex_solo_lect, anex_creador, anex_desc, anex_numero, anex_nomb_archivo, anex_borrado, anex_origen, anex_ubic, anex_salida, radi_nume_salida, anex_radi_fech, anex_estado, usua_doc, sgd_rem_destino, anex_fech_envio, sgd_dir_tipo, anex_fech_impres, anex_depe_creador, sgd_doc_secuencia, sgd_doc_padre, sgd_arg_codigo, sgd_tpr_codigo, sgd_deve_codigo, sgd_deve_fech, sgd_fech_impres, anex_fech_anex, anex_depe_codi, sgd_pnufe_codi, sgd_dnufe_codi, anex_usudoc_creador, sgd_fech_doc, sgd_apli_codi, sgd_trad_codigo, sgd_dir_direccion, sgd_exp_numero, numero_doc, sgd_srd_codigo, sgd_sbrd_codigo, anex_num_hoja, texto_archivo_anex, anex_idarch_version, anex_num_version, doc_firmado_qr, anex_nomb_archivo_orig, radi_docu_publico, fecha_rec_remi, anex_radicado, anex_tipo_envio) FROM stdin;
@@ -7457,7 +7457,7 @@ COPY public.anexos (anex_radi_nume, anex_codigo, anex_tipo, anex_tamano, anex_so
 
 
 --
--- Data for Name: anexos_historico; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: anexos_historico; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.anexos_historico (anex_hist_anex_codi, anex_hist_num_ver, anex_hist_tipo_mod, anex_hist_usua, anex_hist_fecha, usua_doc) FROM stdin;
@@ -7465,7 +7465,7 @@ COPY public.anexos_historico (anex_hist_anex_codi, anex_hist_num_ver, anex_hist_
 
 
 --
--- Data for Name: anexos_tipo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: anexos_tipo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.anexos_tipo (anex_tipo_codi, anex_tipo_ext, anex_tipo_desc, anex_tipo_icon) FROM stdin;
@@ -7493,7 +7493,7 @@ COPY public.anexos_tipo (anex_tipo_codi, anex_tipo_ext, anex_tipo_desc, anex_tip
 
 
 --
--- Data for Name: bodega_empresas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: bodega_empresas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.bodega_empresas (nombre_de_la_empresa, nuir, nit_de_la_empresa, sigla_de_la_empresa, direccion, codigo_del_departamento, codigo_del_municipio, telefono_1, telefono_2, email, nombre_rep_legal, cargo_rep_legal, identificador_empresa, are_esp_secue, id_cont, id_pais, activa, flag_rups, codigo_suscriptor, id_users_pqrs, trte_codi) FROM stdin;
@@ -7501,7 +7501,7 @@ COPY public.bodega_empresas (nombre_de_la_empresa, nuir, nit_de_la_empresa, sigl
 
 
 --
--- Data for Name: borrar_carpeta_personalizada; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: borrar_carpeta_personalizada; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.borrar_carpeta_personalizada (carp_per_codi, carp_per_usu, carp_per_desc) FROM stdin;
@@ -7509,7 +7509,7 @@ COPY public.borrar_carpeta_personalizada (carp_per_codi, carp_per_usu, carp_per_
 
 
 --
--- Data for Name: borrar_empresa_esp; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: borrar_empresa_esp; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.borrar_empresa_esp (eesp_codi, eesp_nomb, essp_nit, essp_sigla, depe_codi, muni_codi, eesp_dire, eesp_rep_leg) FROM stdin;
@@ -7517,7 +7517,7 @@ COPY public.borrar_empresa_esp (eesp_codi, eesp_nomb, essp_nit, essp_sigla, depe
 
 
 --
--- Data for Name: carpeta; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: carpeta; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.carpeta (carp_codi, carp_desc, mostrar_como_tipo) FROM stdin;
@@ -7531,7 +7531,7 @@ COPY public.carpeta (carp_codi, carp_desc, mostrar_como_tipo) FROM stdin;
 
 
 --
--- Data for Name: carpeta_per; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: carpeta_per; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.carpeta_per (usua_codi, depe_codi, nomb_carp, desc_carp, codi_carp, id_caperta_per) FROM stdin;
@@ -7541,7 +7541,7 @@ COPY public.carpeta_per (usua_codi, depe_codi, nomb_carp, desc_carp, codi_carp, 
 
 
 --
--- Data for Name: centro_poblado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: centro_poblado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.centro_poblado (cpob_codi, muni_codi, dpto_codi, cpob_nomb, cpob_nomb_anterior) FROM stdin;
@@ -7549,7 +7549,7 @@ COPY public.centro_poblado (cpob_codi, muni_codi, dpto_codi, cpob_nomb, cpob_nom
 
 
 --
--- Data for Name: configuracion_contrasena; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: configuracion_contrasena; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.configuracion_contrasena ("idConfiguracionContracsena", numero_periocidad, descripcion_periocidad, dias_notificacion, estado_configuracion_contrasena, anio_creacion) FROM stdin;
@@ -7562,7 +7562,7 @@ COPY public.configuracion_contrasena ("idConfiguracionContracsena", numero_perio
 
 
 --
--- Data for Name: configuracion_general_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: configuracion_general_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.configuracion_general_fondo (id_campo_configuracion_fondo, nombre_campo_configuracion_fondo, descripcion_campo_configuracion_fondo, consultar_configuracion_fondo, tipo_consulta_configuracion_fondo) FROM stdin;
@@ -7570,7 +7570,7 @@ COPY public.configuracion_general_fondo (id_campo_configuracion_fondo, nombre_ca
 
 
 --
--- Data for Name: contrasenas_guardadas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: contrasenas_guardadas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.contrasenas_guardadas (id_contrasena_guardada, usua_login_contrasena_guardada, contrasena_anterior_contrasena_guardada, contrasena_nueva_contrasena_guardada, fecha_creacion_contrasena_guardada, fecha_vencimiento_contrasena_guardada, estado_contrasena_guardada) FROM stdin;
@@ -7689,7 +7689,7 @@ COPY public.contrasenas_guardadas (id_contrasena_guardada, usua_login_contrasena
 
 
 --
--- Data for Name: datosocr; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: datosocr; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.datosocr (indice, nume_radi, texto, radi_nume_deri, fecha_radi, tipo, radi_depe_radi, tipo_radi, tdoc_codi, anex_desc, fechaocr) FROM stdin;
@@ -7697,7 +7697,7 @@ COPY public.datosocr (indice, nume_radi, texto, radi_nume_deri, fecha_radi, tipo
 
 
 --
--- Data for Name: departamento; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: departamento; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.departamento (dpto_codi, dpto_nomb, id_cont, id_pais) FROM stdin;
@@ -7739,7 +7739,7 @@ COPY public.departamento (dpto_codi, dpto_nomb, id_cont, id_pais) FROM stdin;
 
 
 --
--- Data for Name: dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.dependencia (depe_codi, depe_nomb, dpto_codi, depe_codi_padre, muni_codi, depe_codi_territorial, dep_sigla, dep_central, dep_direccion, depe_num_interna, depe_num_resolucion, depe_rad_tp1, depe_rad_tp2, id_cont, id_pais, depe_estado, depe_segu, depe_rad_tp4) FROM stdin;
@@ -7751,7 +7751,7 @@ COPY public.dependencia (depe_codi, depe_nomb, dpto_codi, depe_codi_padre, muni_
 
 
 --
--- Data for Name: dependencia_visibilidad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: dependencia_visibilidad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.dependencia_visibilidad (codigo_visibilidad, dependencia_visible, dependencia_observa) FROM stdin;
@@ -7760,7 +7760,7 @@ COPY public.dependencia_visibilidad (codigo_visibilidad, dependencia_visible, de
 
 
 --
--- Data for Name: direccion_usuarios; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: direccion_usuarios; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.direccion_usuarios (id, "DirCam1", "DirCam2", "DirCam3", "DirCam4", "DirCam5", "DirCam6") FROM stdin;
@@ -7768,7 +7768,7 @@ COPY public.direccion_usuarios (id, "DirCam1", "DirCam2", "DirCam3", "DirCam4", 
 
 
 --
--- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.estado (esta_codi, esta_desc, estado_tipo_radicado) FROM stdin;
@@ -7782,7 +7782,7 @@ COPY public.estado (esta_codi, esta_desc, estado_tipo_radicado) FROM stdin;
 
 
 --
--- Data for Name: estado_civil_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: estado_civil_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.estado_civil_pqrs (id_estado_civil_pqrs, tipo_estado_civil_pqrs) FROM stdin;
@@ -7795,7 +7795,7 @@ COPY public.estado_civil_pqrs (id_estado_civil_pqrs, tipo_estado_civil_pqrs) FRO
 
 
 --
--- Data for Name: fondo_acumulado_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: fondo_acumulado_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.fondo_acumulado_comunicaciones (id_fondo_acumulado_comunicaciones, tipo_fondo, campo1, campo2, campo3, campo4, campo5, campo6, campo7, campo8, campo9, campo10, campo11, campo12) FROM stdin;
@@ -7803,7 +7803,7 @@ COPY public.fondo_acumulado_comunicaciones (id_fondo_acumulado_comunicaciones, t
 
 
 --
--- Data for Name: fun_funcionario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: fun_funcionario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.fun_funcionario (usua_doc, usua_fech_crea, usua_esta, usua_nomb, usua_ext, usua_nacim, usua_email, usua_at, usua_piso, cedula_ok, cedula_suip, nombre_suip, observa) FROM stdin;
@@ -7811,7 +7811,7 @@ COPY public.fun_funcionario (usua_doc, usua_fech_crea, usua_esta, usua_nomb, usu
 
 
 --
--- Data for Name: genero_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: genero_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.genero_pqrs (genero_pqrs_id, genero_pqrs_tipo) FROM stdin;
@@ -7822,7 +7822,7 @@ COPY public.genero_pqrs (genero_pqrs_id, genero_pqrs_tipo) FROM stdin;
 
 
 --
--- Data for Name: grupo_interes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: grupo_interes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.grupo_interes (id_grupo_interes, nombre_grupo_interes) FROM stdin;
@@ -7836,7 +7836,7 @@ COPY public.grupo_interes (id_grupo_interes, nombre_grupo_interes) FROM stdin;
 
 
 --
--- Data for Name: grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.grupos_informados (id_grupos_informados, nombre_grupo, descripcion_grupo, activo_grupo) FROM stdin;
@@ -7845,7 +7845,7 @@ COPY public.grupos_informados (id_grupos_informados, nombre_grupo, descripcion_g
 
 
 --
--- Data for Name: hist_eventos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: hist_eventos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.hist_eventos (depe_codi, hist_fech, usua_codi, radi_nume_radi, hist_obse, usua_codi_dest, usua_doc, usua_doc_old, sgd_ttr_codigo, hist_usua_autor, hist_doc_dest, depe_codi_dest) FROM stdin;
@@ -8051,7 +8051,7 @@ COPY public.hist_eventos (depe_codi, hist_fech, usua_codi, radi_nume_radi, hist_
 
 
 --
--- Data for Name: informados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: informados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.informados (radi_nume_radi, usua_codi, depe_codi, info_desc, info_fech, info_leido, usua_codi_info, info_codi, usua_doc, info_resp) FROM stdin;
@@ -8065,7 +8065,7 @@ COPY public.informados (radi_nume_radi, usua_codi, depe_codi, info_desc, info_fe
 
 
 --
--- Data for Name: inventario_documental; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: inventario_documental; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.inventario_documental (id_inv_documental, uni_administrativa, ofi_productora, no_orden, objeto, codigo, nombre, sub_serie, fecha_ext_ini, fecha_ext_end, caja, carpeta, tomo, otro, modulo, estante, no_folios, fr_consulta, notas, soporte) FROM stdin;
@@ -8075,7 +8075,7 @@ COPY public.inventario_documental (id_inv_documental, uni_administrativa, ofi_pr
 
 
 --
--- Data for Name: inventario_documentos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: inventario_documentos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.inventario_documentos (id_inv_documento, original_inv_doc, nombre_inv_doc, ruta_inv_doc, tipo_inv_doc, tamano_inv_doc, user_inv_doc, creacion_inv_doc, id_inv_documental) FROM stdin;
@@ -8086,7 +8086,7 @@ COPY public.inventario_documentos (id_inv_documento, original_inv_doc, nombre_in
 
 
 --
--- Data for Name: medio_recepcion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: medio_recepcion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.medio_recepcion (mrec_codi, mrec_desc) FROM stdin;
@@ -8099,7 +8099,7 @@ COPY public.medio_recepcion (mrec_codi, mrec_desc) FROM stdin;
 
 
 --
--- Data for Name: municipio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: municipio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.municipio (muni_codi, dpto_codi, muni_nomb, id_cont, id_pais, homologa_muni, homologa_idmuni, activa) FROM stdin;
@@ -9216,7 +9216,7 @@ COPY public.municipio (muni_codi, dpto_codi, muni_nomb, id_cont, id_pais, homolo
 
 
 --
--- Data for Name: nivel_academico_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: nivel_academico_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.nivel_academico_pqrs (id_nivel_acad_pqrs, descripcion_nivel_acad_pqrs) FROM stdin;
@@ -9230,7 +9230,7 @@ COPY public.nivel_academico_pqrs (id_nivel_acad_pqrs, descripcion_nivel_acad_pqr
 
 
 --
--- Data for Name: par_serv_servicios; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: par_serv_servicios; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.par_serv_servicios (par_serv_secue, par_serv_codigo, par_serv_nombre, par_serv_estado) FROM stdin;
@@ -9238,7 +9238,7 @@ COPY public.par_serv_servicios (par_serv_secue, par_serv_codigo, par_serv_nombre
 
 
 --
--- Data for Name: perfiles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: perfiles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.perfiles (codi_perfil, nomb_perfil, usua_esta, perm_radi, usua_admin, usua_nuevo, codi_nivel, perm_radi_sal, usua_admin_archivo, usua_masiva, usua_perm_dev, usua_perm_numera_res, usua_perm_numeradoc, sgd_panu_codi, usua_prad_tp1, usua_prad_tp2, usua_prad_tp4, usua_perm_envios, usua_perm_modifica, usua_perm_impresion, sgd_aper_codigo, sgd_perm_estadistica, usua_admin_sistema, usua_perm_trd, usua_perm_firma, usua_perm_prestamo, usuario_publico, usuario_reasignar, usua_perm_notifica, usua_perm_expediente, usua_auth_ldap, perm_archi, perm_vobo, perm_borrar_anexo, perm_tipif_anexo, usua_perm_adminflujos, usua_exp_trd, usua_perm_rademail, usua_perm_accesi, usua_perm_agrcontacto, usua_perm_preradicado, descargar_documentos, usua_perm_reasigna_masiva, usua_nivel_consulta, descarga_arc_original, firma_qr, per_transferencia_documental, usua_perm_grupo_usuarios_informados, usua_perm_doc_publico, usua_perm_consulta_rad, consulta_inv_documental, carga_inv_documental) FROM stdin;
@@ -9251,7 +9251,7 @@ COPY public.perfiles (codi_perfil, nomb_perfil, usua_esta, perm_radi, usua_admin
 
 
 --
--- Data for Name: pl_generado_plg; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pl_generado_plg; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.pl_generado_plg (depe_codi, radi_nume_radi, plt_codi, plg_codi, plg_comentarios, plg_analiza, plg_firma, plg_autoriza, plg_imprime, plg_envia, plg_archivo_tmp, plg_archivo_final, plg_nombre, plg_crea, plg_autoriza_fech, plg_imprime_fech, plg_envia_fech, plg_crea_fech, plg_creador, pl_codi, usua_doc, sgd_rem_destino, radi_nume_sal) FROM stdin;
@@ -9259,7 +9259,7 @@ COPY public.pl_generado_plg (depe_codi, radi_nume_radi, plt_codi, plg_codi, plg_
 
 
 --
--- Data for Name: pl_tipo_plt; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pl_tipo_plt; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.pl_tipo_plt (plt_codi, plt_desc) FROM stdin;
@@ -9267,7 +9267,7 @@ COPY public.pl_tipo_plt (plt_codi, plt_desc) FROM stdin;
 
 
 --
--- Data for Name: plan_table; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: plan_table; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.plan_table (statement_id, "timestamp", remarks, operation, options, object_node, object_owner, object_name, object_instance, object_type, optimizer, search_columns, id, parent_id, "position", cost, cardinality, s, other_tag, partition_start, partition_stop, partition_id, other, distribution) FROM stdin;
@@ -9275,7 +9275,7 @@ COPY public.plan_table (statement_id, "timestamp", remarks, operation, options, 
 
 
 --
--- Data for Name: plantilla_pl; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: plantilla_pl; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.plantilla_pl (pl_codi, depe_codi, pl_nomb, pl_archivo, pl_desc, pl_fech, usua_codi, pl_uso) FROM stdin;
@@ -9283,7 +9283,7 @@ COPY public.plantilla_pl (pl_codi, depe_codi, pl_nomb, pl_archivo, pl_desc, pl_f
 
 
 --
--- Data for Name: pre_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pre_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.pre_radicado (radi_nume_radi, radi_fech_radi, estado) FROM stdin;
@@ -9291,7 +9291,7 @@ COPY public.pre_radicado (radi_nume_radi, radi_fech_radi, estado) FROM stdin;
 
 
 --
--- Data for Name: preguntas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: preguntas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.preguntas (id_preguntas, pregunta) FROM stdin;
@@ -9304,7 +9304,7 @@ COPY public.preguntas (id_preguntas, pregunta) FROM stdin;
 
 
 --
--- Data for Name: prestamo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: prestamo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.prestamo (pres_id, radi_nume_radi, usua_login_actu, depe_codi, usua_login_pres, pres_desc, pres_fech_pres, pres_fech_devo, pres_fech_pedi, pres_estado, pres_requerimiento, pres_depe_arch, pres_fech_venc, dev_desc, pres_fech_canc, usua_login_canc, usua_login_rx) FROM stdin;
@@ -9312,7 +9312,7 @@ COPY public.prestamo (pres_id, radi_nume_radi, usua_login_actu, depe_codi, usua_
 
 
 --
--- Data for Name: radicado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: radicado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.radicado (radi_nume_radi, radi_fech_radi, tdoc_codi, trte_codi, mrec_codi, eesp_codi, eotra_codi, radi_tipo_empr, radi_fech_ofic, tdid_codi, radi_nume_iden, radi_nomb, radi_prim_apel, radi_segu_apel, radi_pais, muni_codi, cpob_codi, carp_codi, esta_codi, dpto_codi, cen_muni_codi, cen_dpto_codi, radi_dire_corr, radi_tele_cont, radi_nume_hoja, radi_desc_anex, radi_nume_deri, radi_path, radi_usua_actu, radi_depe_actu, radi_fech_asig, radi_arch1, radi_arch2, radi_arch3, radi_arch4, ra_asun, radi_usu_ante, radi_depe_radi, radicado_referencia_cliente, radi_usua_radi, codi_nivel, flag_nivel, carp_per, radi_leido, radi_cuentai, radi_tipo_deri, listo, sgd_tma_codigo, sgd_mtd_codigo, par_serv_secue, sgd_fld_codigo, radi_agend, radi_fech_agend, radi_fech_doc, sgd_doc_secuencia, sgd_pnufe_codi, sgd_eanu_codigo, sgd_not_codi, radi_fech_notif, sgd_tdec_codigo, sgd_apli_codi, sgd_ttr_codigo, usua_doc_ante, radi_fech_antetx, sgd_trad_codigo, fech_vcmto, tdoc_vcmto, sgd_termino_real, id_cont, sgd_spub_codigo, id_pais, medio_m, radi_nrr, numero_rm, numero_tran, firma_qr, tipo_usario_interes, doc_transferido, radi_fech_reasignado, radi_envio_correo, radi_docu_publico, radi_eje_tematico, radi_estado_pqrs, descripcion_asunto_pqrs, grupo_interes, servicio_pqr, radi_depe_ante) FROM stdin;
@@ -9351,7 +9351,7 @@ COPY public.radicado (radi_nume_radi, radi_fech_radi, tdoc_codi, trte_codi, mrec
 
 
 --
--- Data for Name: rango_edades_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: rango_edades_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.rango_edades_pqrs (id_rango_edades_pqrs, nombre_rango_edades_pqrs) FROM stdin;
@@ -9363,7 +9363,7 @@ COPY public.rango_edades_pqrs (id_rango_edades_pqrs, nombre_rango_edades_pqrs) F
 
 
 --
--- Data for Name: respuestas_usuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: respuestas_usuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.respuestas_usuario ("id_Respuestas_Usuario", id_pregunta, id_sgd_ciu_ciudadano, respuesta) FROM stdin;
@@ -9371,7 +9371,7 @@ COPY public.respuestas_usuario ("id_Respuestas_Usuario", id_pregunta, id_sgd_ciu
 
 
 --
--- Data for Name: rol_tipos_doc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: rol_tipos_doc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.rol_tipos_doc (cod_rol_tipos, cod_rol, cod_tp_tpdcumento, estado) FROM stdin;
@@ -11881,7 +11881,7 @@ COPY public.rol_tipos_doc (cod_rol_tipos, cod_rol, cod_tp_tpdcumento, estado) FR
 
 
 --
--- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.roles (cod_rol, nomb_rol, fecha, estado) FROM stdin;
@@ -11894,7 +11894,7 @@ COPY public.roles (cod_rol, nomb_rol, fecha, estado) FROM stdin;
 
 
 --
--- Data for Name: servicios_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: servicios_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.servicios_pqrs (id_servicio_pqrs, nombre_servicio_pqrs) FROM stdin;
@@ -11915,7 +11915,7 @@ COPY public.servicios_pqrs (id_servicio_pqrs, nombre_servicio_pqrs) FROM stdin;
 
 
 --
--- Data for Name: sgd_agen_agendados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_agen_agendados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_agen_agendados (sgd_agen_fech, sgd_agen_observacion, radi_nume_radi, usua_doc, depe_codi, sgd_agen_codigo, sgd_agen_fechplazo, sgd_agen_activo) FROM stdin;
@@ -11923,7 +11923,7 @@ COPY public.sgd_agen_agendados (sgd_agen_fech, sgd_agen_observacion, radi_nume_r
 
 
 --
--- Data for Name: sgd_anar_anexarg; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_anar_anexarg; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_anar_anexarg (sgd_anar_codi, anex_codigo, sgd_argd_codi, sgd_anar_argcod) FROM stdin;
@@ -11931,7 +11931,7 @@ COPY public.sgd_anar_anexarg (sgd_anar_codi, anex_codigo, sgd_argd_codi, sgd_ana
 
 
 --
--- Data for Name: sgd_anu_anulados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_anu_anulados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_anu_anulados (sgd_anu_id, sgd_anu_desc, radi_nume_radi, sgd_eanu_codi, sgd_anu_sol_fech, sgd_anu_fech, depe_codi, usua_doc, usua_codi, depe_codi_anu, usua_doc_anu, usua_codi_anu, usua_anu_acta, sgd_anu_path_acta, sgd_trad_codigo) FROM stdin;
@@ -11939,7 +11939,7 @@ COPY public.sgd_anu_anulados (sgd_anu_id, sgd_anu_desc, radi_nume_radi, sgd_eanu
 
 
 --
--- Data for Name: sgd_aper_adminperfiles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aper_adminperfiles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_aper_adminperfiles (sgd_aper_codigo, sgd_aper_descripcion) FROM stdin;
@@ -11947,7 +11947,7 @@ COPY public.sgd_aper_adminperfiles (sgd_aper_codigo, sgd_aper_descripcion) FROM 
 
 
 --
--- Data for Name: sgd_apli_aplintegra; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_apli_aplintegra; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_apli_aplintegra (sgd_apli_codi, sgd_apli_descrip, sgd_apli_lk1desc, sgd_apli_lk1, sgd_apli_lk2desc, sgd_apli_lk2, sgd_apli_lk3desc, sgd_apli_lk3, sgd_apli_lk4desc, sgd_apli_lk4) FROM stdin;
@@ -11956,7 +11956,7 @@ COPY public.sgd_apli_aplintegra (sgd_apli_codi, sgd_apli_descrip, sgd_apli_lk1de
 
 
 --
--- Data for Name: sgd_aplmen_aplimens; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aplmen_aplimens; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_aplmen_aplimens (sgd_aplmen_codi, sgd_apli_codi, sgd_aplmen_ref, sgd_aplmen_haciaorfeo, sgd_aplmen_desdeorfeo) FROM stdin;
@@ -11964,7 +11964,7 @@ COPY public.sgd_aplmen_aplimens (sgd_aplmen_codi, sgd_apli_codi, sgd_aplmen_ref,
 
 
 --
--- Data for Name: sgd_aplus_plicusua; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aplus_plicusua; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_aplus_plicusua (sgd_aplus_codi, sgd_apli_codi, usua_doc, sgd_trad_codigo, sgd_aplus_prioridad) FROM stdin;
@@ -11972,7 +11972,7 @@ COPY public.sgd_aplus_plicusua (sgd_aplus_codi, sgd_apli_codi, usua_doc, sgd_tra
 
 
 --
--- Data for Name: sgd_arch_depe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_arch_depe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_arch_depe (sgd_arch_depe, sgd_arch_edificio, sgd_arch_item, sgd_arch_id) FROM stdin;
@@ -11980,7 +11980,7 @@ COPY public.sgd_arch_depe (sgd_arch_depe, sgd_arch_edificio, sgd_arch_item, sgd_
 
 
 --
--- Data for Name: sgd_archivo_central; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_central; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_archivo_central (sgd_archivo_id, sgd_archivo_tipo, sgd_archivo_orden, sgd_archivo_fechai, sgd_archivo_demandado, sgd_archivo_demandante, sgd_archivo_cc_demandante, sgd_archivo_depe, sgd_archivo_zona, sgd_archivo_carro, sgd_archivo_cara, sgd_archivo_estante, sgd_archivo_entrepano, sgd_archivo_caja, sgd_archivo_unidocu, sgd_archivo_anexo, sgd_archivo_inder, sgd_archivo_path, sgd_archivo_year, sgd_archivo_rad, sgd_archivo_srd, sgd_archivo_sbrd, sgd_archivo_folios, sgd_archivo_mata, sgd_archivo_fechaf, sgd_archivo_prestamo, sgd_archivo_funprest, sgd_archivo_fechprest, sgd_archivo_fechprestf, depe_codi, sgd_archivo_usua, sgd_archivo_fech) FROM stdin;
@@ -11988,7 +11988,7 @@ COPY public.sgd_archivo_central (sgd_archivo_id, sgd_archivo_tipo, sgd_archivo_o
 
 
 --
--- Data for Name: sgd_archivo_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_archivo_fondo (sgd_archivo_id, sgd_archivo_tipo, sgd_archivo_orden, sgd_archivo_fechai, sgd_archivo_demandado, sgd_archivo_demandante, sgd_archivo_cc_demandante, sgd_archivo_depe, sgd_archivo_zona, sgd_archivo_carro, sgd_archivo_cara, sgd_archivo_estante, sgd_archivo_entrepano, sgd_archivo_caja, sgd_archivo_unidocu, sgd_archivo_anexo, sgd_archivo_inder, sgd_archivo_path, sgd_archivo_year, sgd_archivo_rad, sgd_archivo_srd, sgd_archivo_folios, sgd_archivo_mata, sgd_archivo_fechaf, sgd_archivo_prestamo, sgd_archivo_funprest, sgd_archivo_fechprest, sgd_archivo_fechprestf, depe_codi, sgd_archivo_usua, sgd_archivo_fech) FROM stdin;
@@ -11996,7 +11996,7 @@ COPY public.sgd_archivo_fondo (sgd_archivo_id, sgd_archivo_tipo, sgd_archivo_ord
 
 
 --
--- Data for Name: sgd_archivo_hist; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_hist; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_archivo_hist (depe_codi, hist_fech, usua_codi, sgd_archivo_rad, hist_obse, usua_doc, sgd_ttr_codigo, hist_id) FROM stdin;
@@ -12004,7 +12004,7 @@ COPY public.sgd_archivo_hist (depe_codi, hist_fech, usua_codi, sgd_archivo_rad, 
 
 
 --
--- Data for Name: sgd_argd_argdoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_argd_argdoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_argd_argdoc (sgd_argd_codi, sgd_pnufe_codi, sgd_argd_tabla, sgd_argd_tcodi, sgd_argd_tdes, sgd_argd_llist, sgd_argd_campo) FROM stdin;
@@ -12012,7 +12012,7 @@ COPY public.sgd_argd_argdoc (sgd_argd_codi, sgd_pnufe_codi, sgd_argd_tabla, sgd_
 
 
 --
--- Data for Name: sgd_argup_argudoctop; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_argup_argudoctop; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_argup_argudoctop (sgd_argup_codi, sgd_argup_desc, sgd_tpr_codigo) FROM stdin;
@@ -12020,7 +12020,7 @@ COPY public.sgd_argup_argudoctop (sgd_argup_codi, sgd_argup_desc, sgd_tpr_codigo
 
 
 --
--- Data for Name: sgd_auditoria; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_auditoria; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_auditoria (usua_doc, ip, tipo, tabla, isql, fecha) FROM stdin;
@@ -12036,7 +12036,7 @@ COPY public.sgd_auditoria (usua_doc, ip, tipo, tabla, isql, fecha) FROM stdin;
 
 
 --
--- Data for Name: sgd_camexp_campoexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_camexp_campoexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_camexp_campoexpediente (sgd_camexp_codigo, sgd_camexp_campo, sgd_parexp_codigo, sgd_camexp_fk, sgd_camexp_tablafk, sgd_camexp_campofk, sgd_camexp_campovalor, sgd_camexp_orden) FROM stdin;
@@ -12044,7 +12044,7 @@ COPY public.sgd_camexp_campoexpediente (sgd_camexp_codigo, sgd_camexp_campo, sgd
 
 
 --
--- Data for Name: sgd_carp_descripcion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_carp_descripcion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_carp_descripcion (sgd_carp_depecodi, sgd_carp_tiporad, sgd_carp_descr) FROM stdin;
@@ -12053,7 +12053,7 @@ COPY public.sgd_carp_descripcion (sgd_carp_depecodi, sgd_carp_tiporad, sgd_carp_
 
 
 --
--- Data for Name: sgd_cau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_cau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_cau_causal (sgd_cau_codigo, sgd_cau_descrip) FROM stdin;
@@ -12061,7 +12061,7 @@ COPY public.sgd_cau_causal (sgd_cau_codigo, sgd_cau_descrip) FROM stdin;
 
 
 --
--- Data for Name: sgd_caux_causales; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_caux_causales; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_caux_causales (sgd_caux_codigo, radi_nume_radi, sgd_dcau_codigo, sgd_ddca_codigo, sgd_caux_fecha, usua_doc) FROM stdin;
@@ -12069,7 +12069,7 @@ COPY public.sgd_caux_causales (sgd_caux_codigo, radi_nume_radi, sgd_dcau_codigo,
 
 
 --
--- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ciu_ciudadano (tdid_codi, sgd_ciu_codigo, sgd_ciu_nombre, sgd_ciu_direccion, sgd_ciu_apell1, sgd_ciu_apell2, sgd_ciu_telefono, sgd_ciu_email, muni_codi, dpto_codi, sgd_ciu_cedula, id_cont, id_pais, id_estado_civil_pqrs, genero_pqrs_id, id_users_pqrs, barrio, sgd_ciu_edad, sgd_ciu_ubicacion, trte_codi, tipo_poblacion) FROM stdin;
@@ -12078,7 +12078,7 @@ COPY public.sgd_ciu_ciudadano (tdid_codi, sgd_ciu_codigo, sgd_ciu_nombre, sgd_ci
 
 
 --
--- Data for Name: sgd_clta_clstarif; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_clta_clstarif; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_clta_clstarif (sgd_fenv_codigo, sgd_clta_codser, sgd_tar_codigo, sgd_clta_descrip, sgd_clta_pesdes, sgd_clta_peshast) FROM stdin;
@@ -12087,7 +12087,7 @@ COPY public.sgd_clta_clstarif (sgd_fenv_codigo, sgd_clta_codser, sgd_tar_codigo,
 
 
 --
--- Data for Name: sgd_cob_campobliga; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_cob_campobliga; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_cob_campobliga (sgd_cob_codi, sgd_cob_desc, sgd_cob_label, sgd_tidm_codi) FROM stdin;
@@ -12105,7 +12105,7 @@ COPY public.sgd_cob_campobliga (sgd_cob_codi, sgd_cob_desc, sgd_cob_label, sgd_t
 
 
 --
--- Data for Name: sgd_dcau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dcau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_dcau_causal (sgd_dcau_codigo, sgd_cau_codigo, sgd_dcau_descrip) FROM stdin;
@@ -12113,7 +12113,7 @@ COPY public.sgd_dcau_causal (sgd_dcau_codigo, sgd_cau_codigo, sgd_dcau_descrip) 
 
 
 --
--- Data for Name: sgd_ddca_ddsgrgdo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ddca_ddsgrgdo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ddca_ddsgrgdo (sgd_ddca_codigo, sgd_dcau_codigo, par_serv_secue, sgd_ddca_descrip) FROM stdin;
@@ -12121,7 +12121,7 @@ COPY public.sgd_ddca_ddsgrgdo (sgd_ddca_codigo, sgd_dcau_codigo, par_serv_secue,
 
 
 --
--- Data for Name: sgd_def_contactos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_contactos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_def_contactos (ctt_id, ctt_nombre, ctt_cargo, ctt_telefono, ctt_id_tipo, ctt_id_empresa) FROM stdin;
@@ -12129,7 +12129,7 @@ COPY public.sgd_def_contactos (ctt_id, ctt_nombre, ctt_cargo, ctt_telefono, ctt_
 
 
 --
--- Data for Name: sgd_def_continentes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_continentes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_def_continentes (id_cont, nombre_cont) FROM stdin;
@@ -12143,7 +12143,7 @@ COPY public.sgd_def_continentes (id_cont, nombre_cont) FROM stdin;
 
 
 --
--- Data for Name: sgd_def_paises; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_paises; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_def_paises (id_pais, id_cont, nombre_pais) FROM stdin;
@@ -12164,7 +12164,7 @@ COPY public.sgd_def_paises (id_pais, id_cont, nombre_pais) FROM stdin;
 
 
 --
--- Data for Name: sgd_deve_dev_envio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_deve_dev_envio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_deve_dev_envio (sgd_deve_codigo, sgd_deve_desc) FROM stdin;
@@ -12190,7 +12190,7 @@ COPY public.sgd_deve_dev_envio (sgd_deve_codigo, sgd_deve_desc) FROM stdin;
 
 
 --
--- Data for Name: sgd_dir_drecciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dir_drecciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_dir_drecciones (sgd_dir_codigo, sgd_dir_tipo, sgd_oem_codigo, sgd_ciu_codigo, radi_nume_radi, sgd_esp_codi, muni_codi, dpto_codi, sgd_dir_direccion, sgd_dir_telefono, sgd_dir_mail, sgd_sec_codigo, sgd_temporal_nombre, anex_codigo, sgd_anex_codigo, sgd_dir_nombre, sgd_doc_fun, sgd_dir_nomremdes, sgd_trd_codigo, sgd_dir_tdoc, sgd_dir_doc, id_pais, id_cont) FROM stdin;
@@ -12229,7 +12229,7 @@ COPY public.sgd_dir_drecciones (sgd_dir_codigo, sgd_dir_tipo, sgd_oem_codigo, sg
 
 
 --
--- Data for Name: sgd_dnufe_docnufe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dnufe_docnufe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_dnufe_docnufe (sgd_dnufe_codi, sgd_pnufe_codi, sgd_tpr_codigo, sgd_dnufe_label, trte_codi, sgd_dnufe_main, sgd_dnufe_path, sgd_dnufe_gerarq, anex_tipo_codi) FROM stdin;
@@ -12237,7 +12237,7 @@ COPY public.sgd_dnufe_docnufe (sgd_dnufe_codi, sgd_pnufe_codi, sgd_tpr_codigo, s
 
 
 --
--- Data for Name: sgd_dt_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dt_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_dt_radicado (radi_nume_radi, dias_termino) FROM stdin;
@@ -12277,7 +12277,7 @@ COPY public.sgd_dt_radicado (radi_nume_radi, dias_termino) FROM stdin;
 
 
 --
--- Data for Name: sgd_eanu_estanulacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_eanu_estanulacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_eanu_estanulacion (sgd_eanu_desc, sgd_eanu_codi) FROM stdin;
@@ -12289,7 +12289,7 @@ RADICADO IMPOSIBLE DE ANULAR	9
 
 
 --
--- Data for Name: sgd_einv_inventario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_einv_inventario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_einv_inventario (sgd_einv_codigo, sgd_depe_nomb, sgd_depe_codi, sgd_einv_expnum, sgd_einv_titulo, sgd_einv_unidad, sgd_einv_fech, sgd_einv_fechfin, sgd_einv_radicados, sgd_einv_folios, sgd_einv_nundocu, sgd_einv_nundocubodega, sgd_einv_caja, sgd_einv_cajabodega, sgd_einv_srd, sgd_einv_nomsrd, sgd_einv_sbrd, sgd_einv_nomsbrd, sgd_einv_retencion, sgd_einv_disfinal, sgd_einv_ubicacion, sgd_einv_observacion) FROM stdin;
@@ -12297,7 +12297,7 @@ COPY public.sgd_einv_inventario (sgd_einv_codigo, sgd_depe_nomb, sgd_depe_codi, 
 
 
 --
--- Data for Name: sgd_eit_items; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_eit_items; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_eit_items (sgd_eit_codigo, sgd_eit_cod_padre, sgd_eit_nombre, sgd_eit_sigla, codi_dpto, codi_muni) FROM stdin;
@@ -12310,7 +12310,7 @@ COPY public.sgd_eit_items (sgd_eit_codigo, sgd_eit_cod_padre, sgd_eit_nombre, sg
 
 
 --
--- Data for Name: sgd_ejes_tematicos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ejes_tematicos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ejes_tematicos (id_sgd_eje_tematico, nombre_eje_tematico, descripcion_eje_tematico, plazo_eje_tematico, tipo_plazo_eje_tematico, activo_eje_tematico) FROM stdin;
@@ -12567,7 +12567,7 @@ COPY public.sgd_ejes_tematicos (id_sgd_eje_tematico, nombre_eje_tematico, descri
 
 
 --
--- Data for Name: sgd_ejes_tematicos_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ejes_tematicos_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ejes_tematicos_dependencia (id_sgd_eje_tematico_dependencia, id_sgd_eje_tematico, depe_codi, estado_eje_tematico) FROM stdin;
@@ -12575,7 +12575,7 @@ COPY public.sgd_ejes_tematicos_dependencia (id_sgd_eje_tematico_dependencia, id_
 
 
 --
--- Data for Name: sgd_empus_empusuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_empus_empusuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_empus_empusuario (usua_login, identificador_empresa) FROM stdin;
@@ -12583,7 +12583,7 @@ COPY public.sgd_empus_empusuario (usua_login, identificador_empresa) FROM stdin;
 
 
 --
--- Data for Name: sgd_ent_entidades; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ent_entidades; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ent_entidades (sgd_ent_nit, sgd_ent_codsuc, sgd_ent_pias, dpto_codi, muni_codi, sgd_ent_descrip, sgd_ent_direccion, sgd_ent_telefono) FROM stdin;
@@ -12591,7 +12591,7 @@ COPY public.sgd_ent_entidades (sgd_ent_nit, sgd_ent_codsuc, sgd_ent_pias, dpto_c
 
 
 --
--- Data for Name: sgd_enve_envioespecial; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_enve_envioespecial; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_enve_envioespecial (sgd_fenv_codigo, sgd_enve_valorl, sgd_enve_valorn, sgd_enve_desc) FROM stdin;
@@ -12599,7 +12599,7 @@ COPY public.sgd_enve_envioespecial (sgd_fenv_codigo, sgd_enve_valorl, sgd_enve_v
 
 
 --
--- Data for Name: sgd_estc_estconsolid; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_estc_estconsolid; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_estc_estconsolid (sgd_estc_codigo, sgd_tpr_codigo, dep_nombre, depe_codi, sgd_estc_ctotal, sgd_estc_centramite, sgd_estc_csinriesgo, sgd_estc_criesgomedio, sgd_estc_criesgoalto, sgd_estc_ctramitados, sgd_estc_centermino, sgd_estc_cfueratermino, sgd_estc_fechgen, sgd_estc_fechini, sgd_estc_fechfin, sgd_estc_fechiniresp, sgd_estc_fechfinresp, sgd_estc_dsinriesgo, sgd_estc_driesgomegio, sgd_estc_driesgoalto, sgd_estc_dtermino, sgd_estc_grupgenerado) FROM stdin;
@@ -12607,7 +12607,7 @@ COPY public.sgd_estc_estconsolid (sgd_estc_codigo, sgd_tpr_codigo, dep_nombre, d
 
 
 --
--- Data for Name: sgd_estinst_estadoinstancia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_estinst_estadoinstancia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_estinst_estadoinstancia (sgd_estinst_codi, sgd_apli_codi, sgd_instorf_codi, sgd_estinst_valor, sgd_estinst_habilita, sgd_estinst_mensaje) FROM stdin;
@@ -12615,7 +12615,7 @@ COPY public.sgd_estinst_estadoinstancia (sgd_estinst_codi, sgd_apli_codi, sgd_in
 
 
 --
--- Data for Name: sgd_exp_expediente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_exp_expediente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_exp_expediente (sgd_exp_numero, radi_nume_radi, sgd_exp_fech, sgd_exp_fech_mod, depe_codi, usua_codi, usua_doc, sgd_exp_estado, sgd_exp_titulo, sgd_exp_asunto, sgd_exp_carpeta, sgd_exp_ufisica, sgd_exp_isla, sgd_exp_estante, sgd_exp_caja, sgd_exp_fech_arch, sgd_srd_codigo, sgd_sbrd_codigo, sgd_fexp_codigo, sgd_exp_subexpediente, sgd_exp_archivo, sgd_exp_unicon, sgd_exp_fechfin, sgd_exp_folios, sgd_exp_rete, sgd_exp_entrepa, radi_usua_arch, sgd_exp_edificio, sgd_exp_caja_bodega, sgd_exp_carro, sgd_exp_carpeta_bodega, sgd_exp_privado, sgd_exp_cd, sgd_exp_nref, sgd_sexp_paraexp1, id_expediente) FROM stdin;
@@ -12637,7 +12637,7 @@ COPY public.sgd_exp_expediente (sgd_exp_numero, radi_nume_radi, sgd_exp_fech, sg
 
 
 --
--- Data for Name: sgd_fars_faristas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fars_faristas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_fars_faristas (sgd_fars_codigo, sgd_pexp_codigo, sgd_fexp_codigoini, sgd_fexp_codigofin, sgd_fars_diasminimo, sgd_fars_diasmaximo, sgd_fars_desc, sgd_trad_codigo, sgd_srd_codigo, sgd_sbrd_codigo, sgd_fars_tipificacion, sgd_tpr_codigo, sgd_fars_automatico, sgd_fars_rolgeneral) FROM stdin;
@@ -12645,7 +12645,7 @@ COPY public.sgd_fars_faristas (sgd_fars_codigo, sgd_pexp_codigo, sgd_fexp_codigo
 
 
 --
--- Data for Name: sgd_fenv_frmenvio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fenv_frmenvio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_fenv_frmenvio (sgd_fenv_codigo, sgd_fenv_descrip, sgd_fenv_planilla, sgd_fenv_estado) FROM stdin;
@@ -12654,7 +12654,7 @@ COPY public.sgd_fenv_frmenvio (sgd_fenv_codigo, sgd_fenv_descrip, sgd_fenv_plani
 
 
 --
--- Data for Name: sgd_fexp_flujoexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fexp_flujoexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_fexp_flujoexpedientes (sgd_fexp_codigo, sgd_pexp_codigo, sgd_fexp_orden, sgd_fexp_terminos, sgd_fexp_imagen, sgd_fexp_descrip) FROM stdin;
@@ -12663,7 +12663,7 @@ COPY public.sgd_fexp_flujoexpedientes (sgd_fexp_codigo, sgd_pexp_codigo, sgd_fex
 
 
 --
--- Data for Name: sgd_firmas_qr; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_firmas_qr; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_firmas_qr (radi_nume_radi, usua_login, usua_nomb, usua_doc, depe_codi, firma_fecha, permiso_firma, usua_codi) FROM stdin;
@@ -12677,7 +12677,7 @@ COPY public.sgd_firmas_qr (radi_nume_radi, usua_login, usua_nomb, usua_doc, depe
 
 
 --
--- Data for Name: sgd_firrad_firmarads; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_firrad_firmarads; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_firrad_firmarads (sgd_firrad_id, radi_nume_radi, usua_doc, sgd_firrad_firma, sgd_firrad_fecha, sgd_firrad_docsolic, sgd_firrad_fechsolic, sgd_firrad_pk) FROM stdin;
@@ -12685,7 +12685,7 @@ COPY public.sgd_firrad_firmarads (sgd_firrad_id, radi_nume_radi, usua_doc, sgd_f
 
 
 --
--- Data for Name: sgd_fld_flujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fld_flujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_fld_flujodoc (sgd_fld_codigo, sgd_fld_desc, sgd_tpr_codigo, sgd_fld_imagen, sgd_fld_grupoweb) FROM stdin;
@@ -12693,7 +12693,7 @@ COPY public.sgd_fld_flujodoc (sgd_fld_codigo, sgd_fld_desc, sgd_tpr_codigo, sgd_
 
 
 --
--- Data for Name: sgd_fun_funciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fun_funciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_fun_funciones (sgd_fun_codigo, sgd_fun_descrip, sgd_fun_fech_ini, sgd_fun_fech_fin) FROM stdin;
@@ -12701,7 +12701,7 @@ COPY public.sgd_fun_funciones (sgd_fun_codigo, sgd_fun_descrip, sgd_fun_fech_ini
 
 
 --
--- Data for Name: sgd_hfld_histflujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_hfld_histflujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_hfld_histflujodoc (sgd_hfld_codigo, sgd_fexp_codigo, sgd_exp_fechflujoant, sgd_hfld_fech, sgd_exp_numero, radi_nume_radi, usua_doc, usua_codi, depe_codi, sgd_ttr_codigo, sgd_fexp_observa, sgd_hfld_observa, sgd_fars_codigo, sgd_hfld_automatico) FROM stdin;
@@ -12957,7 +12957,7 @@ COPY public.sgd_hfld_histflujodoc (sgd_hfld_codigo, sgd_fexp_codigo, sgd_exp_fec
 
 
 --
--- Data for Name: sgd_hmtd_hismatdoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_hmtd_hismatdoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_hmtd_hismatdoc (sgd_hmtd_codigo, sgd_hmtd_fecha, radi_nume_radi, usua_codi, sgd_hmtd_obse, usua_doc, depe_codi, sgd_mtd_codigo) FROM stdin;
@@ -12965,7 +12965,7 @@ COPY public.sgd_hmtd_hismatdoc (sgd_hmtd_codigo, sgd_hmtd_fecha, radi_nume_radi,
 
 
 --
--- Data for Name: sgd_instorf_instanciasorfeo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_instorf_instanciasorfeo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_instorf_instanciasorfeo (sgd_instorf_codi, sgd_instorf_desc) FROM stdin;
@@ -12973,7 +12973,7 @@ COPY public.sgd_instorf_instanciasorfeo (sgd_instorf_codi, sgd_instorf_desc) FRO
 
 
 --
--- Data for Name: sgd_lip_linkip; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_lip_linkip; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_lip_linkip (sgd_lip_id, sgd_lip_ipini, sgd_lip_ipfin, sgd_lip_dirintranet, depe_codi, sgd_lip_arch, sgd_lip_diascache, sgd_lip_rutaftp, sgd_lip_servftp, sgd_lip_usbd, sgd_lip_nombd, sgd_lip_pwdbd, sgd_lip_usftp, sgd_lip_pwdftp) FROM stdin;
@@ -12981,7 +12981,7 @@ COPY public.sgd_lip_linkip (sgd_lip_id, sgd_lip_ipini, sgd_lip_ipfin, sgd_lip_di
 
 
 --
--- Data for Name: sgd_mat_matriz; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mat_matriz; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_mat_matriz (sgd_mat_codigo, depe_codi, sgd_fun_codigo, sgd_prc_codigo, sgd_prd_codigo, sgd_mat_fech_ini, sgd_mat_fech_fin, sgd_mat_peso_prd) FROM stdin;
@@ -12989,7 +12989,7 @@ COPY public.sgd_mat_matriz (sgd_mat_codigo, depe_codi, sgd_fun_codigo, sgd_prc_c
 
 
 --
--- Data for Name: sgd_mpes_mddpeso; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mpes_mddpeso; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_mpes_mddpeso (sgd_mpes_codigo, sgd_mpes_descrip) FROM stdin;
@@ -12997,7 +12997,7 @@ COPY public.sgd_mpes_mddpeso (sgd_mpes_codigo, sgd_mpes_descrip) FROM stdin;
 
 
 --
--- Data for Name: sgd_mrd_matrird; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mrd_matrird; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_mrd_matrird (sgd_mrd_codigo, depe_codi, sgd_srd_codigo, sgd_sbrd_codigo, sgd_tpr_codigo, soporte, sgd_mrd_fechini, sgd_mrd_fechfin, sgd_mrd_esta) FROM stdin;
@@ -13040,7 +13040,7 @@ COPY public.sgd_mrd_matrird (sgd_mrd_codigo, depe_codi, sgd_srd_codigo, sgd_sbrd
 
 
 --
--- Data for Name: sgd_msdep_msgdep; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_msdep_msgdep; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_msdep_msgdep (sgd_msdep_codi, depe_codi, sgd_msg_codi) FROM stdin;
@@ -13048,7 +13048,7 @@ COPY public.sgd_msdep_msgdep (sgd_msdep_codi, depe_codi, sgd_msg_codi) FROM stdi
 
 
 --
--- Data for Name: sgd_msg_mensaje; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_msg_mensaje; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_msg_mensaje (sgd_msg_codi, sgd_tme_codi, sgd_msg_desc, sgd_msg_fechdesp, sgd_msg_url, sgd_msg_veces, sgd_msg_ancho, sgd_msg_largo) FROM stdin;
@@ -13056,7 +13056,7 @@ COPY public.sgd_msg_mensaje (sgd_msg_codi, sgd_tme_codi, sgd_msg_desc, sgd_msg_f
 
 
 --
--- Data for Name: sgd_mtd_matriz_doc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mtd_matriz_doc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_mtd_matriz_doc (sgd_mtd_codigo, sgd_mat_codigo, sgd_tpr_codigo) FROM stdin;
@@ -13064,7 +13064,7 @@ COPY public.sgd_mtd_matriz_doc (sgd_mtd_codigo, sgd_mat_codigo, sgd_tpr_codigo) 
 
 
 --
--- Data for Name: sgd_noh_nohabiles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_noh_nohabiles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_noh_nohabiles (noh_fecha) FROM stdin;
@@ -13351,7 +13351,7 @@ COPY public.sgd_noh_nohabiles (noh_fecha) FROM stdin;
 
 
 --
--- Data for Name: sgd_not_notificacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_not_notificacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_not_notificacion (sgd_not_codi, sgd_not_descrip) FROM stdin;
@@ -13359,7 +13359,7 @@ COPY public.sgd_not_notificacion (sgd_not_codi, sgd_not_descrip) FROM stdin;
 
 
 --
--- Data for Name: sgd_ntrd_notifrad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ntrd_notifrad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ntrd_notifrad (radi_nume_radi, sgd_not_codi, sgd_ntrd_notificador, sgd_ntrd_notificado, sgd_ntrd_fecha_not, sgd_ntrd_num_edicto, sgd_ntrd_fecha_fija, sgd_ntrd_fecha_desfija, sgd_ntrd_observaciones) FROM stdin;
@@ -13367,7 +13367,7 @@ COPY public.sgd_ntrd_notifrad (radi_nume_radi, sgd_not_codi, sgd_ntrd_notificado
 
 
 --
--- Data for Name: sgd_oem_oempresas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_oem_oempresas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_oem_oempresas (sgd_oem_codigo, tdid_codi, sgd_oem_oempresa, sgd_oem_rep_legal, sgd_oem_nit, sgd_oem_sigla, muni_codi, dpto_codi, sgd_oem_direccion, sgd_oem_telefono, id_cont, id_pais, email) FROM stdin;
@@ -13376,7 +13376,7 @@ COPY public.sgd_oem_oempresas (sgd_oem_codigo, tdid_codi, sgd_oem_oempresa, sgd_
 
 
 --
--- Data for Name: sgd_panu_peranulados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_panu_peranulados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_panu_peranulados (sgd_panu_codi, sgd_panu_desc) FROM stdin;
@@ -13384,7 +13384,7 @@ COPY public.sgd_panu_peranulados (sgd_panu_codi, sgd_panu_desc) FROM stdin;
 
 
 --
--- Data for Name: sgd_parametro; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_parametro; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_parametro (param_nomb, param_codi, param_valor) FROM stdin;
@@ -13403,7 +13403,7 @@ PRESTAMO_ESTADO	1	Solicitado
 
 
 --
--- Data for Name: sgd_parexp_paramexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_parexp_paramexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_parexp_paramexpediente (sgd_parexp_codigo, depe_codi, sgd_parexp_tabla, sgd_parexp_etiqueta, sgd_parexp_orden, sgd_parexp_editable) FROM stdin;
@@ -13413,7 +13413,7 @@ COPY public.sgd_parexp_paramexpediente (sgd_parexp_codigo, depe_codi, sgd_parexp
 
 
 --
--- Data for Name: sgd_pen_pensionados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pen_pensionados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_pen_pensionados (tdid_codi, sgd_ciu_codigo, sgd_ciu_nombre, sgd_ciu_direccion, sgd_ciu_apell1, sgd_ciu_apell2, sgd_ciu_telefono, sgd_ciu_email, muni_codi, dpto_codi, sgd_ciu_cedula, id_cont, id_pais) FROM stdin;
@@ -13421,7 +13421,7 @@ COPY public.sgd_pen_pensionados (tdid_codi, sgd_ciu_codigo, sgd_ciu_nombre, sgd_
 
 
 --
--- Data for Name: sgd_pexp_procexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pexp_procexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_pexp_procexpedientes (sgd_pexp_codigo, sgd_pexp_descrip, sgd_pexp_terminos, sgd_srd_codigo, sgd_sbrd_codigo, sgd_pexp_automatico, sgd_pexp_tieneflujo) FROM stdin;
@@ -13430,7 +13430,7 @@ COPY public.sgd_pexp_procexpedientes (sgd_pexp_codigo, sgd_pexp_descrip, sgd_pex
 
 
 --
--- Data for Name: sgd_pnufe_procnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pnufe_procnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_pnufe_procnumfe (sgd_pnufe_codi, sgd_tpr_codigo, sgd_pnufe_descrip, sgd_pnufe_serie) FROM stdin;
@@ -13438,7 +13438,7 @@ COPY public.sgd_pnufe_procnumfe (sgd_pnufe_codi, sgd_tpr_codigo, sgd_pnufe_descr
 
 
 --
--- Data for Name: sgd_pnun_procenum; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pnun_procenum; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_pnun_procenum (sgd_pnun_codi, sgd_pnufe_codi, depe_codi, sgd_pnun_prepone) FROM stdin;
@@ -13446,7 +13446,7 @@ COPY public.sgd_pnun_procenum (sgd_pnun_codi, sgd_pnufe_codi, depe_codi, sgd_pnu
 
 
 --
--- Data for Name: sgd_prc_proceso; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_prc_proceso; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_prc_proceso (sgd_prc_codigo, sgd_prc_descrip, sgd_prc_fech_ini, sgd_prc_fech_fin) FROM stdin;
@@ -13454,7 +13454,7 @@ COPY public.sgd_prc_proceso (sgd_prc_codigo, sgd_prc_descrip, sgd_prc_fech_ini, 
 
 
 --
--- Data for Name: sgd_prd_prcdmentos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_prd_prcdmentos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_prd_prcdmentos (sgd_prd_codigo, sgd_prd_descrip, sgd_prd_fech_ini, sgd_prd_fech_fin) FROM stdin;
@@ -13462,7 +13462,7 @@ COPY public.sgd_prd_prcdmentos (sgd_prd_codigo, sgd_prd_descrip, sgd_prd_fech_in
 
 
 --
--- Data for Name: sgd_rda_retdoca; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_rda_retdoca; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_rda_retdoca (anex_radi_nume, anex_codigo, radi_nume_salida, anex_borrado, sgd_mrd_codigo, depe_codi, usua_codi, usua_doc, sgd_rda_fech, sgd_deve_codigo, anex_solo_lect, anex_radi_fech, anex_estado, anex_nomb_archivo, anex_tipo, sgd_dir_tipo) FROM stdin;
@@ -13470,7 +13470,7 @@ COPY public.sgd_rda_retdoca (anex_radi_nume, anex_codigo, radi_nume_salida, anex
 
 
 --
--- Data for Name: sgd_rdf_retdocf; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_rdf_retdocf; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_rdf_retdocf (sgd_mrd_codigo, radi_nume_radi, depe_codi, usua_codi, usua_doc, sgd_rdf_fech) FROM stdin;
@@ -13490,7 +13490,7 @@ COPY public.sgd_rdf_retdocf (sgd_mrd_codigo, radi_nume_radi, depe_codi, usua_cod
 
 
 --
--- Data for Name: sgd_renv_regenvio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_renv_regenvio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_renv_regenvio (sgd_renv_codigo, sgd_fenv_codigo, sgd_renv_fech, radi_nume_sal, sgd_renv_destino, sgd_renv_telefono, sgd_renv_mail, sgd_renv_peso, sgd_renv_valor, sgd_renv_certificado, sgd_renv_estado, usua_doc, sgd_renv_nombre, sgd_rem_destino, sgd_dir_codigo, sgd_renv_planilla, sgd_renv_fech_sal, depe_codi, sgd_dir_tipo, radi_nume_grupo, sgd_renv_dir, sgd_renv_depto, sgd_renv_mpio, sgd_renv_tel, sgd_renv_cantidad, sgd_renv_tipo, sgd_renv_observa, sgd_renv_grupo, sgd_deve_codigo, sgd_deve_fech, sgd_renv_valortotal, sgd_renv_valistamiento, sgd_renv_vdescuento, sgd_renv_vadicional, sgd_depe_genera, sgd_renv_pais, sgd_renv_guia) FROM stdin;
@@ -13505,7 +13505,7 @@ COPY public.sgd_renv_regenvio (sgd_renv_codigo, sgd_fenv_codigo, sgd_renv_fech, 
 
 
 --
--- Data for Name: sgd_rmr_radmasivre; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_rmr_radmasivre; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_rmr_radmasivre (sgd_rmr_grupo, sgd_rmr_radi) FROM stdin;
@@ -13513,7 +13513,7 @@ COPY public.sgd_rmr_radmasivre (sgd_rmr_grupo, sgd_rmr_radi) FROM stdin;
 
 
 --
--- Data for Name: sgd_sbrd_subserierd; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_sbrd_subserierd; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_sbrd_subserierd (sgd_srd_codigo, sgd_sbrd_codigo, sgd_sbrd_descrip, sgd_sbrd_fechini, sgd_sbrd_fechfin, sgd_sbrd_tiemag, sgd_sbrd_tiemac, sgd_sbrd_dispfin, sgd_sbrd_soporte, sgd_sbrd_procedi, id_tabla) FROM stdin;
@@ -13781,7 +13781,7 @@ COPY public.sgd_sbrd_subserierd (sgd_srd_codigo, sgd_sbrd_codigo, sgd_sbrd_descr
 
 
 --
--- Data for Name: sgd_sed_sede; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_sed_sede; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_sed_sede (sgd_sed_codi, sgd_sed_desc) FROM stdin;
@@ -13789,7 +13789,7 @@ COPY public.sgd_sed_sede (sgd_sed_codi, sgd_sed_desc) FROM stdin;
 
 
 --
--- Data for Name: sgd_senuf_secnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_senuf_secnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_senuf_secnumfe (sgd_senuf_codi, sgd_pnufe_codi, depe_codi, sgd_senuf_sec) FROM stdin;
@@ -13797,7 +13797,7 @@ COPY public.sgd_senuf_secnumfe (sgd_senuf_codi, sgd_pnufe_codi, depe_codi, sgd_s
 
 
 --
--- Data for Name: sgd_sexp_secexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_sexp_secexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_sexp_secexpedientes (sgd_exp_numero, sgd_srd_codigo, sgd_sbrd_codigo, sgd_sexp_secuencia, depe_codi, usua_doc, sgd_sexp_fech, sgd_fexp_codigo, sgd_sexp_ano, usua_doc_responsable, sgd_sexp_parexp1, sgd_sexp_parexp2, sgd_sexp_parexp3, sgd_sexp_parexp4, sgd_sexp_parexp5, sgd_pexp_codigo, sgd_exp_fech_arch, sgd_fld_codigo, sgd_exp_fechflujoant, sgd_mrd_codigo, sgd_exp_subexpediente, sgd_exp_privado, sgd_sexp_estado) FROM stdin;
@@ -13809,7 +13809,7 @@ COPY public.sgd_sexp_secexpedientes (sgd_exp_numero, sgd_srd_codigo, sgd_sbrd_co
 
 
 --
--- Data for Name: sgd_srd_seriesrd; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_srd_seriesrd; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_srd_seriesrd (sgd_srd_codigo, sgd_srd_descrip, sgd_srd_fechini, sgd_srd_fechfin) FROM stdin;
@@ -13849,7 +13849,7 @@ COPY public.sgd_srd_seriesrd (sgd_srd_codigo, sgd_srd_descrip, sgd_srd_fechini, 
 
 
 --
--- Data for Name: sgd_tar_tarifas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tar_tarifas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tar_tarifas (sgd_fenv_codigo, sgd_tar_codser, sgd_tar_codigo, sgd_tar_valenv1, sgd_tar_valenv2, sgd_tar_valenv1g1, sgd_clta_codser, sgd_tar_valenv2g2, sgd_clta_descrip) FROM stdin;
@@ -13866,7 +13866,7 @@ COPY public.sgd_tar_tarifas (sgd_fenv_codigo, sgd_tar_codser, sgd_tar_codigo, sg
 
 
 --
--- Data for Name: sgd_tdec_tipodecision; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tdec_tipodecision; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tdec_tipodecision (sgd_apli_codi, sgd_tdec_codigo, sgd_tdec_descrip, sgd_tdec_sancionar, sgd_tdec_firmeza, sgd_tdec_versancion, sgd_tdec_showmenu, sgd_tdec_updnotif, sgd_tdec_veragota) FROM stdin;
@@ -13874,7 +13874,7 @@ COPY public.sgd_tdec_tipodecision (sgd_apli_codi, sgd_tdec_codigo, sgd_tdec_desc
 
 
 --
--- Data for Name: sgd_tid_tipdecision; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tid_tipdecision; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tid_tipdecision (sgd_tid_codi, sgd_tid_desc, sgd_tpr_codigo, sgd_pexp_codigo, sgd_tpr_codigop) FROM stdin;
@@ -13882,7 +13882,7 @@ COPY public.sgd_tid_tipdecision (sgd_tid_codi, sgd_tid_desc, sgd_tpr_codigo, sgd
 
 
 --
--- Data for Name: sgd_tidm_tidocmasiva; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tidm_tidocmasiva; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tidm_tidocmasiva (sgd_tidm_codi, sgd_tidm_desc) FROM stdin;
@@ -13892,7 +13892,7 @@ COPY public.sgd_tidm_tidocmasiva (sgd_tidm_codi, sgd_tidm_desc) FROM stdin;
 
 
 --
--- Data for Name: sgd_tip3_tipotercero; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tip3_tipotercero; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tip3_tipotercero (sgd_tip3_codigo, sgd_dir_tipo, sgd_tip3_nombre, sgd_tip3_desc, sgd_tip3_imgpestana, sgd_tpr_tp1, sgd_tpr_tp2, sgd_tpr_tp4) FROM stdin;
@@ -13901,7 +13901,7 @@ COPY public.sgd_tip3_tipotercero (sgd_tip3_codigo, sgd_dir_tipo, sgd_tip3_nombre
 
 
 --
--- Data for Name: sgd_tma_temas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tma_temas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tma_temas (sgd_tma_codigo, depe_codi, sgd_prc_codigo, sgd_tma_descrip) FROM stdin;
@@ -13909,7 +13909,7 @@ COPY public.sgd_tma_temas (sgd_tma_codigo, depe_codi, sgd_prc_codigo, sgd_tma_de
 
 
 --
--- Data for Name: sgd_tme_tipmen; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tme_tipmen; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tme_tipmen (sgd_tme_codi, sgd_tme_desc) FROM stdin;
@@ -13917,7 +13917,7 @@ COPY public.sgd_tme_tipmen (sgd_tme_codi, sgd_tme_desc) FROM stdin;
 
 
 --
--- Data for Name: sgd_tpr_tpdcumento; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tpr_tpdcumento; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tpr_tpdcumento (sgd_tpr_codigo, sgd_tpr_descrip, sgd_tpr_termino, sgd_tpr_tpuso, sgd_tpr_numera, sgd_tpr_radica, sgd_tpr_tp1, sgd_tpr_tp2, sgd_tpr_estado, sgd_termino_real, sgd_tpr_web, sgd_tpr_tiptermino, sgd_tpr_tp4) FROM stdin;
@@ -14428,7 +14428,7 @@ COPY public.sgd_tpr_tpdcumento (sgd_tpr_codigo, sgd_tpr_descrip, sgd_tpr_termino
 
 
 --
--- Data for Name: sgd_trad_tiporad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_trad_tiporad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_trad_tiporad (sgd_trad_codigo, sgd_trad_descr, sgd_trad_icono, sgd_trad_diasbloqueo, sgd_trad_genradsal, tiporadi_email, mostrar_como_tipo) FROM stdin;
@@ -14439,7 +14439,7 @@ COPY public.sgd_trad_tiporad (sgd_trad_codigo, sgd_trad_descr, sgd_trad_icono, s
 
 
 --
--- Data for Name: sgd_transfe_documentales; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_transfe_documentales; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_transfe_documentales (id_trans, sgd_exp_numero, sgd_srd_codigo, sgd_sbrd_codigo, sgd_tpr_codigo, radi_nume_radi, fecha_archivado, depe_codi_arch, usua_codi_arch, fecha_transferencia, depe_codi_trans, usua_codi_trans, nombre_archivo) FROM stdin;
@@ -14450,7 +14450,7 @@ COPY public.sgd_transfe_documentales (id_trans, sgd_exp_numero, sgd_srd_codigo, 
 
 
 --
--- Data for Name: sgd_ttr_transaccion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ttr_transaccion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ttr_transaccion (sgd_ttr_codigo, sgd_ttr_descrip) FROM stdin;
@@ -14516,7 +14516,7 @@ COPY public.sgd_ttr_transaccion (sgd_ttr_codigo, sgd_ttr_descrip) FROM stdin;
 
 
 --
--- Data for Name: sgd_tvd_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tvd_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tvd_dependencia (sgd_depe_codi, sgd_depe_nombre, sgd_depe_fechini, sgd_depe_fechfin) FROM stdin;
@@ -14524,7 +14524,7 @@ COPY public.sgd_tvd_dependencia (sgd_depe_codi, sgd_depe_nombre, sgd_depe_fechin
 
 
 --
--- Data for Name: sgd_tvd_series; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tvd_series; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_tvd_series (sgd_depe_codi, sgd_stvd_codi, sgd_stvd_nombre, sgd_stvd_ac, sgd_stvd_dispfin, sgd_stvd_proc) FROM stdin;
@@ -14532,7 +14532,7 @@ COPY public.sgd_tvd_series (sgd_depe_codi, sgd_stvd_codi, sgd_stvd_nombre, sgd_s
 
 
 --
--- Data for Name: sgd_ush_usuhistorico; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ush_usuhistorico; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_ush_usuhistorico (sgd_ush_admcod, sgd_ush_admdep, sgd_ush_admdoc, sgd_ush_usucod, sgd_ush_usudep, sgd_ush_usudoc, sgd_ush_modcod, sgd_ush_fechevento, sgd_ush_usulogin) FROM stdin;
@@ -14831,7 +14831,7 @@ COPY public.sgd_ush_usuhistorico (sgd_ush_admcod, sgd_ush_admdep, sgd_ush_admdoc
 
 
 --
--- Data for Name: sgd_usm_usumodifica; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_usm_usumodifica; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sgd_usm_usumodifica (sgd_usm_modcod, sgd_usm_moddescr) FROM stdin;
@@ -14896,7 +14896,7 @@ COPY public.sgd_usm_usumodifica (sgd_usm_modcod, sgd_usm_moddescr) FROM stdin;
 
 
 --
--- Data for Name: sphinx_index_meta; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sphinx_index_meta; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sphinx_index_meta (index_name, max_id, last_update) FROM stdin;
@@ -14905,7 +14905,7 @@ sph_idx_posts_main	1	2023-08-17 09:10:10.60358-05
 
 
 --
--- Data for Name: sphinx_index_remove; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sphinx_index_remove; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.sphinx_index_remove (id, indice, estado, fecha_creacion, fecha_ejecucion, identificador) FROM stdin;
@@ -14913,7 +14913,7 @@ COPY public.sphinx_index_remove (id, indice, estado, fecha_creacion, fecha_ejecu
 
 
 --
--- Data for Name: tipo_doc_identificacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_doc_identificacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipo_doc_identificacion (tdid_codi, tdid_desc) FROM stdin;
@@ -14927,7 +14927,7 @@ COPY public.tipo_doc_identificacion (tdid_codi, tdid_desc) FROM stdin;
 
 
 --
--- Data for Name: tipo_poblacion_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_poblacion_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipo_poblacion_pqrs (id_tp_pqrs, tipo_p_pqrs) FROM stdin;
@@ -14951,7 +14951,7 @@ COPY public.tipo_poblacion_pqrs (id_tp_pqrs, tipo_p_pqrs) FROM stdin;
 
 
 --
--- Data for Name: tipo_remitente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_remitente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipo_remitente (trte_codi, trte_desc, aplica_pqrs) FROM stdin;
@@ -14965,7 +14965,7 @@ COPY public.tipo_remitente (trte_codi, trte_desc, aplica_pqrs) FROM stdin;
 
 
 --
--- Data for Name: tipo_tratamiento_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_tratamiento_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipo_tratamiento_pqrs (id_tipo_t_pqrs, tipo_t_pqrs) FROM stdin;
@@ -14977,7 +14977,7 @@ COPY public.tipo_tratamiento_pqrs (id_tipo_t_pqrs, tipo_t_pqrs) FROM stdin;
 
 
 --
--- Data for Name: tipo_usuario_grupo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_usuario_grupo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipo_usuario_grupo (id_grupo_tipo_usuario, nombre_tipo_usuario, estdo_tipo_usuario) FROM stdin;
@@ -14987,7 +14987,7 @@ COPY public.tipo_usuario_grupo (id_grupo_tipo_usuario, nombre_tipo_usuario, estd
 
 
 --
--- Data for Name: tipos_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipos_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.tipos_comunicaciones (id_tipos_comunicaciones, nombre_tipos_comunicaciones) FROM stdin;
@@ -14998,7 +14998,7 @@ COPY public.tipos_comunicaciones (id_tipos_comunicaciones, nombre_tipos_comunica
 
 
 --
--- Data for Name: ubicacion_fisica; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: ubicacion_fisica; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.ubicacion_fisica (ubic_depe_radi, ubic_depe_arch) FROM stdin;
@@ -15006,7 +15006,7 @@ COPY public.ubicacion_fisica (ubic_depe_radi, ubic_depe_arch) FROM stdin;
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public."user" (id, username, auth_key, password_hash, password_reset_token, email, status, created_at, updated_at, verification_token, security_questions) FROM stdin;
@@ -15015,7 +15015,7 @@ COPY public."user" (id, username, auth_key, password_hash, password_reset_token,
 
 
 --
--- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.usuario (usua_codi, depe_codi, usua_login, usua_fech_crea, usua_pasw, usua_esta, usua_nomb, perm_radi, usua_admin, usua_nuevo, usua_doc, codi_nivel, usua_sesion, usua_fech_sesion, usua_ext, usua_nacim, usua_email, usua_at, usua_piso, perm_radi_sal, usua_admin_archivo, usua_masiva, usua_perm_dev, usua_perm_numera_res, usua_doc_suip, usua_perm_numeradoc, sgd_panu_codi, usua_prad_tp1, usua_prad_tp2, usua_perm_envios, usua_perm_modifica, usua_perm_impresion, sgd_aper_codigo, usu_telefono1, usua_encuesta, sgd_perm_estadistica, usua_perm_sancionados, usua_admin_sistema, usua_perm_trd, usua_perm_firma, usua_perm_prestamo, usuario_publico, usuario_reasignar, usua_perm_notifica, usua_perm_expediente, usua_login_externo, id_pais, id_cont, usua_auth_ldap, perm_archi, perm_vobo, perm_borrar_anexo, perm_tipif_anexo, usua_perm_adminflujos, usua_exp_trd, usua_perm_rademail, usua_perm_accesi, usua_perm_agrcontacto, usua_prad_tp4, usua_perm_preradicado, cod_rol, descargar_documentos, usua_perm_reasigna_masiva, usua_nivel_consulta, descarga_arc_original, firma_qr, per_transferencia_documental, usua_perm_grupo_usuarios_informados, usua_perm_doc_publico, usua_perm_consulta_rad, consulta_inv_documental, carga_inv_documental) FROM stdin;
@@ -15028,7 +15028,7 @@ COPY public.usuario (usua_codi, depe_codi, usua_login, usua_fech_crea, usua_pasw
 
 
 --
--- Data for Name: usuarios_grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: usuarios_grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 COPY public.usuarios_grupos_informados (id_usuarios_grupos_informados, id_grupos_informados, usua_login, usuario_grupo_activo) FROM stdin;
@@ -15036,511 +15036,511 @@ COPY public.usuarios_grupos_informados (id_usuarios_grupos_informados, id_grupos
 
 
 --
--- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public."Preguntas_id_preguntas_seq"', 1, false);
 
 
 --
--- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public."Respuestas_Usuario_id_Respuestas_Usuario_seq"', 1, false);
 
 
 --
--- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.carpeta_per_id_caperta_per_seq', 2, true);
 
 
 --
--- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public."configuracion_contrasena_idConfiguracionContracsena_seq"', 5, true);
 
 
 --
--- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.configuracion_general_fondo_id_campo_configuracion_fondo_seq', 143, true);
 
 
 --
--- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.contrasenas_guardadas_id_contrasena_guardada_seq', 124, true);
 
 
 --
--- Name: datosocr_indice_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: datosocr_indice_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.datosocr_indice_seq', 1, false);
 
 
 --
--- Name: dependencias; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: dependencias; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.dependencias', 0, false);
 
 
 --
--- Name: direccion_usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.direccion_usuarios_id_seq', 1, false);
 
 
 --
--- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.estado_civil_pqrs_id_estado_civil_pqrs_seq', 1, false);
 
 
 --
--- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.fondo_acumulado_comunicaciones_id_fondo_acumulado_seq', 127481, true);
 
 
 --
--- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.grupos_informados_id_grupos_informados_seq', 1, false);
 
 
 --
--- Name: grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.grupos_informados_seq', 1, false);
 
 
 --
--- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.nivel_academico_pqrs_id_nivel_acad_pqrs_seq', 1, false);
 
 
 --
--- Name: num_resol_dtc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_dtc', 24, false);
 
 
 --
--- Name: num_resol_dtn; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtn; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_dtn', 101, false);
 
 
 --
--- Name: num_resol_dtoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_dtoc', 21, false);
 
 
 --
--- Name: num_resol_dtor; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtor; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_dtor', 61, false);
 
 
 --
--- Name: num_resol_dts; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dts; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_dts', 61, false);
 
 
 --
--- Name: num_resol_gral; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_gral; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.num_resol_gral', 1, false);
 
 
 --
--- Name: perfiles_codi_perfil_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: perfiles_codi_perfil_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.perfiles_codi_perfil_seq', 6, false);
 
 
 --
--- Name: plsql_profiler_runnumeric; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: plsql_profiler_runnumeric; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.plsql_profiler_runnumeric', 1, false);
 
 
 --
--- Name: pres_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: pres_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.pres_seq', 30392, false);
 
 
 --
--- Name: roles_cod_rol_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: roles_cod_rol_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.roles_cod_rol_seq', 6, false);
 
 
 --
--- Name: sec_bodega_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_bodega_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_bodega_empresas', 1, false);
 
 
 --
--- Name: sec_central; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_central; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_central', 1, false);
 
 
 --
--- Name: sec_ciu_ciudadano; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_ciu_ciudadano; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_ciu_ciudadano', 2, false);
 
 
 --
--- Name: sec_def_contactos; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_def_contactos; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_def_contactos', 1, false);
 
 
 --
--- Name: sec_dir_direcciones; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_dir_direcciones; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_dir_direcciones', 43, true);
 
 
 --
--- Name: sec_edificio; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_edificio; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_edificio', 5, true);
 
 
 --
--- Name: sec_fondo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_fondo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_fondo', 1, false);
 
 
 --
--- Name: sec_inv; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_inv; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_inv', 1, false);
 
 
 --
--- Name: sec_oem_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_oem_empresas', 1, false);
 
 
 --
--- Name: sec_oem_oempresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_oempresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_oem_oempresas', 1, true);
 
 
 --
--- Name: sec_planilla; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_planilla', 8, true);
 
 
 --
--- Name: sec_planilla_envio; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_envio; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_planilla_envio', 4, true);
 
 
 --
--- Name: sec_planilla_tx; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_tx; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_planilla_tx', 1, false);
 
 
 --
--- Name: sec_prestamo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_prestamo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_prestamo', 1, false);
 
 
 --
--- Name: sec_rol_tipos_doc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_rol_tipos_doc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_rol_tipos_doc', 6003, true);
 
 
 --
--- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sec_sgd_hfld_histflujodoc', 1, false);
 
 
 --
--- Name: secr_subseries_id_tabla; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_subseries_id_tabla; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_subseries_id_tabla', 279, true);
 
 
 --
--- Name: secr_tp1_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp1_', 1, false);
 
 
 --
--- Name: secr_tp1_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp1_998', 20, true);
 
 
 --
--- Name: secr_tp1_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp1_999', 1, false);
 
 
 --
--- Name: secr_tp2_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp2_', 1, false);
 
 
 --
--- Name: secr_tp2_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp2_998', 11, true);
 
 
 --
--- Name: secr_tp2_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp2_999', 1, false);
 
 
 --
--- Name: secr_tp4_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp4_', 1, false);
 
 
 --
--- Name: secr_tp4_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp4_998', 1, true);
 
 
 --
--- Name: secr_tp4_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.secr_tp4_999', 1, false);
 
 
 --
--- Name: seq_parexp_paramexpediente; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: seq_parexp_paramexpediente; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.seq_parexp_paramexpediente', 16, true);
 
 
 --
--- Name: seq_sgd_mrd_codigo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: seq_sgd_mrd_codigo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.seq_sgd_mrd_codigo', 2298, true);
 
 
 --
--- Name: sgd_anar_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_anar_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_anar_secue', 1, false);
 
 
 --
--- Name: sgd_ciu_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_ciu_secue', 1, false);
 
 
 --
--- Name: sgd_dir_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_dir_secue', 1, false);
 
 
 --
--- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq', 343, true);
 
 
 --
--- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_ejes_tematicos_id_sgd_eje_tematico_seq', 284, true);
 
 
 --
--- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_exp_expediente_id_expediente_seq', 14, true);
 
 
 --
--- Name: sgd_hmtd_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_hmtd_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_hmtd_secue', 1, false);
 
 
 --
--- Name: sgd_info_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_info_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_info_secue', 1, false);
 
 
 --
--- Name: sgd_mat_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mat_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_mat_secue', 1, false);
 
 
 --
--- Name: sgd_oem_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_oem_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_oem_secue', 18398, false);
 
 
 --
--- Name: sgd_plg_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_plg_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_plg_secue', 1, false);
 
 
 --
--- Name: sgd_tvd_depe_id; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tvd_depe_id; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sgd_tvd_depe_id', 0, false);
 
 
 --
--- Name: sphinx_index_meta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_meta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.sphinx_index_meta_id_seq', 11, true);
 
 
 --
--- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.tipo_poblacion_pqrs_id_tp_pqrs_seq', 6, true);
 
 
 --
--- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq', 1, false);
 
 
 --
--- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.tipo_usuario_grupo_id_grupo_tipo_usuario_seq', 1, false);
 
 
 --
--- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.tipos_comunicaciones_id_tipos_comunicaciones_seq', 1, false);
 
 
 --
--- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.user_id_seq', 2, false);
 
 
 --
--- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.usuarios_grupos_informados_id_usuarios_grupos_informados_seq', 1, false);
 
 
 --
--- Name: usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('public.usuarios_grupos_informados_seq', 45, true);
 
 
 --
--- Name: sgd_arch_depe ID; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_arch_depe ID; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_arch_depe
@@ -15548,7 +15548,7 @@ ALTER TABLE ONLY public.sgd_arch_depe
 
 
 --
--- Name: sgd_ttr_transaccion PK_SGD_TTR_TRANSACCION; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ttr_transaccion PK_SGD_TTR_TRANSACCION; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ttr_transaccion
@@ -15556,7 +15556,7 @@ ALTER TABLE ONLY public.sgd_ttr_transaccion
 
 
 --
--- Name: preguntas Preguntas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: preguntas Preguntas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.preguntas
@@ -15564,7 +15564,7 @@ ALTER TABLE ONLY public.preguntas
 
 
 --
--- Name: respuestas_usuario Respuestas_Usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: respuestas_usuario Respuestas_Usuario_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.respuestas_usuario
@@ -15572,7 +15572,7 @@ ALTER TABLE ONLY public.respuestas_usuario
 
 
 --
--- Name: sgd_trad_tiporad SGD_TRAD_TIPORAD_CODIGO_INX; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_trad_tiporad SGD_TRAD_TIPORAD_CODIGO_INX; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_trad_tiporad
@@ -15580,7 +15580,7 @@ ALTER TABLE ONLY public.sgd_trad_tiporad
 
 
 --
--- Name: bodega_empresas bodega_empresas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: bodega_empresas bodega_empresas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.bodega_empresas
@@ -15588,7 +15588,7 @@ ALTER TABLE ONLY public.bodega_empresas
 
 
 --
--- Name: configuracion_contrasena configuracion_contrasena_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena configuracion_contrasena_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.configuracion_contrasena
@@ -15596,7 +15596,7 @@ ALTER TABLE ONLY public.configuracion_contrasena
 
 
 --
--- Name: configuracion_general_fondo configuracion_general_fondo_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo configuracion_general_fondo_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.configuracion_general_fondo
@@ -15604,7 +15604,7 @@ ALTER TABLE ONLY public.configuracion_general_fondo
 
 
 --
--- Name: contrasenas_guardadas contrasenas_guardadas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas contrasenas_guardadas_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.contrasenas_guardadas
@@ -15612,7 +15612,7 @@ ALTER TABLE ONLY public.contrasenas_guardadas
 
 
 --
--- Name: datosocr datosocr_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: datosocr datosocr_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.datosocr
@@ -15620,7 +15620,7 @@ ALTER TABLE ONLY public.datosocr
 
 
 --
--- Name: departamento departamento_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: departamento departamento_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.departamento
@@ -15628,7 +15628,7 @@ ALTER TABLE ONLY public.departamento
 
 
 --
--- Name: direccion_usuarios direccion_usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios direccion_usuarios_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.direccion_usuarios
@@ -15636,7 +15636,7 @@ ALTER TABLE ONLY public.direccion_usuarios
 
 
 --
--- Name: fondo_acumulado_comunicaciones fondo_acumulado_comunicaciones_pk; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones fondo_acumulado_comunicaciones_pk; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.fondo_acumulado_comunicaciones
@@ -15644,7 +15644,7 @@ ALTER TABLE ONLY public.fondo_acumulado_comunicaciones
 
 
 --
--- Name: grupo_interes grupo_interes_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: grupo_interes grupo_interes_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.grupo_interes
@@ -15652,7 +15652,7 @@ ALTER TABLE ONLY public.grupo_interes
 
 
 --
--- Name: grupos_informados grupos_informados_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados grupos_informados_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.grupos_informados
@@ -15660,7 +15660,7 @@ ALTER TABLE ONLY public.grupos_informados
 
 
 --
--- Name: carpeta_per id_carpeta_per; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per id_carpeta_per; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.carpeta_per
@@ -15668,7 +15668,7 @@ ALTER TABLE ONLY public.carpeta_per
 
 
 --
--- Name: inventario_documental inventario_documental_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: inventario_documental inventario_documental_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.inventario_documental
@@ -15676,7 +15676,7 @@ ALTER TABLE ONLY public.inventario_documental
 
 
 --
--- Name: inventario_documentos inventario_documentos_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: inventario_documentos inventario_documentos_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.inventario_documentos
@@ -15684,7 +15684,7 @@ ALTER TABLE ONLY public.inventario_documentos
 
 
 --
--- Name: municipio municipio_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: municipio municipio_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.municipio
@@ -15692,7 +15692,7 @@ ALTER TABLE ONLY public.municipio
 
 
 --
--- Name: perfiles perfiles_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: perfiles perfiles_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.perfiles
@@ -15700,7 +15700,7 @@ ALTER TABLE ONLY public.perfiles
 
 
 --
--- Name: anexos pk_anex_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: anexos pk_anex_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.anexos
@@ -15708,7 +15708,7 @@ ALTER TABLE ONLY public.anexos
 
 
 --
--- Name: dependencia pk_depe_codi; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: dependencia pk_depe_codi; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.dependencia
@@ -15716,7 +15716,7 @@ ALTER TABLE ONLY public.dependencia
 
 
 --
--- Name: sgd_dt_radicado pk_dt_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dt_radicado pk_dt_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_dt_radicado
@@ -15724,7 +15724,7 @@ ALTER TABLE ONLY public.sgd_dt_radicado
 
 
 --
--- Name: sgd_parexp_paramexpediente pk_parexp_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_parexp_paramexpediente pk_parexp_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_parexp_paramexpediente
@@ -15732,7 +15732,7 @@ ALTER TABLE ONLY public.sgd_parexp_paramexpediente
 
 
 --
--- Name: radicado pk_radicados; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: radicado pk_radicados; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.radicado
@@ -15740,7 +15740,7 @@ ALTER TABLE ONLY public.radicado
 
 
 --
--- Name: sgd_dir_drecciones pk_sgd_dir_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_drecciones pk_sgd_dir_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_dir_drecciones
@@ -15748,7 +15748,7 @@ ALTER TABLE ONLY public.sgd_dir_drecciones
 
 
 --
--- Name: sgd_sexp_secexpedientes pk_sgd_sexp_secuencia; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sexp_secexpedientes pk_sgd_sexp_secuencia; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_sexp_secexpedientes
@@ -15756,7 +15756,7 @@ ALTER TABLE ONLY public.sgd_sexp_secexpedientes
 
 
 --
--- Name: pre_radicado pre_radicado_radi_nume_radi_key; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: pre_radicado pre_radicado_radi_nume_radi_key; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.pre_radicado
@@ -15764,7 +15764,7 @@ ALTER TABLE ONLY public.pre_radicado
 
 
 --
--- Name: sgd_dt_radicado radi_nume_radi; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dt_radicado radi_nume_radi; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_dt_radicado
@@ -15772,7 +15772,7 @@ ALTER TABLE ONLY public.sgd_dt_radicado
 
 
 --
--- Name: rango_edades_pqrs rango_edades_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: rango_edades_pqrs rango_edades_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.rango_edades_pqrs
@@ -15780,7 +15780,7 @@ ALTER TABLE ONLY public.rango_edades_pqrs
 
 
 --
--- Name: rol_tipos_doc rol_tipos_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: rol_tipos_doc rol_tipos_doc_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.rol_tipos_doc
@@ -15788,7 +15788,7 @@ ALTER TABLE ONLY public.rol_tipos_doc
 
 
 --
--- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: roles roles_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.roles
@@ -15796,7 +15796,7 @@ ALTER TABLE ONLY public.roles
 
 
 --
--- Name: sgd_sed_sede sede_codi; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sed_sede sede_codi; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_sed_sede
@@ -15804,7 +15804,7 @@ ALTER TABLE ONLY public.sgd_sed_sede
 
 
 --
--- Name: servicios_pqrs servicios_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: servicios_pqrs servicios_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.servicios_pqrs
@@ -15812,7 +15812,7 @@ ALTER TABLE ONLY public.servicios_pqrs
 
 
 --
--- Name: sgd_archivo_central sgd_archivo_central2_pk; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_archivo_central sgd_archivo_central2_pk; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_archivo_central
@@ -15820,7 +15820,7 @@ ALTER TABLE ONLY public.sgd_archivo_central
 
 
 --
--- Name: sgd_ciu_ciudadano sgd_ciu_ciudadano_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_ciudadano sgd_ciu_ciudadano_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ciu_ciudadano
@@ -15828,7 +15828,7 @@ ALTER TABLE ONLY public.sgd_ciu_ciudadano
 
 
 --
--- Name: sgd_def_paises sgd_def_paises_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_def_paises sgd_def_paises_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_def_paises
@@ -15836,7 +15836,7 @@ ALTER TABLE ONLY public.sgd_def_paises
 
 
 --
--- Name: sgd_ejes_tematicos_dependencia sgd_ejes_tematicos_dependencia_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependencia sgd_ejes_tematicos_dependencia_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ejes_tematicos_dependencia
@@ -15844,7 +15844,7 @@ ALTER TABLE ONLY public.sgd_ejes_tematicos_dependencia
 
 
 --
--- Name: sgd_ejes_tematicos sgd_ejes_tematicos_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos sgd_ejes_tematicos_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ejes_tematicos
@@ -15852,7 +15852,7 @@ ALTER TABLE ONLY public.sgd_ejes_tematicos
 
 
 --
--- Name: sgd_fenv_frmenvio sgd_fenv_frmenvio_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_fenv_frmenvio sgd_fenv_frmenvio_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_fenv_frmenvio
@@ -15860,7 +15860,7 @@ ALTER TABLE ONLY public.sgd_fenv_frmenvio
 
 
 --
--- Name: sgd_tpr_tpdcumento sgd_tpr_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tpr_tpdcumento sgd_tpr_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_tpr_tpdcumento
@@ -15868,7 +15868,7 @@ ALTER TABLE ONLY public.sgd_tpr_tpdcumento
 
 
 --
--- Name: sgd_transfe_documentales sgd_transfe_documentales_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_transfe_documentales sgd_transfe_documentales_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_transfe_documentales
@@ -15876,7 +15876,7 @@ ALTER TABLE ONLY public.sgd_transfe_documentales
 
 
 --
--- Name: sphinx_index_remove sphinx_index_meta_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_remove sphinx_index_meta_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sphinx_index_remove
@@ -15884,7 +15884,7 @@ ALTER TABLE ONLY public.sphinx_index_remove
 
 
 --
--- Name: sgd_sbrd_subserierd srd_sbrd_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sbrd_subserierd srd_sbrd_codigo; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_sbrd_subserierd
@@ -15892,7 +15892,7 @@ ALTER TABLE ONLY public.sgd_sbrd_subserierd
 
 
 --
--- Name: tipo_poblacion_pqrs tipo_poblacion_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: tipo_poblacion_pqrs tipo_poblacion_pqrs_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.tipo_poblacion_pqrs
@@ -15900,7 +15900,7 @@ ALTER TABLE ONLY public.tipo_poblacion_pqrs
 
 
 --
--- Name: tipo_usuario_grupo tipo_usuario_grupo_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo tipo_usuario_grupo_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.tipo_usuario_grupo
@@ -15908,7 +15908,7 @@ ALTER TABLE ONLY public.tipo_usuario_grupo
 
 
 --
--- Name: tipos_comunicaciones tipos_comunicaciones_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones tipos_comunicaciones_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.tipos_comunicaciones
@@ -15916,7 +15916,7 @@ ALTER TABLE ONLY public.tipos_comunicaciones
 
 
 --
--- Name: sgd_mrd_matrird trd_dependencia; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mrd_matrird trd_dependencia; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_mrd_matrird
@@ -15924,7 +15924,7 @@ ALTER TABLE ONLY public.sgd_mrd_matrird
 
 
 --
--- Name: carpeta_per unique_carpeta; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per unique_carpeta; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.carpeta_per
@@ -15932,7 +15932,7 @@ ALTER TABLE ONLY public.carpeta_per
 
 
 --
--- Name: usuario unique_depe_usua; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: usuario unique_depe_usua; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.usuario
@@ -15940,7 +15940,7 @@ ALTER TABLE ONLY public.usuario
 
 
 --
--- Name: sgd_exp_expediente unique_expediente_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_exp_expediente unique_expediente_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_exp_expediente
@@ -15948,7 +15948,7 @@ ALTER TABLE ONLY public.sgd_exp_expediente
 
 
 --
--- Name: sgd_parexp_paramexpediente unique_parexp; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_parexp_paramexpediente unique_parexp; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_parexp_paramexpediente
@@ -15956,7 +15956,7 @@ ALTER TABLE ONLY public.sgd_parexp_paramexpediente
 
 
 --
--- Name: sgd_dir_drecciones unique_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_drecciones unique_radicado; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_dir_drecciones
@@ -15964,7 +15964,7 @@ ALTER TABLE ONLY public.sgd_dir_drecciones
 
 
 --
--- Name: sgd_sexp_secexpedientes unique_secexpediente; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_sexp_secexpedientes unique_secexpediente; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_sexp_secexpedientes
@@ -15972,7 +15972,7 @@ ALTER TABLE ONLY public.sgd_sexp_secexpedientes
 
 
 --
--- Name: user user_password_reset_token_key; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: user user_password_reset_token_key; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public."user"
@@ -15980,7 +15980,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public."user"
@@ -15988,7 +15988,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- Name: user user_username_key; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: user user_username_key; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public."user"
@@ -15996,7 +15996,7 @@ ALTER TABLE ONLY public."user"
 
 
 --
--- Name: usuario usua_login; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: usuario usua_login; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.usuario
@@ -16004,7 +16004,7 @@ ALTER TABLE ONLY public.usuario
 
 
 --
--- Name: usuarios_grupos_informados usuarios_grupos_informados_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados usuarios_grupos_informados_pkey; Type: CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.usuarios_grupos_informados
@@ -16012,21 +16012,21 @@ ALTER TABLE ONLY public.usuarios_grupos_informados
 
 
 --
--- Name: fondo_acumulado_comunicaciones_index; Type: INDEX; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones_index; Type: INDEX; Schema: public; Owner: orfeo_usr
 --
 
 CREATE UNIQUE INDEX fondo_acumulado_comunicaciones_index ON public.fondo_acumulado_comunicaciones USING btree (campo3, campo12);
 
 
 --
--- Name: id_tabla; Type: INDEX; Schema: public; Owner: orfeo62usr
+-- Name: id_tabla; Type: INDEX; Schema: public; Owner: orfeo_usr
 --
 
 CREATE UNIQUE INDEX id_tabla ON public.sgd_sbrd_subserierd USING btree (id_tabla);
 
 
 --
--- Name: sgd_ciu_ciudadano sgd_ciu_edad; Type: FK CONSTRAINT; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_ciudadano sgd_ciu_edad; Type: FK CONSTRAINT; Schema: public; Owner: orfeo_usr
 --
 
 ALTER TABLE ONLY public.sgd_ciu_ciudadano
@@ -16034,14 +16034,14 @@ ALTER TABLE ONLY public.sgd_ciu_ciudadano
 
 
 --
--- Name: FUNCTION concat(text, text); Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: FUNCTION concat(text, text); Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON FUNCTION public.concat(text, text) TO postgres;
 
 
 --
--- Name: TABLE usuario; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE usuario; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.usuario TO postgres;
@@ -16049,7 +16049,7 @@ GRANT ALL ON TABLE public.usuario TO PUBLIC;
 
 
 --
--- Name: TABLE anexos; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE anexos; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.anexos TO postgres;
@@ -16057,7 +16057,7 @@ GRANT ALL ON TABLE public.anexos TO PUBLIC;
 
 
 --
--- Name: TABLE anexos_historico; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE anexos_historico; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.anexos_historico TO postgres;
@@ -16065,7 +16065,7 @@ GRANT ALL ON TABLE public.anexos_historico TO PUBLIC;
 
 
 --
--- Name: TABLE anexos_tipo; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE anexos_tipo; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.anexos_tipo TO postgres;
@@ -16073,7 +16073,7 @@ GRANT ALL ON TABLE public.anexos_tipo TO PUBLIC;
 
 
 --
--- Name: TABLE bodega_empresas; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE bodega_empresas; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.bodega_empresas TO postgres;
@@ -16081,7 +16081,7 @@ GRANT ALL ON TABLE public.bodega_empresas TO PUBLIC;
 
 
 --
--- Name: TABLE borrar_carpeta_personalizada; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE borrar_carpeta_personalizada; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.borrar_carpeta_personalizada TO postgres;
@@ -16089,7 +16089,7 @@ GRANT ALL ON TABLE public.borrar_carpeta_personalizada TO PUBLIC;
 
 
 --
--- Name: TABLE borrar_empresa_esp; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE borrar_empresa_esp; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.borrar_empresa_esp TO postgres;
@@ -16097,7 +16097,7 @@ GRANT ALL ON TABLE public.borrar_empresa_esp TO PUBLIC;
 
 
 --
--- Name: TABLE carpeta; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE carpeta; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.carpeta TO postgres;
@@ -16105,7 +16105,7 @@ GRANT ALL ON TABLE public.carpeta TO PUBLIC;
 
 
 --
--- Name: TABLE carpeta_per; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE carpeta_per; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.carpeta_per TO postgres;
@@ -16113,7 +16113,7 @@ GRANT ALL ON TABLE public.carpeta_per TO PUBLIC;
 
 
 --
--- Name: TABLE centro_poblado; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE centro_poblado; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.centro_poblado TO postgres;
@@ -16121,7 +16121,7 @@ GRANT ALL ON TABLE public.centro_poblado TO PUBLIC;
 
 
 --
--- Name: TABLE departamento; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE departamento; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.departamento TO postgres;
@@ -16129,7 +16129,7 @@ GRANT ALL ON TABLE public.departamento TO PUBLIC;
 
 
 --
--- Name: TABLE dependencia; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE dependencia; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.dependencia TO postgres;
@@ -16137,7 +16137,7 @@ GRANT ALL ON TABLE public.dependencia TO PUBLIC;
 
 
 --
--- Name: TABLE dependencia_visibilidad; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE dependencia_visibilidad; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.dependencia_visibilidad TO postgres;
@@ -16145,7 +16145,7 @@ GRANT ALL ON TABLE public.dependencia_visibilidad TO PUBLIC;
 
 
 --
--- Name: TABLE estado; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE estado; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.estado TO postgres;
@@ -16153,14 +16153,14 @@ GRANT ALL ON TABLE public.estado TO PUBLIC;
 
 
 --
--- Name: TABLE fun_funcionario; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE fun_funcionario; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.fun_funcionario TO postgres;
 
 
 --
--- Name: TABLE hist_eventos; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE hist_eventos; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.hist_eventos TO postgres;
@@ -16168,7 +16168,7 @@ GRANT ALL ON TABLE public.hist_eventos TO PUBLIC;
 
 
 --
--- Name: TABLE informados; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE informados; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.informados TO postgres;
@@ -16176,7 +16176,7 @@ GRANT ALL ON TABLE public.informados TO PUBLIC;
 
 
 --
--- Name: TABLE medio_recepcion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE medio_recepcion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.medio_recepcion TO postgres;
@@ -16184,7 +16184,7 @@ GRANT ALL ON TABLE public.medio_recepcion TO PUBLIC;
 
 
 --
--- Name: TABLE municipio; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE municipio; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.municipio TO postgres;
@@ -16192,7 +16192,7 @@ GRANT ALL ON TABLE public.municipio TO PUBLIC;
 
 
 --
--- Name: TABLE par_serv_servicios; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE par_serv_servicios; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.par_serv_servicios TO postgres;
@@ -16200,7 +16200,7 @@ GRANT ALL ON TABLE public.par_serv_servicios TO PUBLIC;
 
 
 --
--- Name: TABLE pl_generado_plg; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE pl_generado_plg; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.pl_generado_plg TO postgres;
@@ -16208,7 +16208,7 @@ GRANT ALL ON TABLE public.pl_generado_plg TO PUBLIC;
 
 
 --
--- Name: TABLE pl_tipo_plt; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE pl_tipo_plt; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.pl_tipo_plt TO postgres;
@@ -16216,7 +16216,7 @@ GRANT ALL ON TABLE public.pl_tipo_plt TO PUBLIC;
 
 
 --
--- Name: TABLE plan_table; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE plan_table; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.plan_table TO postgres;
@@ -16224,7 +16224,7 @@ GRANT ALL ON TABLE public.plan_table TO PUBLIC;
 
 
 --
--- Name: TABLE plantilla_pl; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE plantilla_pl; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.plantilla_pl TO postgres;
@@ -16232,7 +16232,7 @@ GRANT ALL ON TABLE public.plantilla_pl TO PUBLIC;
 
 
 --
--- Name: TABLE prestamo; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE prestamo; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.prestamo TO postgres;
@@ -16240,7 +16240,7 @@ GRANT ALL ON TABLE public.prestamo TO PUBLIC;
 
 
 --
--- Name: TABLE radicado; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE radicado; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.radicado TO postgres;
@@ -16248,7 +16248,7 @@ GRANT ALL ON TABLE public.radicado TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_agen_agendados; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_agen_agendados; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_agen_agendados TO postgres;
@@ -16256,7 +16256,7 @@ GRANT ALL ON TABLE public.sgd_agen_agendados TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_anar_anexarg; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_anar_anexarg; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_anar_anexarg TO postgres;
@@ -16264,7 +16264,7 @@ GRANT ALL ON TABLE public.sgd_anar_anexarg TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_anu_anulados; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_anu_anulados; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_anu_anulados TO postgres;
@@ -16272,7 +16272,7 @@ GRANT ALL ON TABLE public.sgd_anu_anulados TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_aper_adminperfiles; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_aper_adminperfiles; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_aper_adminperfiles TO postgres;
@@ -16280,7 +16280,7 @@ GRANT ALL ON TABLE public.sgd_aper_adminperfiles TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_apli_aplintegra; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_apli_aplintegra; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_apli_aplintegra TO postgres;
@@ -16288,7 +16288,7 @@ GRANT ALL ON TABLE public.sgd_apli_aplintegra TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_aplmen_aplimens; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_aplmen_aplimens; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_aplmen_aplimens TO postgres;
@@ -16296,7 +16296,7 @@ GRANT ALL ON TABLE public.sgd_aplmen_aplimens TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_aplus_plicusua; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_aplus_plicusua; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_aplus_plicusua TO postgres;
@@ -16304,7 +16304,7 @@ GRANT ALL ON TABLE public.sgd_aplus_plicusua TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_archivo_central; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_archivo_central; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_archivo_central TO postgres;
@@ -16312,7 +16312,7 @@ GRANT ALL ON TABLE public.sgd_archivo_central TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_archivo_hist; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_archivo_hist; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_archivo_hist TO postgres;
@@ -16320,7 +16320,7 @@ GRANT ALL ON TABLE public.sgd_archivo_hist TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_argd_argdoc; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_argd_argdoc; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_argd_argdoc TO postgres;
@@ -16328,7 +16328,7 @@ GRANT ALL ON TABLE public.sgd_argd_argdoc TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_argup_argudoctop; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_argup_argudoctop; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_argup_argudoctop TO postgres;
@@ -16336,7 +16336,7 @@ GRANT ALL ON TABLE public.sgd_argup_argudoctop TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_camexp_campoexpediente; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_camexp_campoexpediente; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_camexp_campoexpediente TO postgres;
@@ -16344,7 +16344,7 @@ GRANT ALL ON TABLE public.sgd_camexp_campoexpediente TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_carp_descripcion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_carp_descripcion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_carp_descripcion TO postgres;
@@ -16352,7 +16352,7 @@ GRANT ALL ON TABLE public.sgd_carp_descripcion TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_cau_causal; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_cau_causal; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_cau_causal TO postgres;
@@ -16360,7 +16360,7 @@ GRANT ALL ON TABLE public.sgd_cau_causal TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_caux_causales; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_caux_causales; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_caux_causales TO postgres;
@@ -16368,7 +16368,7 @@ GRANT ALL ON TABLE public.sgd_caux_causales TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_clta_clstarif; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_clta_clstarif; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_clta_clstarif TO postgres;
@@ -16376,7 +16376,7 @@ GRANT ALL ON TABLE public.sgd_clta_clstarif TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_cob_campobliga; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_cob_campobliga; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_cob_campobliga TO postgres;
@@ -16384,7 +16384,7 @@ GRANT ALL ON TABLE public.sgd_cob_campobliga TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_dcau_causal; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_dcau_causal; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_dcau_causal TO postgres;
@@ -16392,7 +16392,7 @@ GRANT ALL ON TABLE public.sgd_dcau_causal TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_ddca_ddsgrgdo; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ddca_ddsgrgdo; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_ddca_ddsgrgdo TO postgres;
@@ -16400,7 +16400,7 @@ GRANT ALL ON TABLE public.sgd_ddca_ddsgrgdo TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_def_contactos; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_def_contactos; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_def_contactos TO postgres;
@@ -16408,7 +16408,7 @@ GRANT ALL ON TABLE public.sgd_def_contactos TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_def_continentes; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_def_continentes; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_def_continentes TO postgres;
@@ -16416,7 +16416,7 @@ GRANT ALL ON TABLE public.sgd_def_continentes TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_def_paises; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_def_paises; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_def_paises TO postgres;
@@ -16424,7 +16424,7 @@ GRANT ALL ON TABLE public.sgd_def_paises TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_deve_dev_envio; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_deve_dev_envio; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_deve_dev_envio TO postgres;
@@ -16432,7 +16432,7 @@ GRANT ALL ON TABLE public.sgd_deve_dev_envio TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_dir_drecciones; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_dir_drecciones; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_dir_drecciones TO postgres;
@@ -16440,7 +16440,7 @@ GRANT ALL ON TABLE public.sgd_dir_drecciones TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_dnufe_docnufe; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_dnufe_docnufe; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_dnufe_docnufe TO postgres;
@@ -16448,7 +16448,7 @@ GRANT ALL ON TABLE public.sgd_dnufe_docnufe TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_eanu_estanulacion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_eanu_estanulacion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_eanu_estanulacion TO postgres;
@@ -16456,7 +16456,7 @@ GRANT ALL ON TABLE public.sgd_eanu_estanulacion TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_einv_inventario; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_einv_inventario; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_einv_inventario TO postgres;
@@ -16464,7 +16464,7 @@ GRANT ALL ON TABLE public.sgd_einv_inventario TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_eit_items; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_eit_items; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_eit_items TO postgres;
@@ -16472,7 +16472,7 @@ GRANT ALL ON TABLE public.sgd_eit_items TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_ent_entidades; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ent_entidades; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_ent_entidades TO postgres;
@@ -16480,7 +16480,7 @@ GRANT ALL ON TABLE public.sgd_ent_entidades TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_enve_envioespecial; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_enve_envioespecial; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_enve_envioespecial TO postgres;
@@ -16488,7 +16488,7 @@ GRANT ALL ON TABLE public.sgd_enve_envioespecial TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_estc_estconsolid; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_estc_estconsolid; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_estc_estconsolid TO postgres;
@@ -16496,7 +16496,7 @@ GRANT ALL ON TABLE public.sgd_estc_estconsolid TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_estinst_estadoinstancia; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_estinst_estadoinstancia; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_estinst_estadoinstancia TO postgres;
@@ -16504,7 +16504,7 @@ GRANT ALL ON TABLE public.sgd_estinst_estadoinstancia TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_exp_expediente; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_exp_expediente; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_exp_expediente TO postgres;
@@ -16512,7 +16512,7 @@ GRANT ALL ON TABLE public.sgd_exp_expediente TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_fars_faristas; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fars_faristas; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_fars_faristas TO postgres;
@@ -16520,7 +16520,7 @@ GRANT ALL ON TABLE public.sgd_fars_faristas TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_fenv_frmenvio; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fenv_frmenvio; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_fenv_frmenvio TO postgres;
@@ -16528,7 +16528,7 @@ GRANT ALL ON TABLE public.sgd_fenv_frmenvio TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_fexp_flujoexpedientes; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fexp_flujoexpedientes; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_fexp_flujoexpedientes TO postgres;
@@ -16536,7 +16536,7 @@ GRANT ALL ON TABLE public.sgd_fexp_flujoexpedientes TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_firrad_firmarads; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_firrad_firmarads; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_firrad_firmarads TO postgres;
@@ -16544,7 +16544,7 @@ GRANT ALL ON TABLE public.sgd_firrad_firmarads TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_fld_flujodoc; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fld_flujodoc; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_fld_flujodoc TO postgres;
@@ -16552,7 +16552,7 @@ GRANT ALL ON TABLE public.sgd_fld_flujodoc TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_fun_funciones; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_fun_funciones; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_fun_funciones TO postgres;
@@ -16560,7 +16560,7 @@ GRANT ALL ON TABLE public.sgd_fun_funciones TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_hfld_histflujodoc; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_hfld_histflujodoc; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_hfld_histflujodoc TO postgres;
@@ -16568,7 +16568,7 @@ GRANT ALL ON TABLE public.sgd_hfld_histflujodoc TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_hmtd_hismatdoc; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_hmtd_hismatdoc; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_hmtd_hismatdoc TO postgres;
@@ -16576,7 +16576,7 @@ GRANT ALL ON TABLE public.sgd_hmtd_hismatdoc TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_instorf_instanciasorfeo; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_instorf_instanciasorfeo; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_instorf_instanciasorfeo TO postgres;
@@ -16584,7 +16584,7 @@ GRANT ALL ON TABLE public.sgd_instorf_instanciasorfeo TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_lip_linkip; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_lip_linkip; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_lip_linkip TO postgres;
@@ -16592,7 +16592,7 @@ GRANT ALL ON TABLE public.sgd_lip_linkip TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_mat_matriz; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_mat_matriz; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_mat_matriz TO postgres;
@@ -16600,7 +16600,7 @@ GRANT ALL ON TABLE public.sgd_mat_matriz TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_mpes_mddpeso; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_mpes_mddpeso; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_mpes_mddpeso TO postgres;
@@ -16608,7 +16608,7 @@ GRANT ALL ON TABLE public.sgd_mpes_mddpeso TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_mrd_matrird; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_mrd_matrird; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_mrd_matrird TO postgres;
@@ -16616,7 +16616,7 @@ GRANT ALL ON TABLE public.sgd_mrd_matrird TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_msdep_msgdep; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_msdep_msgdep; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_msdep_msgdep TO postgres;
@@ -16624,7 +16624,7 @@ GRANT ALL ON TABLE public.sgd_msdep_msgdep TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_msg_mensaje; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_msg_mensaje; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_msg_mensaje TO postgres;
@@ -16632,7 +16632,7 @@ GRANT ALL ON TABLE public.sgd_msg_mensaje TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_mtd_matriz_doc; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_mtd_matriz_doc; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_mtd_matriz_doc TO postgres;
@@ -16640,7 +16640,7 @@ GRANT ALL ON TABLE public.sgd_mtd_matriz_doc TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_noh_nohabiles; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_noh_nohabiles; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_noh_nohabiles TO postgres;
@@ -16648,7 +16648,7 @@ GRANT ALL ON TABLE public.sgd_noh_nohabiles TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_not_notificacion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_not_notificacion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_not_notificacion TO postgres;
@@ -16656,7 +16656,7 @@ GRANT ALL ON TABLE public.sgd_not_notificacion TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_ntrd_notifrad; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ntrd_notifrad; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_ntrd_notifrad TO postgres;
@@ -16664,7 +16664,7 @@ GRANT ALL ON TABLE public.sgd_ntrd_notifrad TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_oem_oempresas; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_oem_oempresas; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_oem_oempresas TO postgres;
@@ -16672,7 +16672,7 @@ GRANT ALL ON TABLE public.sgd_oem_oempresas TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_panu_peranulados; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_panu_peranulados; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_panu_peranulados TO postgres;
@@ -16680,7 +16680,7 @@ GRANT ALL ON TABLE public.sgd_panu_peranulados TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_parametro; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_parametro; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_parametro TO postgres;
@@ -16688,7 +16688,7 @@ GRANT ALL ON TABLE public.sgd_parametro TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_parexp_paramexpediente; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_parexp_paramexpediente; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_parexp_paramexpediente TO postgres;
@@ -16696,7 +16696,7 @@ GRANT ALL ON TABLE public.sgd_parexp_paramexpediente TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_pexp_procexpedientes; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_pexp_procexpedientes; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_pexp_procexpedientes TO postgres;
@@ -16704,7 +16704,7 @@ GRANT ALL ON TABLE public.sgd_pexp_procexpedientes TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_pnufe_procnumfe; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_pnufe_procnumfe; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_pnufe_procnumfe TO postgres;
@@ -16712,7 +16712,7 @@ GRANT ALL ON TABLE public.sgd_pnufe_procnumfe TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_pnun_procenum; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_pnun_procenum; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_pnun_procenum TO postgres;
@@ -16720,7 +16720,7 @@ GRANT ALL ON TABLE public.sgd_pnun_procenum TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_prc_proceso; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_prc_proceso; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_prc_proceso TO postgres;
@@ -16728,7 +16728,7 @@ GRANT ALL ON TABLE public.sgd_prc_proceso TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_prd_prcdmentos; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_prd_prcdmentos; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_prd_prcdmentos TO postgres;
@@ -16736,7 +16736,7 @@ GRANT ALL ON TABLE public.sgd_prd_prcdmentos TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_rda_retdoca; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_rda_retdoca; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_rda_retdoca TO postgres;
@@ -16744,7 +16744,7 @@ GRANT ALL ON TABLE public.sgd_rda_retdoca TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_rdf_retdocf; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_rdf_retdocf; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_rdf_retdocf TO postgres;
@@ -16752,7 +16752,7 @@ GRANT ALL ON TABLE public.sgd_rdf_retdocf TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_renv_regenvio; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_renv_regenvio; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_renv_regenvio TO postgres;
@@ -16760,7 +16760,7 @@ GRANT ALL ON TABLE public.sgd_renv_regenvio TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_rmr_radmasivre; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_rmr_radmasivre; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_rmr_radmasivre TO postgres;
@@ -16768,7 +16768,7 @@ GRANT ALL ON TABLE public.sgd_rmr_radmasivre TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_sbrd_subserierd; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_sbrd_subserierd; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_sbrd_subserierd TO postgres;
@@ -16776,7 +16776,7 @@ GRANT ALL ON TABLE public.sgd_sbrd_subserierd TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_sed_sede; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_sed_sede; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_sed_sede TO postgres;
@@ -16784,7 +16784,7 @@ GRANT ALL ON TABLE public.sgd_sed_sede TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_senuf_secnumfe; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_senuf_secnumfe; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_senuf_secnumfe TO postgres;
@@ -16792,7 +16792,7 @@ GRANT ALL ON TABLE public.sgd_senuf_secnumfe TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_sexp_secexpedientes; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_sexp_secexpedientes; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_sexp_secexpedientes TO postgres;
@@ -16800,7 +16800,7 @@ GRANT ALL ON TABLE public.sgd_sexp_secexpedientes TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_srd_seriesrd; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_srd_seriesrd; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_srd_seriesrd TO postgres;
@@ -16808,7 +16808,7 @@ GRANT ALL ON TABLE public.sgd_srd_seriesrd TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tar_tarifas; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tar_tarifas; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tar_tarifas TO postgres;
@@ -16816,7 +16816,7 @@ GRANT ALL ON TABLE public.sgd_tar_tarifas TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tdec_tipodecision; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tdec_tipodecision; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tdec_tipodecision TO postgres;
@@ -16824,7 +16824,7 @@ GRANT ALL ON TABLE public.sgd_tdec_tipodecision TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tid_tipdecision; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tid_tipdecision; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tid_tipdecision TO postgres;
@@ -16832,7 +16832,7 @@ GRANT ALL ON TABLE public.sgd_tid_tipdecision TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tidm_tidocmasiva; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tidm_tidocmasiva; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tidm_tidocmasiva TO postgres;
@@ -16840,7 +16840,7 @@ GRANT ALL ON TABLE public.sgd_tidm_tidocmasiva TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tip3_tipotercero; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tip3_tipotercero; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tip3_tipotercero TO postgres;
@@ -16848,7 +16848,7 @@ GRANT ALL ON TABLE public.sgd_tip3_tipotercero TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tma_temas; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tma_temas; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tma_temas TO postgres;
@@ -16856,7 +16856,7 @@ GRANT ALL ON TABLE public.sgd_tma_temas TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tme_tipmen; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tme_tipmen; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tme_tipmen TO postgres;
@@ -16864,7 +16864,7 @@ GRANT ALL ON TABLE public.sgd_tme_tipmen TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_tpr_tpdcumento; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_tpr_tpdcumento; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_tpr_tpdcumento TO postgres;
@@ -16872,7 +16872,7 @@ GRANT ALL ON TABLE public.sgd_tpr_tpdcumento TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_trad_tiporad; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_trad_tiporad; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_trad_tiporad TO postgres;
@@ -16880,7 +16880,7 @@ GRANT ALL ON TABLE public.sgd_trad_tiporad TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_ttr_transaccion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ttr_transaccion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_ttr_transaccion TO postgres;
@@ -16888,7 +16888,7 @@ GRANT ALL ON TABLE public.sgd_ttr_transaccion TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_ush_usuhistorico; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_ush_usuhistorico; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_ush_usuhistorico TO postgres;
@@ -16896,7 +16896,7 @@ GRANT ALL ON TABLE public.sgd_ush_usuhistorico TO PUBLIC;
 
 
 --
--- Name: TABLE sgd_usm_usumodifica; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE sgd_usm_usumodifica; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.sgd_usm_usumodifica TO postgres;
@@ -16904,7 +16904,7 @@ GRANT ALL ON TABLE public.sgd_usm_usumodifica TO PUBLIC;
 
 
 --
--- Name: TABLE tipo_doc_identificacion; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE tipo_doc_identificacion; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.tipo_doc_identificacion TO postgres;
@@ -16912,7 +16912,7 @@ GRANT ALL ON TABLE public.tipo_doc_identificacion TO PUBLIC;
 
 
 --
--- Name: TABLE tipo_remitente; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE tipo_remitente; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.tipo_remitente TO postgres;
@@ -16920,7 +16920,7 @@ GRANT ALL ON TABLE public.tipo_remitente TO PUBLIC;
 
 
 --
--- Name: TABLE ubicacion_fisica; Type: ACL; Schema: public; Owner: orfeo62usr
+-- Name: TABLE ubicacion_fisica; Type: ACL; Schema: public; Owner: orfeo_usr
 --
 
 GRANT ALL ON TABLE public.ubicacion_fisica TO postgres;
