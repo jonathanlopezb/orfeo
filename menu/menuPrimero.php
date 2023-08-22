@@ -47,7 +47,7 @@ echo 'menu-primero';
                     <td valign="top">
                         <table width="150"  border="0" cellpadding="0" cellspacing="3" class=eMenu>
                             <?php
-                            if ($_SESSION["usua_admin_sistema"] == 1) {
+                            if ($_SESSION["usua_admin_sistema"] == "1") {
                                 ?>
                                 <tr valign="middle">
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
