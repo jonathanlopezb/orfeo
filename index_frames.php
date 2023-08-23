@@ -38,6 +38,10 @@ $imagenes = $_SESSION["imagenes"];
 $logo = 'logoEntidad.png';
 
 ?>
+
+<script>
+    console.log("datos uduarios" ,$_SESSION)
+</script>
 <html>
     <head>
         <title>.:: SGD Orfeo 6 ::.</title>

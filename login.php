@@ -76,9 +76,6 @@ $datosEnvio = "$fechah&" . session_name() . "=" . trim(session_id()) . "&krd=$kr
 echo $datosEnvio;
 ?>
 
-<script>
-    console.log("datos uduarios" ,$_SESSION)
-</script>
 <head>
     <title>.:: SGD Orfeo 6 ::.</title>
     <link rel="stylesheet" href=".<?= $ESTILOS_PATH2 ?>login.css">
