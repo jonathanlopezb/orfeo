@@ -36,7 +36,8 @@ $autenticaPorLDAP = $_SESSION["autentica_por_LDAP"];
 
 $imagenes = $_SESSION["imagenes"];
 $logo = 'logoEntidad.png';
-echo $_SESSION
+echo $_SESSION;
+var_dump($_SESSION);
 
 ?>
 <html>
