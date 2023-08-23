@@ -77,7 +77,7 @@ echo $datosEnvio;
 ?>
 
 <script>
-    console.log()
+    console.log("datos uduarios" ,$_SESSION)
 </script>
 <head>
     <title>.:: SGD Orfeo 6 ::.</title>
