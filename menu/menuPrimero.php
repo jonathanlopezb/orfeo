@@ -65,8 +65,8 @@ echo 'menu-primero';
                                         <span class="Estilo12"><a href="radicacion/reasignacion_masiva/reasignacionMasiva.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo reasignaci&oacute;n masiva de radicados" alt="M&oacute;dulo reasignaci&oacute;n masiva de radicados" title="M&oacute;dulo reasignaci&oacute;n masiva de radicados">Reasignaci&oacute;n Masiva</a></span>
                                     </td>
                                     <td width="125">
-                                        <a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?> target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a>
-                                    </td>
+                                        <span class="Estilo12"><a href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo reasignaci&oacute;n masiva de radicados" alt="M&oacute;dulo reasignaci&oacute;n masiva de radicados" title="M&oacute;dulo reasignaci&oacute;n masiva de radicados">Administraci&oacute;n</a></span>
+                                    </td>-
                                 </tr>
                                 <?php
                             }           
