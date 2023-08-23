@@ -53,7 +53,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                     <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr=".md5($dep)."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a>
+                                        <a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -87,7 +87,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                                    <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a id="envioPerm" href="radicacion/formRadEnvios.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr=".md5($dep)."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" alt="M&oacute;dulo administraci&oacute;n de env&iacute;os" aria-label="M&oacute;dulo administraci&oacute;n de env&iacute;os" title="M&oacute;dulo administraci&oacute;n de env&iacute;os">Env&iacute;os</a>
+                                        <a id="envioPerm" href="radicacion/formRadEnvios.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" alt="M&oacute;dulo administraci&oacute;n de env&iacute;os" aria-label="M&oacute;dulo administraci&oacute;n de env&iacute;os" title="M&oacute;dulo administraci&oacute;n de env&iacute;os">Env&iacute;os</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -252,7 +252,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                     <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a  id="transDocuPerm" href="transDocumentales/transfeDocumentales.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr=".md5($dep)."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Transferencias documentales del aplicativo" alt="M&oacute;dulo de Transferencias documentales del aplicativo" title="M&oacute;dulo de Transferencias documentales del aplicativo">Transferencias documentales</a>
+                                        <a  id="transDocuPerm" href="transDocumentales/transfeDocumentales.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Transferencias documentales del aplicativo" alt="M&oacute;dulo de Transferencias documentales del aplicativo" title="M&oacute;dulo de Transferencias documentales del aplicativo">Transferencias documentales</a>
                                     </td>
                                 </tr>
                             <?php
