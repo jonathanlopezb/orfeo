@@ -53,9 +53,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                     <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a>
-                                        <span class="Estilo12"><a href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo reasignaci&oacute;n masiva de radicados" alt="M&oacute;dulo reasignaci&oacute;n masiva de radicados" title="M&oacute;dulo reasignaci&oacute;n masiva de radicados">Administraci&oacute;n</a></span>
-                                    
+                                        <a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -66,9 +64,6 @@ echo 'menu-primero';
                                     <td width="125">
                                         <span class="Estilo12"><a href="radicacion/reasignacion_masiva/reasignacionMasiva.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo reasignaci&oacute;n masiva de radicados" alt="M&oacute;dulo reasignaci&oacute;n masiva de radicados" title="M&oacute;dulo reasignaci&oacute;n masiva de radicados">Reasignaci&oacute;n Masiva</a></span>
                                     </td>
-                                    <td width="125">
-                                        <span class="Estilo12"><a href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo reasignaci&oacute;n masiva de radicados" alt="M&oacute;dulo reasignaci&oacute;n masiva de radicados" title="M&oacute;dulo reasignaci&oacute;n masiva de radicados">Administraci&oacute;n</a></span>
-                                    </td>-
                                 </tr>
                                 <?php
                             }           
@@ -89,7 +84,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                                    <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a id="envioPerm" href="radicacion/formRadEnvios.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" alt="M&oacute;dulo administraci&oacute;n de env&iacute;os" aria-label="M&oacute;dulo administraci&oacute;n de env&iacute;os" title="M&oacute;dulo administraci&oacute;n de env&iacute;os">Env&iacute;os</a>
+                                        <a id="envioPerm" href="radicacion/formRadEnvios.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr=".md5($dep)."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" alt="M&oacute;dulo administraci&oacute;n de env&iacute;os" aria-label="M&oacute;dulo administraci&oacute;n de env&iacute;os" title="M&oacute;dulo administraci&oacute;n de env&iacute;os">Env&iacute;os</a>
                                     </td>
                                 </tr>
                                 <?php
@@ -254,7 +249,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                     <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <a  id="transDocuPerm" href="transDocumentales/transfeDocumentales.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr="."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Transferencias documentales del aplicativo" alt="M&oacute;dulo de Transferencias documentales del aplicativo" title="M&oacute;dulo de Transferencias documentales del aplicativo">Transferencias documentales</a>
+                                        <a  id="transDocuPerm" href="transDocumentales/transfeDocumentales.php?<?= $phpsession ?>&<? echo "fechah=$fechah&usr=".md5($dep)."&primera=1&ent=1"; ?>" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Transferencias documentales del aplicativo" alt="M&oacute;dulo de Transferencias documentales del aplicativo" title="M&oacute;dulo de Transferencias documentales del aplicativo">Transferencias documentales</a>
                                     </td>
                                 </tr>
                             <?php

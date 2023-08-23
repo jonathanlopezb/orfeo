@@ -35,7 +35,7 @@ $autenticaPorLDAP = $_SESSION["autentica_por_LDAP"];
 //$ruta_raiz = ".";
 
 $imagenes = $_SESSION["imagenes"];
-$logo = 'logoEntidad.png';
+$logo = 'logoEntidad.png-dist';
 print_r($_SESSION);
 
 ?>
@@ -271,7 +271,6 @@ print_r($_SESSION);
                                 <!-- <li><a href="#" onclick="document.getElementById('mainFrame').contentWindow.showSearchTable();"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a><p>Buscar</p></li> -->
                                 <li><a href="quixplorer.php" target="Ayuda_Orfeo"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a><p>Ayuda</p></li>
                                 <li><a href="mod_datos.php?<?= session_name() . "=" . session_id() . "&fechah=$fechah&krd=$krd&info=false" ?>" target="mainFrame"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a><p>Información</p></li>
-                                <li><a href="menu/creditos.php?<?= session_name() . "=" . session_id() . "&fechah=$fechah&krd=$krd&info=false" ?>" target="mainFrame"><span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span></a><p>Cr&eacute;ditos</p></li>
                                 <?php
                                 if ($autenticaPorLDAP == 0) {
                                     ?>
