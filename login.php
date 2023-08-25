@@ -72,10 +72,7 @@ if ($krd) {
 }
 $krd = strtoupper($krd);
 $datosEnvio = "$fechah&" . session_name() . "=" . trim(session_id()) . "&krd=$krd&swLog=1";
-
-echo $datosEnvio;
 ?>
-
 <head>
     <title>.:: SGD Orfeo 6 ::.</title>
     <link rel="stylesheet" href=".<?= $ESTILOS_PATH2 ?>login.css">

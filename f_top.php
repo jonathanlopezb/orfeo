@@ -104,6 +104,7 @@ function MM_swapImage() { //v3.0
 	<td background="./<?=$imagenes?>/ayuda.gif"></td>
 	<td width="62"><a href="../quixplorer/" target="Ayuda_Orfeo"><img src="<?=$imagenes?>/ayuda.gif" name="Image8" width="62" height="76" border="0" alt="Manuales Orfeo"></a></td>
 	<td width="61"><a href="mod_datos.php?<?=session_name()."=".session_id()."&fechah=$fechah&krd=$krd&info=false"?>" target=mainFrame><img src="<?=$imagenes?>/info.gif" name="Image9" width="61" height="76" border="0" alt="Modificaci&otilde;n Datos Personales"></a></td>
+	<td width="61"><a href="menu/creditos.php?<?=session_name()."=".session_id()."&fechah=$fechah&krd=$krd&info=false"?>" target=mainFrame><img src="<?=$imagenes?>/creditos.gif" name="Image12" width="61" height="76" border="0" alt="Creditos del Software"></a></td>
 	<?php
 	if($autentica_por_LDAP == 0){
 	?>
