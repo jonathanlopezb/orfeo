@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -103,7 +103,7 @@ function devolver_rad($chkd,$krd)
 	ora_parse($cursor,$isql_hl);
 	ora_exec($cursor);
 	$observa = "Dev.". $observa;
-	$proccarp = "Devolución";
+	$proccarp = "Devoluciï¿½n";
 	$mensaje_dev = " (Recuperado el rad $chkd a  $us_anterior_nombre)";
 	return "$mensaje_dev";
 }
@@ -455,7 +455,7 @@ if($chk20)
 <table border=0 cellspace=1 cellpad=2 WIDTH=98% class="t_bordeGris" align="center">
 <tr bgcolor=#6699cc class=grisCCCCCC align=middle>
 <th width=10% height="30"> <a href='<?=$ref ?>radi_nume_radi'  alt=Seleccione una busqueda class="textoOpcion">
-		Número Radicado</a> </th>
+		Nï¿½mero Radicado</a> </th>
 <th  width=10% height="30"> <a href='<?=$ref ?>radi_fech_radi' alt=Seleccione una busqueda><img src='iconos/<?=$imagen ?>' border=0 alt='<?=$data ?>'><span class="textoOpcion">
 		Fecha Radicado</span></a></th>
 <th  width=30% height="30" > <a href='<?=$ref ?>ra_asun'  alt='eleccione una busqueda'><img src='iconos/<?=$imagen ?>' border=0 alt='<?=$data ?>'><span class="textoOpcion">
@@ -514,7 +514,7 @@ if($chk20)
 		<p class=etexto>
         <p class=etexto> <span class="etextomenu">ACCION REQUERIDA :</span> <br><font color=blue>
           <?
-		  if($enviara==21) {echo "Devolución";} else {echo "$proccarp";}
+		  if($enviara==21) {echo "Devoluciï¿½n";} else {echo "$proccarp";}
 		  ?> </font></p>
 		<p class=etexto><span class="etextomenu"><br>RADICADOS INVOLUCRADOS :</span><br>
            <font color=blue><?=$procard ?></font></p>

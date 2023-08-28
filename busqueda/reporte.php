@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -133,7 +133,7 @@ function Search_show()
   global $styles;
   
   global $sForm;
-  $sFormTitle = "Búsqueda";
+  $sFormTitle = "Bï¿½squeda";
   $sActionFileName = "reporte.php";
   $ss_desde_RADI_FECH_RADIDisplayValue = "";
   $ss_hora_inicialDisplayValue = "";

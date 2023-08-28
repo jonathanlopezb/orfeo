@@ -192,7 +192,7 @@ if (isset($_POST['creaConfigOrfeo'])) {
                         <div class="col-md-12 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input name="entidad_contacto" type="tel" class="form-control" id="entidad_contacto" placeholder="http://www.skinatech.com/contactenos"  value="<?php echo $entidad_contacto; ?>">
+                                <input name="entidad_contacto" type="tel" class="form-control" id="entidad_contacto" placeholder="http://cco.gov.co/contactenos"  value="<?php echo $entidad_contacto; ?>">
                             </div>
                         </div>
                     </div>

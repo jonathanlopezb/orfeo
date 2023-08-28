@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -257,7 +257,7 @@ function Form1_show()
       <tr><td class="FieldCaptionTD"><font class="FieldCaptionFONT">Palabra Clave</font></td><td class="DataTD"><input type="password" name="Password" maxlength="50"></td></tr>
       <tr><td colspan="2">
       <input type="hidden" name="FormAction" value="login">
-      <input type="submit" value="Conexión">
+      <input type="submit" value="Conexiï¿½n">
       </td></tr>
     <?
   }
@@ -272,7 +272,7 @@ function Form1_show()
 ?>
       <tr><td class="DataTD"><font class="DataFONT"> <?= $db->f("USUA_LOGIN") ?></font>
       <input type="hidden" name="FormAction" value="logout">
-      <input type="submit" value="Desconexión">
+      <input type="submit" value="Desconexiï¿½n">
       </td></tr>
 <?
   }

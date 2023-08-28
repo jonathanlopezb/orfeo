@@ -6,7 +6,7 @@
             <tr>
             <tr>
                 <td>
-                    <p align="center"><a href="http://www.skinatech.com"><img src="images/logo-skina.png" alt="skina" width="200" longdesc="skina" /></a></p>
+                    <p align="center"><a href="http://cco.gov.co"><img src="images/logo-skina.png" alt="skina" width="200" longdesc="skina" /></a></p>
                 </td>
                 <td>
                     <p align="center"><a href="http://www.kuine.org"><img src="images/kuine_logo.jpg" alt="kuine" width="200" longdesc="kuine"/></a></p>

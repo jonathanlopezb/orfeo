@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -72,7 +72,7 @@
  * @author    Pablo Villate <pvillate@skinatech.com>
  * @copyright 2014 Skina Technologies Ltda.
  * @license   ../LICENSE.txt <http://www.gnu.org/licenses/gpl-2.0.html>
- * @link      http://www.skinatech.com
+ * @link      http://cco.gov.co
  * @since     Archivo disponible desde la version 1.0.0
  */
 

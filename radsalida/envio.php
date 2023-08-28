@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -386,7 +386,7 @@ if(($grb_destino or  $reg_envio) AND $envio_peso and $valor_unit)
 
   $numrad = $verrad;
   error_reporting(7);
-  // lugar en el cual se muestra la Información para grabar en el Radicado
+  // lugar en el cual se muestra la Informaciï¿½n para grabar en el Radicado
   	//$verrad_sal = trim($radicados_sel[$i]);
 	//$nunrad_sal = trim($radicados_sel[$i]);
 	$verrad_sal = substr($verrad_sal,0,$no_digitos);

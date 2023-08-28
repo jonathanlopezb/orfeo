@@ -6,7 +6,7 @@
  * @package      SGD Orfeo
  * @subpackage   
  * @author       Jaime E. Gomez H.
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$

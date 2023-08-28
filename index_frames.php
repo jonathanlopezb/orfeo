@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -35,7 +35,7 @@ $autenticaPorLDAP = $_SESSION["autentica_por_LDAP"];
 //$ruta_raiz = ".";
 
 $imagenes = $_SESSION["imagenes"];
-$logo = 'logoEntidad.png';
+$logo = 'logoEntidad.png-dist';
 
 ?>
 <html>
@@ -258,7 +258,7 @@ $logo = 'logoEntidad.png';
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <a href="http://www.skinatech.com"><img src="estilos/orfeo50/imagenes50/sgd.png" class="orf2" alt="Skina technologies"></a>
+                    <a href="http://cco.gov.co"><img src="estilos/orfeo50/imagenes50/sgd.png" class="orf2" alt="Skina technologies"></a>
                 </div>
                 <!-- <div class="col-md-2">
                     <img src="estilos/orfeo50/imagenes50/<?= $logo ?>" <?php echo ($_SESSION["logoSuperiorOrfeo"] == true) ? "" : "style=\"visibility:hidden;\""; ?> class="orf" alt="">

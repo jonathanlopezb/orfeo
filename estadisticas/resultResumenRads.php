@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -46,7 +46,7 @@ $hora=date("H")."_".date("i")."_".date("s");
 $ddate=date('d');
 // var que almacena el mes de la fecha
 $mdate=date('m');
-// var que almacena el año de la fecha
+// var que almacena el aï¿½o de la fecha
 $adate=date('Y');
 // var que almacena  la fecha formateada
 $fecha=$adate."_".$mdate."_".$ddate;

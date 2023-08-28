@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -61,7 +61,7 @@
       </td>
     </tr>
 		<?
-		//Recorre el erreglo con los documentos radicados y muestra su número
+		//Recorre el erreglo con los documentos radicados y muestra su nï¿½mero
 		while ($i < $num) {	
 		?>
       <tr align="center"> 

@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -34,7 +34,7 @@
 <head>
 <title>ORFEO</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<!-- Fireworks MX Dreamweaver MX target.  Created Tue Sep 27 13:32:55 GMT-0500 (Hora est. del Pacífico de SA) 2005-->
+<!-- Fireworks MX Dreamweaver MX target.  Created Tue Sep 27 13:32:55 GMT-0500 (Hora est. del Pacï¿½fico de SA) 2005-->
 <style type="text/css">
 <!--
 body {
@@ -72,7 +72,7 @@ function MM_swapImage() { //v3.0
 //-->
 
 function cerrar_session() {
-	if (confirm('¿Esta seguro de Cerrar Sesion ?'))
+	if (confirm('ï¿½Esta seguro de Cerrar Sesion ?'))
 	{
 		fecha = <?=date("Ymdhms") ?>;
 		<?

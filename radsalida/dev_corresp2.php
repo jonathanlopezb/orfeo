@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -118,7 +118,7 @@
 	</TD>
   </TR>
     <TR>
-    <TD height="26" class='grisCCCCCC'>Motivo Devolución</TD>
+    <TD height="26" class='grisCCCCCC'>Motivo Devoluciï¿½n</TD>
     <TD valign="top">
 <select name ="motivo_devol" class="ecajasfecha" >
       <option value="0">----- Todas -----</option>
@@ -186,7 +186,7 @@ if(($devolver_rad or $devolver_dependencias) and $fecha_busq)
 	{
      ?>
 	  <span class=etexto>Si esta seguro de devolver estos documentos por favaor haga clik aqui</span>
-	  <input type=SUBMIT name='devolver_dependencias'  value = 'Confirmar Devolución' class=ebuttons2>
+	  <input type=SUBMIT name='devolver_dependencias'  value = 'Confirmar Devoluciï¿½n' class=ebuttons2>
 	  <?php
 	 }
      else

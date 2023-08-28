@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -130,11 +130,11 @@ src="<?=$imagenes?>/informar_R.gif" border=0 id=informar_r></a><font color="#000
                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
                       <tr> 
                         <td width="11%"><img src="<?=$imagenes?>/listar.gif" width="73" height="20"></td>
-                        <td width="89%"> <a href='cuerpo.php?<?=session_name()."=".trim(session_id()).$encabezado."7&ordcambio=1"; ?>' alt='Ordenar Por Leidos'><span class='tpar'>Leídos 
+                        <td width="89%"> <a href='cuerpo.php?<?=session_name()."=".trim(session_id()).$encabezado."7&ordcambio=1"; ?>' alt='Ordenar Por Leidos'><span class='tpar'>Leï¿½dos 
                           </span></a> 
                           <?=$img7 ?>
                           <a href='cuerpo.php?<?=session_name()."=".trim(session_id()).$encabezado."8&ordcambio=1" ?>' alt='Ordenar Por Leidos' class="tparr"><span class='tparr'> 
-                          No Leídos</span></a></td>
+                          No Leï¿½dos</span></a></td>
                       </tr>
                     </table>
                   </td>

@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -34,10 +34,10 @@
 /**
  * RemitenteDocumento es la clase encargada de gestionar las operaciones 
  * relacionadas con el manejo que se da a los tipos de remitente, dentro del formulario que
- * selecciona paqueted de numeración y fechado
+ * selecciona paqueted de numeraciï¿½n y fechado
  * a un radicado
  * <p>
- * @author      Sixto Angel Pinzón
+ * @author      Sixto Angel Pinzï¿½n
  * @version     1.0
  */
  
@@ -50,7 +50,7 @@ class RemitenteDocumento {
    */
 var $usuarioRemitenteNombre;
 /**
-   * Almacena la dirección remitente usuario
+   * Almacena la direcciï¿½n remitente usuario
    * @var string
    * @access public
    */
@@ -74,7 +74,7 @@ var $usuarioRemitenteMunicipio;
    */
 var $ESPRemitenteNombre;
 /**
-   * Almacena la dirección de la ESP remitente 
+   * Almacena la direcciï¿½n de la ESP remitente 
    * @var string
    * @access public
    */
@@ -99,7 +99,7 @@ var $ESPRemitenteMunicipio;
    */
 var $otroRemitenteNombre;
 /**
-   * Almacena la dirección del remitente "otro"
+   * Almacena la direcciï¿½n del remitente "otro"
    * @var string
    * @access public
    */
@@ -123,7 +123,7 @@ var $otroRemitenteMunicipio;
    */
 var $predioRemitenteNombre;
 /**
-   * Almacena la dirección del predio
+   * Almacena la direcciï¿½n del predio
    * @var string
    * @access public
    */

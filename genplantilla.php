@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -117,7 +117,7 @@ $alltext = str_replace("*DIA*",$fdia,$alltext);
 $alltext = str_replace("*DIA_NOMBRE*",$fdia_nombre,$alltext);
 $alltext = str_replace("*MES_NOMBRE*",$fmes_nombre,$alltext);
 $alltext = str_replace("*MES*",$fmes,$alltext);
-$alltext = str_replace("*AÑO*",$fano,$alltext);
+$alltext = str_replace("*Aï¿½O*",$fano,$alltext);
 $alltext = str_replace("*RADICADO*",$radicado,$alltext);
 $alltext = str_replace("*FECHARAD*",$fecharad,$alltext);
 $alltext = str_replace("*CUENTAI*",$cuentai,$alltext);
@@ -132,7 +132,7 @@ if($alltext and $enviar)
 // ****************  FIN TX COMBINACION DE CAMPOS
 if($radicar_documento)
 {
-// Generar el Numero de Radicación
+// Generar el Numero de Radicaciï¿½n
 ECHO "eNTRO A generar la secuencia";
 	 if($gen_rad != "false")
 	 {

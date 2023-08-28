@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -176,7 +176,7 @@ function Search_show()
      <tr>
       <td class="FieldCaptionTD"><font class="FieldCaptionFONT">Radicado</font></td>
       <td class="DataTD"><input type="text" name="s_RADI_NUME_RADI" maxlength="" value="<?= tohtml($flds_RADI_NUME_RADI) ?>" size="" ></td>
-     <td ><input type="submit" value="Búsqueda"></td>
+     <td ><input type="submit" value="Bï¿½squeda"></td>
     </tr>
    </table>
    </form>

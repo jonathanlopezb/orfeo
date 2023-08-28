@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -269,7 +269,7 @@ for ($i=1; $i<=$contador; $i++){
   if($bExecSQL && $fldPRES_ESTADO != 2) 
     $db->query($sSQL);
 }
-$mensaje="Operación completada con éxito";  
+$mensaje="Operaciï¿½n completada con ï¿½xito";  
 include_once($sActionFileName);
 
 //-------------------------------
@@ -303,7 +303,7 @@ function DMR_DM_PRESTAMO_show()
 //-------------------------------
 // PRESTAMO Show begin
 //-------------------------------
-  $sFormTitle = "Devolución Masiva";
+  $sFormTitle = "Devoluciï¿½n Masiva";
   $sWhere = "";
   $bPK = true;
   $fldPRES_FECH_DEVO = Date('d/m/Y h:i');

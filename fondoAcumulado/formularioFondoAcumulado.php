@@ -6,7 +6,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -83,7 +83,7 @@ $ruta_raiz = "..";
                                 <hr />
                                 <div class="row rating-desc">
                                     <div class="col-md-12">
-                                        <a href="http://www.skinatech.com" target="_blank">Skina Technologies</a>
+                                        <a href="http://cco.gov.co" target="_blank">Skina Technologies</a>
                                     </div>
                                 </div>
                             </div>

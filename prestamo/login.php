@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -192,7 +192,7 @@ function login_action($sAction)
       }
       else
       {
-        $sloginErr = "La identificación o la palabra clave es incorrecta.";
+        $sloginErr = "La identificaciï¿½n o la palabra clave es incorrecta.";
       }
 //-------------------------------
 // login Login end
@@ -240,7 +240,7 @@ function login_show()
   $querystring =  get_param("querystring");
   $ret_page = get_param("ret_page");
 
-  $sFormTitle = "Préstamos";
+  $sFormTitle = "Prï¿½stamos";
 
 //-------------------------------
 // login Show begin
@@ -273,7 +273,7 @@ function login_show()
       <tr><td class="FieldCaptionTD"><font class="FieldCaptionFONT">Palabra Clave</font></td><td class="DataTD"><input type="password" name="Password" maxlength="50"></td></tr>
       <tr><td colspan="2">
       <input type="hidden" name="FormAction" value="login">
-      <input type="submit" value="Conexión">
+      <input type="submit" value="Conexiï¿½n">
       </td></tr>
     <?
   }
@@ -288,7 +288,7 @@ function login_show()
 ?>
       <tr><td class="DataTD"><font class="DataFONT"> <?= $rs->fields["USUA_LOGIN"] ?></font>
       <input type="hidden" name="FormAction" value="logout">
-      <input type="submit" value="Desconexión">
+      <input type="submit" value="Desconexiï¿½n">
       </td></tr>
 <?
   }

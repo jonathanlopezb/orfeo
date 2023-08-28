@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -37,7 +37,7 @@ $fechah = date("Ymdhms");
 <head>
 <script language="JavaScript" type="text/JavaScript">
 function cerrar_session() {
-	if (confirm('¿Esta seguro de Cerrar Sesion ?'))
+	if (confirm('ï¿½Esta seguro de Cerrar Sesion ?'))
 	{
 		fecha = <?=date("Ymdhms") ?>;
 		<?

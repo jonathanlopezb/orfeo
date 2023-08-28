@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -44,14 +44,14 @@ require_once("$ruta_raiz/include/combos.php");
 
 
 		
-//Genera el objeto que procesa los datos del remitnete para un paquete de numeración y fechado
+//Genera el objeto que procesa los datos del remitnete para un paquete de numeraciï¿½n y fechado
 $remitenteDocumento = new RemitenteDocumento; 
 $remitenteDocumento->setDatosUsuario($nombret_us11,$direccion_us11,$dpto_nombre_us11,$muni_nombre_us11);
 $remitenteDocumento->setDatosPredio($nombret_us2,$direccion_us2,$dpto_nombre_us2,$muni_nombre_us2);
 $remitenteDocumento->setDatosESP($nombret_us3,$direccion_us3,$dpto_nombre_us3,$muni_nombre_us3);
 $tipoDocumento = explode("-", $tipo);
 $tipoPaquete = $tipoDocumento[1];
-//Arma el query que obtine los datos del paquete de numeración y fechado
+//Arma el query que obtine los datos del paquete de numeraciï¿½n y fechado
 $q="select b.SGD_PNUFE_CODI ,a.SGD_DNUFE_CODI,a.SGD_DNUFE_PATH ,b.SGD_PNUFE_SERIE,c.SGD_TPR_DESCRIP,a.SGD_DNUFE_LABEL,a.SGD_DNUFE_MAIN,a.TRTE_CODI from sgd_dnufe_docnufe a,sgd_pnufe_procnumfe b,sgd_tpr_tpdcumento c where b.sgd_pnufe_codi=a.sgd_pnufe_codi " .
 		"and c.sgd_tpr_codigo=a.sgd_tpr_codigo and b.sgd_pnufe_codi=$tipoPaquete order by a.sgd_dnufe_main desc";
 //$conexion = new ConnectionHandler;
@@ -89,7 +89,7 @@ desde=0;
 documentos=document.formPaqueteDocumentos.listaDocumentos.value;
 
 //Verifica que no exista problema alguno con las plantillas, es decir que el campo que
-//indica algun inconveniente "existeDocumento*" no tenga algún comentario de objeción
+//indica algun inconveniente "existeDocumento*" no tenga algï¿½n comentario de objeciï¿½n
 while ( documentos.indexOf("[",desde) >=0) {
 		
 		hasta = documentos.indexOf("]",desde) + 1;
@@ -110,7 +110,7 @@ desde=0;
 //El campo listaDestinatarios almacena los destinatarios involucrados en el paquete de documentos
 destinatarios=document.formPaqueteDocumentos.listaDestinatarios.value;
 //Verifica que no exista problema alguno con los remitentes, es decir que el campo que
-//indica algun inconveniente "completitudDestinatario*" no tenga algún comentario de objeción
+//indica algun inconveniente "completitudDestinatario*" no tenga algï¿½n comentario de objeciï¿½n
 while ( destinatarios.indexOf("[",desde) >=0) {
 		
 		hasta = destinatarios.indexOf("]",desde) + 1;
@@ -128,11 +128,11 @@ while ( destinatarios.indexOf("[",desde) >=0) {
 
 
 
-//Verifica que los argumentos esten completos, a través del campo "listaArgumentos", que contiene
+//Verifica que los argumentos esten completos, a travï¿½s del campo "listaArgumentos", que contiene
 //la lista de codigos de argumento del paquete de datos
 desde=0; 
 argumentos=document.formPaqueteDocumentos.listaArgumentos.value;
-//Verifica que no exista problema alguno con los argumentos, es decir que las listas de selección que
+//Verifica que no exista problema alguno con los argumentos, es decir que las listas de selecciï¿½n que
 //despliegan los argumentos hayan sido seleccionadas
 while ( argumentos.indexOf("[",desde) >=0) {
 		
@@ -203,7 +203,7 @@ while ($rs&&!$rs->EOF) {
   <r> 
 	
 	<?
-	// Si es el documento principal pintal el último número generado y los argumentos
+	// Si es el documento principal pintal el ï¿½ltimo nï¿½mero generado y los argumentos
 	if ($documentoPrincipal=="1") {
 		$numeroActualSecuencia = $anexo->obtenerNumeroActualSecuencia($tipoPaquete,$dependencia);
 	

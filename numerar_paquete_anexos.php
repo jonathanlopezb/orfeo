@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -31,8 +31,8 @@
 
 
 if (!$ruta_raiz) $ruta_raiz= ".";
-//Programa que numera un paquete de documentos de numeración y fechado
-//además muestra el resultado de esta numeración
+//Programa que numera un paquete de documentos de numeraciï¿½n y fechado
+//ademï¿½s muestra el resultado de esta numeraciï¿½n
 if (!$dependencia or !$depe_codi_territorial)  include "$ruta_raiz/rec_session.php";
 
 include("$ruta_raiz/class_control/anexo.php");
@@ -55,7 +55,7 @@ if (strlen(trim($secuenciaDocto))<1){
 }
 	if	(!$anex->guardarSecuencia()){
 		$db->conn->RollbackTrans();
-		die ("<span class='etextomenu'>No se ha podido Grabar la información de numeración");
+		die ("<span class='etextomenu'>No se ha podido Grabar la informaciï¿½n de numeraciï¿½n");
 	
 	}
 	$tipoDocumento = & new TipoDocumento($db); 

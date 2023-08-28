@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -36,13 +36,13 @@ $imagenes=$_SESSION["imagenes"];
 $ruta_raiz = "..";
 if(!$dependencia) include_once "$ruta_raiz/rec_session.php";
 /**
-  *  ANULACION DE RADICADOS.  Sun función es presentar a los usuarios segun sus permisos el listado de radicados para realizar solicitud de anulacion de los radicados.
+  *  ANULACION DE RADICADOS.  Sun funciï¿½n es presentar a los usuarios segun sus permisos el listado de radicados para realizar solicitud de anulacion de los radicados.
 	*  Este permiso depende del campo existente en la tabla usuario llamado sgd_panu_codi
 	*
 	*/
 ?>
 <html>
-<Head><TITLE>Anulación de Radicados</TITLE>
+<Head><TITLE>Anulaciï¿½n de Radicados</TITLE>
 
 <?
 /*  INICILAIZACION DE VARIABLES
@@ -61,7 +61,7 @@ if(!$depeBuscada)
 }
 /*  FILTRO DE DATOS
  *  @$setFiltroSelect  Contiene los valores digitados por el usuario separados por coma.
- *  @$filtroSelect Si SetfiltoSelect contiene algunvalor la siguiente rutina realiza el arreglo de la condición para la consulta a la base de datos y lo almacena en whereFiltro.
+ *  @$filtroSelect Si SetfiltoSelect contiene algunvalor la siguiente rutina realiza el arreglo de la condiciï¿½n para la consulta a la base de datos y lo almacena en whereFiltro.
  *  @$whereFiltro  Si filtroSelect trae valor la rutina del where para este filtro es almacenado aqui.
  *  
  */
@@ -365,7 +365,7 @@ function  prueba(Button)
 {
 	if (event.button == 2)
 	{
-		alert("Botón derecho pulsado");
+		alert("Botï¿½n derecho pulsado");
 	}
 }
  </script>

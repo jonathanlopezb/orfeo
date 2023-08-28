@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -34,8 +34,8 @@
 require_once("$ruta_raiz/include/db/ConnectionHandler.php");
 
 /**
- * Notificacion es la clase encargada de gestionar las operaciones y  los datos básicos referentes a un tipo de Notificacion
- * @author      Sixto Angel Pinzón
+ * Notificacion es la clase encargada de gestionar las operaciones y  los datos bï¿½sicos referentes a un tipo de Notificacion
+ * @author      Sixto Angel Pinzï¿½n
  * @version     1.0
  */                  
 class Notificacion {
@@ -73,7 +73,7 @@ class Notificacion {
 
 
 /** 
-* Retorna el valor string correspondiente al atributo descripción de la notificacion, debe invocarse antes notificacion_codigo()
+* Retorna el valor string correspondiente al atributo descripciï¿½n de la notificacion, debe invocarse antes notificacion_codigo()
 * @return   string
 */
 	function get_sgd_not_descrip() {
@@ -91,12 +91,12 @@ class Notificacion {
 
 
  /** 
-  * Carga los datos de la instacia con un código de departamento suministrado
-  * @param	$codigo	int	es el código del departamento
+  * Carga los datos de la instacia con un cï¿½digo de departamento suministrado
+  * @param	$codigo	int	es el cï¿½digo del departamento
   */
 	function notificacion_codigo($codigo){
 
-	//si se ingresó un parámetro válido
+	//si se ingresï¿½ un parï¿½metro vï¿½lido
 		if (strlen($codigo>0)){
 			//almacena el query
 			$q= "select *  from sgd_not_notificacion

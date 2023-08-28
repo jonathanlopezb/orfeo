@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -30,7 +30,7 @@
         +---------------------------------------------------------*/
 
 
-// Programa que actualiza el paquete de documentos de numeración y fechado
+// Programa que actualiza el paquete de documentos de numeraciï¿½n y fechado
 session_start();
 //print("ENTRA");
 if (!$ruta_raiz) $ruta_raiz = ".";
@@ -45,7 +45,7 @@ require_once("$ruta_raiz/class_control/anex_tipo.php");
 //print("INCLUYE");
 $fecha_hoy = Date("Y-m-d");
 $hora=date("H").":".date("i").":".date("s");
-//Trae los datos relacionados con el paquete de documentos de numeración y fechado
+//Trae los datos relacionados con el paquete de documentos de numeraciï¿½n y fechado
 $q="select a.SGD_TPR_CODIGO, a.ANEX_TIPO_CODI, a.SGD_DNUFE_GERARQ,b.SGD_PNUFE_CODI ,a.SGD_DNUFE_CODI,a.SGD_DNUFE_PATH ,b.SGD_PNUFE_SERIE,c.SGD_TPR_DESCRIP,a.SGD_DNUFE_LABEL,a.SGD_DNUFE_MAIN,a.TRTE_CODI from sgd_dnufe_docnufe a,sgd_pnufe_procnumfe b,sgd_tpr_tpdcumento c where b.sgd_pnufe_codi=a.sgd_pnufe_codi " .
 		"and c.sgd_tpr_codigo=a.sgd_tpr_codigo and b.sgd_pnufe_codi=$tipoPaquete order by a.sgd_dnufe_main desc";
 //print("ANTES CONEXIONES");
@@ -137,7 +137,7 @@ if ($doctoPrincipal=="1") {
 			 
 			 if (!$rs3){
 			 	$db->conn->RollbackTrans();
-		 	 	die ("<span class='etextomenu'>No se ha podido Grabar la información seleccionada");
+		 	 	die ("<span class='etextomenu'>No se ha podido Grabar la informaciï¿½n seleccionada");
 			 }
 
 			 next($argumento); 

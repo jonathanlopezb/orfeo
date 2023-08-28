@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -158,7 +158,7 @@ if($motivo_devol)
 	ora_parse($cursor1,$isql);
 	ora_exec($cursor1);
 	$anexos_act = ora_numrows($cursor1);
-	echo "<br><span class=etexto>Se ha realizado la devolución de los siguientes registros enviados
+	echo "<br><span class=etexto>Se ha realizado la devoluciï¿½n de los siguientes registros enviados
 				<br>";
 }
 $isql = "select a.*,b.radi_nume_deri from sgd_renv_regenvio a, radicado b
@@ -218,12 +218,12 @@ while($btt->cursor->next_record())
 }
 }
  else {
-	echo "<span class=etexto><b>No se actualizaron los registros <br>Debe seleccionar un tipo de devolución<br>";
+	echo "<span class=etexto><b>No se actualizaron los registros <br>Debe seleccionar un tipo de devoluciï¿½n<br>";
 	echo "<input type=hidden name=devolucion_rad value=si>";
 }
 }else
 {
-	echo "<span class=etexto><b> <br>Debe seleccionar un tipo de devolución<br>";
+	echo "<span class=etexto><b> <br>Debe seleccionar un tipo de devoluciï¿½n<br>";
 	echo "<input type=hidden name=devolucion_rad value=no>";
 }
       ?>

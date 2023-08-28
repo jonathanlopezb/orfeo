@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -66,9 +66,9 @@ class Historico
    * @radicados      Arreglo de radicados
    * @depeOrigen int Dependencia que realiza la transaccion
    * @depeDest int   Dependencia destino
-	 * @usDocOrigen    Documento del usuario que realiza la transacción
+	 * @usDocOrigen    Documento del usuario que realiza la transacciï¿½n
 	 * @usDocDest      Documento del usuario destino
-	 * @tipoTx         Tipo de Transacción
+	 * @tipoTx         Tipo de Transacciï¿½n
    * @return void 
    * 
    */

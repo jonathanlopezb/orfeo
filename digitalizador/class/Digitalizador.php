@@ -16,7 +16,7 @@
  * @copyright 2015 Skina Technologies Ltda.
  * @license   ../LICENSE.txt <http://www.gnu.org/licenses/gpl-2.0.html>
  * @version   SVN: $Id$
- * @link      http://www.skinatech.com
+ * @link      http://cco.gov.co
  * @since     Archivo disponible desde la version 4.2.0
  */
 
@@ -30,7 +30,7 @@
  * @author    Camilo Andres Pintor Gutierrez <cpintor@skinatech.com>
  * @copyright 2015 Skina Technologies Ltda.
  * @license   ../LICENSE.txt <http://www.gnu.org/licenses/gpl-2.0.html>
- * @link      http://www.skinatech.com
+ * @link      http://cco.gov.co
  * @since     Archivo disponible desde la version 4.2.0
  */
 

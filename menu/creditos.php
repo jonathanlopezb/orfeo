@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -83,7 +83,7 @@
                         </ul>
                     </div>
                     <div class="price-table-button-holder">
-                        <a target="_blank" href="http://www.skinatech.com" > <button class="btnSkina">
+                        <a target="_blank" href="http://cco.gov.co" > <button class="btnSkina">
                                 Skina technologies
                             </button></a>
                     </div>
@@ -120,7 +120,7 @@
                         </ul>
                     </div>
                     <div class="price-table-button-holder">
-                        <a target="_blank" href="http://www.skinatech.com" > <button class="btnSkina">
+                        <a target="_blank" href="http://cco.gov.co" > <button class="btnSkina">
                                 Skina technologies
                             </button></a>
                     </div>

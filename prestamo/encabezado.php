@@ -8,7 +8,7 @@
  * @package      SGD Orfeo
  * @subpackage   Main
  * @author       Community
- * @author       Skina Technologies SAS (http://www.skinatech.com)
+ * @author       Skina Technologies SAS (http://cco.gov.co)
  * @license      GNU/GPL <http://www.gnu.org/licenses/gpl-2.0.html>
  * @link         http://www.orfeolibre.org
  * @version      SVN: $Id$
@@ -78,7 +78,7 @@ function Form1_show()
       <td class="DataTD"><a href="<?= $fldprestamoMasivo?>"><font class="DataFONT">Prestamo Masivo</font></a></td>
       <td class="DataTD"><a href="<?= $flddevolver?>"><font class="DataFONT">Ver Prestados</font></a></td>
       <td class="DataTD"><a href="<?= $flddevolucionMasivo?>"><font class="DataFONT">Devolucion Masiva</font></a></td>
-      <td class="DataTD"><a href="<?= $fldbusquedas?>"><font class="DataFONT">Búsquedas</font></a></td>
+      <td class="DataTD"><a href="<?= $fldbusquedas?>"><font class="DataFONT">Bï¿½squedas</font></a></td>
       <td class="DataTD"><a href="<?= $fldcancelarAntiguos?>"><font class="DataFONT">Cancelar Antiguos</font></a></td>
       <td class="DataTD"><a href="<?= $fldsalir?>"><font class="DataFONT">Salida Segura</font></a></td>
      </tr>
