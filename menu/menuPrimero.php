@@ -53,7 +53,7 @@ echo 'menu-primero';
                                     <!--By Skina -Ing Camilo Pintor Nov-12-2013 Se comenta para dar accesibilidad en el movimiento entre aplicaciones con el tab inci -->
                                     <!--<td width="25"><img src="<?= $imagenes ?>/menu.gif" height="18"></td>-->
                                     <td width="125">
-                                        <span class="Estilo12"><a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2"" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a></span>
+                                        <span class="Estilo12"><a  id="adminPerm" href="Administracion/formAdministracion.php?<?= $phpsession ?>&fechah=<?= $fechah ?>&primera=1&ent=2" target='mainFrame' class="menu_princ menu1" aria-label="M&oacute;dulo de Administraci&oacute;n del aplicativo" alt="M&oacute;dulo de Administraci&oacute;n del aplicativo" title="M&oacute;dulo de Administraci&oacute;n del aplicativo">Administraci&oacute;n</a></span>
                                     </td>
                                 </tr>
                                 <?php
