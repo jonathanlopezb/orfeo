@@ -7743,10 +7743,10 @@ COPY public.departamento (dpto_codi, dpto_nomb, id_cont, id_pais) FROM stdin;
 --
 
 COPY public.dependencia (depe_codi, depe_nomb, dpto_codi, depe_codi_padre, muni_codi, depe_codi_territorial, dep_sigla, dep_central, dep_direccion, depe_num_interna, depe_num_resolucion, depe_rad_tp1, depe_rad_tp2, id_cont, id_pais, depe_estado, depe_segu, depe_rad_tp4) FROM stdin;
-998	Dependencia de Skinatech	11	998	1	998	DAS	1	Carrera 37 No. 53-50	\N	\N	998	998	1	170	1	\N	998
+998	Dependencia administradora Sistema	11	998	1	998	DAS	1	Carrera 37 No. 53-50	\N	\N	998	998	1	170	1	\N	998
 999	Dependencia Administración Archivo	11	999	1	999	DAA	1	Carrera 37 No. 53-50	\N	\N	999	999	1	170	1	\N	999
 100	INVIMA SAS	11	998	1	998	INVM	\N	Zona franca de bogota	\N	\N	\N	\N	1	170	1	\N	\N
-101	SKINA TECHNOLOGIES	11	998	1	998	SKN	\N	Zona franca Bodega 10	\N	\N	\N	\N	1	170	1	\N	\N
+101	Comisión Colombiana del Océano	11	998	1	998	SKN	\N	Zona franca Bodega 10	\N	\N	\N	\N	1	170	1	\N	\N
 \.
 
 
