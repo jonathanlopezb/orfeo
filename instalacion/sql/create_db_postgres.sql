@@ -93,7 +93,7 @@ CREATE FUNCTION concat(text, text) RETURNS text
     AS $_$select case when $1 = '' then $2 else ($1 || ', ' || $2) end$_$;
 
 
-ALTER FUNCTION public.concat(text, text) OWNER TO orfeo62usr;
+ALTER FUNCTION public.concat(text, text) OWNER TO orfeo_usr;
 
 SET default_tablespace = '';
 
