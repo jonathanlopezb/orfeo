@@ -430,7 +430,7 @@ $error_msg .= '</td></tr></table>';
         <!-- <link href="<?= $url_raiz . $ESTILOS_PATH2 ?>bootstrap.css" rel="stylesheet" type="text/css"/> -->
         <link href="../../../estilos50/orfeo50/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="<?= $url_raiz . $_SESSION['ESTILOS_PATH_ORFEO'] ?>" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="<?php echo $url_raiz ?>/estilos/tabber.css" TYPE="text/css" MEDIA="screen">
+        <link rel="stylesheet" href="../../../estilos/tabber.css" TYPE="text/css" MEDIA="screen">
         <!--
         Skinatech
         Autor: Andrés Mosquera
