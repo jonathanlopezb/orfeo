@@ -686,6 +686,8 @@ echo arrayToJsArray($vmcposv, 'vm');
                     return false;
                 }
             }
+
+            console.log("Tengo javascript")
             /***
             Skinatech
             Autor: Andrés Mosquera
