@@ -450,8 +450,8 @@ $error_msg .= '</td></tr></table>';
         Información: Se crea esta clase para ampliar el select multiple de las dependencias
         -->
 
-        <script language="JavaScript" src="<?php echo $url_raiz ?>/js/formchek.js"></script>
-        <script language="JavaScript" src="<?php echo $url_raiz ?>/js/crea_combos_2.js"></script>
+        <script language="JavaScript" src="../../../js/formchek.js"></script>
+        <script language="JavaScript" src="../../../js/crea_combos_2.js"></script>
         <script language="JavaScript">
             document.write('<style type="text/css">.tabber{display:none;}<\/style>');
             var tabberOptions =
