@@ -477,7 +477,7 @@ $error_msg .= '</td></tr></table>';
                         'addLinkId': true
                     };
         </script>
-        <script type="text/javascript" src="<?php echo $url_raiz ?>/js/tabber.js"></script>
+        <script type="text/javascript" src="../../../js/tabber.js"></script>
         <script language="Javascript">
             function ver_datos(x)
             {
