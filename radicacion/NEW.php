@@ -437,112 +437,7 @@ function fechf(formulario,n){
     return fecha_doc;
 }
 
-function radicar_doc(){
-    
-  //if(fechf ("formulario",16)=="ok"){
 
-    if( document.formulario.documento_us1.value == 0 || document.formulario.documento_us1.value == '' ){
-      alert("El n\u00FAmero de identificaci\u00F3n es obligatorio.");
-      document.formulario.cc_documento_us1.focus();
-      return false;
-    }
-
-    if( document.formulario.direccion_us1.value == 0 || document.formulario.direccion_us1.value == '' ){
-      alert("La direcci\u00F3n es obligatoria.");
-      document.formulario.direccion_us1.focus();
-      return false;
-    }
-
-    if( document.formulario.asu.value == '' ){
-      alert("El asunto es obligatorio.");
-      document.formulario.asu.focus();
-      return false;
-    }
-
-    if( document.formulario.muni_us1.value == 0 || document.formulario.muni_us1.value == '' ){
-      alert("El municipio es obligatorio.");
-      document.formulario.muni_us1.focus();
-      return false;
-    }
-
-    if( document.formulario.tdoc.value == 0 || document.formulario.tdoc.value == '' ){
-      alert("El tipo documental es obligatorio.");
-      document.formulario.tdoc.focus();
-      return false;
-    }
-
-    if( document.formulario.coddepe.value == 0 || document.formulario.coddepe.value == '' ){
-      alert("La dependencia responsable es obligatoria.");
-      document.formulario.coddepe.focus();
-      return false;
-    }
-
-    if(document.formulario.birds2.value == ''){
-        alert("Los dias de termino son obligatorios");
-        document.formulario.birds2.focus();
-        return false;
-    }
-
-    if(document.formulario.birds2.value == 0){
-        alert("Ingreso 0 en dias de termino lo que indica que para el dia de mañana ya estaria vencido el radicado");
-    }
-
-
-    if(document.formulario.ent.value == 2 || document.formulario.ent.value == 4){
-        
-        // if(document.formulario.sgd_ciu_eps.value == ''){
-        //     alert("El campo eps es obligatorio.");
-        //     document.formulario.sgd_ciu_eps.focus();
-        //     return false;
-        // }       
-        if( document.formulario.radi_nume_hoja.value == 0 || document.formulario.radi_nume_hoja.value == '' ){
-            alert("La cantidad de folios es obligatorio.");
-            document.formulario.radi_nume_hoja.focus();
-            return false;
-        }  
-    }
-
-    if(document.formulario.ent.value == 4){
-        if( document.formulario.tipoUsuarioGrupo.value == 0){
-            alert("El tipo de usuario es obligatorio, no puede ser vacio.");
-            document.formulario.tipoUsuarioGrupo.focus();
-            return false;
-        }
-
-        // if( document.formulario.tipoServicioPqrs.value == 0){
-        //     alert("El servicio es obligatorio, no puede ser vacio.");
-        //     document.formulario.tipoServicioPqrs.focus();
-        //     return false;
-        // }
-
-        // if( document.formulario.tipoGrupoInteres.value == 0){
-        //     alert("EL centro de atención es obligatorio, no puede ser vacio.");
-        //     document.formulario.tipoGrupoInteres.focus();
-        //     return false;
-        // }
-    }
-
-    if ( 
-      document.formulario.tdoc.value != 0 &&
-            document.formulario.documento_us1.value != 0 &&
-            document.formulario.muni_us1.value != 0 &&
-            document.formulario.direccion_us1.value != 0 &&
-            document.formulario.coddepe.value != 0 &&
-      document.formulario.asu.value != '' ) 
-    {
-        document.getElementById( 'birds22' ).value = document.getElementById( 'birds2' ).value;
-        if($('#radicadoexiste').prop('checked') && $("#radinume").val() == ''){
-          alert("Tiene marcada la opcion (Ya tiene radicado), por favor ingrese el numero");
-        }else{
-          document.formulario.Submit33.disabled=true;
-          document.formulario.submit();
-        }
-        }else{
-          alert("El Remitente/Destinatario, Direcci\u00F3n, Asunto, Tipo de Documento y Dependencia son obligatorios ");    
-    }
-
-    //}
-}
 
 function modificar_doc(){
     if (document.formulario.documento_us1.value && document.formulario.asu.value != '' && document.formulario.tdoc.value != 0) {
@@ -2717,7 +2612,7 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
                                 $varEnvio = session_name() . "=" . session_id() . "&faxPath&leido=no&krd=$krd&faxPath=$faxPath&verrad=$nurad&nurad=$nurad&ent=$ent&remite=$grbNombresUs1&dependenciaDestino=$dependencia";
                                 ?>
                                                 <center>
-                                                    <input type='button' onClick='modificar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
+                                                    <input type='button' onClick='radicar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
                                                     <br>
                                                     <input type='hidden'  name='Submit4' value='Modificar Datos' class='ebuttons2'>
                                                     <input type='hidden' name='nurad' value='<?= $nurad ?>'>
@@ -2740,10 +2635,112 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
 </form>
 
 <script>
-        function miFuncion() {
-        alert('¡La función JavaScript ha sido llamada!');
-        // Aquí puedes realizar cualquier acción que desees
-    }
+function radicar_doc(){
+    
+    //if(fechf ("formulario",16)=="ok"){
+  
+      if( document.formulario.documento_us1.value == 0 || document.formulario.documento_us1.value == '' ){
+        alert("El n\u00FAmero de identificaci\u00F3n es obligatorio.");
+        document.formulario.cc_documento_us1.focus();
+        return false;
+      }
+  
+      if( document.formulario.direccion_us1.value == 0 || document.formulario.direccion_us1.value == '' ){
+        alert("La direcci\u00F3n es obligatoria.");
+        document.formulario.direccion_us1.focus();
+        return false;
+      }
+  
+      if( document.formulario.asu.value == '' ){
+        alert("El asunto es obligatorio.");
+        document.formulario.asu.focus();
+        return false;
+      }
+  
+      if( document.formulario.muni_us1.value == 0 || document.formulario.muni_us1.value == '' ){
+        alert("El municipio es obligatorio.");
+        document.formulario.muni_us1.focus();
+        return false;
+      }
+  
+      if( document.formulario.tdoc.value == 0 || document.formulario.tdoc.value == '' ){
+        alert("El tipo documental es obligatorio.");
+        document.formulario.tdoc.focus();
+        return false;
+      }
+  
+      if( document.formulario.coddepe.value == 0 || document.formulario.coddepe.value == '' ){
+        alert("La dependencia responsable es obligatoria.");
+        document.formulario.coddepe.focus();
+        return false;
+      }
+  
+      if(document.formulario.birds2.value == ''){
+          alert("Los dias de termino son obligatorios");
+          document.formulario.birds2.focus();
+          return false;
+      }
+  
+      if(document.formulario.birds2.value == 0){
+          alert("Ingreso 0 en dias de termino lo que indica que para el dia de mañana ya estaria vencido el radicado");
+      }
+  
+  
+      if(document.formulario.ent.value == 2 || document.formulario.ent.value == 4){
+          
+          // if(document.formulario.sgd_ciu_eps.value == ''){
+          //     alert("El campo eps es obligatorio.");
+          //     document.formulario.sgd_ciu_eps.focus();
+          //     return false;
+          // }       
+          if( document.formulario.radi_nume_hoja.value == 0 || document.formulario.radi_nume_hoja.value == '' ){
+              alert("La cantidad de folios es obligatorio.");
+              document.formulario.radi_nume_hoja.focus();
+              return false;
+          }  
+      }
+  
+      if(document.formulario.ent.value == 4){
+          if( document.formulario.tipoUsuarioGrupo.value == 0){
+              alert("El tipo de usuario es obligatorio, no puede ser vacio.");
+              document.formulario.tipoUsuarioGrupo.focus();
+              return false;
+          }
+  
+          // if( document.formulario.tipoServicioPqrs.value == 0){
+          //     alert("El servicio es obligatorio, no puede ser vacio.");
+          //     document.formulario.tipoServicioPqrs.focus();
+          //     return false;
+          // }
+  
+          // if( document.formulario.tipoGrupoInteres.value == 0){
+          //     alert("EL centro de atención es obligatorio, no puede ser vacio.");
+          //     document.formulario.tipoGrupoInteres.focus();
+          //     return false;
+          // }
+      }
+  
+      if ( 
+        document.formulario.tdoc.value != 0 &&
+              document.formulario.documento_us1.value != 0 &&
+              document.formulario.muni_us1.value != 0 &&
+              document.formulario.direccion_us1.value != 0 &&
+              document.formulario.coddepe.value != 0 &&
+        document.formulario.asu.value != '' ) 
+      {
+          document.getElementById( 'birds22' ).value = document.getElementById( 'birds2' ).value;
+          if($('#radicadoexiste').prop('checked') && $("#radinume").val() == ''){
+            alert("Tiene marcada la opcion (Ya tiene radicado), por favor ingrese el numero");
+          }else{
+            document.formulario.Submit33.disabled=true;
+            document.formulario.submit();
+          }
+          }else{
+            alert("El Remitente/Destinatario, Direcci\u00F3n, Asunto, Tipo de Documento y Dependencia son obligatorios ");    
+      }
+  
+      //}
+  }
 </script>
 
 <?php
