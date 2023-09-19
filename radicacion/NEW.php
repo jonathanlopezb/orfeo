@@ -389,8 +389,7 @@ function validaRadicado(){
 
 </script>
 
-<script language="JavaScript">
-console.log("Corriendo JS");
+<script>
 
 document.write('<style type="text/css">.tabber{display:none;}<\/style>');
 <?php

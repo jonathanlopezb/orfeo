@@ -97,14 +97,14 @@ if ($db) {
         }
         include($dir_raiz . "/class_control/Dependencia.php");
         $depObj = new Dependencia($db);
-       
+
         switch ($_POST['btn_accion']) {
             case 'Agregar': {
-//                    $db->conn->debug = true;
+                    //                    $db->conn->debug = true;
                     $db->conn->BeginTrans();
                     //Agregamos en el vector $record los registros de código y secuencias.
                     if (isset($_POST['txtIdDep']) && $_POST['txtIdDep'] != "")
-                    $record['DEPE_CODI'] = (string) str_pad($_POST['txtIdDep'], $longitud_codigo_dependencia, '0', STR_PAD_LEFT);
+                        $record['DEPE_CODI'] = (string) str_pad($_POST['txtIdDep'], $longitud_codigo_dependencia, '0', STR_PAD_LEFT);
                     foreach ($Vec_Trad as $tmp) {
                         $tmp1 = $tmp['id'];
                         if ($_POST['slc_tr' . $tmp1] > 0) {
@@ -113,7 +113,7 @@ if ($db) {
                             $pos = strpos($mystring, $findme);
 
                             if ($pos === false) {
-                                $record['DEPE_RAD_TP' . $tmp1] = "'" . $_POST['slc_tr' . $tmp1]. "'";
+                                $record['DEPE_RAD_TP' . $tmp1] = "'" . $_POST['slc_tr' . $tmp1] . "'";
                             } else {
                                 $record['DEPE_RAD_TP' . $tmp1] = "'" . $_POST['slc_tr' . $tmp1] . "'";
                             }
@@ -154,7 +154,8 @@ if ($db) {
                         ($ok1) ? (($ok2) ? $error = 4 : $error = 5) : $error = 3;
                         $db->conn->RollbackTrans();
                     }
-                }break;
+                }
+                break;
             case 'Modificar': {
                     /* Las reglas del negocio para la inactivacion de una dependencia son:
                       a. No debe tener usuarios Activos.
@@ -168,7 +169,7 @@ if ($db) {
                     //con el fin de comparar los cambios que necesiten validarse.
                     $record_ori = $depObj->dependenciaArr($_POST['id']);
                     //completamos el vector de datos recibidos
-                    $record['DEPE_CODI'] = "'" .str_pad($_POST['txtIdDep'],$longitud_codigo_dependencia,'0', STR_PAD_LEFT). "'";
+                    $record['DEPE_CODI'] = "'" . str_pad($_POST['txtIdDep'], $longitud_codigo_dependencia, '0', STR_PAD_LEFT) . "'";
                     $depe = $_POST['slc_tr' . $tmp1];
                     if ($_POST['Slc_destado'] == 0 && $record_ori['depe_estado'] == 1) {
                         //Iniciamos validaciones...
@@ -217,7 +218,7 @@ if ($db) {
                                         $vlr_nxt = $rs_nxt->fields['last_number'] + 1;
                                     if ($rs_act->RecordCount() > 0)
                                         $vlr_act = $rs_act->fields['last_number'] + 1;
-                                    $sql_rtp = "select * from radicado where " . $db->conn->substr . '(radi_nume_radi,15,1)=' . $tmp1 . " and radi_depe_radi='" . $_POST['txtIdDep']."'";
+                                    $sql_rtp = "select * from radicado where " . $db->conn->substr . '(radi_nume_radi,15,1)=' . $tmp1 . " and radi_depe_radi='" . $_POST['txtIdDep'] . "'";
                                     break;
                                 case 'mssql':
                                     $vlr_nxt = $db->conn->GenID('SECR_TP' . $tmp1 . '_' . $_POST['slc_tr' . $tmp1]);
@@ -236,11 +237,11 @@ if ($db) {
                             }
                             $ADODB_COUNTRECS = true;
                             $rs_rtp = $db->conn->Execute($sql_rtp);
-                            
+
                             $ADODB_COUNTRECS = false;
                             if ($rs_rtp->RecordCount() == 0)
                                 $vlr_nxt = $vlr_act;
-                            
+
                             if ($vlr_nxt < $vlr_act) {
                                 $okc = false;
                                 $tpr = $tmp1;
@@ -283,7 +284,7 @@ if ($db) {
                 }
                 break;
             case 'Eliminar': {
-//                     $db->conn->debug = true;
+                    //                     $db->conn->debug = true;
                     /* a. No debe tener histórico la actual dependencia(Consecuencia del punto b). */
                     $sql = "SELECT DEPE_CODI from HIST_EVENTOS where DEPE_CODI='" . $_POST['id'] . "'";
                     $ADODB_COUNTRECS = true;
@@ -301,9 +302,9 @@ if ($db) {
 
     include "$dir_raiz/radicacion/crea_combos_universales.php";
     // Buscamos los datos generales de las despencias
-    
+
     $driver == 'postgres' ? $var_usua_codi = "RTRIM(cast(u.usua_codi AS character(20)))" : $var_usua_codi = "RTRIM(CONVERT(varchar(20),u.usua_codi))";
-    
+
     $sql1 = "SELECT cast(DEPE_CODI as char(" . $longitud_codigo_dependencia . "))" . $db->conn->concat_operator . "' '" . $db->conn->concat_operator . "DEPE_NOMB as ver, ";
     $sql1 .= "DEPE_CODI as ID, DEPE_NOMB as NOMBRE, DEPE_ESTADO as ESTADO, ID_CONT, ID_PAIS, ";
     $sql1 .= "ID_PAIS" . $db->conn->concat_operator . "'-'" . $db->conn->concat_operator . "DPTO_CODI as DPTO_CODI , ";
@@ -311,7 +312,7 @@ if ($db) {
     $sql1 .= "DEPE_CODI_PADRE, DEPE_CODI_TERRITORIAL, DEP_SIGLA as SIGLA, DEP_CENTRAL, DEP_DIRECCION, DEPE_NUM_INTERNA, DEPE_NUM_RESOLUCION ";
     $sql1 .= "FROM DEPENDENCIA ";
     $sql3 = "ORDER BY DEPE_CODI";
-    
+
     $rs = $db->conn->Execute($sql1 . $sql3); //utilizamos este recorset para los combos de las dependencias y para traer los datos generales de todas las dependencias.
 //   echo '--------------- '.$sql1 . $sql3;
     if ($rs) {
@@ -320,7 +321,7 @@ if ($db) {
         //Buscamos los datos de una dependencia específica para generar los datos mostrados.
         if (isset($_POST['id']) && ($_POST['id'] > 0 || $_POST['id'] != "")) {
             $sql0 = "SELECT * FROM DEPENDENCIA ";
-            $sql2 = "WHERE DEPE_CODI = '" . $_POST['id'] . "'";            
+            $sql2 = "WHERE DEPE_CODI = '" . $_POST['id'] . "'";
             $v_def = $db->conn->GetAll($sql0 . $sql2 . $sql3);
             $txtIdDep = $assoc == 0 ? $v_def[0]['depe_codi'] : $v_def[0]['DEPE_CODI'];
             $txtSigla = $assoc == 0 ? $v_def[0]['dep_sigla'] : $v_def[0]['DEP_SIGLA'];
@@ -352,8 +353,8 @@ if ($db) {
 
         $varRad = new TipRads($db);
         $Vec_Trad = $varRad->GetArrayIdTipRad();
-        $nm = 'slc_tr';        
-        
+        $nm = 'slc_tr';
+
         foreach ($Vec_Trad as $val) {
             if (isset($val['ID']))
                 $value = $val['ID'];
@@ -369,7 +370,7 @@ if ($db) {
 
         $slc_dep1 = $rs->GetMenu2('id', $txtIdDep, ':&lt;&lt seleccione &gt;&gt;', false, false, 'Class="select" Onchange="ver_datos(this.value)" id="slc_id" title="Listado con todas las dependencias existentes, una vez seleccione alguna los campos del formulario se llenarán automáticamente"');
         $rs = $db->conn->Execute($sql1 . $sql3);
-        
+
         $slc_dep2 = $rs->GetMenu2('Slc_dpadre', $Slc_dpadre, ':&lt;&lt seleccione &gt;&gt;', false, false, 'Class="select" id="Slc_dpadre"');
         $rs = $db->conn->Execute($sql1 . $sql3);
         $slc_dep3 = $rs->GetMenu2('Slc_dterr', $Slc_dterr, ':&lt;&lt seleccione &gt;&gt;', false, false, 'Class="select" id="Slc_dterr"');
@@ -377,8 +378,7 @@ if ($db) {
         $slc_dep4 = $rs->GetMenu2('Slc_dvis[]', $Slc_dvis, false, true, 10, 'Class="select selectMultipleDependencias" id="Slc_dvis"');
         $rs = $db->conn->Execute($sql1 . $sql3);
         $slc_cont = $Rs_Cont->GetMenu2('idcont1', 0, "0:&lt;&lt; SELECCIONE &gt;&gt;", false, 0, "id=\"idcont1\" class=\"select\" onchange=\"borra_datos(this.form);cambia(this.form,'idpais1','idcont1')\"");
-    }
-    else {
+    } else {
         $error = 2;
     }
 }
@@ -418,334 +418,323 @@ switch ($error) {
     case 11: // Error en la modificacion de la dependencia
         $error_msg .= "No se pudo eliminar dependencia";
         break;
-    default: $error_msg .= "&nbsp;";
+    default:
+        $error_msg .= "&nbsp;";
         break;
 }
 $error_msg .= '</td></tr></table>';
 ?>
 <html>
-    <head>
-        <title>Orfeo- Admon de Dependencias.</title>
-        <?$url_raiz="../..";?>
-        <!-- <link href="<?= $url_raiz . $ESTILOS_PATH2 ?>bootstrap.css" rel="stylesheet" type="text/css"/> -->
-        <link href="../../../estilos50/orfeo50/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <!-- <link href="<?= $url_raiz . $_SESSION['ESTILOS_PATH_ORFEO'] ?>" rel="stylesheet" type="text/css"> -->
-        <link rel="stylesheet" href="../../../estilos/tabber.css" TYPE="text/css" MEDIA="screen">
-        <link rel="stylesheet" href="../../../estilos/orfeo.css" rel="stylesheet" type="text/css">
-        <!--
+
+<head>
+    <title>Orfeo- Admon de Dependencias.</title>
+    <? $url_raiz = "../.."; ?>
+    <!-- <link href="<?= $url_raiz . $ESTILOS_PATH2 ?>bootstrap.css" rel="stylesheet" type="text/css"/> -->
+    <link href="../../../estilos50/orfeo50/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="<?= $url_raiz . $_SESSION['ESTILOS_PATH_ORFEO'] ?>" rel="stylesheet" type="text/css"> -->
+    <link rel="stylesheet" href="../../../estilos/tabber.css" TYPE="text/css" MEDIA="screen">
+    <link rel="stylesheet" href="../../../estilos/orfeo.css" rel="stylesheet" type="text/css">
+    <!--
         Skinatech
         Autor: Andrés Mosquera
         Fecha: 08-11-2018
         Información: Se crea esta clase para ampliar el select multiple de las dependencias
         -->
-        <style type="text/css" media="screen">
-            .selectMultipleDependencias {
-                width: 800px;
-            }
-        </style>
-        <!--
+    <style type="text/css" media="screen">
+        .selectMultipleDependencias {
+            width: 800px;
+        }
+    </style>
+    <!--
         Skinatech
         Autor: Andrés Mosquera
         Fecha: 08-11-2018
         Información: Se crea esta clase para ampliar el select multiple de las dependencias
         -->
 
-        <script language="JavaScript" src="../../../js/formchek.js"></script>
-        <script language="JavaScript" src="../../../js/crea_combos_2.js"></script>
-        <script language="JavaScript">
-            document.write('<style type="text/css">.tabber{display:none;}<\/style>');
-            var tabberOptions =
-                    {
-                        /* Optional: instead of letting tabber run during the onload event,
-                         we'll start it up manually. This can be useful because the onload
-                         even runs after all the images have finished loading, and we can
-                         run tabber at the bottom of our page to start it up faster. See the
-                         bottom of this page for more info. Note: this variable must be set
-                         BEFORE you include tabber.js.
-                         */
-                        'manualStartup': true,
-                        /* Optional: code to run after each tabber object has initialized */
-                        'onLoad': function (argsObj)
-                        {
-                            /* Display an alert only after tab2 */
-                            if (argsObj.tabber.id == 'tab1')
-                            {
-                                crea_var_idlugar_defa('<?= $muni_us1 ?>');
-                            }
-                        },
-                        /* Optional: set an ID for each tab navigation link */
-                        'addLinkId': true
-                    };
-        </script>
-        <script type="text/javascript" src="../../../js/tabber.js"></script>
-        <script language="Javascript">
-            function ver_datos(x)
-            {
-                var pos = false;
-                if (x == '')
-                {
-                    document.getElementById('txtIdDep').value = '';
-                    document.getElementById('txtSigla').value = '';
-                    document.getElementById('Slc_destado').value = '';
-                    document.getElementById('txtModelo').value = '';
-                    document.getElementById('txtDir').value = '';
-                    document.getElementById('Slc_dpadre').value = '';
-                    document.getElementById('Slc_dterr').value = '';
-                    document.getElementById('idcont1').value = 0;
-                    act_pes2('');
-                    borra_datos(document.formSeleccion);
-                } else
-                {
-                    document.formSeleccion.submit();
-                }
-            }
-
-            function act_pes2(vlr)
-            {
-<?php
-echo $js_pes2;
-?>
-            }
-
-            function rightTrim(sString)
-            {
-                while (sString.substring(sString.length - 1, sString.length) == ' ')
-                {
-                    sString = sString.substring(0, sString.length - 1);
-                }
-                return sString;
-            }
-
-            function addOpt(oCntrl, iPos, sTxt, sVal)
-            {
-                var selOpcion = new Option(sTxt, sVal);
-                eval(oCntrl.options[iPos] = selOpcion);
-            }
-
-            function borra_datos(form1)
-            {
-                borra_combo(form1, 7);
-                borra_combo(form1, 8);
-                borra_combo(form1, 9);
-            }
-
-            /*
-             *	Funcion que se le envia el id del municipio en el formato general c-ppp-ddd-mmm y lo desgloza
-             *	creando las variables en javascript para su uso individual, p.e. para los combos respectivos.
+    <script language="JavaScript" src="../../../js/formchek.js"></script>
+    <script language="JavaScript" src="../../../js/crea_combos_2.js"></script>
+    <script language="JavaScript">
+        document.write('<style type="text/css">.tabber{display:none;}<\/style>');
+        var tabberOptions =
+        {
+            /* Optional: instead of letting tabber run during the onload event,
+             we'll start it up manually. This can be useful because the onload
+             even runs after all the images have finished loading, and we can
+             run tabber at the bottom of our page to start it up faster. See the
+             bottom of this page for more info. Note: this variable must be set
+             BEFORE you include tabber.js.
              */
-            function crea_var_idlugar_defa(id_mcpio)
-            {
-                if (id_mcpio == 0)
-                    return;
-                var str = id_mcpio.split('-');
-
-                document.formSeleccion.idcont1.value = str[0] * 1;
-                cambia(formSeleccion, 'idpais1', 'idcont1');
-                document.formSeleccion.idpais1.value = str[1] * 1;
-                cambia(formSeleccion, 'codep_us1', 'idpais1');
-                document.formSeleccion.codep_us1.value = str[1] * 1 + '-' + str[2] * 1;
-                cambia(formSeleccion, 'muni_us1', 'codep_us1');
-                document.formSeleccion.muni_us1.value = str[1] * 1 + '-' + str[2] * 1 + '-' + str[3] * 1;
+            'manualStartup': true,
+            /* Optional: code to run after each tabber object has initialized */
+            'onLoad': function (argsObj) {
+                /* Display an alert only after tab2 */
+                if (argsObj.tabber.id == 'tab1') {
+                    crea_var_idlugar_defa('<?= $muni_us1 ?>');
+                }
+            },
+            /* Optional: set an ID for each tab navigation link */
+            'addLinkId': true
+        };
+    </script>
+    <script type="text/javascript" src="../../../js/tabber.js"></script>
+    <script language="Javascript">
+        console.log("Escuchando")
+        function ver_datos(x) {
+            var pos = false;
+            if (x == '') {
+                document.getElementById('txtIdDep').value = '';
+                document.getElementById('txtSigla').value = '';
+                document.getElementById('Slc_destado').value = '';
+                document.getElementById('txtModelo').value = '';
+                document.getElementById('txtDir').value = '';
+                document.getElementById('Slc_dpadre').value = '';
+                document.getElementById('Slc_dterr').value = '';
+                document.getElementById('idcont1').value = 0;
+                act_pes2('');
+                borra_datos(document.formSeleccion);
+            } else {
+                document.formSeleccion.submit();
             }
+        }
 
-<?php
-// Convertimos los vectores de los paises, dptos y municipios creados en crea_combos_universales.php a vectores en JavaScript.
-echo arrayToJsArray($vpaisesv, 'vp');
-echo arrayToJsArray($vdptosv, 'vd');
-echo arrayToJsArray($vmcposv, 'vm');
-?>
+        function act_pes2(vlr) {
+            <?php
+            echo $js_pes2;
+            ?>
+        }
 
-            function ValidarInformacion(accion)
-            {
-                if ((accion == 'Agregar') || (accion == 'Modificar'))
-                {
-                    if (document.getElementById('txtIdDep').value == "")
-                    {
-                        alert('Seleccione o escriba el codigo de la dependencia');
-                        document.formSeleccion.txtIdDep.focus();
-                        return false;
-                    }
-                    if (accion == 'Modificar')
-                    {
-                        if (document.formSeleccion.id.value != document.formSeleccion.txtIdDep.value)
-                        {
-                            alert('No se puede modificar el codigo de la dependencia.\Ingrese una nueva.');
-                            return false;
-                        }
-                    }
-                    if (stripWhitespace(document.formSeleccion.txtModelo.value) == '')
-                    {
-                        alert('Digite el nombre de la dependencia');
-                        document.formSeleccion.txtModelo.focus();
-                        return false;
-                    }
-                        /* 
-                        Skinatech
-                        Autor: Carlos Martínez
-                        Fecha: 27-10-2019
-                        Se pone comentario en esta linea por resultado de pruebas
-                        */
-                    /*                     
-                    if (stripWhitespace(document.formSeleccion.txtDir.value) == '')
-                    {
-                        //alert('Digite la direcci&oacute;n de la dependencia');
-                        alert('Digite la dirección de la dependencia');
-                        document.formSeleccion.txtDir.focus();
-                        return false;
-                    }
-                    */
-                    if (!(isPositiveInteger(document.formSeleccion.idcont1.value, false)))
-                    {
-                        alert('Seleccione un Continente');
-                        document.formSeleccion.idcont1.focus();
-                        return false;
-                    }
-                    if (!(isPositiveInteger(document.formSeleccion.idpais1.value, false)))
-                    {
-                        alert('Seleccione un Pa\u00eds');
-                        document.formSeleccion.idpais1.focus();
-                        return false;
-                    }
-                    if (document.formSeleccion.codep_us1.value == 0)
-                    {
-                        alert('Seleccione un Departamento');
-                        document.formSeleccion.codep_us1.focus();
-                        return false;
-                    }
-                    if (document.formSeleccion.muni_us1.value == 0)
-                    {
-                        alert('Seleccione un Municipio');
-                        document.formSeleccion.muni_us1.focus();
-                        return false;
-                    }
-                    if (document.formSeleccion.Slc_dterr.value == "")
-                    {
-                        alert('Seleccione la dependencia Territorial');
-                        document.formSeleccion.Slc_dterr.focus();
-                        return false;
-                    }
-                    if (!(isNonnegativeInteger(document.formSeleccion.Slc_destado.value, false)))
-                    {
-                        alert('Seleccione estado de la dependencia');
-                        document.formSeleccion.Slc_destado.focus();
-                        return false;
-                    }
-
-                }
-                if (accion == 'Agregar')
-                {
-                    for (n = 1; n < document.formSeleccion.id.length; n++)
-                        if (document.formSeleccion.id.options[n].value == document.formSeleccion.txtIdDep.value) {
-                            alert('!Ya existe una dependencia con este código!');
-                            return false;
-                        }
-                }
-                if (accion == 'Eliminar')
-                {
-                    a = window.confirm('Est\xe1 seguro de eliminar el registro ?');
-                    if (a == true)
-                    {
-                    } else
-                    {
-                        return false;
-                    }
-                }
+        function rightTrim(sString) {
+            while (sString.substring(sString.length - 1, sString.length) == ' ') {
+                sString = sString.substring(0, sString.length - 1);
             }
+            return sString;
+        }
 
-            function ver_listado()
-            {
-                window.open('listados.php?var=dpc', '', 'scrollbars=yes,menubar=no,height=600,width=800,resizable=yes,toolbar=no,location=no,status=no');
-            }
+        function addOpt(oCntrl, iPos, sTxt, sVal) {
+            var selOpcion = new Option(sTxt, sVal);
+            eval(oCntrl.options[iPos] = selOpcion);
+        }
 
-            /***
-            Skinatech
-            Autor: Andrés Mosquera
-            Fecha: 23-11-2018
-            Información: Valida que los inputs de texto no permitan caracteres especiales
-            ***/
-            function validaNumLetra(e) {
-                key = e.keyCode || e.which ;
-                tecla = String.fromCharCode(key).toString();
+        function borra_datos(form1) {
+            borra_combo(form1, 7);
+            borra_combo(form1, 8);
+            borra_combo(form1, 9);
+        }
 
-                /*console.log(key);
-                console.log(tecla);*/
+        /*
+         *	Funcion que se le envia el id del municipio en el formato general c-ppp-ddd-mmm y lo desgloza
+         *	creando las variables en javascript para su uso individual, p.e. para los combos respectivos.
+         */
+        function crea_var_idlugar_defa(id_mcpio) {
+            if (id_mcpio == 0)
+                return;
+            var str = id_mcpio.split('-');
 
-                 //Se define todo lo que se quiere que se muestre
-                caracter = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
-                especiales = [];
+            document.formSeleccion.idcont1.value = str[0] * 1;
+            cambia(formSeleccion, 'idpais1', 'idcont1');
+            document.formSeleccion.idpais1.value = str[1] * 1;
+            cambia(formSeleccion, 'codep_us1', 'idpais1');
+            document.formSeleccion.codep_us1.value = str[1] * 1 + '-' + str[2] * 1;
+            cambia(formSeleccion, 'muni_us1', 'codep_us1');
+            document.formSeleccion.muni_us1.value = str[1] * 1 + '-' + str[2] * 1 + '-' + str[3] * 1;
+        }
 
-                tecla_especial = false;
-                for(var i in especiales)
-                {
-                    if(key == especiales[i])
-                    {
-                        tecla_especial = true;
-                        break;
+        <?php
+        // Convertimos los vectores de los paises, dptos y municipios creados en crea_combos_universales.php a vectores en JavaScript.
+        echo arrayToJsArray($vpaisesv, 'vp');
+        echo arrayToJsArray($vdptosv, 'vd');
+        echo arrayToJsArray($vmcposv, 'vm');
+        ?>
+
+        function ValidarInformacion(accion) {
+            if ((accion == 'Agregar') || (accion == 'Modificar')) {
+                if (document.getElementById('txtIdDep').value == "") {
+                    alert('Seleccione o escriba el codigo de la dependencia');
+                    document.formSeleccion.txtIdDep.focus();
+                    return false;
+                }
+                if (accion == 'Modificar') {
+                    if (document.formSeleccion.id.value != document.formSeleccion.txtIdDep.value) {
+                        alert('No se puede modificar el codigo de la dependencia.\Ingrese una nueva.');
+                        return false;
                     }
                 }
-                if(caracter.indexOf (tecla) == -1 && !tecla_especial){
-                    alert('Caracter no aceptado');
+                if (stripWhitespace(document.formSeleccion.txtModelo.value) == '') {
+                    alert('Digite el nombre de la dependencia');
+                    document.formSeleccion.txtModelo.focus();
+                    return false;
+                }
+                /* 
+                Skinatech
+                Autor: Carlos Martínez
+                Fecha: 27-10-2019
+                Se pone comentario en esta linea por resultado de pruebas
+                */
+                /*                     
+                if (stripWhitespace(document.formSeleccion.txtDir.value) == '')
+                {
+                    //alert('Digite la direcci&oacute;n de la dependencia');
+                    alert('Digite la dirección de la dependencia');
+                    document.formSeleccion.txtDir.focus();
+                    return false;
+                }
+                */
+                if (!(isPositiveInteger(document.formSeleccion.idcont1.value, false))) {
+                    alert('Seleccione un Continente');
+                    document.formSeleccion.idcont1.focus();
+                    return false;
+                }
+                if (!(isPositiveInteger(document.formSeleccion.idpais1.value, false))) {
+                    alert('Seleccione un Pa\u00eds');
+                    document.formSeleccion.idpais1.focus();
+                    return false;
+                }
+                if (document.formSeleccion.codep_us1.value == 0) {
+                    alert('Seleccione un Departamento');
+                    document.formSeleccion.codep_us1.focus();
+                    return false;
+                }
+                if (document.formSeleccion.muni_us1.value == 0) {
+                    alert('Seleccione un Municipio');
+                    document.formSeleccion.muni_us1.focus();
+                    return false;
+                }
+                if (document.formSeleccion.Slc_dterr.value == "") {
+                    alert('Seleccione la dependencia Territorial');
+                    document.formSeleccion.Slc_dterr.focus();
+                    return false;
+                }
+                if (!(isNonnegativeInteger(document.formSeleccion.Slc_destado.value, false))) {
+                    alert('Seleccione estado de la dependencia');
+                    document.formSeleccion.Slc_destado.focus();
+                    return false;
+                }
+
+            }
+            if (accion == 'Agregar') {
+                for (n = 1; n < document.formSeleccion.id.length; n++)
+                    if (document.formSeleccion.id.options[n].value == document.formSeleccion.txtIdDep.value) {
+                        alert('!Ya existe una dependencia con este código!');
+                        return false;
+                    }
+            }
+            if (accion == 'Eliminar') {
+                a = window.confirm('Est\xe1 seguro de eliminar el registro ?');
+                if (a == true) {
+                } else {
                     return false;
                 }
             }
+        }
 
-            console.log("Tengo javascript")
-            /***
-            Skinatech
-            Autor: Andrés Mosquera
-            Fecha: 23-11-2018
-            Información: Fin Valida que los inputs de texto no permitan caracteres especiales
-            ***/
-        </script>
-    </head>
-    <body>
-        <br>
-        <form name="formSeleccion" id="formSeleccion" method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
-            <table width="82%" border="1" align="center" class="t_bordeGris">
-                <tr bordercolor="#FFFFFF">
-                <div id="titulo" style="width: 82%; margin-left: 9%" align="center" >Administrador de dependencias</div>
-                  <!--<td width="100%" colspan="2" height="40" align="center" class="titulos4"><b>ADMINISTRADOR DE DEPENDENCIAS</b></td>-->
-                </tr>
-                <tr class=timparr>
-                    <td width="25%" align="left" class="titulos2"><b>&nbsp;<label for="slc_id">Seleccione Dependencia</label></b></td>
-                    <td width="75%" colspan="5" class="listado2">
-                        <?php
-                        echo $slc_dep1;
-                        ?>
-                    </td>
-                </tr>
-            </table>
-            <?php
-            echo $error_msg;
-            ?>
-            <div class="tabber" id="tab1" style="width: 82%;margin-left: 9%;">
-                <div class="tabbertab" title="B&aacute;sicos">
-                    <table width="100%" border="1" align="center" class="t_bordeGris">
-                        <tr class=timparr>
-                            <td width="25%" align="left" class="titulos2"><b>&nbsp;<label for="txtIdDep">Ingrese c&oacute;digo.</label></b></td>
-                            <td class="listado2"><input name="txtIdDep" id="txtIdDep" type="text" size="30%" maxlength="<?= $longitud_codigo_dependencia ?>" value="<?= $txtIdDep ?>" title="Ingrese/edite el código de la dependencia" onkeypress="return validaNumLetra(event);"></td>
-                            <td class="titulos2"><b>&nbsp;<label for="txtSigla">Ingrese Sigla</label></b></td>
-                            <td class="listado2"><input name="txtSigla" id="txtSigla" type="text" size="9%" maxlength="15" value="<?= $txtSigla ?>" title="Ingrese/edite la sigla de la dependencia" onkeypress="return validaNumLetra(event);"></td>
-                            <td class="titulos2"><b>&nbsp;<label for="Slc_destado">Seleccione Estado</label></b></td>
-                            <td class="listado2">
-                                <select name="Slc_destado" id="Slc_destado" class="select form-control" style='width: 95%' title="Seleccione/cambie el estado de la dependencia">
-                                    <option value="" selected>&lt; seleccione &gt;</option>
-                                    <option value="0" <?= $off ?>>Inactiva</option>
-                                    <option value="1" <?= $on ?>>Activa</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="txtModelo">Ingrese nombre.</label></b></td>
-                            <td colspan="5" class="listado2"><input name="txtModelo" id="txtModelo" type="text" size="100%" maxlength="70" value="<?= $txtModelo ?>" title="Ingrese/edite el nombre de la dependencia" onkeypress="return validaNumLetra(event);"></td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="txtDir">Ingrese direcci&oacute;n.</label></b></td>
-                            <td colspan="2" class="listado2 "><input name="txtDir" id="txtDir" type="text" size="50%" maxlength="70" value="<?= $txtDir ?>" title="Ingrese/edite la dirección en la que se encuentra la dependencia"></td>
-<!--                            <td width="11%" class="titulos2"> <font class="etextomenu"><label for="tdoc">Regional</label></font></td>
+        function ver_listado() {
+            window.open('listados.php?var=dpc', '', 'scrollbars=yes,menubar=no,height=600,width=800,resizable=yes,toolbar=no,location=no,status=no');
+        }
+
+        /***
+        Skinatech
+        Autor: Andrés Mosquera
+        Fecha: 23-11-2018
+        Información: Valida que los inputs de texto no permitan caracteres especiales
+        ***/
+        function validaNumLetra(e) {
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toString();
+
+            /*console.log(key);
+            console.log(tecla);*/
+
+            //Se define todo lo que se quiere que se muestre
+            caracter = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+            especiales = [];
+
+            tecla_especial = false;
+            for (var i in especiales) {
+                if (key == especiales[i]) {
+                    tecla_especial = true;
+                    break;
+                }
+            }
+            if (caracter.indexOf(tecla) == -1 && !tecla_especial) {
+                alert('Caracter no aceptado');
+                return false;
+            }
+        }
+
+        console.log("Tengo javascript")
+        /***
+        Skinatech
+        Autor: Andrés Mosquera
+        Fecha: 23-11-2018
+        Información: Fin Valida que los inputs de texto no permitan caracteres especiales
+        ***/
+    </script>
+</head>
+
+<body>
+    <br>
+    <form name="formSeleccion" id="formSeleccion" method="post" action="<?= $_SERVER['PHP_SELF'] ?>">
+        <table width="82%" border="1" align="center" class="t_bordeGris">
+            <tr bordercolor="#FFFFFF">
+                <div id="titulo" style="width: 82%; margin-left: 9%" align="center">Administrador de dependencias</div>
+                <!--<td width="100%" colspan="2" height="40" align="center" class="titulos4"><b>ADMINISTRADOR DE DEPENDENCIAS</b></td>-->
+            </tr>
+            <tr class=timparr>
+                <td width="25%" align="left" class="titulos2"><b>&nbsp;<label for="slc_id">Seleccione
+                            Dependencia</label></b></td>
+                <td width="75%" colspan="5" class="listado2">
+                    <?php
+                    echo $slc_dep1;
+                    ?>
+                </td>
+            </tr>
+        </table>
+        <?php
+        echo $error_msg;
+        ?>
+        <div class="tabber" id="tab1" style="width: 82%;margin-left: 9%;">
+            <div class="tabbertab" title="B&aacute;sicos">
+                <table width="100%" border="1" align="center" class="t_bordeGris">
+                    <tr class=timparr>
+                        <td width="25%" align="left" class="titulos2"><b>&nbsp;<label for="txtIdDep">Ingrese
+                                    c&oacute;digo.</label></b></td>
+                        <td class="listado2"><input name="txtIdDep" id="txtIdDep" type="text" size="30%"
+                                maxlength="<?= $longitud_codigo_dependencia ?>" value="<?= $txtIdDep ?>"
+                                title="Ingrese/edite el código de la dependencia"
+                                onkeypress="return validaNumLetra(event);"></td>
+                        <td class="titulos2"><b>&nbsp;<label for="txtSigla">Ingrese Sigla</label></b></td>
+                        <td class="listado2"><input name="txtSigla" id="txtSigla" type="text" size="9%" maxlength="15"
+                                value="<?= $txtSigla ?>" title="Ingrese/edite la sigla de la dependencia"
+                                onkeypress="return validaNumLetra(event);"></td>
+                        <td class="titulos2"><b>&nbsp;<label for="Slc_destado">Seleccione Estado</label></b></td>
+                        <td class="listado2">
+                            <select name="Slc_destado" id="Slc_destado" class="select form-control" style='width: 95%'
+                                title="Seleccione/cambie el estado de la dependencia">
+                                <option value="" selected>&lt; seleccione &gt;</option>
+                                <option value="0" <?= $off ?>>Inactiva</option>
+                                <option value="1" <?= $on ?>>Activa</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="txtModelo">Ingrese nombre.</label></b>
+                        </td>
+                        <td colspan="5" class="listado2"><input name="txtModelo" id="txtModelo" type="text" size="100%"
+                                maxlength="70" value="<?= $txtModelo ?>"
+                                title="Ingrese/edite el nombre de la dependencia"
+                                onkeypress="return validaNumLetra(event);"></td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="txtDir">Ingrese
+                                    direcci&oacute;n.</label></b></td>
+                        <td colspan="2" class="listado2 "><input name="txtDir" id="txtDir" type="text" size="50%"
+                                maxlength="70" value="<?= $txtDir ?>"
+                                title="Ingrese/edite la dirección en la que se encuentra la dependencia"></td>
+                        <!--                            <td width="11%" class="titulos2"> <font class="etextomenu"><label for="tdoc">Regional</label></font></td>
                             <td colspan=4" width="" valign="top" class="listado2"><font color="">
                                 <?php
-//                                $query = "select reg_nombre,reg_codi from regional ORDER BY reg_nombre ";
+                                //                                $query = "select reg_nombre,reg_codi from regional ORDER BY reg_nombre ";
 //                                $rs = $db->conn->query($query);
 //                                $opcMenu = "0:-- Seleccione regional --";
 //                                $varQuery = $query;
@@ -755,76 +744,93 @@ echo arrayToJsArray($vmcposv, 'vm');
                                 ?>
                                 </font>
                             </td>-->
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="idcont1">Seleccione ubicaci&oacute;n</label></b></td>
-                            <td colspan="5" class="listado2">
-                                <?php
-                                // Listamos los continentes.
-                                echo $slc_cont;
-                                ?>
-                                <select name="idpais1" id="idpais1" class="select" onChange="cambia(this.form, 'codep_us1', 'idpais1')" title="Listado de países">
-                                    <option value="0" selected>&lt;&lt; Seleccione pa&iacute;s &gt;&gt;</option>
-                                </select>
-                                <select name='codep_us1' id ="codep_us1" class='select' onChange="cambia(this.form, 'muni_us1', 'codep_us1')" title="Listado de departamentos"><option value='0' selected>&lt;&lt; Seleccione Departamento &gt;&gt;</option></select>
-                                <select name='muni_us1' id="muni_us1" class='select' title="Listado de municipios"><option value='0' selected>&lt;&lt; Seleccione Municipio &gt;&gt;</option></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dpadre">Seleccione Dependencia PADRE</label></b></td>
-                            <td colspan="5" class="listado2">
-                                <?php
-                                echo $slc_dep2;
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dterr">Seleccione Dependencia TERRITORIAL</label></b></td>
-                            <td colspan="5" class="listado2">
-                                <?php
-                                echo $slc_dep3;
-                                ?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dvis">Seleccione las Dependencias a las que ser&aacute; VISIBLE.</b><br />Presione (CTRL + teclas de cursor o SHIFT + teclas de cursor) para seleccionar varios</label></td>
-                            <td colspan="5" class="listado2" id="depenciasSelectMulti">
-                                <?php
-                                echo $slc_dep4;
-                                ?>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="tabbertab" title="Consecutivos">
-                    <table width="100%" border="1" align="center" class="t_bordeGris">
-                        <?php
-                        echo $pes2;
-                        ?>
-                    </table>
-                </div>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="idcont1">Seleccione
+                                    ubicaci&oacute;n</label></b></td>
+                        <td colspan="5" class="listado2">
+                            <?php
+                            // Listamos los continentes.
+                            echo $slc_cont;
+                            ?>
+                            <select name="idpais1" id="idpais1" class="select"
+                                onChange="cambia(this.form, 'codep_us1', 'idpais1')" title="Listado de países">
+                                <option value="0" selected>&lt;&lt; Seleccione pa&iacute;s &gt;&gt;</option>
+                            </select>
+                            <select name='codep_us1' id="codep_us1" class='select'
+                                onChange="cambia(this.form, 'muni_us1', 'codep_us1')" title="Listado de departamentos">
+                                <option value='0' selected>&lt;&lt; Seleccione Departamento &gt;&gt;</option>
+                            </select>
+                            <select name='muni_us1' id="muni_us1" class='select' title="Listado de municipios">
+                                <option value='0' selected>&lt;&lt; Seleccione Municipio &gt;&gt;</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dpadre">Seleccione Dependencia
+                                    PADRE</label></b></td>
+                        <td colspan="5" class="listado2">
+                            <?php
+                            echo $slc_dep2;
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dterr">Seleccione Dependencia
+                                    TERRITORIAL</label></b></td>
+                        <td colspan="5" class="listado2">
+                            <?php
+                            echo $slc_dep3;
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left" class="titulos2"><b>&nbsp;<label for="Slc_dvis">Seleccione las Dependencias a
+                                    las que ser&aacute; VISIBLE.</b><br />Presione (CTRL + teclas de cursor o SHIFT +
+                            teclas de cursor) para seleccionar varios</label></td>
+                        <td colspan="5" class="listado2" id="depenciasSelectMulti">
+                            <?php
+                            echo $slc_dep4;
+                            ?>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <table width="82%" border="0" align="center" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td width="10%" class="listado1" >&nbsp;</td>
-                    <td width="20%" align="center" class="listado1"><input name="btn_accion" type="button" class="botones" id="btn_accion" value="Listado" onClick="ver_listado();" accesskey="L" alt="Alt + L"></td>
-                    <td width="20%" align="center" class="listado1"><input name="btn_accion" type="submit" class="botones" id="btn_accion" value="Agregar" onClick="return ValidarInformacion(this.value);" accesskey="A"></td>
-                    <td width="20%" align="center" class="listado1"><input name="btn_accion" type="submit" class="botones" id="btn_accion" value="Modificar" onClick="return ValidarInformacion(this.value);" accesskey="M"></td>
-                    <!--<td width="20%" align="center"><input name="btn_accion" type="submit" class="botones" id="btn_accion" value="Eliminar" onClick="document.form1.hdBandera.value='E'; return ValidarInformacion();" accesskey="E"></td>-->
-            <!--	<td width="10%" class="listado1">&nbsp;</td>-->
-                </tr>
-            </table>
-            <?php
-//echo $error_msg;
-            ?>
-            <br>
-            <script type="text/javascript">
-                /* Since we specified manualStartup=true, tabber will not run after
-                 the onload event. Instead let's run it now, to prevent any delay
-                 while images load.
-                 */
-                tabberAutomatic(tabberOptions);
-            </script>
-        </form>
-    </body>
+            <div class="tabbertab" title="Consecutivos">
+                <table width="100%" border="1" align="center" class="t_bordeGris">
+                    <?php
+                    echo $pes2;
+                    ?>
+                </table>
+            </div>
+        </div>
+        <table width="82%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td width="10%" class="listado1">&nbsp;</td>
+                <td width="20%" align="center" class="listado1"><input name="btn_accion" type="button" class="botones"
+                        id="btn_accion" value="Listado" onClick="ver_listado();" accesskey="L" alt="Alt + L"></td>
+                <td width="20%" align="center" class="listado1"><input name="btn_accion" type="submit" class="botones"
+                        id="btn_accion" value="Agregar" onClick="return ValidarInformacion(this.value);" accesskey="A">
+                </td>
+                <td width="20%" align="center" class="listado1"><input name="btn_accion" type="submit" class="botones"
+                        id="btn_accion" value="Modificar" onClick="return ValidarInformacion(this.value);"
+                        accesskey="M"></td>
+                <!--<td width="20%" align="center"><input name="btn_accion" type="submit" class="botones" id="btn_accion" value="Eliminar" onClick="document.form1.hdBandera.value='E'; return ValidarInformacion();" accesskey="E"></td>-->
+                <!--	<td width="10%" class="listado1">&nbsp;</td>-->
+            </tr>
+        </table>
+        <?php
+        //echo $error_msg;
+        ?>
+        <br>
+        <script type="text/javascript">
+            /* Since we specified manualStartup=true, tabber will not run after
+             the onload event. Instead let's run it now, to prevent any delay
+             while images load.
+             */
+            tabberAutomatic(tabberOptions);
+        </script>
+    </form>
+</body>
+
 </html>
