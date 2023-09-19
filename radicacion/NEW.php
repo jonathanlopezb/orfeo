@@ -389,7 +389,7 @@ function validaRadicado(){
 
 </script>
 
-<script>
+<script language="JavaScript">
 
 document.write('<style type="text/css">.tabber{display:none;}<\/style>');
 <?php
@@ -437,7 +437,7 @@ function fechf(formulario,n){
     return fecha_doc;
 }
 
-function radicar_doc(){
+export function radicar_doc(){
     
   //if(fechf ("formulario",16)=="ok"){
 
@@ -1347,388 +1347,388 @@ for ($i = 1; $i <= 1; $i++) {
     //$titulo = $tip3Nombre[$i][$ent];
     // if(!$titulo)  $titulo = "?? $i";
     ?>
-            <div class="tabbertab" title="<?= $titulo ?>">
-                <div class="container borde_tab" name='pes<?= $i ?>' id='pes<?= $i ?>'  cellpadding="0" cellspacing="1"> <br>
-                    <div class="panel panel-default" style="background-color: rgb(246, 246, 246)">
-                        <br><b>BUSCAR <?= $titulo ?>:</b><br><br>                                      
-                        <div class="row"> 
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:15px;">
-                                <label for="birds">Nombre:</label> <br>
-                                <input maxlength="80" id="birds" size="40" name="birds" title="Campo para buscar usuario por nombre, debe digitar minimo 3 caracteres para la busqueda, para buscar entre las coincidencias use las flechas arriba y abajo" aria-autocomplete="list" aria-haspopup="true" aria-owns="ui-autocomplete-instance" type="text"> (M&iacute;nimo 3 caracteres)
-                            </div>
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                <?php if ($_SESSION["usua_perm_agrcontacto"] == 1) { ?>
-                                            <!--botom  BUSCAR -->
-                                            <input type="button" name="Button" value="Agregar remitente" class="botones" onClick="Start('buscar_usuario.php?&nombreTp1=<?= $nombreTp1 ?>&nombreTp2=<?= $nombreTp2 ?>&nombreTp3=<?= $nombreTp3 ?>&busq_salida=<?= $busq_salida ?>&ent=<?= $ent ?>',1024,400);" align="left">
-                                            <input type='hidden' name='depende22' value="<?php echo $depende; ?>">
-                                <?php } ?>
-                                <?php if ($ent == 2 && $Submit3 != 'ModificarDocumentos' && $_SESSION["preRadica"] == 1 && $_SESSION["tpPerRad"][2] == 3) { ?>
-                                            | <input type='checkbox' name='radicadoexiste' id='radicadoexiste' onclick="checkradicado();"> Ya tiene radicado                                 
-                                <?php } ?>                                                                                  
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:15px;">
-                                <?php
-                                if ($tipoMedio == "eMail" or $med == 3) {
-                                    // Indica que muestre los tipos de radicados que en la columna tiporadi_email tiene 1 los cuales son 
-                                    // los que se van a utilizar para la radicación emal
-                                    $selectTipoRad = "select sgd_trad_codigo, sgd_trad_descr from sgd_trad_tiporad where tiporadi_email=1 and mostrar_como_tipo=1";
-                                    $rsTipoRad = $db->conn->query($selectTipoRad);
-
-                                    if ($Submit44) {
-                                        $selectnombre = "select sgd_trad_descr from sgd_trad_tiporad where sgd_trad_codigo=" . $ent;
-                                        $rsTipoRadNomb = $db->conn->query($selectnombre);
-                                        $nombreTiporRad = isset($rsTipoRadNomb->fields['sgd_trad_descr']) ? $rsTipoRadNomb->fields['sgd_trad_descr'] : $rsTipoRadNomb->fields['SGD_TRAD_DESCR'];
-
-                                        echo '<label for="birds">Tipo de Radicado: </label>' . $nombreTiporRad . '<br>';
-                                    }
-
-                                    if ($eMailMid) {
-                                        if ($nurad == '' or $nurad == null) {
-                                            ?><br>
-                                                                        <label for="birds">Tipo de Radicado:</label> <br>
-                                                                        <select class="form-control" name="tipoRadEmail" id="tipoRadEmail">
-                                                                            <option value="0">-- Seleccione Tipo de Radicado --</option>
-                                                                            <?php
-
-                                                                            if ($_POST['tipoRadEmail']) {
-                                                                                $datos = " selected ";
-                                                                            } else {
-                                                                                $datos = "";
-                                                                            }
-                                                                            while (!$rsTipoRad->EOF) {
-                                                                                $sgd_trad_codigo = $rsTipoRad->fields['SGD_TRAD_CODIGO'];
-                                                                                $sgd_trad_descr = $rsTipoRad->fields['SGD_TRAD_DESCR'];
-
-                                                                                if ($_POST['tipoRadEmail'] == $sgd_trad_codigo) {
-                                                                                    echo '<option value="' . $sgd_trad_codigo . '" ' . $datos . '>' . $sgd_trad_descr . '</option>';
-                                                                                } else {
-                                                                                    echo '<option value="' . $sgd_trad_codigo . '">' . $sgd_trad_descr . '</option>';
-                                                                                }
-
-                                                                                //echo '<option value="'.$sgd_trad_codigo.'" '.$datos.'>'.$sgd_trad_descr.'</option>';
-                                                                                $rsTipoRad->MoveNext();
-                                                                            }
-                                                                            ?>
-                                                                        </select>
-                                                                    <?php
-                                        }
-                                    }
-                                }
-                                ?>
-                            </div>
-                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                                <?php if ($ent == 2 && $Submit3 != 'ModificarDocumentos' && $_SESSION["preRadica"] == 1 && $_SESSION["tpPerRad"][2] == 3) { ?>
-                                            <div style="display: none" id='divradicado'>
-                                                <label for="birds">Número de Radicado:</label> <br>
-                                                <input type='numeric' class="form-control" minlength="18" maxlength="30" name='radinume' id='radinume' value='' onkeypress="return isTextKeyradicado(event)" onChange="validaRadicado();"/>                                                
-                                            </div>                                    
-                                <?php } ?> 
-                            </div><br>
-                        </div>
-            
-                        <div class="panel-body">
-                            <div class="row">
-
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="cc_documento_us1">N&uacute;mero de identificaci&oacute;n</label><br>
-                                    <input type=text name='cc_documento_us<?= $i ?>' value='<?php if (isset($_POST['cc_documento_us1'])) {
-                                          echo $_POST['cc_documento_us1'];
-                                      } else {
-                                          echo $cc_documento_temp;
-                                      } ?>'readonly="true" id="cc_documento_us1" class="tex_area form-control" title="Campo que contiene el documento de identificacion del usuario o suscriptor buscado">
-                                    <input type=hidden name='documento_us<?= $i ?>' value='<?= $documento ?>' readonly="true" id="documento_us1" class="tex_area form-control" size="1">
-                                </div> 
-
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="nombre_us1"><?= $lbl_nombre ?></label><br>
-                                    <INPUT type=text id="nombre_us1" class="form-control" title="Campo que se autocompleta con el nombre completo del usuario o suscriptor buscado"  name='nombre_us<?= $i ?>' value='<?= $nombre ?>' 
-                                           class="tex_area" size=40 readonly="true">
-                            
+                <div class="tabbertab" title="<?= $titulo ?>">
+                    <div class="container borde_tab" name='pes<?= $i ?>' id='pes<?= $i ?>'  cellpadding="0" cellspacing="1"> <br>
+                        <div class="panel panel-default" style="background-color: rgb(246, 246, 246)">
+                            <br><b>BUSCAR <?= $titulo ?>:</b><br><br>                                      
+                            <div class="row"> 
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:15px;">
+                                    <label for="birds">Nombre:</label> <br>
+                                    <input maxlength="80" id="birds" size="40" name="birds" title="Campo para buscar usuario por nombre, debe digitar minimo 3 caracteres para la busqueda, para buscar entre las coincidencias use las flechas arriba y abajo" aria-autocomplete="list" aria-haspopup="true" aria-owns="ui-autocomplete-instance" type="text"> (M&iacute;nimo 3 caracteres)
                                 </div>
-
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="prim_apel_us1"> <?= $lbl_apellido ?></label><br>
+                                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                                    <?php if ($_SESSION["usua_perm_agrcontacto"] == 1) { ?>
+                                                    <!--botom  BUSCAR -->
+                                                    <input type="button" name="Button" value="Agregar remitente" class="botones" onClick="Start('buscar_usuario.php?&nombreTp1=<?= $nombreTp1 ?>&nombreTp2=<?= $nombreTp2 ?>&nombreTp3=<?= $nombreTp3 ?>&busq_salida=<?= $busq_salida ?>&ent=<?= $ent ?>',1024,400);" align="left">
+                                                    <input type='hidden' name='depende22' value="<?php echo $depende; ?>">
+                                    <?php } ?>
+                                    <?php if ($ent == 2 && $Submit3 != 'ModificarDocumentos' && $_SESSION["preRadica"] == 1 && $_SESSION["tpPerRad"][2] == 3) { ?>
+                                                    | <input type='checkbox' name='radicadoexiste' id='radicadoexiste' onclick="checkradicado();"> Ya tiene radicado                                 
+                                    <?php } ?>                                                                                  
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="margin-left:15px;">
                                     <?php
-                                    if ($i == 4) {
-                                        $ADODB_COUNTRECS = true;
-                                        $query = "select PAR_SERV_NOMBRE,PAR_SERV_CODIGO FROM PAR_SERV_SERVICIOS order by PAR_SERV_NOMBRE";
-                                        $rs = $db->conn->query($query);
-                                        $numRegs = "! " . $rs->RecordCount();
-                                        $varQuery = $query;
-                                        print $rs->GetMenu2("sector_us$i", "sector_us$i", "0:-- Seleccione --", false, "", "onChange='procEst(formulario,18,$i )' class='ecajasfecha'");
-                                        $ADODB_COUNTRECS = false;
-                                        ?>
-                                                <select name="sector_us<?= $i ?>" class="select">
-                                                    <?php
-                                                    while (!$rs->EOF) {
-                                                        $codigo_sect = $rs->fields["PAR_SERV_CODIGO"];
-                                                        $nombre_sect = $rs->fields["PAR_SERV_NOMBRE"];
-                                                        echo "<option value=$codigo_sect>$nombre_sect</option>";
-                                                        $rs->MoveNext();
-                                                    }
-                                                    ?>
-                                                </select>
-                                                <?php
-                                    } else {
-                                        ?>
-                                                <INPUT type=text name='prim_apel_us<?= $i ?>' value='<?= $papel ?>' class="tex_area form-control" id="prim_apel_us1" readonly="true"  size="35" title="Campo que se autocompleta con el primer apellido del usuario o suscriptor buscado">
-                                                <?php
+                                    if ($tipoMedio == "eMail" or $med == 3) {
+                                        // Indica que muestre los tipos de radicados que en la columna tiporadi_email tiene 1 los cuales son 
+                                        // los que se van a utilizar para la radicación emal
+                                        $selectTipoRad = "select sgd_trad_codigo, sgd_trad_descr from sgd_trad_tiporad where tiporadi_email=1 and mostrar_como_tipo=1";
+                                        $rsTipoRad = $db->conn->query($selectTipoRad);
+
+                                        if ($Submit44) {
+                                            $selectnombre = "select sgd_trad_descr from sgd_trad_tiporad where sgd_trad_codigo=" . $ent;
+                                            $rsTipoRadNomb = $db->conn->query($selectnombre);
+                                            $nombreTiporRad = isset($rsTipoRadNomb->fields['sgd_trad_descr']) ? $rsTipoRadNomb->fields['sgd_trad_descr'] : $rsTipoRadNomb->fields['SGD_TRAD_DESCR'];
+
+                                            echo '<label for="birds">Tipo de Radicado: </label>' . $nombreTiporRad . '<br>';
+                                        }
+
+                                        if ($eMailMid) {
+                                            if ($nurad == '' or $nurad == null) {
+                                                ?><br>
+                                                                                        <label for="birds">Tipo de Radicado:</label> <br>
+                                                                                        <select class="form-control" name="tipoRadEmail" id="tipoRadEmail">
+                                                                                            <option value="0">-- Seleccione Tipo de Radicado --</option>
+                                                                                            <?php
+
+                                                                                            if ($_POST['tipoRadEmail']) {
+                                                                                                $datos = " selected ";
+                                                                                            } else {
+                                                                                                $datos = "";
+                                                                                            }
+                                                                                            while (!$rsTipoRad->EOF) {
+                                                                                                $sgd_trad_codigo = $rsTipoRad->fields['SGD_TRAD_CODIGO'];
+                                                                                                $sgd_trad_descr = $rsTipoRad->fields['SGD_TRAD_DESCR'];
+
+                                                                                                if ($_POST['tipoRadEmail'] == $sgd_trad_codigo) {
+                                                                                                    echo '<option value="' . $sgd_trad_codigo . '" ' . $datos . '>' . $sgd_trad_descr . '</option>';
+                                                                                                } else {
+                                                                                                    echo '<option value="' . $sgd_trad_codigo . '">' . $sgd_trad_descr . '</option>';
+                                                                                                }
+
+                                                                                                //echo '<option value="'.$sgd_trad_codigo.'" '.$datos.'>'.$sgd_trad_descr.'</option>';
+                                                                                                $rsTipoRad->MoveNext();
+                                                                                            }
+                                                                                            ?>
+                                                                                        </select>
+                                                                                    <?php
+                                            }
+                                        }
                                     }
                                     ?>
                                 </div>
-                                <input type=hidden name='seg_apel_us<?= $i ?>' value='<?= $sapel ?>'  readonly="true" id="seg_apel_us1"  class="tex_area form-control" size=40 title="Campo que se autocompletaa con el segundo apellido del usuario o suscriptor buscado">
-                                <!--<div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <?php if ($ent == 2 && $Submit3 != 'ModificarDocumentos' && $_SESSION["preRadica"] == 1 && $_SESSION["tpPerRad"][2] == 3) { ?>
+                                                    <div style="display: none" id='divradicado'>
+                                                        <label for="birds">Número de Radicado:</label> <br>
+                                                        <input type='numeric' class="form-control" minlength="18" maxlength="30" name='radinume' id='radinume' value='' onkeypress="return isTextKeyradicado(event)" onChange="validaRadicado();"/>                                                
+                                                    </div>                                    
+                                    <?php } ?> 
+                                </div><br>
+                            </div>
+            
+                            <div class="panel-body">
+                                <div class="row">
+
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="cc_documento_us1">N&uacute;mero de identificaci&oacute;n</label><br>
+                                        <input type=text name='cc_documento_us<?= $i ?>' value='<?php if (isset($_POST['cc_documento_us1'])) {
+                                              echo $_POST['cc_documento_us1'];
+                                          } else {
+                                              echo $cc_documento_temp;
+                                          } ?>'readonly="true" id="cc_documento_us1" class="tex_area form-control" title="Campo que contiene el documento de identificacion del usuario o suscriptor buscado">
+                                        <input type=hidden name='documento_us<?= $i ?>' value='<?= $documento ?>' readonly="true" id="documento_us1" class="tex_area form-control" size="1">
+                                    </div> 
+
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="nombre_us1"><?= $lbl_nombre ?></label><br>
+                                        <INPUT type=text id="nombre_us1" class="form-control" title="Campo que se autocompleta con el nombre completo del usuario o suscriptor buscado"  name='nombre_us<?= $i ?>' value='<?= $nombre ?>' 
+                                               class="tex_area" size=40 readonly="true">
+                            
+                                    </div>
+
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="prim_apel_us1"> <?= $lbl_apellido ?></label><br>
+                                        <?php
+                                        if ($i == 4) {
+                                            $ADODB_COUNTRECS = true;
+                                            $query = "select PAR_SERV_NOMBRE,PAR_SERV_CODIGO FROM PAR_SERV_SERVICIOS order by PAR_SERV_NOMBRE";
+                                            $rs = $db->conn->query($query);
+                                            $numRegs = "! " . $rs->RecordCount();
+                                            $varQuery = $query;
+                                            print $rs->GetMenu2("sector_us$i", "sector_us$i", "0:-- Seleccione --", false, "", "onChange='procEst(formulario,18,$i )' class='ecajasfecha'");
+                                            $ADODB_COUNTRECS = false;
+                                            ?>
+                                                        <select name="sector_us<?= $i ?>" class="select">
+                                                            <?php
+                                                            while (!$rs->EOF) {
+                                                                $codigo_sect = $rs->fields["PAR_SERV_CODIGO"];
+                                                                $nombre_sect = $rs->fields["PAR_SERV_NOMBRE"];
+                                                                echo "<option value=$codigo_sect>$nombre_sect</option>";
+                                                                $rs->MoveNext();
+                                                            }
+                                                            ?>
+                                                        </select>
+                                                        <?php
+                                        } else {
+                                            ?>
+                                                        <INPUT type=text name='prim_apel_us<?= $i ?>' value='<?= $papel ?>' class="tex_area form-control" id="prim_apel_us1" readonly="true"  size="35" title="Campo que se autocompleta con el primer apellido del usuario o suscriptor buscado">
+                                                        <?php
+                                        }
+                                        ?>
+                                    </div>
+                                    <input type=hidden name='seg_apel_us<?= $i ?>' value='<?= $sapel ?>'  readonly="true" id="seg_apel_us1"  class="tex_area form-control" size=40 title="Campo que se autocompletaa con el segundo apellido del usuario o suscriptor buscado">
+                                    <!--<div class="form-group col-lg-3 col-md-3 col-xs-3">
                             <!--<label for="seg_apel_us1"><?= $lbl_nombre2 ?></label><br>-->
                             
-                                <!--</div>-->
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="tipo_emp_us1">Tipo remitente / destinatario</label><br>
-                                    <select name="tipo_emp_us<?= $i ?>" class="select form-control" readonly="true" tabindex="-1" id="tipo_emp_us1" title="Lista desplegable que contiene los tipos de usuario" >
-                                        <?php
-                                        if ($i == 1) {
-                                            if ($tipo_emp_us1 == 0) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                    <!--</div>-->
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="tipo_emp_us1">Tipo remitente / destinatario</label><br>
+                                        <select name="tipo_emp_us<?= $i ?>" class="select form-control" readonly="true" tabindex="-1" id="tipo_emp_us1" title="Lista desplegable que contiene los tipos de usuario" >
+                                            <?php
+                                            if ($i == 1) {
+                                                if ($tipo_emp_us1 == 0) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 2) {
-                                            if ($tipo_emp_us2 == 0) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 2) {
+                                                if ($tipo_emp_us2 == 0) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 3) {
-                                            if ($tipo_emp_us3 == 0) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 3) {
+                                                if ($tipo_emp_us3 == 0) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        ?>
-                                        <option value=0 <?= $datos ?>>USUARIO</option>
-                                        <?php
-                                        if ($i == 1) {
-                                            if ($tipo_emp_us1 == 1) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            ?>
+                                            <option value=0 <?= $datos ?>>USUARIO</option>
+                                            <?php
+                                            if ($i == 1) {
+                                                if ($tipo_emp_us1 == 1) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 2) {
-                                            if ($tipo_emp_us2 == 1) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 2) {
+                                                if ($tipo_emp_us2 == 1) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 3) {
-                                            if ($tipo_emp_us3 == 1) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 3) {
+                                                if ($tipo_emp_us3 == 1) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        ?>
-                                        <option value=1 <?= $datos ?>>TERCEROS </option>
-                                        <?php
-                                        if ($i == 1) {
-                                            if ($tipo_emp_us1 == 2) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            ?>
+                                            <option value=1 <?= $datos ?>>TERCEROS </option>
+                                            <?php
+                                            if ($i == 1) {
+                                                if ($tipo_emp_us1 == 2) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 2) {
-                                            if ($tipo_emp_us2 == 2) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 2) {
+                                                if ($tipo_emp_us2 == 2) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 3) {
-                                            if ($tipo_emp_us3 == 2) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 3) {
+                                                if ($tipo_emp_us3 == 2) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        ?>
-                                        <option value=2 <?= $datos ?>>EMPRESAS  </option>
-                                        <?php
-                                        if ($i == 1) {
-                                            if ($tipo_emp_us1 == 6) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            ?>
+                                            <option value=2 <?= $datos ?>>EMPRESAS  </option>
+                                            <?php
+                                            if ($i == 1) {
+                                                if ($tipo_emp_us1 == 6) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 2) {
-                                            if ($tipo_emp_us2 == 6) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 2) {
+                                                if ($tipo_emp_us2 == 6) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        if ($i == 3) {
-                                            if ($tipo_emp_us3 == 6) {
-                                                $datos = " selected ";
-                                            } else {
-                                                $datos = "";
+                                            if ($i == 3) {
+                                                if ($tipo_emp_us3 == 6) {
+                                                    $datos = " selected ";
+                                                } else {
+                                                    $datos = "";
+                                                }
                                             }
-                                        }
-                                        ?>
-                                        <option value=6 <?= $datos ?>>FUNCIONARIOS  </option>
-                                    </select>
+                                            ?>
+                                            <option value=6 <?= $datos ?>>FUNCIONARIOS  </option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-                            <?php
-                            if ($ent == '2' or $ent == $tipoRadicadoPqr) {
-                                $col = '4';
-                            } else {
-                                $col = '4';
-                            }
-                            ?>
-                            <div class="row">
-                                <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
-                                    <label for="direccion_us1">Direcci&oacute;n</label><br>
-                                    <INPUT type=text  name='direccion_us<?= $i ?>' value='<?= $dir ?>' <?= $bloqEdicion ?> class="tex_area form-control" id="direccion_us1" size=40 title="Campo que se autocompleta con la direccion del usuario o suscriptor consultado"> 
-                                </div>
-                                <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-3<?= $col ?>">
-                                    <label for="telefono_us1">Tel&eacute;fono</label><br>
-                                    <input type=text name='telefono_us<?= $i ?>' value='<?= $tel ?>' <?= $bloqEdicion ?> class="tex_area form-control"id="telefono_us1"  size=35 title="Campo que se autocompleta con el telefono del usuario o suscriptor buscado">
-                                </div>
-                                <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
-                                    <label for="mail_us1">Correo Electrónico</label><br>
-                                    <INPUT id="mail_us1" type=text name='mail_us<?= $i ?>' value='<?= $mail ?>' <?= $bloqEdicion ?> class="tex_area form-control" size=35 title="Campo que se autocompleta con el correo electronico del usuario o suscriptor buscado">
-                                </div>
-                                <input type="hidden" name="ent" id="ent" value="<?= $ent ?>"/>
-                                <?php //if($ent == '2' or $ent == $tipoRadicadoPqr){ ?>
-                                    <!-- <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
+                                <?php
+                                if ($ent == '2' or $ent == $tipoRadicadoPqr) {
+                                    $col = '4';
+                                } else {
+                                    $col = '4';
+                                }
+                                ?>
+                                <div class="row">
+                                    <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
+                                        <label for="direccion_us1">Direcci&oacute;n</label><br>
+                                        <INPUT type=text  name='direccion_us<?= $i ?>' value='<?= $dir ?>' <?= $bloqEdicion ?> class="tex_area form-control" id="direccion_us1" size=40 title="Campo que se autocompleta con la direccion del usuario o suscriptor consultado"> 
+                                    </div>
+                                    <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-3<?= $col ?>">
+                                        <label for="telefono_us1">Tel&eacute;fono</label><br>
+                                        <input type=text name='telefono_us<?= $i ?>' value='<?= $tel ?>' <?= $bloqEdicion ?> class="tex_area form-control"id="telefono_us1"  size=35 title="Campo que se autocompleta con el telefono del usuario o suscriptor buscado">
+                                    </div>
+                                    <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
+                                        <label for="mail_us1">Correo Electrónico</label><br>
+                                        <INPUT id="mail_us1" type=text name='mail_us<?= $i ?>' value='<?= $mail ?>' <?= $bloqEdicion ?> class="tex_area form-control" size=35 title="Campo que se autocompleta con el correo electronico del usuario o suscriptor buscado">
+                                    </div>
+                                    <input type="hidden" name="ent" id="ent" value="<?= $ent ?>"/>
+                                    <?php //if($ent == '2' or $ent == $tipoRadicadoPqr){ ?>
+                                        <!-- <div class="form-group col-lg-<?= $col ?> col-md-<?= $col ?> col-xs-<?= $col ?>">
                                 <label for="sgd_ciu_eps">Eps</label><br>
                                 <INPUT id="sgd_ciu_eps" type=text name='sgd_ciu_eps' value='<?= $sgd_ciu_eps ?>' <?= $bloqEdicion ?> class="tex_area form-control" size=35 title="Campo que se autocompleta con el correo electronico del usuario o suscriptor buscado">
                             </div> -->
-                                <?php //}else{
-                                    ?>
-                                    <!-- <input type="hidden" name="sgd_ciu_eps" id="sgd_ciu_eps" value="<?= $sgd_ciu_eps ?>"/> -->
-                                    <?php
-                                    //} ?>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                    <?php
-                                    if ($i != 3) {
+                                    <?php //}else{
                                         ?>
-                                                <label>Dignatario / Funcionario</label><br>
-                                                <INPUT type='text' name='otro_us<?= $i ?>' title="Campo para el ingreso de dignatario si existe" value="<?php echo htmlspecialchars(stripcslashes($otro)); ?>"  class='tex_area form-control' size='80' maxlength='50'>
-                                                <?php
-                                    }
-                                    ?>
+                                        <!-- <input type="hidden" name="sgd_ciu_eps" id="sgd_ciu_eps" value="<?= $sgd_ciu_eps ?>"/> -->
+                                        <?php
+                                        //} ?>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="idcont1">Continente</label><br>
-                                    <?php
-                                    /*  En este segmento trabajaremos macrosusticiï¿½n, lo que en el argot php se denomina Variables variables.
-                                     *  El objetivo es evitar realizar codigo con las mismas asignaciones y comparaciones cuya diferencia es el
-                                     *  valor concatenado de una variable + $i.
-                                     */
-                                    $var_cnt = "idcont" . $i;
-                                    $var_pai = "idpais" . $i;
-                                    $var_dpt = "codep_us" . $i;
-                                    $var_mcp = "muni_us" . $i;
-
-                                    /*  Se crean las variables cuyo contenido es el valor por defecto para cada combo, esto segï¿½n el siguiente orden:
-                                     *  1. Se pregunta si existe idcont1, idcont2 e idcont3 (segï¿½n iteracciï¿½n del ciclo), si es asï¿½ se asigna a $contcodi.
-                                     *  2. Sino existe (osea que no viene de buscar_usuario.php) se pregunta si existe "localidad" y se asigna el
-                                     *     respectivo cï¿½digo; de ser negativa la "localidad", $contcodi toma el valor de 0. Esto para cada
-                                     *     variable de continente, pais, dpto y mncpio respectivamente.
-                                     */
-
-                                    (${$var_cnt}) ? $contcodi = ${$var_cnt} : ($_SESSION['cod_local'] ? $contcodi = (substr($_SESSION['cod_local'], 0, 1) * 1) : $contcodi = 0);
-                                    (${$var_pai}) ? $paiscodi = ${$var_pai} : ($_SESSION['cod_local'] ? $paiscodi = (substr($_SESSION['cod_local'], 2, 3) * 1) : $paiscodi = 0);
-                                    (${$var_dpt}) ? $deptocodi = ${$var_dpt} : ($_SESSION['cod_local'] ? $deptocodi = $paiscodi . "-" . (substr($_SESSION['cod_local'], 6, 3) * 1) : $deptocodi = 0);
-                                    (${$var_mcp}) ? $municodi = ${$var_mcp} : ($_SESSION['cod_local'] ? $municodi = $deptocodi . "-" . (substr($_SESSION['cod_local'], 10, 3) * 1) : $municodi = 0);
-
-                                    //  Visualizamos el combo de continentes.
-                                    echo $Rs_Cont->GetMenu2("idcont$i", $contcodi, "0:<< seleccione >>", false, 0, " id=\"idcont$i\" CLASS=\"select form-control\" TITLE=\"Lista desplegable con continentes, cambia automaticamente una vez el nombre o suscriptor es consultado\" onchange=\"cambia(this.form, 'idpais$i', 'idcont$i')\" ");
-                                    $Rs_Cont->Move(0);
-                                    ?>
-                                </div>
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="idpais1">Pa&iacute;s</label><br>
-                                    <?php
-                                    //  Visualizamos el combo de paises.
-                                    echo "<SELECT name=\"idpais$i\" id=\"idpais$i\" TITLE=\"Lista desplegable con paises, cambia automaticamente una vez el nombre o suscriptor es consultado\" CLASS=\"select form-control\" onchange=\"cambia(this.form, 'codep_us$i', 'idpais$i')\">";
-                                    while (!$Rs_pais->EOF and (!$Submit4)) {
-
-                                        $pais_id0 = isset($Rs_pais->fields['ID0']) ? $Rs_pais->fields['ID0'] : $Rs_pais->fields['id0'];
-                                        $pais_id1 = isset($Rs_pais->fields['ID1']) ? $Rs_pais->fields['ID1'] : $Rs_pais->fields['id1'];
-                                        $pais_nombre = isset($Rs_pais->fields['NOMBRE']) ? $Rs_pais->fields['NOMBRE'] : $Rs_pais->fields['nombre'];
-
-                                        if ($pais_id0 == $contcodi) { //Si hay local Y pais pertenece al continente.
-                                            ($paiscodi == $pais_id1) ? $s = " selected='selected'" : $s = "";
-                                            echo "<option" . $s . " value='" . $pais_id1 . "'>" . $pais_nombre . "</option>";
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                        <?php
+                                        if ($i != 3) {
+                                            ?>
+                                                        <label>Dignatario / Funcionario</label><br>
+                                                        <INPUT type='text' name='otro_us<?= $i ?>' title="Campo para el ingreso de dignatario si existe" value="<?php echo htmlspecialchars(stripcslashes($otro)); ?>"  class='tex_area form-control' size='80' maxlength='50'>
+                                                        <?php
                                         }
-                                        $Rs_pais->MoveNext();
-                                    }
-                                    echo "</SELECT>";
-                                    $Rs_pais->Move(0);
-                                    ?>
+                                        ?>
+                                    </div>
                                 </div>
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="codep_us1">Departamento</label><br>
-                                    <?php
-                                    echo "<SELECT name='codep_us$i' id='codep_us$i' CLASS=\"select form-control\" TITLE=\"Lista desplegable con departamentos, cambia automaticamente una vez el nombre o el suscriptor es consultado\" onchange=\"cambia(this.form, 'muni_us$i', 'codep_us$i')\">";
-                                    while (!$Rs_dpto->EOF and (!$Submit4)) {
+                                <div class="row">
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="idcont1">Continente</label><br>
+                                        <?php
+                                        /*  En este segmento trabajaremos macrosusticiï¿½n, lo que en el argot php se denomina Variables variables.
+                                         *  El objetivo es evitar realizar codigo con las mismas asignaciones y comparaciones cuya diferencia es el
+                                         *  valor concatenado de una variable + $i.
+                                         */
+                                        $var_cnt = "idcont" . $i;
+                                        $var_pai = "idpais" . $i;
+                                        $var_dpt = "codep_us" . $i;
+                                        $var_mcp = "muni_us" . $i;
 
-                                        $dpto_id0 = isset($Rs_dpto->fields['ID0']) ? $Rs_dpto->fields['ID0'] : $Rs_dpto->fields['id0'];
-                                        $dpto_id1 = isset($Rs_dpto->fields['ID1']) ? $Rs_dpto->fields['ID1'] : $Rs_dpto->fields['id1'];
-                                        $dpto_nombre = isset($Rs_dpto->fields['NOMBRE']) ? $Rs_dpto->fields['NOMBRE'] : $Rs_dpto->fields['nombre'];
+                                        /*  Se crean las variables cuyo contenido es el valor por defecto para cada combo, esto segï¿½n el siguiente orden:
+                                         *  1. Se pregunta si existe idcont1, idcont2 e idcont3 (segï¿½n iteracciï¿½n del ciclo), si es asï¿½ se asigna a $contcodi.
+                                         *  2. Sino existe (osea que no viene de buscar_usuario.php) se pregunta si existe "localidad" y se asigna el
+                                         *     respectivo cï¿½digo; de ser negativa la "localidad", $contcodi toma el valor de 0. Esto para cada
+                                         *     variable de continente, pais, dpto y mncpio respectivamente.
+                                         */
 
-                                        if ($dpto_id0 == $paiscodi) { //Si hay local Y dpto pertenece al pais.
-                                            ($deptocodi == $dpto_id1) ? $s = " selected='selected'" : $s = "";
-                                            echo "<option" . $s . " value='" . $dpto_id1 . "'>" . $dpto_nombre . "</option>";
+                                        (${$var_cnt}) ? $contcodi = ${$var_cnt} : ($_SESSION['cod_local'] ? $contcodi = (substr($_SESSION['cod_local'], 0, 1) * 1) : $contcodi = 0);
+                                        (${$var_pai}) ? $paiscodi = ${$var_pai} : ($_SESSION['cod_local'] ? $paiscodi = (substr($_SESSION['cod_local'], 2, 3) * 1) : $paiscodi = 0);
+                                        (${$var_dpt}) ? $deptocodi = ${$var_dpt} : ($_SESSION['cod_local'] ? $deptocodi = $paiscodi . "-" . (substr($_SESSION['cod_local'], 6, 3) * 1) : $deptocodi = 0);
+                                        (${$var_mcp}) ? $municodi = ${$var_mcp} : ($_SESSION['cod_local'] ? $municodi = $deptocodi . "-" . (substr($_SESSION['cod_local'], 10, 3) * 1) : $municodi = 0);
+
+                                        //  Visualizamos el combo de continentes.
+                                        echo $Rs_Cont->GetMenu2("idcont$i", $contcodi, "0:<< seleccione >>", false, 0, " id=\"idcont$i\" CLASS=\"select form-control\" TITLE=\"Lista desplegable con continentes, cambia automaticamente una vez el nombre o suscriptor es consultado\" onchange=\"cambia(this.form, 'idpais$i', 'idcont$i')\" ");
+                                        $Rs_Cont->Move(0);
+                                        ?>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="idpais1">Pa&iacute;s</label><br>
+                                        <?php
+                                        //  Visualizamos el combo de paises.
+                                        echo "<SELECT name=\"idpais$i\" id=\"idpais$i\" TITLE=\"Lista desplegable con paises, cambia automaticamente una vez el nombre o suscriptor es consultado\" CLASS=\"select form-control\" onchange=\"cambia(this.form, 'codep_us$i', 'idpais$i')\">";
+                                        while (!$Rs_pais->EOF and (!$Submit4)) {
+
+                                            $pais_id0 = isset($Rs_pais->fields['ID0']) ? $Rs_pais->fields['ID0'] : $Rs_pais->fields['id0'];
+                                            $pais_id1 = isset($Rs_pais->fields['ID1']) ? $Rs_pais->fields['ID1'] : $Rs_pais->fields['id1'];
+                                            $pais_nombre = isset($Rs_pais->fields['NOMBRE']) ? $Rs_pais->fields['NOMBRE'] : $Rs_pais->fields['nombre'];
+
+                                            if ($pais_id0 == $contcodi) { //Si hay local Y pais pertenece al continente.
+                                                ($paiscodi == $pais_id1) ? $s = " selected='selected'" : $s = "";
+                                                echo "<option" . $s . " value='" . $pais_id1 . "'>" . $pais_nombre . "</option>";
+                                            }
+                                            $Rs_pais->MoveNext();
                                         }
-                                        $Rs_dpto->MoveNext();
-                                    }
-                                    echo "</SELECT>";
-                                    $Rs_dpto->Move(0);
-                                    ?>
-                                </div>
-                                <div class="form-group col-lg-3 col-md-3 col-xs-3">
-                                    <label for="muni_us1">Municipio</label><br>
-                                    <?php
-                                    echo "<SELECT name=\"muni_us$i\" id=\"muni_us$i\" CLASS=\"select form-control\" TITLE=\"Lista desplegable con municipios, cambia automaticamente una vez el nombre o el suscriptor es consultado\">";
-                                    while (!$Rs_mcpo->EOF and (!$Submit4)) {
+                                        echo "</SELECT>";
+                                        $Rs_pais->Move(0);
+                                        ?>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="codep_us1">Departamento</label><br>
+                                        <?php
+                                        echo "<SELECT name='codep_us$i' id='codep_us$i' CLASS=\"select form-control\" TITLE=\"Lista desplegable con departamentos, cambia automaticamente una vez el nombre o el suscriptor es consultado\" onchange=\"cambia(this.form, 'muni_us$i', 'codep_us$i')\">";
+                                        while (!$Rs_dpto->EOF and (!$Submit4)) {
 
-                                        $mcpo_id0 = isset($Rs_mcpo->fields['ID0']) ? $Rs_mcpo->fields['ID0'] : $Rs_mcpo->fields['id0'];
-                                        $mcpo_id1 = isset($Rs_mcpo->fields['ID1']) ? $Rs_mcpo->fields['ID1'] : $Rs_mcpo->fields['id1'];
-                                        $mcpo_nombre = isset($Rs_mcpo->fields['NOMBRE']) ? $Rs_mcpo->fields['NOMBRE'] : $Rs_mcpo->fields['nombre'];
+                                            $dpto_id0 = isset($Rs_dpto->fields['ID0']) ? $Rs_dpto->fields['ID0'] : $Rs_dpto->fields['id0'];
+                                            $dpto_id1 = isset($Rs_dpto->fields['ID1']) ? $Rs_dpto->fields['ID1'] : $Rs_dpto->fields['id1'];
+                                            $dpto_nombre = isset($Rs_dpto->fields['NOMBRE']) ? $Rs_dpto->fields['NOMBRE'] : $Rs_dpto->fields['nombre'];
 
-                                        if ($_SESSION['cod_local']) { //Si hay local
-                                            ($municodi == $mcpo_id1) ? $s = " selected='selected'" : $s = "";
-                                            echo "<option" . $s . " value='" . $mcpo_id1 . "'>" . $mcpo_nombre . "</option>";
+                                            if ($dpto_id0 == $paiscodi) { //Si hay local Y dpto pertenece al pais.
+                                                ($deptocodi == $dpto_id1) ? $s = " selected='selected'" : $s = "";
+                                                echo "<option" . $s . " value='" . $dpto_id1 . "'>" . $dpto_nombre . "</option>";
+                                            }
+                                            $Rs_dpto->MoveNext();
                                         }
-                                        $Rs_mcpo->MoveNext();
-                                    }
-                                    echo "</SELECT>";
-                                    $Rs_mcpo->Move(0);
+                                        echo "</SELECT>";
+                                        $Rs_dpto->Move(0);
+                                        ?>
+                                    </div>
+                                    <div class="form-group col-lg-3 col-md-3 col-xs-3">
+                                        <label for="muni_us1">Municipio</label><br>
+                                        <?php
+                                        echo "<SELECT name=\"muni_us$i\" id=\"muni_us$i\" CLASS=\"select form-control\" TITLE=\"Lista desplegable con municipios, cambia automaticamente una vez el nombre o el suscriptor es consultado\">";
+                                        while (!$Rs_mcpo->EOF and (!$Submit4)) {
 
-                                    $municodi = 0;
-                                    $muninomb = "";
-                                    $deptocodi = 0;
-                                    ?>
+                                            $mcpo_id0 = isset($Rs_mcpo->fields['ID0']) ? $Rs_mcpo->fields['ID0'] : $Rs_mcpo->fields['id0'];
+                                            $mcpo_id1 = isset($Rs_mcpo->fields['ID1']) ? $Rs_mcpo->fields['ID1'] : $Rs_mcpo->fields['id1'];
+                                            $mcpo_nombre = isset($Rs_mcpo->fields['NOMBRE']) ? $Rs_mcpo->fields['NOMBRE'] : $Rs_mcpo->fields['nombre'];
+
+                                            if ($_SESSION['cod_local']) { //Si hay local
+                                                ($municodi == $mcpo_id1) ? $s = " selected='selected'" : $s = "";
+                                                echo "<option" . $s . " value='" . $mcpo_id1 . "'>" . $mcpo_nombre . "</option>";
+                                            }
+                                            $Rs_mcpo->MoveNext();
+                                        }
+                                        echo "</SELECT>";
+                                        $Rs_mcpo->Move(0);
+
+                                        $municodi = 0;
+                                        $muninomb = "";
+                                        $deptocodi = 0;
+                                        ?>
+                                    </div>
                                 </div>
-                            </div>
                 
         
       
-                <?php
+                    <?php
 }
 unset($contcodi);
 unset($paiscodi);
@@ -1756,54 +1756,54 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
 
                 <div class="panel-body">
                     <?php if ($ent == $tipoRadicadoPqr) { ?>
-                                <div class="row">   
-                                    <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
-                                        <label for="tipoUsuarioGrupo">Tipos de usuarios</label><br>
-                                        <?php
-                                        $query = "select nombre_tipo_usuario ,id_grupo_tipo_usuario from tipo_usuario_grupo order by id_grupo_tipo_usuario ";
-                                        $rs = $db->conn->query($query);
-                                        $opcMenu = "0:-- Seleccione tipo de usuario --";
-                                        $varQuery = $query;
-                                        if ($rs) {
-                                            print $rs->GetMenu2("tipoUsuarioGrupo", $tipoUsuarioGrupo, "$opcMenu", false, "", "class='select form-control' title='Lista desplegable con los tipos de usuario' id='tipoUsuarioGrupo'");
-                                        }
-                                        ?>
-                                        <!--<input type="text" id="tiposUsus" name="tiposUsus" class="form-control" title="Campo que indica el tipo de usuario de la solicitud" ><?php echo $tiposUsus; ?></textarea>-->
-                                    </div>
+                                    <div class="row">   
+                                        <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
+                                            <label for="tipoUsuarioGrupo">Tipos de usuarios</label><br>
+                                            <?php
+                                            $query = "select nombre_tipo_usuario ,id_grupo_tipo_usuario from tipo_usuario_grupo order by id_grupo_tipo_usuario ";
+                                            $rs = $db->conn->query($query);
+                                            $opcMenu = "0:-- Seleccione tipo de usuario --";
+                                            $varQuery = $query;
+                                            if ($rs) {
+                                                print $rs->GetMenu2("tipoUsuarioGrupo", $tipoUsuarioGrupo, "$opcMenu", false, "", "class='select form-control' title='Lista desplegable con los tipos de usuario' id='tipoUsuarioGrupo'");
+                                            }
+                                            ?>
+                                            <!--<input type="text" id="tiposUsus" name="tiposUsus" class="form-control" title="Campo que indica el tipo de usuario de la solicitud" ><?php echo $tiposUsus; ?></textarea>-->
+                                        </div>
 
-                                    <?php if ($mostrarListados == true) {
-                                        ?>
-                                                <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
-                                                    <label for="tipoServicioPqrs">Servicio</label><br>
-                                                    <?php
-                                                    $queryservicio = "select nombre_servicio_pqrs, id_servicio_pqrs from servicios_pqrs order by id_servicio_pqrs ";
-                                                    $rsservicio = $db->conn->query($queryservicio);
-                                                    $opcMenuservicio = "0:-- Seleccione Servicio --";
-                                                    $varQuery = $queryservicio;
-                                                    if ($rsservicio) {
-                                                        print $rsservicio->GetMenu2("tipoServicioPqrs", $tipoServicioPqrs, "$opcMenuservicio", false, "", "class='select form-control' title='Lista desplegable con los servicios' id='tipoServicioPqrs'");
-                                                    }
-                                                    ?>
-                                                </div>
-                                                <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
-                                                    <label for="tipoGrupoInteres">Centro de Atención</label><br>
-                                                    <?php
-                                                    $queryInteres = "select nombre_grupo_interes, id_grupo_interes from grupo_interes order by id_grupo_interes ";
-                                                    $rsInteres = $db->conn->query($queryInteres);
-                                                    $opcMenuInteres = "0:-- Seleccione Centro de Atenci&oacute;n --";
-                                                    $varQuery = $queryInteres;
-                                                    if ($rsInteres) {
-                                                        print $rsInteres->GetMenu2("tipoGrupoInteres", $tipoGrupoInteres, "$opcMenuInteres", false, "", "class='select form-control' title='Lista desplegable con los grupos de interes' id='tipoGrupoInteres'");
-                                                    }
-                                                    ?>
-                                                    <!--<input type="text" id="tiposUsus" name="tiposUsus" class="form-control" title="Campo que indica el tipo de usuario de la solicitud" ><?php echo $tiposUsus; ?></textarea>-->
-                                                </div>
+                                        <?php if ($mostrarListados == true) {
+                                            ?>
+                                                        <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
+                                                            <label for="tipoServicioPqrs">Servicio</label><br>
+                                                            <?php
+                                                            $queryservicio = "select nombre_servicio_pqrs, id_servicio_pqrs from servicios_pqrs order by id_servicio_pqrs ";
+                                                            $rsservicio = $db->conn->query($queryservicio);
+                                                            $opcMenuservicio = "0:-- Seleccione Servicio --";
+                                                            $varQuery = $queryservicio;
+                                                            if ($rsservicio) {
+                                                                print $rsservicio->GetMenu2("tipoServicioPqrs", $tipoServicioPqrs, "$opcMenuservicio", false, "", "class='select form-control' title='Lista desplegable con los servicios' id='tipoServicioPqrs'");
+                                                            }
+                                                            ?>
+                                                        </div>
+                                                        <div class="form-group <?= $cols ?>" style="display:<?= $displayClass ?>">
+                                                            <label for="tipoGrupoInteres">Centro de Atención</label><br>
+                                                            <?php
+                                                            $queryInteres = "select nombre_grupo_interes, id_grupo_interes from grupo_interes order by id_grupo_interes ";
+                                                            $rsInteres = $db->conn->query($queryInteres);
+                                                            $opcMenuInteres = "0:-- Seleccione Centro de Atenci&oacute;n --";
+                                                            $varQuery = $queryInteres;
+                                                            if ($rsInteres) {
+                                                                print $rsInteres->GetMenu2("tipoGrupoInteres", $tipoGrupoInteres, "$opcMenuInteres", false, "", "class='select form-control' title='Lista desplegable con los grupos de interes' id='tipoGrupoInteres'");
+                                                            }
+                                                            ?>
+                                                            <!--<input type="text" id="tiposUsus" name="tiposUsus" class="form-control" title="Campo que indica el tipo de usuario de la solicitud" ><?php echo $tiposUsus; ?></textarea>-->
+                                                        </div>
                                 
-                                                <?php
-                                    } ?>                            
+                                                        <?php
+                                        } ?>                            
                             
                             
-                                </div>
+                                    </div>
                     <?php } ?>
                     <div class="row">
                       <div class="form-group col-lg-12 col-md-12 col-xs-12">
@@ -1914,18 +1914,18 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
 
                         if ($ent == $tipoRadicadoPqr or $ent == 2) {
                             ?>
-                                  <div id="div_ejetematico" class="row">
-                                      <div class="form-group col-lg-12 col-md-12 col-sx-12" style="margin-left: 22px;">
-                                          <?php
-                                          if ($radiEnvioCorreo == 't') {
-                                              $estadoCorreo = 'checked';
-                                          } else {
-                                              $estadoCorreo = '';
-                                          }
-                                          ?>
-                                          <input type="checkbox" name="notificarmeCorreo" id="notificarmeCorreo" <?= $estadoCorreo ?> value="true"><b> ¿Usted autoriza recibir respuesta por medio de correo electrónico?</b>        
-                                      </div>                                                  
-                                  </div>
+                                      <div id="div_ejetematico" class="row">
+                                          <div class="form-group col-lg-12 col-md-12 col-sx-12" style="margin-left: 22px;">
+                                              <?php
+                                              if ($radiEnvioCorreo == 't') {
+                                                  $estadoCorreo = 'checked';
+                                              } else {
+                                                  $estadoCorreo = '';
+                                              }
+                                              ?>
+                                              <input type="checkbox" name="notificarmeCorreo" id="notificarmeCorreo" <?= $estadoCorreo ?> value="true"><b> ¿Usted autoriza recibir respuesta por medio de correo electrónico?</b>        
+                                          </div>                                                  
+                                      </div>
                         <?php } ?>  
                     </div>
                 </div>                                                                          
@@ -2327,57 +2327,57 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
                                         $var_envio = session_name() . "=" . session_id() . "&faxPath&leido=no&krd=$krd&verrad=$nurad&ent=$ent";
                                         ?>
                                                 
-                                                                        <center>
-                                                                            <img src='../iconos/img_alerta_2.gif' title="Icono de alerta">
-                                                                            <font face='Arial' size='3'><b>
-                                                                                Se ha generado el radicado No.<b>
-                                                                            </font>
-                                                                            <font face='Arial' size='4' color='red'><b><u>
-                                                                                <?php
-                                                                                // By Skinatech - 14/08/2018
-                                                                                if ($estructuraRad == 'ymd') {
-                                                                                    $num = 8;
-                                                                                } elseif ($estructuraRad == 'ym') {
-                                                                                    $num = 6;
-                                                                                } else {
-                                                                                    $num = 4;
-                                                                                }
+                                                                                    <center>
+                                                                                        <img src='../iconos/img_alerta_2.gif' title="Icono de alerta">
+                                                                                        <font face='Arial' size='3'><b>
+                                                                                            Se ha generado el radicado No.<b>
+                                                                                        </font>
+                                                                                        <font face='Arial' size='4' color='red'><b><u>
+                                                                                            <?php
+                                                                                            // By Skinatech - 14/08/2018
+                                                                                            if ($estructuraRad == 'ymd') {
+                                                                                                $num = 8;
+                                                                                            } elseif ($estructuraRad == 'ym') {
+                                                                                                $num = 6;
+                                                                                            } else {
+                                                                                                $num = 4;
+                                                                                            }
 
-                                                                                $numeroRadSeparado = substr($noRad, 0, $num) . "-" . substr($noRad, $num, $longitud_codigo_dependencia) . "-" . substr($noRad, ($num + $longitud_codigo_dependencia), 6) . "-" . substr($noRad, -1);
-                                                                                echo $nurad;
-                                                                                ?>
-                                                                            </u></b>
-                                                                            </font>
-                                                                            <br>
-                                                                            <?php
-                                                                            echo "<script language='Javascript'>alert('Radicado creado exitosamente');</script>";
+                                                                                            $numeroRadSeparado = substr($noRad, 0, $num) . "-" . substr($noRad, $num, $longitud_codigo_dependencia) . "-" . substr($noRad, ($num + $longitud_codigo_dependencia), 6) . "-" . substr($noRad, -1);
+                                                                                            echo $nurad;
+                                                                                            ?>
+                                                                                        </u></b>
+                                                                                        </font>
+                                                                                        <br>
+                                                                                        <?php
+                                                                                        echo "<script language='Javascript'>alert('Radicado creado exitosamente');</script>";
 
-                                                                            /**Modificado skina para enviar correo en radicacion de entrada***/
-                                                                            if ($ent == 2 or $ent == 7 or $ent == $tipoRadicadoPqr) {
-                                                                                echo "<script>window.open('../radicacion/mail.php?codusu=$radi_usua_actu&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
-                                                                                //echo "<script>window.open('../radicacion/mailInformarPqr.php?codusu=$radi_usua_actu&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count&notificacion=crear', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
-                                                                            } else {
-                                                                                echo "<script>window.open('../radicacion/mail.php?codusu=$codusuario&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
-                                                                                echo "<script>window.open('../verradicado.php?verrad=$nurad&var_envio=$var_envio" . $datos_envio . "&datoVer=985&dir_raiz=" . $dir_raiz . "&menu_ver_tmp=2', 'Modificaciï¿½n_de_Datos', 'height=700,width=650,scrollbars=yes');</script>";
-                                                                            }
+                                                                                        /**Modificado skina para enviar correo en radicacion de entrada***/
+                                                                                        if ($ent == 2 or $ent == 7 or $ent == $tipoRadicadoPqr) {
+                                                                                            echo "<script>window.open('../radicacion/mail.php?codusu=$radi_usua_actu&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
+                                                                                            //echo "<script>window.open('../radicacion/mailInformarPqr.php?codusu=$radi_usua_actu&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count&notificacion=crear', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
+                                                                                        } else {
+                                                                                            echo "<script>window.open('../radicacion/mail.php?codusu=$codusuario&verrad=$nurad&asunto=$asu&nombre=$nombre_us1&apellido=$prim_apel_us1&fecha=$fecha_gen_doc&tx=Radicado&count=$count', 'Modificacion_de_Datos', 'height=200,width=250,scrollbars=yes');</script>";
+                                                                                            echo "<script>window.open('../verradicado.php?verrad=$nurad&var_envio=$var_envio" . $datos_envio . "&datoVer=985&dir_raiz=" . $dir_raiz . "&menu_ver_tmp=2', 'Modificaciï¿½n_de_Datos', 'height=700,width=650,scrollbars=yes');</script>";
+                                                                                        }
 
-                                                                            //by skinatech, grabamos datos de dias de termino
-                                                                            $mod = 0;
-                                                                            include_once "./grabar_dt.php";
+                                                                                        //by skinatech, grabamos datos de dias de termino
+                                                                                        $mod = 0;
+                                                                                        include_once "./grabar_dt.php";
 
-                                                                            if ($eMailMid) {
-                                                                                if ($tipoMedio == "eMail" || $med == "3") {
-                                                                                    $varEnvio = session_name() . "=" . session_id() . "&nurad=$nurad" . "&eMailMid=" . $_GET['eMailMid'] . "&eMailPid=" . $_GET['eMailPid'] . "&folder=" . $_GET['folder'];
-                                                                                    ?>
-                                                                                                    <center>
-                                                                                                        <input class="botones_largo" value ="ASOCIAR EMAIL A RADICADO" type=button target= 'UploadFax' onclick="window.open('../email/uploadMail.php?<?= $varEnvio ?>','formulario', 'height=400, width=640,left=350,top=300')">
-                                                                                                    </center> 
-                                                                                                    <?php
-                                                                                }
-                                                                            }
-                                                                            ?>  
-                                                                        </center>
-                                                                        <?php
+                                                                                        if ($eMailMid) {
+                                                                                            if ($tipoMedio == "eMail" || $med == "3") {
+                                                                                                $varEnvio = session_name() . "=" . session_id() . "&nurad=$nurad" . "&eMailMid=" . $_GET['eMailMid'] . "&eMailPid=" . $_GET['eMailPid'] . "&folder=" . $_GET['folder'];
+                                                                                                ?>
+                                                                                                                        <center>
+                                                                                                                            <input class="botones_largo" value ="ASOCIAR EMAIL A RADICADO" type=button target= 'UploadFax' onclick="window.open('../email/uploadMail.php?<?= $varEnvio ?>','formulario', 'height=400, width=640,left=350,top=300')">
+                                                                                                                        </center> 
+                                                                                                                        <?php
+                                                                                            }
+                                                                                        }
+                                                                                        ?>  
+                                                                                    </center>
+                                                                                    <?php
                                     } else {
                                         echo "<font color=red >Ha ocurrido un Problema<br>Verfique los datos e intente de nuevo</font>";
                                     }
@@ -2663,39 +2663,39 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
 
                             if ($nurad) {
                                 ?>
-                                        <div class="row">
-                                            <div class="form-group col-lg-12 col-md-12 col-xs-12">
-                                                <center>
-                                                <label for="coddepeinf">Se ha informado a:</label> <br />
-                                                    <?php
-                                                    $query2 = "select b.depe_nomb ,a.INFO_DESC ,b.DEPE_NOMB ,a.DEPE_CODI ,a.info_fech as INFO_FECH ,INFO_DESC from informados a,dependencia b where a.depe_codi=b.depe_codi and a.radi_nume_radi ='$nurad' order by info_fech desc ";
-                                                    $rsInformados = $db->conn->query($query2);
+                                            <div class="row">
+                                                <div class="form-group col-lg-12 col-md-12 col-xs-12">
+                                                    <center>
+                                                    <label for="coddepeinf">Se ha informado a:</label> <br />
+                                                        <?php
+                                                        $query2 = "select b.depe_nomb ,a.INFO_DESC ,b.DEPE_NOMB ,a.DEPE_CODI ,a.info_fech as INFO_FECH ,INFO_DESC from informados a,dependencia b where a.depe_codi=b.depe_codi and a.radi_nume_radi ='$nurad' order by info_fech desc ";
+                                                        $rsInformados = $db->conn->query($query2);
 
-                                                    if ($rsInformados) {
-                                                        echo '<table border=1 class=borde_tab width=90% style="font-size:small">';
-                                                        echo '<tr>';
-                                                        echo '<td>Descripción</td>';
-                                                        echo '<td>Nombre Dependencia</td>';
-                                                        echo '<td>Fecha Informado</td>';
-                                                        echo '</tr>';
-                                                        foreach ($rsInformados as $value) {
-                                                            $data5 = date("d-m-Y", $db->conn->UnixTimeStamp($value['INFO_FECH']));
-                                                            $data6 = $db->conn->UnixTimeStamp($value['INFO_DESC']);
+                                                        if ($rsInformados) {
+                                                            echo '<table border=1 class=borde_tab width=90% style="font-size:small">';
+                                                            echo '<tr>';
+                                                            echo '<td>Descripción</td>';
+                                                            echo '<td>Nombre Dependencia</td>';
+                                                            echo '<td>Fecha Informado</td>';
+                                                            echo '</tr>';
+                                                            foreach ($rsInformados as $value) {
+                                                                $data5 = date("d-m-Y", $db->conn->UnixTimeStamp($value['INFO_FECH']));
+                                                                $data6 = $db->conn->UnixTimeStamp($value['INFO_DESC']);
 
-                                                            echo "<tr>";
-                                                            echo "<td>" . $value['INFO_DESC'] . "</td>";
-                                                            echo "<td>" . $value['DEPE_CODI'] . "-" . $value['DEPE_NOMB'] . "</td>";
-                                                            echo "<td>" . $data5 . "</td>";
-                                                            echo "</tr>";
+                                                                echo "<tr>";
+                                                                echo "<td>" . $value['INFO_DESC'] . "</td>";
+                                                                echo "<td>" . $value['DEPE_CODI'] . "-" . $value['DEPE_NOMB'] . "</td>";
+                                                                echo "<td>" . $data5 . "</td>";
+                                                                echo "</tr>";
+                                                            }
+                                                            echo '</table>';
                                                         }
-                                                        echo '</table>';
-                                                    }
-                                                    ?>
-                                                <input type="hidden" name="depende" value="<?php echo $depende; ?>" /><br/>
-                                                </center>
+                                                        ?>
+                                                    <input type="hidden" name="depende" value="<?php echo $depende; ?>" /><br/>
+                                                    </center>
+                                                </div>
                                             </div>
-                                        </div>
-                                   <?php
+                                       <?php
                             }
                             echo "<INPUT TYPE=HIDDEN NAME=codusuarioActu value=$codusuarioActu>";
                             echo "<INPUT TYPE=HIDDEN NAME=radicadopadre value=$radicadopadre>";
@@ -2707,29 +2707,29 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
 
                             if (!$Submit3 and !$Submit4) {
                                 ?>
-                                        <center>
-                                            <input type='button' onClick='radicar_doc()' name='Submit33' id='Submit33' value='Asignar Radicado' class="botones_largo">
-                                            <input type='hidden'  name='Submit3' value='Radicar' class='ebuttons2'>
-                                        </center>
-                                        <?php
+                                            <center>
+                                                <input type='button' onClick='radicar_doc()' name='Submit33' id='Submit33' value='Asignar Radicado' class="botones_largo">
+                                                <input type='hidden'  name='Submit3' value='Radicar' class='ebuttons2'>
+                                            </center>
+                                            <?php
                             } else {
                                 // Modificacion variable para agregar campos necesarios de sticker web
                                 $varEnvio = session_name() . "=" . session_id() . "&faxPath&leido=no&krd=$krd&faxPath=$faxPath&verrad=$nurad&nurad=$nurad&ent=$ent&remite=$grbNombresUs1&dependenciaDestino=$dependencia";
                                 ?>
-                                        <center>
-                                            <input type='button' onClick='modificar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
-                                            <br>
-                                            <input type='hidden'  name='Submit4' value='Modificar Datos' class='ebuttons2'>
-                                            <input type='hidden' name='nurad' value='<?= $nurad ?>'>
-                                        </center>
-                                        <center>
-                                            <br>
-                                            <font face='Arial' size='3' color='black'>Haga click en el c&oacute;digo de barras para imprimir el sticker</font>
-                                            <br>
-                                            <a href="#"  class=vinculos onClick="window.open ('stickerWeb/index.php?<?= $varEnvio ?>&alineacion=Center','sticker<?= $nurad ?>','menubar=0,resizable=0,scrollbars=0,width=400,height=130,toolbar=0,location=0');"><img src="stickerWeb/codigoBarras.png" alt="Al dar click en la imagen se abrìra una nueva ventana que ejecutara la accion de imprimir" width="300" height="80" border="0"></a>
-                                            <br>
-                                        </center>
-                                        <?php
+                                            <center>
+                                                <input type='button' onClick='modificar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
+                                                <br>
+                                                <input type='hidden'  name='Submit4' value='Modificar Datos' class='ebuttons2'>
+                                                <input type='hidden' name='nurad' value='<?= $nurad ?>'>
+                                            </center>
+                                            <center>
+                                                <br>
+                                                <font face='Arial' size='3' color='black'>Haga click en el c&oacute;digo de barras para imprimir el sticker</font>
+                                                <br>
+                                                <a href="#"  class=vinculos onClick="window.open ('stickerWeb/index.php?<?= $varEnvio ?>&alineacion=Center','sticker<?= $nurad ?>','menubar=0,resizable=0,scrollbars=0,width=400,height=130,toolbar=0,location=0');"><img src="stickerWeb/codigoBarras.png" alt="Al dar click en la imagen se abrìra una nueva ventana que ejecutara la accion de imprimir" width="300" height="80" border="0"></a>
+                                                <br>
+                                            </center>
+                                            <?php
                             }
                             ?>
                         </div>                                                                             

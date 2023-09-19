@@ -479,7 +479,6 @@ $error_msg .= '</td></tr></table>';
     </script>
     <script type="text/javascript" src="../../../js/tabber.js"></script>
     <script language="Javascript">
-        console.log("Escuchando")
         function ver_datos(x) {
             var pos = false;
             if (x == '') {
@@ -661,8 +660,6 @@ $error_msg .= '</td></tr></table>';
                 return false;
             }
         }
-
-        console.log("Tengo javascript")
         /***
         Skinatech
         Autor: Andrés Mosquera
