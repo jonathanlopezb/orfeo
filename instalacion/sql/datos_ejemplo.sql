@@ -11,14 +11,14 @@ SET client_min_messages = warning;
 SET search_path = public, pg_catalog;
 
 --
--- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: Preguntas_id_preguntas_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('"Preguntas_id_preguntas_seq"', 1, false);
 
 
 --
--- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: Respuestas_Usuario_id_Respuestas_Usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('"Respuestas_Usuario_id_Respuestas_Usuario_seq"', 1, false);
@@ -29,7 +29,7 @@ SELECT pg_catalog.setval('"Respuestas_Usuario_id_Respuestas_Usuario_seq"', 1, fa
 
 
 --
--- Data for Name: carpeta; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: carpeta; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO carpeta VALUES (0, 'Entrada', 1);
@@ -41,7 +41,7 @@ INSERT INTO carpeta VALUES (4, 'Pqrsd', 1);
 
 
 --
--- Data for Name: carpeta_per; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: carpeta_per; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO carpeta_per VALUES (1, '999', 'Masiva', 'Radicacion Masiva', 99, 1);
@@ -49,20 +49,20 @@ INSERT INTO carpeta_per VALUES (1, '998', 'Masiva', 'Radicacion Masiva', 99, 2);
 
 
 --
--- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: carpeta_per_id_caperta_per_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('carpeta_per_id_caperta_per_seq', 2, true);
 
 
 --
--- Data for Name: centro_poblado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: centro_poblado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: configuracion_contrasena; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: configuracion_contrasena; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO configuracion_contrasena VALUES (4, 3, 'month', 3, false, '2020');
@@ -73,20 +73,20 @@ INSERT INTO configuracion_contrasena VALUES (5, 3, 'month', 1, true, '2020');
 
 
 --
--- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_contrasena_idConfiguracionContracsena_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('"configuracion_contrasena_idConfiguracionContracsena_seq"', 5, true);
 
 
 --
--- Data for Name: configuracion_general_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: configuracion_general_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: configuracion_general_fondo_id_campo_configuracion_fondo_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('configuracion_general_fondo_id_campo_configuracion_fondo_seq', 143, true);
@@ -94,27 +94,27 @@ SELECT pg_catalog.setval('configuracion_general_fondo_id_campo_configuracion_fon
 
 
 --
--- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: contrasenas_guardadas_id_contrasena_guardada_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('contrasenas_guardadas_id_contrasena_guardada_seq', 124, true);
 
 
 --
--- Data for Name: datosocr; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: datosocr; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: datosocr_indice_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: datosocr_indice_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('datosocr_indice_seq', 1, false);
 
 
 --
--- Data for Name: departamento; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: departamento; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO departamento VALUES (1, 'TODOS', 1, 170);
@@ -154,7 +154,7 @@ INSERT INTO departamento VALUES (18, 'CAQUETÁ', 1, 170);
 
 
 --
--- Data for Name: dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO dependencia VALUES ('998', 'Comisión Colombiana del Océano', 11, '998', 1, '998', 'CCO', 1, 'Carrera 37 No. 53-50', NULL, NULL, '998', '998', 1, 170, 1, NULL, '998');
@@ -163,34 +163,34 @@ INSERT INTO dependencia VALUES ('997', 'Área de Direccionamiento Estratégico',
 
 
 --
--- Data for Name: dependencia_visibilidad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: dependencia_visibilidad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO dependencia_visibilidad VALUES (1, '1021', '1020');
 
 
 --
--- Name: dependencias; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: dependencias; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('dependencias', 0, false);
 
 
 --
--- Data for Name: direccion_usuarios; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: direccion_usuarios; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: direccion_usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: direccion_usuarios_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('direccion_usuarios_id_seq', 1, false);
 
 
 --
--- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: estado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO estado VALUES (9, 'Documento Orfeo', NULL);
@@ -202,7 +202,7 @@ INSERT INTO estado VALUES (1, 'Nueva', 4);
 
 
 --
--- Data for Name: estado_civil_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: estado_civil_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO estado_civil_pqrs VALUES (1, 'Soltero(a)');
@@ -213,33 +213,33 @@ INSERT INTO estado_civil_pqrs VALUES (5, 'Divorciado');
 
 
 --
--- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: estado_civil_pqrs_id_estado_civil_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('estado_civil_pqrs_id_estado_civil_pqrs_seq', 1, false);
 
 
 --
--- Data for Name: fondo_acumulado_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: fondo_acumulado_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: fondo_acumulado_comunicaciones_id_fondo_acumulado_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('fondo_acumulado_comunicaciones_id_fondo_acumulado_seq', 127481, true);
 
 
 --
--- Data for Name: fun_funcionario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: fun_funcionario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: genero_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: genero_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO genero_pqrs VALUES (1, 'Masculino');
@@ -248,7 +248,7 @@ INSERT INTO genero_pqrs VALUES (3, 'Otro');
 
 
 --
--- Data for Name: grupo_interes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: grupo_interes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO grupo_interes VALUES (1, 'Ninguno');
@@ -261,28 +261,28 @@ INSERT INTO grupo_interes VALUES (6, 'Integrante Junta Directiva');
 
 
 --
--- Data for Name: grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO grupos_informados VALUES (8, 'Equipo Tecnico de Gestión Documental', 'Integrantes Del Comité De Archivo', 1);
 
 
 --
--- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_id_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('grupos_informados_id_grupos_informados_seq', 1, false);
 
 
 --
--- Name: grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('grupos_informados_seq', 1, false);
 
 
 --
--- Data for Name: inventario_documental; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: inventario_documental; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO inventario_documental VALUES (66, 'Dependencia', '998', '0001', 'CENTRAL', '0001-998', 'SERIE', 'SUBSERIE', '2020-12-01', '2020-12-31', 500, 500, 500, '', 500, 500, 500, 3, 'NOTAS', 'SOPORTE');
@@ -290,7 +290,7 @@ INSERT INTO inventario_documental VALUES (68, 'ua', 'op', 'no', 'ob', 'co', 'no'
 
 
 --
--- Data for Name: medio_recepcion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: medio_recepcion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO medio_recepcion VALUES (1, 'Mensajeria');
@@ -301,7 +301,7 @@ INSERT INTO medio_recepcion VALUES (5, 'Pagina web');
 
 
 --
--- Data for Name: municipio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: municipio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO municipio VALUES (1, 10, 'NEW YORK', 1, 249, '0', NULL, 1);
@@ -1416,7 +1416,7 @@ INSERT INTO municipio VALUES (45, 5, 'APARTADÓ', 1, 170, '0', NULL, 1);
 
 
 --
--- Data for Name: nivel_academico_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: nivel_academico_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO nivel_academico_pqrs VALUES (1, 'Educación Básica Primaria');
@@ -1428,62 +1428,62 @@ INSERT INTO nivel_academico_pqrs VALUES (6, 'Maestría');
 
 
 --
--- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: nivel_academico_pqrs_id_nivel_acad_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('nivel_academico_pqrs_id_nivel_acad_pqrs_seq', 1, false);
 
 
 --
--- Name: num_resol_dtc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_dtc', 24, false);
 
 
 --
--- Name: num_resol_dtn; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtn; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_dtn', 101, false);
 
 
 --
--- Name: num_resol_dtoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_dtoc', 21, false);
 
 
 --
--- Name: num_resol_dtor; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dtor; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_dtor', 61, false);
 
 
 --
--- Name: num_resol_dts; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_dts; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_dts', 61, false);
 
 
 --
--- Name: num_resol_gral; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: num_resol_gral; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('num_resol_gral', 1, false);
 
 
 --
--- Data for Name: par_serv_servicios; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: par_serv_servicios; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: perfiles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: perfiles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO perfiles VALUES (2, 'ADMINISTRADOR DEL SISTEMA', '1', '1', '1', '1', 5, 1, 2, 1, 1, '0', 0, 3, 3, 3, 3, 1, 1, 2, 0, 2, 1, 2, 0, 1, 1, 1, 0, 2, 0, '1', '1', 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 3, 1, 1, 1, NULL, 0, 1, 1, 1);
@@ -1494,51 +1494,51 @@ INSERT INTO perfiles VALUES (5, 'VENTANILLA DE RADICACIÓN', '1', '1', '1', '1',
 
 
 --
--- Name: perfiles_codi_perfil_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: perfiles_codi_perfil_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('perfiles_codi_perfil_seq', 6, false);
 
 
 --
--- Data for Name: pl_generado_plg; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pl_generado_plg; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: pl_tipo_plt; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pl_tipo_plt; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: plan_table; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: plan_table; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: plantilla_pl; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: plantilla_pl; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: plsql_profiler_runnumeric; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: plsql_profiler_runnumeric; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('plsql_profiler_runnumeric', 1, false);
 
 
 --
--- Data for Name: pre_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: pre_radicado; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: preguntas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: preguntas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO preguntas VALUES (1, '¿Cual era el nombre de tu primera mascota ?');
@@ -1549,20 +1549,20 @@ INSERT INTO preguntas VALUES (5, '¿Como se llama la primera escuela a la que as
 
 
 --
--- Name: pres_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: pres_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('pres_seq', 30392, false);
 
 
 --
--- Data for Name: prestamo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: prestamo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: rango_edades_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: rango_edades_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO rango_edades_pqrs VALUES (1, 'Menores a 18');
@@ -1572,13 +1572,13 @@ INSERT INTO rango_edades_pqrs VALUES (4, 'Mayores 60');
 
 
 --
--- Data for Name: respuestas_usuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: respuestas_usuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO roles VALUES (1, 'ADMINISTRADOR TABLAS DE RETENCIÓN DOCUMENTAL', '2018-08-08', 1);
@@ -1589,210 +1589,210 @@ INSERT INTO roles VALUES (4, 'JEFE', '2018-08-08', 1);
 
 
 --
--- Name: roles_cod_rol_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: roles_cod_rol_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('roles_cod_rol_seq', 6, false);
 
 
 --
--- Name: sec_bodega_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_bodega_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_bodega_empresas', 1, false);
 
 
 --
--- Name: sec_central; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_central; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_central', 1, false);
 
 
 --
--- Name: sec_ciu_ciudadano; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_ciu_ciudadano; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_ciu_ciudadano', 2, false);
 
 
 --
--- Name: sec_def_contactos; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_def_contactos; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_def_contactos', 1, false);
 
 
 --
--- Name: sec_dir_direcciones; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_dir_direcciones; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_dir_direcciones', 43, true);
 
 
 --
--- Name: sec_edificio; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_edificio; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_edificio', 5, true);
 
 
 --
--- Name: sec_fondo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_fondo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_fondo', 1, false);
 
 
 --
--- Name: sec_inv; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_inv; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_inv', 1, false);
 
 
 --
--- Name: sec_oem_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_empresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_oem_empresas', 1, false);
 
 
 --
--- Name: sec_oem_oempresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_oem_oempresas; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_oem_oempresas', 1, true);
 
 
 --
--- Name: sec_planilla; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_planilla', 8, true);
 
 
 --
--- Name: sec_planilla_envio; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_envio; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_planilla_envio', 4, true);
 
 
 --
--- Name: sec_planilla_tx; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_planilla_tx; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_planilla_tx', 1, false);
 
 
 --
--- Name: sec_prestamo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_prestamo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_prestamo', 1, false);
 
 
 --
--- Name: sec_rol_tipos_doc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_rol_tipos_doc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_rol_tipos_doc', 6003, true);
 
 
 --
--- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sec_sgd_hfld_histflujodoc; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sec_sgd_hfld_histflujodoc', 1, false);
 
 
 --
--- Name: secr_subseries_id_tabla; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_subseries_id_tabla; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_subseries_id_tabla', 279, true);
 
 
 --
--- Name: secr_tp1_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp1_', 1, false);
 
 
 --
--- Name: secr_tp1_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp1_998', 20, true);
 
 
 --
--- Name: secr_tp1_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp1_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp1_999', 1, false);
 
 
 --
--- Name: secr_tp2_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp2_', 1, false);
 
 
 --
--- Name: secr_tp2_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp2_998', 11, true);
 
 
 --
--- Name: secr_tp2_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp2_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp2_999', 1, false);
 
 
 --
--- Name: secr_tp4_; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp4_', 1, false);
 
 
 --
--- Name: secr_tp4_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_998; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp4_998', 1, true);
 
 
 --
--- Name: secr_tp4_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: secr_tp4_999; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('secr_tp4_999', 1, false);
 
 
 --
--- Name: seq_parexp_paramexpediente; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: seq_parexp_paramexpediente; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('seq_parexp_paramexpediente', 16, true);
 
 
 --
--- Name: seq_sgd_mrd_codigo; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: seq_sgd_mrd_codigo; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('seq_sgd_mrd_codigo', 2298, true);
 
 
 --
--- Data for Name: servicios_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: servicios_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO servicios_pqrs VALUES (1, 'General');
@@ -1811,144 +1811,144 @@ INSERT INTO servicios_pqrs VALUES (13, 'Pagaduría');
 
 
 --
--- Data for Name: sgd_agen_agendados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_agen_agendados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_anar_anexarg; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_anar_anexarg; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: sgd_anar_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_anar_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_anar_secue', 1, false);
 
 
 --
--- Data for Name: sgd_anu_anulados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_anu_anulados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_aper_adminperfiles; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aper_adminperfiles; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_apli_aplintegra; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_apli_aplintegra; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_apli_aplintegra VALUES (0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 
 --
--- Data for Name: sgd_aplmen_aplimens; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aplmen_aplimens; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_aplus_plicusua; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_aplus_plicusua; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_arch_depe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_arch_depe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_archivo_central; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_central; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_archivo_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_fondo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_archivo_hist; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_archivo_hist; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_argd_argdoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_argd_argdoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_argup_argudoctop; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_argup_argudoctop; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_auditoria; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_auditoria; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_camexp_campoexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_camexp_campoexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_carp_descripcion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_carp_descripcion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_carp_descripcion VALUES ('900', 1, 'Oficio');
 
 
 --
--- Data for Name: sgd_cau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_cau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_caux_causales; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_caux_causales; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: sgd_ciu_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ciu_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_ciu_secue', 1, false);
 
 
 --
--- Data for Name: sgd_clta_clstarif; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_clta_clstarif; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_clta_clstarif VALUES (1, 1, 1, 'ENVIÓ MENSAJERO PERSONAL', 1, 1);
 
 
 --
--- Data for Name: sgd_cob_campobliga; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_cob_campobliga; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_cob_campobliga VALUES (1, 'PAIS_NOMBRE', 'PAIS_NOMBRE', 2);
@@ -1964,25 +1964,25 @@ INSERT INTO sgd_cob_campobliga VALUES (10, 'DIR', 'DIR', 2);
 
 
 --
--- Data for Name: sgd_dcau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dcau_causal; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_ddca_ddsgrgdo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ddca_ddsgrgdo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_def_contactos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_contactos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_def_continentes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_continentes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_def_continentes VALUES (1, 'AMERICA');
@@ -1994,7 +1994,7 @@ INSERT INTO sgd_def_continentes VALUES (6, 'ANTARTIDA');
 
 
 --
--- Data for Name: sgd_def_paises; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_def_paises; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_def_paises VALUES (170, 1, 'COLOMBIA');
@@ -2013,7 +2013,7 @@ INSERT INTO sgd_def_paises VALUES (724, 1, 'ESPAÑA');
 
 
 --
--- Data for Name: sgd_deve_dev_envio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_deve_dev_envio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_deve_dev_envio VALUES (1, 'CASA DESOCUPADA');
@@ -2037,20 +2037,20 @@ INSERT INTO sgd_deve_dev_envio VALUES (18, 'SE TRASLADO');
 
 
 --
--- Name: sgd_dir_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_dir_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_dir_secue', 1, false);
 
 
 --
--- Data for Name: sgd_dnufe_docnufe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_dnufe_docnufe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_eanu_estanulacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_eanu_estanulacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_eanu_estanulacion VALUES ('RADICADO EN SOLICITUD DE ANULACION', 1);
@@ -2060,214 +2060,214 @@ INSERT INTO sgd_eanu_estanulacion VALUES ('RADICADO IMPOSIBLE DE ANULAR', 9);
 
 
 --
--- Data for Name: sgd_einv_inventario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_einv_inventario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 
 --
--- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_ejes_tematicos_dependenci_id_sgd_eje_tematico_dependenc_seq', 343, true);
 
 
 --
--- Data for Name: sgd_ejes_tematicos_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ejes_tematicos_dependencia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_ejes_tematicos_id_sgd_eje_tematico_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_ejes_tematicos_id_sgd_eje_tematico_seq', 284, true);
 
 
 --
--- Data for Name: sgd_empus_empusuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_empus_empusuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_ent_entidades; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ent_entidades; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_enve_envioespecial; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_enve_envioespecial; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_estc_estconsolid; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_estc_estconsolid; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_estinst_estadoinstancia; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_estinst_estadoinstancia; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 --
--- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_exp_expediente_id_expediente_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_exp_expediente_id_expediente_seq', 14, true);
 
 
 --
--- Data for Name: sgd_fars_faristas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fars_faristas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_fenv_frmenvio; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fenv_frmenvio; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_fenv_frmenvio VALUES (1, 'MENSAJERO PERSONAL', 1, 1);
 
 
 --
--- Data for Name: sgd_fexp_flujoexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fexp_flujoexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_fexp_flujoexpedientes VALUES (0, 0, 0, 0, '', '');
 
 
 --
--- Data for Name: sgd_firmas_qr; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_firmas_qr; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_firmas_qr VALUES ('20219980000031', 'ADMON', 'Usuario de Soporte', '1234567890', '998', '2021-02-23 14:58:52.691107', 1, 1);
 
 
 --
--- Data for Name: sgd_firrad_firmarads; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_firrad_firmarads; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_fld_flujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fld_flujodoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_fun_funciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_fun_funciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_hmtd_hismatdoc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_hmtd_hismatdoc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: sgd_hmtd_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_hmtd_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_hmtd_secue', 1, false);
 
 
 --
--- Name: sgd_info_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_info_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_info_secue', 1, false);
 
 
 --
--- Data for Name: sgd_instorf_instanciasorfeo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_instorf_instanciasorfeo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_lip_linkip; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_lip_linkip; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_mat_matriz; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mat_matriz; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: sgd_mat_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_mat_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_mat_secue', 1, false);
 
 
 --
--- Data for Name: sgd_mpes_mddpeso; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mpes_mddpeso; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_msdep_msgdep; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_msdep_msgdep; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_msg_mensaje; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_msg_mensaje; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_mtd_matriz_doc; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_mtd_matriz_doc; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 --
--- Data for Name: sgd_not_notificacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
---
-
-
-
---
--- Data for Name: sgd_ntrd_notifrad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_not_notificacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_oem_oempresas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ntrd_notifrad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
+--
+
+
+
+--
+-- Data for Name: sgd_oem_oempresas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_oem_oempresas VALUES (1, 4, 'SKINA TECHNOLOGIES SAS', '--', '8002509887', '', 1, 11, 'Carrera 37 No. 53-50', '6431582', 1, 170, 'soporte@skinatech.com');
 
 
 --
--- Name: sgd_oem_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_oem_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_oem_secue', 18398, false);
 
 
 --
--- Data for Name: sgd_panu_peranulados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_panu_peranulados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 -
--- Data for Name: sgd_parexp_paramexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_parexp_paramexpediente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_parexp_paramexpediente VALUES (1, '998', '', 'Nombre de Carpeta', 1, 1);
@@ -2275,88 +2275,88 @@ INSERT INTO sgd_parexp_paramexpediente VALUES (2, '999', '', 'Nombre de Carpeta'
 
 
 --
--- Data for Name: sgd_pen_pensionados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pen_pensionados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_pexp_procexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pexp_procexpedientes; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_pexp_procexpedientes VALUES (0, NULL, 0, NULL, NULL, 1, 0);
 
 
 --
--- Name: sgd_plg_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_plg_secue; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_plg_secue', 1, false);
 
 
 --
--- Data for Name: sgd_pnufe_procnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pnufe_procnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_pnun_procenum; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_pnun_procenum; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_prc_proceso; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_prc_proceso; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_prd_prcdmentos; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_prd_prcdmentos; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_rda_retdoca; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
---
-
-
-
-
---
--- Data for Name: sgd_rmr_radmasivre; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_rda_retdoca; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 
 --
--- Data for Name: sgd_sed_sede; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_rmr_radmasivre; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
+--
+
+
+
+
+--
+-- Data for Name: sgd_sed_sede; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_senuf_secnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_senuf_secnumfe; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 --
--- Data for Name: sgd_tdec_tipodecision; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
---
-
-
-
---
--- Data for Name: sgd_tid_tipdecision; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tdec_tipodecision; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_tidm_tidocmasiva; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tid_tipdecision; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
+--
+
+
+
+--
+-- Data for Name: sgd_tidm_tidocmasiva; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_tidm_tidocmasiva VALUES (1, 'PLANTILLA');
@@ -2364,26 +2364,26 @@ INSERT INTO sgd_tidm_tidocmasiva VALUES (2, 'CSV');
 
 
 --
--- Data for Name: sgd_tip3_tipotercero; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tip3_tipotercero; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_tip3_tipotercero VALUES (1, NULL, NULL, NULL, NULL, 0, 0, 1);
 
 
 --
--- Data for Name: sgd_tma_temas; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tma_temas; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_tme_tipmen; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tme_tipmen; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: sgd_tpr_tpdcumento; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_tpr_tpdcumento; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_tpr_tpdcumento VALUES (29, 'Actas de Justicia Transicional', 30, NULL, NULL, '1', 0, 0, 1, NULL, 0, NULL, 1);
@@ -2892,7 +2892,7 @@ INSERT INTO sgd_tpr_tpdcumento VALUES (503, 'Solicitud de permiso ambiental', 10
 
 
 --
--- Data for Name: sgd_trad_tiporad; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_trad_tiporad; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_trad_tiporad VALUES (2, 'Entrada', NULL, 1, NULL, 1, 1);
@@ -2901,7 +2901,7 @@ INSERT INTO sgd_trad_tiporad VALUES (4, 'Pqrsd', NULL, 1, NULL, 1, 1);
 
 
 --
--- Data for Name: sgd_transfe_documentales; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_transfe_documentales; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_transfe_documentales VALUES (1, '20219981120000003E', 11, 2, 248, '20219980000092', '2021-04-15 10:13:58.192931-05', '998', 1, '2021-04-15 11:18:37.386882-05', '998', 1, 'transferencia_998_20210415111837.pdf');
@@ -2910,7 +2910,7 @@ INSERT INTO sgd_transfe_documentales VALUES (3, '20219981120000003E', 11, 2, 2, 
 
 
 --
--- Data for Name: sgd_ttr_transaccion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ttr_transaccion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_ttr_transaccion VALUES (40, 'Firma Digital de Documento');
@@ -2974,34 +2974,34 @@ INSERT INTO sgd_ttr_transaccion VALUES (72, 'Cambió el estado del anexo publico
 
 
 --
--- Name: sgd_tvd_depe_id; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sgd_tvd_depe_id; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sgd_tvd_depe_id', 0, false);
 
 
 --
--- Data for Name: sphinx_index_meta; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sphinx_index_meta; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sphinx_index_meta VALUES ('sph_idx_posts_main', 1, '2021-01-29 12:10:01.196636-05');
 
 
 --
--- Name: sphinx_index_meta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: sphinx_index_meta_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('sphinx_index_meta_id_seq', 11, true);
 
 
 --
--- Data for Name: sphinx_index_remove; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sphinx_index_remove; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Data for Name: tipo_doc_identificacion; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_doc_identificacion; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipo_doc_identificacion VALUES (0, 'Cedula de Ciudadania');
@@ -3013,7 +3013,7 @@ INSERT INTO tipo_doc_identificacion VALUES (5, 'NUIR');
 
 
 --
--- Data for Name: tipo_poblacion_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_poblacion_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipo_poblacion_pqrs VALUES (1, 'Adulto Mayor');
@@ -3035,14 +3035,14 @@ INSERT INTO tipo_poblacion_pqrs VALUES (4, 'Poblacion Indigena');
 
 
 --
--- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_poblacion_pqrs_id_tp_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('tipo_poblacion_pqrs_id_tp_pqrs_seq', 6, true);
 
 
 --
--- Data for Name: tipo_remitente; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_remitente; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipo_remitente VALUES (1, 'Otras empresas', 0);
@@ -3054,7 +3054,7 @@ INSERT INTO tipo_remitente VALUES (4, 'Persona Jurídica', 10);
 
 
 --
--- Data for Name: tipo_tratamiento_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_tratamiento_pqrs; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipo_tratamiento_pqrs VALUES (1, 'Señor');
@@ -3064,14 +3064,14 @@ INSERT INTO tipo_tratamiento_pqrs VALUES (4, 'Ingeniera');
 
 
 --
--- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('tipo_tratamiento_pqrs_id_tipo_t_pqrs_seq', 1, false);
 
 
 --
--- Data for Name: tipo_usuario_grupo; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipo_usuario_grupo; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipo_usuario_grupo VALUES (1, 'Ciudadano', 1);
@@ -3079,14 +3079,14 @@ INSERT INTO tipo_usuario_grupo VALUES (2, 'Entes de Control', 1);
 
 
 --
--- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipo_usuario_grupo_id_grupo_tipo_usuario_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('tipo_usuario_grupo_id_grupo_tipo_usuario_seq', 1, false);
 
 
 --
--- Data for Name: tipos_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: tipos_comunicaciones; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO tipos_comunicaciones VALUES (1, 'Enviadas');
@@ -3095,55 +3095,55 @@ INSERT INTO tipos_comunicaciones VALUES (3, 'Recibidas Externas');
 
 
 --
--- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: tipos_comunicaciones_id_tipos_comunicaciones_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('tipos_comunicaciones_id_tipos_comunicaciones_seq', 1, false);
 
 
 --
--- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: sgd_ciu_ciudadano; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO sgd_ciu_ciudadano VALUES (0, 1, 'ANONIMO', 'Carrera 1 # 1 1 Sur', 'ANONIMO', NULL, '1111111111', NULL, 1, 11, '11111111111', 1, 170, 1, 1, 1, 1, 1, 3, 10, 1);
 
 
 --
--- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO "user" VALUES (1, 'anonimo', 'TKx14J91w_WJ0h2rmeORsD9XqksqCMmf', '$2y$13$p0MVeH7Q8b.nFv2fWWjGP.4NPv6SuCYEqCxZJwRMqkj4zsW97IV9i', NULL, 'soporte@skinatech.com', 10, 1577449952, 1577449952, 'WpKeD2Rw6-r7W9DWlrliYWMjbzvwtGkQ_1577449949', 2);
 
 
 --
--- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('user_id_seq', 2, false);
 
 
 --
--- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: usuario; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 INSERT INTO usuario VALUES (1, '998', 'ADMON', '2019-11-05', '1232f297a57a5a743894a0e4a8', '1', 'Usuario de Soporte', '1', '1', '1', '1234567890', 5, '210428075608o1921688236ADMON', '2021-04-28', NULL, NULL, 'soporte.skinatech@gmail.com', NULL, NULL, 0, 2, 1, 1, NULL, '1', NULL, 3, 3, 3, 1, 1, 2, NULL, NULL, NULL, 2, NULL, 1, 2, 0, 1, 1, 1, 0, 2, '--', 170, 1, 0, '1', '1', 0, 1, 0, 0, 1, 0, 1, 3, 0, 2, 1, 1, 3, 1, 1, 1, 1, 1, 1, 0, 0);
 
 
 --
--- Data for Name: usuarios_grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo62usr
+-- Data for Name: usuarios_grupos_informados; Type: TABLE DATA; Schema: public; Owner: orfeo_usr
 --
 
 
 
 --
--- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_id_usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('usuarios_grupos_informados_id_usuarios_grupos_informados_seq', 1, false);
 
 
 --
--- Name: usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo62usr
+-- Name: usuarios_grupos_informados_seq; Type: SEQUENCE SET; Schema: public; Owner: orfeo_usr
 --
 
 SELECT pg_catalog.setval('usuarios_grupos_informados_seq', 45, true);
