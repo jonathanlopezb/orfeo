@@ -35,7 +35,7 @@ $autenticaPorLDAP = $_SESSION["autentica_por_LDAP"];
 //$ruta_raiz = ".";
 
 $imagenes = $_SESSION["imagenes"];
-$logo = 'logoEntidad.png-dist';
+$logo = 'logoEntidad.png';
 
 ?>
 <html>
