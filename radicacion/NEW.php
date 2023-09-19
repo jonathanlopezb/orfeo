@@ -2603,7 +2603,7 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
                             if (!$Submit3 and !$Submit4) {
                                 ?>
                                                 <center>
-                                                    <input type='button' onClick='miFuncion()' name='Submit33' id='Submit33' value='Asignar Radicado' class="botones_largo">
+                                                    <input type='button' onClick='radicar_doc()' name='Submit33' id='Submit33' value='Asignar Radicado' class="botones_largo">
                                                     <input type='hidden'  name='Submit3' value='Radicar' class='ebuttons2'>
                                                 </center>
                                                 <?php
@@ -2612,7 +2612,7 @@ if ($ent == $tipoRadicadoPqr or $ent == 2) {
                                 $varEnvio = session_name() . "=" . session_id() . "&faxPath&leido=no&krd=$krd&faxPath=$faxPath&verrad=$nurad&nurad=$nurad&ent=$ent&remite=$grbNombresUs1&dependenciaDestino=$dependencia";
                                 ?>
                                                 <center>
-                                                    <input type='button' onClick='radicar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
+                                                    <input type='button' onClick='modificar_doc()' name='Submit44' value='Modificar datos' class="botones_largo">
                                                     <br>
                                                     <input type='hidden'  name='Submit4' value='Modificar Datos' class='ebuttons2'>
                                                     <input type='hidden' name='nurad' value='<?= $nurad ?>'>
