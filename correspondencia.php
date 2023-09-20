@@ -512,7 +512,8 @@ $xajax->processRequests();
             </table>
         </form>
         <script>
-                        selecMenuAnt = -1;
+            console.log("escuchando JS")
+            selecMenuAnt = -1;
             swVePerso = 0;
             numPerso = 0;
             function cambioMenu(img) {
