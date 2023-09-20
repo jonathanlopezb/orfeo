@@ -512,7 +512,7 @@ $xajax->processRequests();
             </table>
         </form>
         <script>
-            console.log("escuchando JS")
+            console.log("escuchando JS");
             selecMenuAnt = -1;
             swVePerso = 0;
             numPerso = 0;
