@@ -192,23 +192,7 @@ $xajax->processRequests();
                 document.write("</form>");
                 document.form4.submit();
             }
-            selecMenuAnt = -1;
-            swVePerso = 0;
-            numPerso = 0;
-            function cambioMenu(img) {
 
-                MM_swapImage('plus' + img, '', '<?= $imagenes ?>/menuraya.gif', 1);
-
-                if (selecMenuAnt != -1 && img != selecMenuAnt)
-                    MM_swapImage('plus' + selecMenuAnt, '', '<?= $imagenes ?>/menu.gif', 1);
-                selecMenuAnt = img;
-
-                if (swVePerso == 1 && numPerso != img) {
-                    document.getElementById('carpersolanes').style.display = "none";
-                    MM_swapImage('plus' + numPerso, '', '<?= $imagenes ?>/menu.gif', 1);
-                    swVePerso = 0;
-                }
-            }
             function verPersonales(img) {
 
                 if (swVePerso != 1) {
@@ -527,5 +511,24 @@ $xajax->processRequests();
                 </tr>
             </table>
         </form>
+        <script>
+                        selecMenuAnt = -1;
+            swVePerso = 0;
+            numPerso = 0;
+            function cambioMenu(img) {
+
+                MM_swapImage('plus' + img, '', '<?= $imagenes ?>/menuraya.gif', 1);
+
+                if (selecMenuAnt != -1 && img != selecMenuAnt)
+                    MM_swapImage('plus' + selecMenuAnt, '', '<?= $imagenes ?>/menu.gif', 1);
+                selecMenuAnt = img;
+
+                if (swVePerso == 1 && numPerso != img) {
+                    document.getElementById('carpersolanes').style.display = "none";
+                    MM_swapImage('plus' + numPerso, '', '<?= $imagenes ?>/menu.gif', 1);
+                    swVePerso = 0;
+                }
+            }
+        </script>
     </body>
 </html>
